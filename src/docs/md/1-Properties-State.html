@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="working-with-data-in-react-properties-state">Working with Data in React: Properties &amp; State</h1>
+<p>By Eric Greene</p>
+<p><em>This article is part of a web development series from Microsoft. Thank you for supporting the partners who make SitePoint possible.</em></p>
+<div class="header">
+<pre><code># My Big Header
+&lt;/div&gt;</code></pre>
+<p><strong>Managing data is essential to any application. Orchestrating the flow of data through the user interface (UI) of an application can be challenging. Often, today's web applications have complex UIs such that modifying the data in one area of the UI can directly and indirectly affect other areas of the UI. Two-way data binding via Knockout.js and Angular.js are popular solutions to this problem.</strong></p>
+<p>For some applications (especially with a simple data flow), two-way binding can be a sufficient and quick solution. For more complex applications, two-way data binding can prove to be insufficient and a hindrance to effective UI design. React does not solve the larger problem of application data flow (although <a href="https://www.sitepoint.com/building-a-react-universal-blog-app-implementing-flux/">Flux does</a>), but it does solve the problem of data flow within a single component.</p>
+<p>Within the context of a single component, React solves both the problem of data flow, as well as updating the UI to reflect the results of the data flow. The second problem of UI updates is solved using a pattern named Reconciliation which involves innovative ideas such as a Virtual DOM. The next article will examine Reconciliation in detail. This article is focused on the first problem of data flow, and the kinds of data React uses within its components.</p>
+<h2 id="kinds-of-component-data">Kinds of Component Data</h2>
+<p>Data within React Components is stored as either properties or state.</p>
+<p>Properties are the input values to the component. They are used when rendering the component and initializing state (discussed shortly). After instantiating the component, properties should be considered immutable. Property values can only be set when instantiating the component, then when the component is re-rendered in the DOM, React will compare between the old and new property values to determine what DOM updates are required.</p>
+<p>Here is a demonstration of setting the property values and updating the DOM in consideration of updated property values.</p>
+<p>See the Pen <a href="http://codepen.io/SitePoint/pen/XKqQqN/">React.js Property Update Demo</a> by SitePoint (<span class="citation">[@SitePoint]</span><a href="http://codepen.io/SitePoint">3</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p>State data can be changed by the component and is usually wired into the component's event handlers. Typically, updating the state triggers React components re-render themselves. Before a component is initialized, its state must be initialized. The initialized values can include constant values, as well as, property values (as mentioned above).</p>
+<p>In comparison with frameworks such as Angular.js, properties can be thought of as one-way bound data, and state as two-way bound data. This is not a perfect analogy since Angular.js uses one kind of data object which is used two different ways, and React is using two data objects, each with their specific usages.</p>
+<h2 id="properties">Properties</h2>
+<p>My previous <a href="https://www.sitepoint.com/getting-started-react/">React article</a> covered the syntax to specify and access properties. The article explored the use of JavaScript and JSX with static as well as dynamic properties in various code demonstrations. Expanding on the earlier exploration, let's look at some interesting details regarding working with properties.</p>
+<p>When adding a CSS class name to a component, the property name <code>className</code> must be used, rather than <code>class</code> must be used. React requires this because ES2015 identifies the word <code>class</code> as a reserved keyword and is used for defining objects. To avoid confusion with this keyword, the property name <code>className</code> is used. If a property named <code>class</code> is used, React will display a helpful console message informing the developer that the property name needs to be changed to <code>className</code>.</p>
+<p>Observe the incorrect <code>class</code> property name, and the helpful warning message displayed in the Microsoft Edge console window.</p>
+<div class="figure">
+<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/07/1469284535working-with-data-in-react-properties-state01.png" alt="Incorrect class property name" />
+<p class="caption">Incorrect class property name</p>
+</div>
+<p>Changing the <code>class</code> property to <code>className</code>, results in the warning message not being displayed.</p>
+<div class="figure">
+<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/07/1469284540working-with-data-in-react-properties-state02.png" alt="class property changed to ClassName" />
+<p class="caption">class property changed to ClassName</p>
+</div>
+<p>When the property name is changed from <code>class</code> to <code>className</code> the warning message does not appear. See below for the complete CodePen demonstration.</p>
+<p>See the Pen <a href="https://codepen.io/SitePoint/pen/akGxGW/">React.js Class Property Demo</a> by SitePoint (<span class="citation">[@SitePoint]</span><a href="https://codepen.io/SitePoint">9</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p>In addition to property names such as <code>className</code>, React properties have other interesting aspects. For example, mutating component properties is an anti-pattern. Properties can be set when instantiating a component, but should not be mutated afterwards. This includes changing properties after instantiating the component, as well as after rendering it. Mutating values within a component are considered state, and tracked with the <code>state</code> property rather than the <code>props</code> property.</p>
+<p>In the following code sample, <code>SomeComponent</code> is instantiated with <code>createElement</code>, and then the property values are manipulated afterwards.</p>
+<p><strong>JavaScript:</strong></p>
+<pre><code>var someComponent = React.createElement(SomeComponent);
+
+someComponent.props.prop1 = &quot;some value&quot;;
+someComponent.props.prop2 = &quot;some value&quot;;</code></pre>
+<p><strong>JSX:</strong></p>
+<pre><code>var someComponent = &amp;lt;SomeComponent /&amp;gt;;
+
+someComponent.props.prop1 = &quot;some value&quot;;
+someComponent.props.prop2 = &quot;some value&quot;;</code></pre>
+<p>Manipulating the <code>props</code> of the instantiated component could result in errors that would be hard to trace. Also, changing the properties does not trigger an update to the component, resulting in the component and the properties could be out of sync.</p>
+<p>Instead, properties should be set as part of the component instantiation process, as shown below.</p>
+<p><strong>JavaScript:</strong></p>
+<pre><code>var someComponent = React.createElement(SomeComponent, {
+  prop1: &quot;some value&quot;,
+  prop2: &quot;some value&quot;
+});</code></pre>
+<p><strong>JSX:</strong></p>
+<pre><code>var someComponent = &lt;somecomponent prop1=&quot;some value&quot; prop2=&quot;some value&quot;&gt;</code></pre>
+<p>The component can then be re-rendered at which point React will perform its Reconciliation process to determine how the new property values affect the DOM. Then, the DOM is updated with the changes.</p>
+<p>See the first CodePen demonstration at the top of this article for a demonstration of the DOM updates.</p>
+<h2 id="state">State</h2>
+<p>State represents data that is changed by a component, usually through interaction with the user. To facilitate this change, event handlers are registered for the appropriate DOM elements. When the events occur, the updated values are retrieved from the DOM, and notify the component of the new state. Before the component can utilize state, the state must be initialized via the <code>getInitialState</code> function. Typically, the <code>getInitialState</code> function initializes the state using static values, passed in properties, or another data store.</p>
+<pre><code>var Message = React.createClass({
+
+  getInitialState: function() {
+    return { message: this.props.message };
+  },</code></pre>
+<p>Once the state is initialized, the state values can be used like property values when rendering the component. To capture the user interactions which update the state, event handlers are registered. To keep the React components self-contained, event handler function objects can be passed in as properties or defined directly on the component object definition itself.</p>
+<p>See the Pen <a href="http://codepen.io/SitePoint/pen/JKvVvy/">React.js State Update Demo</a> by SitePoint (<span class="citation">[@SitePoint]</span><a href="http://codepen.io/SitePoint">3</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p>One of the benefits of React is that standard HTML events are used. Included with standard HTML events is the standard HTML Event object. Learning special event libraries, event handlers, or custom event objects is not needed. Because modern browsers are largely compatible, intermediary cross-browser libraries such as jQuery are not needed.</p>
+<p>To handle the state changes, the <code>setState</code> function is used to set the new value on the appropriate state properties. Calling this function causes the component to re-render itself.</p>
+<p>As shown below in the Visual Studio Code editor, the <code>setState</code> function is called from the <code>_messageChange</code> event handler.</p>
+<div class="figure">
+<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/07/1469284546working-with-data-in-react-properties-state03.png" alt="Visual Studio code editor" />
+<p class="caption">Visual Studio code editor</p>
+</div>
+<h3 id="recommended-courses">Recommended Courses</h3>
+<div class="figure">
+<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1501203893wesbos.jpg" />
+
+</div>
+<p>Wes Bos</p>
+<p>A step-by-step training course to get you building real world React.js + Firebase apps and website components in a couple of afternoons. Use coupon code <strong>'SITEPOINT'</strong> at checkout to get <strong>25% off</strong>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>React components provide two mechanisms for working with data: properties and state. Dividing data between immutable properties and mutable state more clearly identifies the role of each kind of data, and the component's relationship to it. In general, properties are preferred because they simplify the flow of data. State is useful for capturing data updates resulting from user interactions and other UI events.</p>
+<p>The relationship between properties and state facilitate the flow of data through a component. Properties can be used to initialize state, and state values can be used to set properties when instantiating and rendering a component. New values from user interaction are captured via state, and then used to update the properties.</p>
+<p>The larger flow of data within an application is accomplished via a pattern named <a href="http://facebook.github.io/flux/">Flux</a>.</p>
+<p>This article is part of the web development series from Microsoft tech evangelists and <a href="http://www.developintelligence.com/">DevelopIntelligence</a> on practical JavaScript learning, open source projects, and interoperability best practices including <a href="http://blogs.windows.com/msedgedev/2015/05/06/a-break-from-the-past-part-2-saying-goodbye-to-activex-vbscript-attachevent/?wt.mc_id=DX_873178">Microsoft Edge</a> browser and the new <a href="http://blogs.windows.com/msedgedev/2015/02/26/a-break-from-the-past-the-birth-of-microsofts-new-web-rendering-engine/?wt.mc_id=DX_873178">EdgeHTML rendering engine</a>. DevelopIntelligence offers JavaScript Training and React Training Courses through <a href="http://appendto.com/">appendTo</a>, their front-end focused blog and <a href="http://appendto.com/courses/">course site</a>.</p>
+<p>We encourage you to test across browsers and devices including Microsoft Edge — the default browser for Windows 10 — with free tools on <a href="https://dev.windows.com/en-us/?wt.mc_id=DX_873178">dev.microsoftedge.com</a>, including <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/?wt.mc_id=DX_873178">status.microsoftedge.com</a>, a portal for the latest implementation status and future roadmap for interoperable web platform features in Microsoft Edge and other browsers, including Internet Explorer. Also, <a href="https://blogs.windows.com/msedgedev/?wt.mc_id=DX_873178">visit the Edge blog</a> to stay updated and informed from Microsoft developers and experts.</p>
+<p><a href="https://www.sitepoint.com/author/ericgreene/"><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/02/1454616608eric_green-96x96.png" alt="Eric Greene" /></a></p>
+<p>Eric Greene is a professional software developer specializing in HTML, CSS, and JavaScript technologies. Right now he is focused on Node.js, React, GraphQL, Relay, Angular (1 and 2), Backbone, and jQuery. He has been developing software and delivering training classes for nearly 19 years. He holds the MCSD Certification for ASP.Net Web Applications, and is a Microsoft Certified Trainer. Eric has worked with companies of all sizes in the insurance, nuclear engineering, publishing and communications industries. Among his many professional endeavors, Eric is a Technical Instructor at <a href="http://www.developintelligence.com/instructors/eric">DevelopIntelligence</a>.</p>
+<p></somecomponent></p>
+</body>
+</html>

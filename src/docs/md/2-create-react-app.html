@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="getting-react-projects-ready-fast-with-pre-configured-builds">Getting React Projects Ready Fast with Pre-configured Builds</h1>
+<p>By Pavels Jelisejevs</p>
+<p><strong>Starting a new React project nowadays is not as simple as we'd like it to be. Instead of instantly diving into the code and bringing your application to life, you have to spend time configuring the right build tools to set up a local development environment, unit testing, and a production build. But there are projects where all you need is a simple setup to get things running quickly and with minimal effort.</strong></p>
+<div class="figure">
+<img src="../images/cover-01.svg" alt="This is the caption" />
+<p class="caption">This is the caption</p>
+</div>
+<p><a href="https://github.com/facebookincubator/create-react-app">Create React App</a> provides just that. It's a CLI tool from Facebook that allows you to generate a new React project and use a pre-configured Webpack build for development. Using it, you'll never have to look at the Webpack config again.</p>
+<p><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/09/1504707649create-react-app-1024x350.jpg" alt="Getting React Projects Ready Fast with Pre-configured Builds" /> ## How Does Create React App Work?</p>
+<p>Create React App is a standalone tool that should be installed globally via <a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">npm</a>, and called each time you need to create a new project:</p>
+<pre><code>npm install -g create-react-app</code></pre>
+<p>To create a new project, run:</p>
+<pre><code>create-react-app react-app</code></pre>
+<p>Create React App will set up the following project structure:</p>
+<pre><code>.
+├── .gitignore
+├── README.md
+├── package.json
+├── node_modules
+├── public
+│   ├── favicon.ico
+│   └── index.html
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    └── logo.svg</code></pre>
+<p>It will also add a <code>react-scripts</code> package to your project that will contain all of the configuration and build scripts. In other words, your project depends <code>react-scripts</code>, not on <code>create-react-app</code> itself. Once the installation is complete, you can start working on your project.</p>
+<h2 id="starting-a-local-development-server">Starting a Local Development Server</h2>
+<p>The first thing you'll need is a local development environment. Running <code>npm start</code> will fire up a Webpack development server with a watcher that will automatically reload the application once you change something. Hot reloading, however, is only supported for styles.</p>
+<p>The application will be generated with a number of features built-in.</p>
+<h3 id="es6-and-es7">ES6 and ES7</h3>
+<p>The application comes with its own Babel preset, <a href="https://github.com/facebookincubator/create-react-app/tree/master/packages/babel-preset-react-app">babel-preset-react-app</a>, to support a set of ES6 and ES7 features. It even supports some of the newer features like async/await, and import/export statements. However, certain features, like decorators, have been intentionally left out.</p>
+<h3 id="asset-import">Asset import</h3>
+<p>You can also import CSS files from your JS modules that allow you to bundle styles that are only relevant for the modules that you ship. The same thing can be done for images and fonts.</p>
+<h3 id="eslint">ESLint</h3>
+<p>During development, your code will also be run through <a href="https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/">ESLint</a>, a static code analyzer that will help you spot errors during development.</p>
+<h3 id="environment-variables">Environment variables</h3>
+<p>You can use Node environment variables to inject values into your code at built-time. React-scripts will automatically look for any environment variables starting with <code>REACT_APP_</code> and make them available under the global <code>process.env</code>. These variables can be in a <code>.env</code> file for convenience:</p>
+<pre><code>REACT_APP_BACKEND=http://my-api.com
+REACT_APP_BACKEND_USER=root</code></pre>
+<p>You can then reference them in your code:</p>
+<pre><code>fetch({process.env.REACT_APP_SECRET_CODE}/endpoint)</code></pre>
+<h3 id="proxying-to-a-backend">Proxying to a backend</h3>
+<p>If your application will be working with a remote backend, you might need to be able to proxy requests during local development to bypass CORS. This can be set up by adding a proxy field to your <code>package.json</code> file:</p>
+<pre><code>&quot;proxy&quot;: &quot;http://localhost:4000&quot;,</code></pre>
+<p>This way, the server will forward any request that doesn't point to a static file the given address.</p>
+<h2 id="running-unit-tests">Running Unit Tests</h2>
+<p>Executing <code>npm test</code> will run tests using Jest and start a watcher to re-run them whenever you change something:</p>
+<pre><code>PASS  src/App.test.js
+  ✓ renders without crashing (7ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.123s, estimated 1s
+Ran all test suites.
+
+Watch Usage
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.</code></pre>
+<p><a href="https://facebook.github.io/jest/">Jest</a> is a test runner also developed by Facebook as an alternative to Mocha or Karma. It runs the tests on a Node environment instead of a real browser, but provides some of the browser-specific globals using <a href="https://github.com/tmpvar/jsdom">jsdom</a>.</p>
+<p>Jest also comes integrated with your VCS and by default will only run tests on files changed since your last commit. For more on this, refer to &quot;<a href="https://www.sitepoint.com/test-react-components-jest/">How to Test React Components Using Jest</a>&quot;.</p>
+<h2 id="creating-a-production-bundle">Creating a Production Bundle</h2>
+<p>When you finally have something you deploy, you can create a production bundle using <code>npm run build</code>. This will generate an optimized build of your application, ready to be deployed to your environment. The generated artifacts will be placed in the build folder:</p>
+<pre><code>.
+├── asset-manifest.json
+├── favicon.ico
+├── index.html
+└── static
+    ├── css
+    │   ├── main.9a0fe4f1.css
+    │   └── main.9a0fe4f1.css.map
+    ├── js
+    │   ├── main.3b7bfee7.js
+    │   └── main.3b7bfee7.js.map
+    └── media
+        └── logo.5d5d9eef.svg</code></pre>
+<p>The JavaScript and CSS code will be minified, and CSS will additionally be run through <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to enable better cross-browser compatibility.</p>
+<h3 id="deployment">Deployment</h3>
+<p>React-scripts provides a way to deploy your application to GitHub pages by simply adding a homepage property to <code>package.json</code>. There's also a separate <a href="https://github.com/mars/create-react-app-buildpack">Heroku build pack</a>.</p>
+<h2 id="opting-out">Opting Out</h2>
+<p>If at some point you feel that the features provided are no longer enough for your project, you can always opt out of using react-scripts by running <code>npm run eject</code>. This will copy the Webpack configuration and build scripts from <code>react-scripts</code> into your project and remove the dependency. After that, you're free to modify the configuration however you see fit.</p>
+<h3 id="recommended-courses">Recommended Courses</h3>
+<div class="figure">
+<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1501203893wesbos.jpg" />
+
+</div>
+<p>Wes Bos</p>
+<p>A step-by-step training course to get you building real world React.js + Firebase apps and website components in a couple of afternoons. Use coupon code <strong>'SITEPOINT'</strong> at checkout to get <strong>25% off</strong>.</p>
+<h2 id="in-conclusion">In Conclusion</h2>
+<p>If you're looking to start a new React project look no further. Create React App will allow you to quickly start working on your application instead of writing yet another Webpack config.</p>
+<p>Have you given it a try yet? What did you think? Let me know in the comments!</p>
+<p><em>This post was peer reviewed by <a href="https://github.com/newjs">Joan Yin</a>. Thanks to all of SitePoint's peer reviewers for making SitePoint content the best it can be!</em></p>
+<p><a href="https://www.sitepoint.com/author/pjelisejevs/"><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/02/1454986598pavels-96x96.jpg" alt="Pavels Jelisejevs" /></a></p>
+<p>Pavels is a software developer from Riga, Latvia, with a keen interest for everything web-related. His interests range from back-end to front-end development, as well as analysis and automation. If you have something to discuss, you can always reach him via Facebook or LinkedIn.</p>
+</body>
+</html>

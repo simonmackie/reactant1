@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your First Week With React</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|PT+Mono|Raleway" rel="stylesheet">
+    <link href="../assets/css/book.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+
+
+
+    <div class="page-frontmatter front set-front-matter">
+        <div class="title-name">
+            <h1>Your First Week With React</h1>
+
+        </div>
+
+        <p class="copyright">Copyright &copy; 2017 SitePoint Pty. Ltd.</p>
+
+        <ul class="credits">
+            <li><strong>Product Manager:</strong> Simon Mackie</li>
+            <li><strong>Cover Designer:</strong> Alex Walker</li>
+        </ul>
+
+        <h2>Notice of Rights</h2>
+
+        <p>All rights reserved. No part of this book may be reproduced, stored in a retrieval system or transmitted in any form or by any means, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical articles or reviews.</p>
+
+        <h2>Notice of Liability</h2>
+
+        <p>The author and publisher have made every effort to ensure the accuracy of the information herein. However, the information contained in this book is sold without warranty, either express or implied. Neither the authors and SitePoint Pty. Ltd., nor its dealers or distributors will be held liable for any damages to be caused either directly or indirectly by the instructions contained in this book, or by the software or hardware products described herein. </p>
+        <div class="block">
+        <h2>Trademark Notice</h2>
+
+        <p>Rather than indicating every occurrence of a trademarked name as such, this book uses the names only in an editorial fashion and to the benefit of the trademark owner with no intention of infringement of the trademark.</p>
+
+        <div class="small-centered">
+            <p><img src="../images/sitepoint-gray.svg" alt="SitePoint logo" width="160">
+                <br>Published by SitePoint Pty. Ltd.</p>
+
+            <p>48 Cambridge Street Collingwood
+                <br>VIC Australia 3066
+                <br>Web: www.sitepoint.com
+                <br>Email: books@sitepoint.com</p>
+
+            <p>ISBN 978-0-9943469-6-4 (print)</p>
+            <p>ISBN 978-0-9943470-2-2 (ebook)
+                <br>Printed and bound in the United States of America</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="page-about front set-front-matter">
+
+
+        <h2>About SitePoint</h2>
+
+        <p>SitePoint specializes in publishing fun, practical, and easy-to-understand content for web professionals. Visit <a href="http://www.sitepoint.com/">http://www.sitepoint.com/</a> to access our blogs, books, newsletters, articles, and community forums. You’ll find a stack of information on JavaScript, PHP, Ruby, mobile development, design, and more. </p>
+
+    </div>
+
+
+
+    <div class="page-toc front set-front-matter">
+        <h1 id="table-of-contents">Table of Contents</h1>
+        <ul id="insert-toc" class="toc">
+        </ul>
+
+    </div>
+
+    <div class="preface set-front-matter">
+        <h1 id="preface">Preface</h1>
+        <p>Preface Goes here</p>
+
+        <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
+
+        <p>This book is for ....</p>
+
+        <h2 id="preface-conventions-used">Conventions Used</h2>
+
+        <p>You’ll notice that we’ve used certain typographic and layout styles throughout this book to signify different types of information. Look out for the following items.</p>
+
+        <h3>Code Samples</h3>
+
+        <p>Code in this book is displayed using a fixed-width font, like so:</p>
+
+        <pre><code class="language-html">
+&lt;h1&gt;A Perfect Summer's Day&lt;/h1&gt;
+&lt;p&gt;It was a lovely day for a walk in the park. The birds were singing and the kids were all back at school.&lt;/p&gt;
+			</code></pre>
+
+        <p>If the code is to be found in the book’s code archive, the name of the file will appear at the top of the program listing, like this:</p>
+
+        <figure class="codefig">
+            <figcaption>example.css</figcaption>
+            <pre><code class="language-css">
+        .footer {
+            background-color: #CCC;
+            border-top: 1px solid #333;
+        }
+        </code></pre>
+        </figure>
+
+        <p>If only part of the file is displayed, this is indicated by the word <em>excerpt</em>:</p>
+
+<figure class="codefig">
+<figcaption>example.css <em>(excerpt)</em></figcaption>
+<pre><code class="language-css">
+    .footer {
+       &vhellip;
+        background-color: #CCC;
+        border-top: 1px solid #333;
+        }
+    </code></pre>
+        </figure>
+
+        <p>If additional code is to be inserted into an existing example, the new code will be displayed in bold:</p>
+
+<pre><code class="language-javascript">
+ function animate() {
+  <strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Where existing code is required for context, rather than repeat all of it, ⋮ will be displayed:</p>
+
+<pre><code class="language-javascript">
+function animate() {
+    ⋮
+<strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Some lines of code should be entered on one line, but we’ve had to wrap them because of page constraints. An ➥ indicates a line break that exists for formatting purposes only, and should be ignored:</p>
+
+<pre><code class="language-javascript">
+URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?responsive1");
+</code></pre>
+
+        <h3 id="preface-tips">Tips, Notes, and Warnings</h3>
+
+        <div class="box tip">
+            <h4>Hey, You!</h4>
+            <div class="body">
+                <p>Tips provide helpful little pointers.</p>
+            </div>
+        </div>
+
+        <div class="box note">
+            <h4>Ahem, Excuse Me ...</h4>
+            <div class="body">
+                <p>Notes are useful asides that are related—but not critical—to the topic at hand. Think of them as extra tidbits of information.</p>
+            </div>
+        </div>
+
+        <div class="box attention">
+            <h4>Make Sure You Always ...</h4>
+            <div class="body">
+                <p>... pay attention to these important points.</p>
+            </div>
+        </div>
+
+        <div class="box warning">
+            <h4>Watch Out!</h4>
+            <div class="body">
+                <p>Warnings highlight any gotchas that are likely to trip you up along the way.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- this is chapter 1, page-count-restart restarts the numbering -->
+    <div class="chapter page-count-restart">
+        <div class="ch-page">
+            <div class="ch-head">Chapter</div>
+            <h1 id="chap1">How to Tell if React is the Best Fit for Your Next Project</h1>
+            <h3>by Maria Antonietta Perna</h3>
+            <p>Nowadays, users expect sleek, performant web applications that behave more and more like native apps. Techniques have been devised to decrease the waiting time for a website to load on a user's first visit. However, in web applications that expose a lot of interactivity, the time elapsing between a user action taking place and the app's response is also important. Native apps feel snappy, and web apps are expected to behave the same, even on less than ideal internet connections.</p>
+
+            <p>A number of modern JavaScript frameworks have sprung up that can be very effective at tackling this problem. <strong><a href="https://facebook.github.io/react/">React</a></strong> can be safely considered among the most popular and robust JavaScript libraries you can use to create fast, interactive user interfaces for web apps.</p>
+
+            <p>In this article, I'm going to talk about what React is good at and what makes it work, which should provide you with some context to help you decide if this library could be a good fit for your next project.</p>
+
+            <h2 id="whatisreactjs">What Is React?</h2>
+
+            <p>React is a Facebook creation which simply labels itself as being <q>a JavaScript library for building user interfaces</q>.</p>
+
+            <p>It's an open-source project which, to date, has raked in over 74,000 stars on GitHub.</p>
+
+            <p>React is:</p>
+
+            <ul>
+              <li><strong>Declarative</strong>: you only need to design <em>simple views for each state in your application</em>, and React will efficiently update and render just the right components when your data changes.</li>
+              <li><strong>Component-based</strong>: you create your React-powered apps by assembling a number of encapsulated components, each managing its own state.</li>
+              <li><strong>Learn Once, Write Anywhere</strong>: React is not a full-blown framework; it's just a library for rendering views.</li>
+            </ul>
+
+            <h2 id="howdoesthevirtualdomwork">How Does the Virtual DOM Work?</h2>
+
+            <p>The <strong>Virtual DOM</strong> is at the core of what makes React fast at rendering user interface elements and their changes. Let's look closer into its mechanism.</p>
+
+            <p>The HTML Document Object Model or DOM is a</p>
+
+            <blockquote>
+              <p>programming interface for HTML and XML documents. … The DOM provides a representation of the document as a structured group of nodes and objects that have properties and methods. Essentially, it connects web pages to scripts or programming languages. &mdash; <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">MDN</a></p>
+            </blockquote>
+
+            <p>Whenever you want to change any part of a web page programmatically, you need to modify the DOM. Depending on the complexity and size of the document, traversing the DOM and updating it could take longer than users might be prepared to accept, especially if you take into account the work browsers need to do when something in the DOM changes. In fact, every time the DOM gets updated, browsers need to recalculate the CSS and carry out layout and repaint operations on the web page.</p>
+
+            <p>React enables developers to make changes to the web page without having to deal directly with the DOM. This is done via the <strong>Virtual DOM</strong>.</p>
+
+            <p>The Virtual DOM is a lightweight, abstract model of the DOM. React uses the <code>render</code> method to create a node tree from React components and updates this tree in response to changes in the data model resulting from actions.</p>
+
+            <p>Each time there are changes to the underlying data in a React app, React creates a new Virtual DOM representation of the user interface.</p>
+
+            <h3 id="updatinguichangeswiththevirtualdom">Updating UI Changes with the Virtual DOM</h3>
+
+            <p>When it comes to updating the browser’s DOM, React roughly follows the steps below:</p>
+
+            <ul>
+            <li>Whenever something changes, React re-renders the entire UI in a Virtual DOM representation.</li>
+            <li>React then calculates the difference between the previous Virtual DOM representation and the new one.</li>
+            <li>Finally, React patches up the real DOM with what has actually changed. If nothing has changed, React won't be dealing with the HTML DOM at all.</li>
+            </ul>
+
+            <p>One would think that such a process, which involves keeping two representations of the Virtual DOM in memory and comparing them, could be slower than dealing directly with the actual DOM. This is where efficient diff algorithms, batching DOM read/write operations, and limiting DOM changes to the bare minimum necessary, make using React and its Virtual DOM a great choice for building performant apps.</p>
+
+            <h2 id="isreactgoodforeveryproject">Is React Good for Every Project?</h2>
+
+            <p>As the name itself suggests, React is great at making super reactive user interfaces &mdash; that is, UIs that are very quick at responding to events and consequent data changes. This comment about the name <em>React</em> made by <a href="https://twitter.com/jordwalke">Jordan Walke</a>, engineer at Facebook, is illuminating:</p>
+
+            <blockquote>
+              <p>This API reacts to any state or property changes, and works with data of any form (as deeply structured as the graph itself) so I think the name is fitting. &mdash; Vjeux, "<a href="https://facebook.github.io/react/blog/2016/09/28/our-first-50000-stars.html">Our First 50,000 Stars</a>"</p>
+            </blockquote>
+
+            <p>Although some would argue that <a href="https://css-tricks.com/projects-need-react/">all projects need React</a>, I think it's uncontroversial to say that React would be a great fit for web apps where you need to keep a complex, interactive UI in sync with frequent changes in the underlying data model.</p>
+
+            <p>React is designed to deal with stateful components in an efficient way (which doesn't mean devs don't need to optimize their code). So projects that would benefit from this capability can be considered good candidates for React.</p>
+
+            <p>Chris Coyier outlines the following, interrelated situations when <a href="https://css-tricks.com/project-need-react/">reaching for React makes sense</a>, which I tend to go along with:</p>
+
+            <ul>
+              <li><strong>Lots of state management and DOM manipulation</strong>. That is, enabling and disabling buttons, making links active, changing input values, closing and expanding menus, etc. In this kind of project, React makes managing stateful components faster and easier. As <a href="https://twitter.com/mjackson">Michael Jackson</a>, co-author of React Router, aptly put it in a <a href="https://twitter.com/mjackson/status/849638783142076416">Tweet</a>:
+
+              <blockquote style="margin-top: 1em;">
+                Point is, React takes care of the hard part of figuring out what changes actually need to happen to the DOM, not me. That's *invaluable*
+              </blockquote></li>
+
+              <li><strong>Fighting spaghetti</strong>. Keeping track of complex state by directly modifying the DOM could lead to spaghetti code, at least if extra attention isn't paid to code organization and structure.</li>
+            </ul>
+
+            <h2 id="resources">Resources</h2>
+
+            <p>If you're curious about how React and its Virtual DOM work, here's where you can learn more:</p>
+
+            <ul>
+              <li><a href="https://facebook.github.io/react/community/videos.html">React Videos from Facebook Engineers</a></li>
+              <li>"<a href="https://www.accelebrate.com/blog/the-real-benefits-of-the-virtual-dom-in-react-js/">The Real Benefits of the Virtual DOM in React.js</a>", by Chris Minnick</li>
+              <li>"<a href="http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/">The difference between Virtual DOM and DOM</a>", by Bartosz Krajka </li>
+              <li>"<a href="https://marmelab.com/blog/2017/02/06/react-is-slow-react-is-fast.html">React is Slow, React is Fast: Optimizing React Apps in Practice</a>", by François Zaninotto</li>
+              <li>"<a href="https://www.sitepoint.com/choose-the-right-front-end-framework-for-your-company/">How to Choose the Right Front-end Framework for Your Company</a>", by  Chris Lienert </li>
+            </ul>
+
+            <h2 id="conclusion">Conclusion</h2>
+
+            <p>React and other similar JavaScript libraries ease the development of snappy, event-driven user interfaces that are fast at responding to state changes. One underlying goal can be identified in the desire to bridge the gap between web apps and native apps: users expect web apps to feel smooth and seamless like native apps.</p>
+
+            <p>This is the direction towards which modern web development is heading. It's not by chance that the latest update of <em><a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html">Create React App</a></em>, a project that makes possible the creation of React apps with zero configuration, has shipped with the functionality of <a href="https://facebook.github.io/react/blog/2017/05/18/whats-new-in-create-react-app.html">creating progressive web apps (PWAs) by default</a>. These are apps that leverage <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">service workers</a> and <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network">offline-first caching</a> to minimize latency and make web apps work offline.</p>
+
+
+
+
+
+    </div>
+
+    <div class="chapter">
+        <div class="ch-head">Chapter</div>
+        <h1 id="chap2">Getting Started with React: A Beginner’s Guide</h1>
+        <h3>by Michael Wanyoike</h3>
+        <p>In this guide, I'll show you the fundamental concepts of React by taking you through a practical, step-by-step tutorial on how to create a simple <a href="https://github.com/brandiqa/message-app">Message App</a> using React. I'll assume you have no previous knowledge of React. However, you'll need at least to be familiar with modern JavaScript and NodeJS.</p>
+
+        <p>React is a remarkable JavaScript library that's taken the development community by storm. In a nutshell, it's made it easier for developers to build interactive user interfaces for web, mobile and desktop platforms. One of its best features is its freedom from the problematic bugs inherent in MVC frameworks, where inconsistent views is a recurring problem for big projects. Today, thousands of companies worldwide are using React, including big names such as Netflix and AirBnB. React has become immensely popular, such that a number of apps have been ported to React --- including WhatsApp, Instagram and Dropbox.</p>
+
+
+
+        <h2 id="prerequisites">Prerequisites</h2>
+
+        <p>As mentioned, you need some experience in the following areas:</p>
+
+        <ul>
+        <li><a href="https://www.sitepoint.com/introduction-functional-javascript/">functional JavaScript</a></li>
+
+        <li><a href="https://www.sitepoint.com/oriented-programming-1/">object-oriented JavaScript</a></li>
+
+        <li><a href="https://www.sitepoint.com/shorthand-javascript-techniques/">ES6 JavaScript Syntax</a></li>
+        </ul>
+
+        <p>On your machine, you'll need:</p>
+
+        <ul>
+        <li><a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">a NodeJS environment</a></li>
+
+        <li><a href="https://www.sitepoint.com/yarn-vs-npm/">a Yarn setup</a> (optional)</li>
+        </ul>
+
+        <p>If you'd like to take a look first at the completed project that's been used in this guide, you can access it via <a href="https://github.com/brandiqa/message-app">GitHub</a>.</p>
+
+        <h2 id="whatisreact">What is React?</h2>
+
+        <p>React is a JavaScript library for building UI components. Unlike more complete frameworks such as Angular or Vue, React deals only with the view layer. Hence, you'll need additional libraries to handle things such as data flow, routing, authentication etc. In this guide, we'll focus on what React can do.</p>
+
+        <p>Building a React project involves creating one or more React <strong>components</strong> that can interact with each other. A React component is simply a JavaScript class that requires the <code>render</code> function to be declared. The <code>render</code> function simply outputs HTML code, which is implemented using either JSX or JavaScript code. A React component may also require additional functions for handling data, actions and lifecyle events.</p>
+
+        <p>React components can further be categorized into <strong>containers/stateful components</strong> and <strong>stateless components</strong>. A stateless component's work is simply to display data that it receives from its parent React component. It can also receive events and inputs, which it passes up to its parent to handle. A React container or stateful component does the work of rendering one or more child components. It fetches data from external sources and feeds it to its child components. It also receives inputs and events from them in order to initiate actions.</p>
+
+        <h2 id="understandingthereactdom">Understanding the React DOM</h2>
+
+        <p>Before we get to coding, you need to be aware that React uses a <strong>Virtual DOM</strong> to handle page rendering. If you're familiar with jQuery, you know that it can directly manipulate a web page via the <strong>HTML DOM</strong>. In a lot of use cases, this direct interaction poses little to no problems. However, for certain cases, such as the running of a highly interactive, real-time web application, performance often takes a huge hit.</p>
+
+        <p>To counter this, the concept of the Virtual DOM was invented, and is currently being applied by many modern UI frameworks including React. Unlike the HTML DOM, the Virtual DOM is much easier to manipulate, and is capable of handling numerous operations in milliseconds without affecting page performance. React periodically compares the Virtual DOM and the HTML DOM. It then computes a <strong>diff</strong>, which it applies to the HTML DOM to make it match the Virtual DOM. This way, React does its best to ensure your application is rendered at a consistent 60 frames per second, meaning that users experience little or no lag.</p>
+
+        <p>Enough chitchat! Let's get our hands dirty …</p>
+
+        <h2 id="startablankreactproject">Start a Blank React Project</h2>
+
+        <p>As per the prerequisites, I assume you already have a NodeJS environment setup. Let's first install or update npm to the latest version.</p>
+
+        <pre><code class="bash language-bash">$ npm i -g npm
+        </code></pre>
+
+        <p>Next, we're going to install a tool, <a href="https://github.com/facebookincubator/create-react-app">Create React App</a>, that will allow us to create our first React project:</p>
+
+        <pre><code class="bash language-bash">$ npm i -g create-react-app
+        </code></pre>
+
+        <p>Navigate to your project's root directory and create a new React project using the tool we just installed:</p>
+
+        <pre><code class="bash language-bash">$ create-react-app message-app
+
+…
+Success! Created message-app at /home/mike/Projects/github/message-app
+Inside that directory, you can run several commands:
+
+    yarn start
+    Starts the development server.
+
+    yarn build
+    Bundles the app into static files for production.
+
+    yarn test
+    Starts the test runner.
+
+    yarn eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+    cd message-app
+    yarn start
+
+Happy hacking!
+        </code></pre>
+
+        <p>Depending on the speed of your internet connection, this might take a while to complete if this is your first time running the <code>create-react-app</code> command. A bunch of packages gets installed along the way, which are needed to set up a convenient development environment --- including a web server, compiler and testing tools.</p>
+
+        <p>Navigate to the newly created <code>message-app</code> folder and open the <code>package.json</code> file.</p>
+
+        <pre><code class="javascript language-javascript">{
+    "name": "message-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.12"
+    },
+    "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+    }
+}
+        </code></pre>
+
+        <p><em>Surprise!</em> You expected to see a list of all those packages listed as dependencies, didn't you? Create React App is an amazing tool that works behind the scenes. It creates a clear separation between your actual code and the development environment. You don't need to manually install Webpack to configure your project. Create React App has already done it for you, using the most common options.</p>
+
+        <p>Let's do a quick test run to ensure our new project has no errors:</p>
+
+        <pre><code>$ yarn start
+
+Starting development server…
+Compiled successfully!
+
+You can now view message-app in the browser.
+
+    Local:            http://localhost:3000/
+    On Your Network:  http://10.0.2.15:3000/
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+        </code></pre>
+
+        <p>If you don't have Yarn, just substitute with npm like this: <code>npm start</code>. For the rest of the article, use <code>npm</code> in place of <code>yarn</code> if you haven't installed it.</p>
+
+        <p>Your default browser should launch automatically, and you should get a screen like this:</p>
+
+        <p><img src="../images/reactant1/150479219101-create-react-app.png" alt="Create React App" /></p>
+
+        <p>One thing to note is that Create React App supports <strong>hot reloading</strong>. This means any changes we make on the code will cause the browser to automatically refresh. For now, let's first stop the development server by pressing <kbd>Ctrl + C</kbd>. This step isn't necessary, I'm just showing you how to kill the development server. Once the server has stopped, delete everything in the <code>src</code> folder. We'll create all the code from scratch so that you can understand everything inside the <code>src</code> folder.</p>
+
+        <h2 id="introducingjsxsyntax">Introducing JSX Syntax</h2>
+
+        <p>Inside the <code>src</code> folder, create an <code>index.js</code> file and place the following code in it:</p>
+
+        <pre><code class="javascript language-javascript">import React from 'react';
+        import ReactDOM from 'react-dom';
+
+        ReactDOM.render(&lt;h1&gt;Hello World&lt;/h1&gt;, document.getElementById('root'));
+        </code></pre>
+
+        <p>Start the development server again using <code>yarn start</code> or <code>npm start</code>. Your browser should display the following content:</p>
+
+        <p><img src="../images/reactant1/150479219402-Hello-World.png" alt="Hello React" /></p>
+
+        <p>This is the most basic "Hello World" React example. The <code>index.js</code> file is the root of your project where React components will be rendered. Let me explain how the code works:</p>
+
+        <ul>
+        <li>Line 1: React package is imported to handle JSX processing</li>
+
+        <li>Line 2: ReactDOM package is imported to render React components.</li>
+
+        <li>Line 4: Call to render function
+
+
+        <ul>
+        <li><code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>: a JSX element</li>
+
+        <li><code>document.getElementById('root')</code>: HTML container</li></ul>
+        </li>
+        </ul>
+
+        <p>The HTML container is located in <code>public/index.html</code> file. On line 28, you should see <code>&lt;div id="root"&gt;&lt;/div&gt;</code>. This is known as the <strong>root DOM</strong> because everything inside it will be managed by the <strong>React DOM</strong>.</p>
+
+        <p><strong>JSX (JavaScript XML)</strong> is a syntax expression that allows JavaScript to use tags such as <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;form&gt;</code>, and <code>&lt;a&gt;</code>. It does look a lot like HTML, but there are some key differences. For example, you can't use a <code>class</code> attribute, since it's a JavaScript keyword. Instead, <code>className</code> is used in its place. Also, events such as <code>onclick</code> are spelled <code>onClick</code> in JSX. Let's now modify our Hello World code:</p>
+
+        <pre><code class="javascript language-javascript">const element = &lt;div&gt;Hello World&lt;/div&gt;;
+
+ReactDOM.render(element, document.getElementById('root'));
+        </code></pre>
+
+        <p>I've moved out the JSX code into a variable named <code>element</code>. I've also replaced the <code>h1</code> tags with <code>div</code>. For JSX to work, you need to wrap your elements inside a single parent tag. This is necessary for JSX to work. Take a look at the following example:</p>
+
+        <pre><code class="javascript language-javascript">const element = &lt;span&gt;Hello,&lt;/span&gt; &lt;span&gt;Jane&lt;/span;
+        </code></pre>
+
+        <p>The above code won't work. You'll get a syntax error telling you must enclose adjacent JSX elements in an enclosing tag. Basically, this is how you should enclose your elements:</p>
+
+        <pre><code class="javascript language-javascript">const element = &lt;div&gt;
+  &lt;span&gt;Hello, &lt;/span&gt;
+  &lt;span&gt;Jane&lt;/span&gt;
+&lt;/div&gt;;
+        </code></pre>
+
+        <p>How about evaluating JavaScript expressions in JSX? Simple, just use curly braces like this:</p>
+
+        <pre><code class="javascript language-javascript">const name = "Jane";
+        const element = &lt;p&gt;Hello, {name}&lt;/p&gt;
+        </code></pre>
+
+        <p>… or like this:</p>
+
+        <pre><code class="javascript language-javascript">const user = {
+    firstName: "Jane",
+    lastName: "Doe"
+}
+const element = &lt;p&gt;Hello, {user.firstName} {user.lastName}&lt;/p&gt;
+        </code></pre>
+
+        <p>Update your code and confirm that the browser is displaying "Hello, Jane Doe". Try out other examples such as <code>{ 5 + 2 }</code>. Now that you've got the basics of working with JSX, let's go ahead and create a React component.</p>
+
+        <h2 id="declaringreactcomponents">Declaring React Components</h2>
+
+        <p>The above example was a simplistic way of showing you how <code>ReactDOM.render()</code> works. Generally, we encapsulate all project logic within React components, which are then passed via the <code>ReactDOM.render</code> function.</p>
+
+        <p>Inside the <code>src</code> folder, create a file named <code>App.js</code> and type the following code:</p>
+
+        <pre><code class="javascript language-javascript">import React, { Component } from 'react';
+
+class App extends Component {
+
+    render(){
+    return (
+        &lt;div&gt;
+        Hello World Again!
+        &lt;/div&gt;
+    )
+    }
+
+}
+
+export default App;
+        </code></pre>
+
+        <p>Here we've created a React Component by defining a JavaScript class that is a subclass of <code>React.Component</code>. We've also defined a render function that returns a JSX element. You can place additional JSX code within the <code>&lt;div&gt;</code> tags. Next, update <code>src/index.js</code> with the following code in order to see the changes reflected in the browser:</p>
+
+        <pre><code class="javascript language-javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './App';
+
+ReactDOM.render(&lt;App/&gt;, document.getElementById('root'));
+        </code></pre>
+
+        <p>First we import the <code>App</code> component. Then we render <code>App</code> using JSX format, like this: <code>&lt;App/&gt;</code>. This is required so that JSX can compile it to an element that can be pushed to the <code>React DOM</code>. After you've saved the changes, take a look at your browser to ensure it's rendering the correct thing.</p>
+
+        <p>Next, we'll look at how to apply styling.</p>
+
+        <h2 id="stylingjsxelements">Styling JSX Elements</h2>
+
+        <p>There are are <a href="https://www.sitepoint.com/style-react-components-styled-components/">two ways of styling JSX elements</a>:</p>
+
+        <ol>
+        <li>JSX inline styling</li>
+
+        <li>External Stylesheets</li>
+        </ol>
+
+        <p>Below is an example of how we can implement JSX inline styling:</p>
+
+        <pre><code class="javascript language-javascript">// src/App.js
+
+…
+    render() {
+    const headerStyle = {
+        color: '#ff0000',
+        textDecoration: 'underline'
+    }
+    return (
+        &lt;div&gt;
+        &lt;h2 style={headerStyle}&gt;Hello World Again!&lt;/h2&gt;
+        &lt;/div&gt;
+    )
+    }
+…
+        </code></pre>
+
+        <p>React styling looks a lot like regular CSS but there are key differences. For example, <code>headerStyle</code> is an object literal. We can't use semicolons like we normally do. Also, a number of CSS declarations have been changed in order to make them compatible with JavaScript syntax. For example, instead of <code>text-decoration</code>, we use <code>textDecoration</code>. Basically, use camel case for all CSS keys except for vendor prefixes such as <code>WebkitTransition</code>, which must start with a capital letter. We can also implement styling this way:</p>
+
+        <pre><code class="javascript language-javascript">// src/App.js
+
+…
+    &lt;h2 style={{color:'#ff0000'}}&gt;Hello World Again!&lt;/h2&gt;
+…
+        </code></pre>
+
+        <p>The second method is using external stylesheets. By default, external CSS stylesheets are already supported. If you want to use Sass or Less, please check the <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc">reference documentation</a> on how to configure it. Inside the <code>src</code> folder, create a file named <code>App.css</code> and type the following code:</p>
+
+        <pre><code class="css language-css">h2 {
+    font-size: 4rem;
+}
+        </code></pre>
+
+        <p>Add the following import statement to <code>src/App.js</code> on line 2 or 3:</p>
+
+        <pre><code class="javascript language-javascript">// src/App.js
+…
+import './App.css';
+…
+        </code></pre>
+
+        <p>After saving, you should see the text content on your browser dramatically change in size.</p>
+
+        <p><img src="../images/reactant1/150479220103-React-Styling.png" alt="Styling in React" /></p>
+
+        <p>Now that you've learned how to add styling to your React project, let's go ahead and learn about stateless and stateful React components:</p>
+
+        <h2 id="statelessvsstatefulcomponents">Stateless vs Stateful Components</h2>
+
+        <p>In React, we generally deal with two types of data: <strong>props</strong> and <strong>state</strong>. <code>Props</code> are read-only and are set by a parent component. <code>State</code> is defined within a component and can change during the lifecyle of a component. Basically, stateless components (also known as <strong>dumb</strong> components) use <code>props</code> to store data, while stateful components (also known as <strong>smart</strong> components) use <code>state</code>. To gain a better understanding, let's examine the following practical examples. Inside the <code>src</code> folder, create a folder and name it <code>messages</code>. Inside that folder, create a file named <code>message-view.js</code> and type the following code to create a stateless component:</p>
+
+        <pre><code class="javascript language-javascript">import React, { Component } from 'react';
+
+class MessageView extends Component {
+    render() {
+    return(
+        &lt;div className="container"&gt;
+        &lt;div className="from"&gt;
+            &lt;span className="label"&gt;From: &lt;/span&gt;
+            &lt;span className="value"&gt;John Doe&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="status"&gt;
+            &lt;span className="label"&gt;Status: &lt;/span&gt;
+            &lt;span className="value"&gt; Unread&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="message"&gt;
+            &lt;span className="label"&gt;Message: &lt;/span&gt;
+            &lt;span className="value"&gt;Have a great day!&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+
+export default MessageView;
+        </code></pre>
+
+        <p>Next, add some basic styling in the <code>src/App.css</code> with the following code:</p>
+
+        <pre><code class="css language-css">container {
+    margin-left: 40px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.value {
+    color: #474747;
+    position: absolute;
+    left: 200px;
+}
+
+.message .value {
+    font-style: italic;
+}
+        </code></pre>
+
+        <p>Finally, modify <code>src/App.js</code> so that the entire file looks like this:</p>
+
+        <pre><code class="javascript language-javascript">import React, { Component } from 'react';
+
+import './App.css';
+import MessageView from './messages/message-view';
+
+class App extends Component {
+    render(){
+    return (
+        &lt;MessageView /&gt;
+    )
+    }
+}
+
+export default App;
+        </code></pre>
+
+        <p>By now, the code should be pretty self explanatory, as I've already explained the basic React concepts. Take a look at your browser now, and you should have the following result:</p>
+
+        <p><img src="../images/reactant1/150479220404-Message-View.png" alt="Messages View" /></p>
+
+        <p>I'd also like to mention that it isn't necessary to use <strong>object-oriented</strong> syntax for stateless components, especially if you aren't defining a lifecycle function. We can rewrite <code>MessageView</code> using functional syntax like this:</p>
+
+        <pre><code class="javascript language-javascript">// src/messages/message-view.js
+
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default function MessageView({message}) {
+    return (
+    &lt;div className="container"&gt;
+        &lt;div className="from"&gt;
+        &lt;span className="label"&gt;From: &lt;/span&gt;
+        &lt;span className="value"&gt;{message.from}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="status"&gt;
+        &lt;span className="label"&gt;Status: &lt;/span&gt;
+        &lt;span className="value"&gt;{message.status}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="message"&gt;
+        &lt;span className="label"&gt;Message: &lt;/span&gt;
+        &lt;span className="value"&gt;{message.content}&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    );
+}
+
+MessageView.propTypes = {
+    message: PropTypes.object.isRequired
+}
+        </code></pre>
+
+        <p>Take note that I've removed the <code>Component</code> import, as this isn't required in the functional syntax. This style might be confusing at first, but you'll quickly learn it's faster to write React components this way.</p>
+
+        <p>You've successfully created a stateless React Component. It's not complete, though, as there's a bit more work that needs to be done for it to be properly integrated with a stateful component or container. Currently, the <code>MessageView</code> is displaying static data. We need to modify so that it can accept input parameters. We do this using <code>this.props</code>. We're going to assign a variable named <code>message</code> to props. We'll also mark the <code>message</code> variable as <code>required</code> using the <code>prop-types</code> package. This is to make it easier to debug our project as it grows. Update <code>message-view.js</code> with the following code:</p>
+
+        <pre><code class="javascript language-javascript">// src/messages/message-view.js
+…
+import PropTypes from 'prop-types';
+
+class MessageView extends Component {
+    render() {
+
+    const message = this.props.message;
+
+    return(
+        &lt;div className="container"&gt;
+        &lt;div className="from"&gt;
+            &lt;span className="label"&gt;From: &lt;/span&gt;
+            &lt;span className="value"&gt;{message.from}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="status"&gt;
+            &lt;span className="label"&gt;Status: &lt;/span&gt;
+            &lt;span className="value"&gt;{message.status}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="message"&gt;
+            &lt;span className="label"&gt;Message: &lt;/span&gt;
+            &lt;span className="value"&gt;{message.content}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    )
+    }
+
+    // Mark message input parameter as required
+    MessageView.propTypes = {
+    message: PropTypes.object.isRequired
+    }
+}
+…
+        </code></pre>
+
+        <p>Next, we'll create a stateful component which will act as a parent to <code>MessageView</code> component. We'll make use of the <code>state</code> data type to store a message which we'll pass on to <code>MessageView</code>. To do this, create <code>message-list.js</code> file inside <code>src/messages</code> and type the following code:</p>
+
+        <pre><code class="javascript language-javascript">// src/messages/message-list.js
+
+import React, { Component } from 'react';
+import MessageView from './message-view';
+
+class MessageList extends Component {
+
+    state = {
+    message: {
+        from: 'Martha',
+        content: 'I will be traveling soon',
+        status: 'read'
+        }
+    }
+
+    render() {
+    return(
+        &lt;div&gt;
+        &lt;h1&gt;List of Messages&lt;/h1&gt;
+        &lt;MessageView message={this.state.message} /&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+
+export default MessageList;
+        </code></pre>
+
+        <p>Next, update <code>src/App.js</code> such that <code>MessageList</code> gets rendered instead (which in turn renders its child component, <code>MessageView</code>).</p>
+
+        <pre><code class="javascript language-javascript">// src/App.js
+…
+import MessageList from './messages/message-list';
+
+class App extends Component {
+    render(){
+    return (
+        &lt;MessageList /&gt;
+    )
+    }
+}
+…
+        </code></pre>
+
+        <p>After saving the changes, check your browser to see the result.</p>
+
+        <p><img src="../images/reactant1/150479220705-Message-List.png" alt="Message List" /></p>
+
+        <p>Now let's see how we can display multiple messages using <code>MessageView</code> instances. First, we'll change <code>state.message</code> to an array and rename it to <code>messages</code>. Then, we'll use the <a href="https://www.sitepoint.com/map-reduce-functional-javascript/">map function</a> to generate multiple instances of <code>MessageView</code> each corresponding to a message in the <code>state.messages</code> array. We'll also need to populate a special attribute named <a href="https://facebook.github.io/react/docs/lists-and-keys.html">key</a> with a unique value such as <code>index</code>. React needs this in order to keep track of what items in the list have been changed, added or removed. Update <code>MessageList</code> code as follows:</p>
+
+        <pre><code class="javascript language-javascript">class MessageList extends Component {
+
+    state = {
+    messages:  [
+        {
+        from: 'John',
+        message: 'The event will start next week',
+        status: 'unread'
+        },
+        {
+        from: 'Martha',
+        message: 'I will be traveling soon',
+        status: 'read'
+        },
+        {
+        from: 'Jacob',
+        message: 'Talk later. Have a great day!',
+        status: 'read'
+        }
+    ]
+    }
+
+    render() {
+    const messageViews = this.state.messages.map(function(message, index) {
+        return(
+        &lt;MessageView key={index} message={message} /&gt;
+        )
+    })
+    return(
+        &lt;div&gt;
+        &lt;h1&gt;List of Messages&lt;/h1&gt;
+        {messageViews}
+        &lt;/div&gt;
+    )
+    }
+}
+        </code></pre>
+
+        <p>Check your browser to see the results:</p>
+
+        <p><img src="../images/reactant1/150479221006-Messages-Loop.png" alt="Messages Loop" /></p>
+
+        <p>As you can see, it's easy to define building blocks to create powerful and complex UI interfaces using React. Feel free to add more styling such as putting spacing and dividers between each <code>MessageView</code> instance.</p>
+
+    </div>
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>React vs Angular: An In-depth Comparison</h1>
+                <h3>by Pavels Jelisejevs</h3>
+                <p><strong>Should I choose Angular or React? Today's bipolar landscape of JavaScript frameworks has left many developers struggling to pick a side in this debate. Whether you're a newcomer trying to figure out where to start, a freelancer picking a framework for your next project, or an enterprise-grade architect planning a strategic vision for your company, you're likely to benefit from having an educated view on this topic.</strong></p>
+
+                <p>To save you some time, let me tell you something up front: this article won't give a clear answer on which framework is better. But neither will hundreds of other articles with similar titles. I can't tell you that, because the answer depends on a wide range of factors which make a particular technology more or less suitable for your environment and use case.</p>
+
+                <p>Since we can't answer the question directly, we'll attempt something else. We'll compare Angular (2+, not the old AngularJS) and React, to demonstrate how you can approach the problem of comparing any two frameworks in a structured manner on your own and tailor it to your environment. You know, the old "teach a man to fish" approach. That way, when both are replaced by a BetterFramework.js in a year's time, you'll be able to re-create the same train of thought once more.</p>
+
+
+                <h2 id="wheretostart">Where to Start?</h2>
+
+                <p>Before you pick any tool, you need to answer two simple questions: "Is this a good tool per se?" and "Will it work well for my use case?" Neither of them mean anything on their own, so you always need to keep both of them in mind. All right, the questions might not be that simple, so we'll try to break them down into smaller ones.</p>
+
+                <p>Questions on the tool itself:</p>
+
+                <ul>
+                <li>How mature is it and who's behind it?</li>
+
+                <li>What kind of features does it have?</li>
+
+                <li>What architecture, development paradigms, and patterns does it employ?</li>
+
+                <li>What is the ecosystem around it?</li>
+                </ul>
+
+                <p>Questions for self-reflection:</p>
+
+                <ul>
+                <li>Will I and my colleagues be able to learn this tool with ease?</li>
+
+                <li>Does is fit well with my project?</li>
+
+                <li>What is the developer experience like?</li>
+                </ul>
+
+                <p>Using this set of questions you can start your assessment of any tool and we'll base our comparison of React and Angular on them as well.</p>
+
+                <p>There's another thing we need to take into account. Strictly speaking, it's not exactly fair to compare Angular to React, since Angular is a full-blown, feature-rich framework, while React just a UI component library. To even the odds, we'll talk about React in conjunction with some of the libraries often used with it.</p>
+
+                <h2 id="maturity">Maturity</h2>
+
+                <p>An important part of being a skilled developer is being able to keep the balance between established, time-proven approaches and evaluating new bleeding-edge tech. As a general rule, you should be careful when adopting tools that haven't yet matured due to certain risks:</p>
+
+                <ul>
+                <li>The tool may be buggy and unstable.</li>
+
+                <li>It might be unexpectedly abandoned by the vendor.</li>
+
+                <li>There might not be a large knowledge base or community available in case you need help.</li>
+                </ul>
+
+                <p>Both React and Angular come from good families, so it seems that we can be confident in this regard. </p>
+
+                <h3 id="react">React</h3>
+
+                <p>React is developed and maintained by Facebook and used in their own products, <a href="https://github.com/facebook/react/wiki/sites-using-react">including Instagram and WhatsApp</a>. It has been around for roughly <a href="https://facebook.github.io/react/blog/2013/06/05/why-react.html">three and a half years</a> now, so it's not exactly new. It's also <a href="https://github.com/search?q=stars:%3E1&amp;s=stars&amp;type=Repositories">one of the most popular</a> projects on GitHub, with about 74,000 stars at the time of writing. Sounds good to me.</p>
+
+                <h3 id="angular">Angular</h3>
+
+                <p>Angular (version 2 and above) has been around less then React, but if you count in the history of its predecessor, AngularJS, the picture evens out. It's maintained by Google and used in <a href="http://angularjs.blogspot.com/2015/11/how-google-uses-angular-2-with-dart.html">AdWords and Google Fiber</a>. Since AdWords is one of the key projects in Google, it is clear they have made a big bet on it and is unlikely to disappear anytime soon.</p>
+
+                <h2 id="features">Features</h2>
+
+                <p>Like I mentioned earlier, Angular has more features out of the box than React. This can be both a good and a bad thing, depending on how you look at it. </p>
+
+                <p>Both frameworks share some key features in common: components, data binding, and platform-agnostic rendering.</p>
+
+                <h3 id="angular-1">Angular</h3>
+
+                <p>Angular provides a lot of the features required for a modern web application out of the box. Some of the standard features are:</p>
+
+                <ul>
+                <li>Dependency injection</li>
+
+                <li>Templates, based on an extended version of HTML</li>
+
+                <li>Routing, provided by @angular/router</li>
+
+                <li>Ajax requests by @angular/http</li>
+
+                <li>@angular/forms for building forms</li>
+
+                <li>Component CSS encapsulation</li>
+
+                <li>XSS protection</li>
+
+                <li>Utilities for unit-testing components.</li>
+                </ul>
+
+                <p>Having all of these features available out of the box is highly convenient when you don't want to spend time picking the libraries yourself. However, it also means that you're stuck with some of them, even if you don't need them. And replacing them will usually require additional effort. For instance, we believe that for small projects having a DI system creates more overhead than benefit, considering it can be effectively replaced by imports.</p>
+
+                <h3 id="react-1">React</h3>
+
+                <p>With React, you're starting off with a more minimalistic approach. If we're looking at just React, here's what we have:</p>
+
+                <ul>
+                <li>No dependency injection</li>
+
+                <li>Instead of classic templates it has JSX, an XML-like language built on top of JavaScript</li>
+
+                <li>XSS protection</li>
+
+                <li>Utilities for unit-testing components.</li>
+                </ul>
+
+                <p>Not much. And this can be a good thing. It means that you have the freedom to choose whatever additional libraries to add based on your needs. The bad thing is that you actually have to make those choices yourself. Some of the popular libraries that are often used together with React are:</p>
+
+                <ul>
+                <li><a href="https://reacttraining.com/react-router/">React-router</a> for routing</li>
+
+                <li><a href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">Fetch</a> (or <a href="https://github.com/mzabriskie/axios">axios</a>) for HTTP requests</li>
+
+                <li>A <a href="https://github.com/MicheleBertoli/css-in-js">wide variety of techniques</a> for CSS encapsulation</li>
+
+                <li><a href="https://github.com/airbnb/enzyme">Enzyme</a> for additional unit-testing utilities.</li>
+                </ul>
+
+                <p>We've found the freedom of choosing your own libraries liberating. This gives us the ability to tailor our stack to particular requirements of each project, and we didn't find the cost of learning new libraries that high.</p>
+
+                <h2 id="languagesparadigmsandpatterns">Languages, Paradigms, and Patterns</h2>
+
+                <p>Taking a step back from the features of each framework, let's see what kind higher-level concepts are popular with both frameworks.</p>
+
+                <h3 id="react-2">React</h3>
+
+                <p>There are several important things that come to mind when thinking about React: JSX, Flow, and Redux.</p>
+
+                <h4 id="jsx">JSX</h4>
+
+                <p><a href="https://facebook.github.io/react/docs/introducing-jsx.html">JSX</a> is a controversial topic for many developers: some enjoy it, and others think that it's a huge step back. Instead of following a classical approach of separating markup and logic, React decided to combine them within components using an XML-like language that allows you to write markup directly in your JavaScript code. </p>
+
+                <p>While the merits of mixing markup with JavaScript might be debatable, it has an indisputable benefit: static analysis. If you make an error in your JSX markup, the compiler will emit an error instead of continuing in silence. This helps by instantly catching typos and other silly errors.</p>
+
+                <h4 id="flow">Flow</h4>
+
+                <p><a href="https://flow.org/">Flow</a> is a type-checking tool for JavaScript also developed by Facebook. It can parse code and check for common type errors such as implicit casting or null dereferencing. </p>
+
+                <p>Unlike TypeScript, which has a similar purpose, it does not require you to migrate to a new language and annotate your code for type checking to work. In Flow, type annotations are optional and can be used to provide additional hints to the analyzer. This makes Flow a good option if you would like to use static code analysis, but would like to avoid having to rewrite your existing code.</p>
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/writing-better-javascript-with-flow/">Writing Better JavaScript with Flow</a></li>
+                </ul>
+
+                <h4 id="redux">Redux</h4>
+
+                <p><a href="http://redux.js.org/">Redux</a> is a library that helps manage state changes in a clear manner. It was inspired by <a href="http://facebook.github.io/flux/">Flux</a>, but with some simplifications. The key idea of Redux is that the whole state of the application is represented by a single object, which is mutated by functions called reducers. Reducers themselves are pure functions and are implemented separately from the components. This enables better separation of concerns and testability. </p>
+
+                <p>If you're working on a simple project, then introducing Redux might be an over complication, but for medium- and large-scale projects, it's a solid choice. The library has become so popular that there are <a href="https://github.com/angular-redux/store">projects</a> implementing it in Angular as well.</p>
+
+                <p>All three features can greatly improve your developer experience: JSX and Flow allow you to quickly spot places with potential errors, and Redux will help achieve a clear structure for your project.</p>
+
+                <h3 id="angular-2">Angular</h3>
+
+                <p>Angular has a few interesting things up its sleeve as well, namely TypeScript and RxJS.</p>
+
+                <h4 id="typescript">TypeScript</h4>
+
+                <p><a href="https://www.typescriptlang.org/">TypeScript</a> is a new language built on top of JavaScript and developed by Microsoft. It's a superset of JavaScript ES2015 and includes features from newer versions of the language. You can use it instead of Babel to write state of the art JavaScript. It also features an extremely powerful typing system that can statically analyze your code by using a combination of annotations and type inference. </p>
+
+                <p>There's also a more subtle benefit. TypeScript has been heavily influenced by Java and .NET, so if your developers have a background in one of these languages, they are likely to find TypeScript easier to learn than plain JavaScript (notice how we switched from the tool to your personal environment). Although Angular has been the first major framework to actively adopt TypeScript, it's also possible to use it together with React.</p>
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/introduction-to-typescript/">An Introduction to TypeScript: Static Typing for the Web</a></li>
+                </ul>
+
+
+                <h4 id="rxjs">RxJS</h4>
+
+                <p><a href="http://reactivex.io/rxjs/">RxJS</a> is a reactive programming library that allows for more flexible handling of asynchronous operations and events. It's a combination of the Observer and Iterator patterns blended together with functional programming. RxJS allows you to treat anything as a continuous stream of values and perform various operations on it such as mapping, filtering, splitting or merging. </p>
+
+                <p>The library has been adopted by Angular in their HTTP module as well for some internal use. When you perform an HTTP request, it returns an Observable instead of the usual Promise. Although this library is extremely powerful, it's also quite complex. To master it, you'll need to know your way around different types of Observables, Subjects, as well as around a <a href="http://reactivex.io/rxjs/manual/overview.html#operators">hundred methods and operators</a>. Yikes, that seems to be a bit excessive just to make HTTP requests!</p>
+
+                <p>RxJS is useful in cases when you work a lot with continuous data streams such as web sockets, however, it seems overly complex for anything else. Anyway, when working with Angular you'll need to learn it at least on a basic level.</p>
+
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/functional-reactive-programming-rxjs/">Introduction to Functional Reactive Programming with RxJS</a></li>
+                </ul>
+
+                <p>We've found TypeScript to be a great tool for improving the maintainability of our projects, especially those with a large code base or complex domain/business logic. Code written in TypeScript is more descriptive and easier to follow. Since TypeScript has been adopted by Angular, we hope to see even more projects using it. RxJS, on the other hand, seems only to be beneficial in certain cases and should be adopted with care. Otherwise, it can bring unwanted complexity to your project.</p>
+
+                <h2 id="ecosystem">Ecosystem</h2>
+
+                <p>The great thing about open source frameworks is the number of tools created around them. Sometimes, these tools are even more helpful than the framework itself. Let's have a look at some of the most popular tools and libraries associated with each framework.</p>
+
+                <h3 id="angular-3">Angular</h3>
+
+                <h4 id="angularcli">Angular CLI</h4>
+
+                <p>A popular trend with modern frameworks is having a CLI tool that helps you bootstrap your project without having to configure the build yourself. Angular has <a href="https://cli.angular.io/">Angular CLI</a> for that. It allows you to generate and run a project with just a couple of commands. All of the scripts responsible for building the application, starting a development server and running tests are hidden away from you in <code>node_modules</code>. You can also use it to generate new code during development. This makes setting up new projects a breeze. </p>
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/ultimate-angular-cli-reference/">The Ultimate Angular CLI Reference</a></li>
+                </ul>
+
+
+                <h4 id="ionic2">Ionic 2</h4>
+
+                <p><a href="http://ionic.io/2">Ionic 2</a> is a new version of the popular framework for developing hybrid mobile applications. It provides a Cordova container that is nicely integrated with Angular 2, and a pretty material component library. Using it, you can easily set up and build a mobile application. If you prefer a hybrid app over a native one, this is a good choice.</p>
+
+                <h4 id="materialdesigncomponents">Material design components</h4>
+
+                <p>If you're a fan of material design, you'll be happy to hear that there's a <a href="https://material.angular.io/">Material component library</a> available for Angular. Currently, it's still at an early stage and slightly raw but it has received lots of contributions recently, so we might hope for things to improve soon.</p>
+
+                <h4 id="angularuniversal">Angular universal</h4>
+
+                <p><a href="https://github.com/angular/universal">Angular universal</a> is a seed project that can be used for creating projects with support for server-side rendering.</p>
+
+                <h4 id="ngrxstore">@ngrx/store</h4>
+
+                <p><a href="https://github.com/ngrx/store">@ngrx/store</a> is a state management library for Angular inspired by Redux, being based on state mutated by pure reducers. Its integration with RxJS allows you to utilize the push change detection strategy for better performance.</p>
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/managing-state-angular-2-ngrx/">Managing State in Angular 2 Apps with ngrx/store</a></li>
+                </ul>
+
+
+                <div class="box note">
+                        <h4>Other Tools</h4>
+                        <div class="body">
+                                <p>There are plenty of other libraries and tools available in <a href="https://github.com/AngularClass/awesome-angular">the Awesome Angular list</a>.</p>
+                        </div>
+                </div>
+
+
+
+
+                <h3 id="react-3">React</h3>
+
+                <h4 id="createreactapp">Create React App</h4>
+
+                <p><a href="https://github.com/facebookincubator/create-react-app">Create React App</a> is a CLI utility for React to quickly set up new projects. Similar to Angular CLI it allows you to generate a new project, start a development server and create a bundle. It uses <a href="https://www.sitepoint.com/test-react-components-jest/">Jest</a>, a relatively new test runner from Facebook, for unit testing, which has some nice features of its own. It also supports flexible application profiling using environment variables, backend proxies for local development, Flow, and other features. Check out this brief <a href="https://www.sitepoint.com/create-react-app/">introduction to Create React App</a> for more information.</p>
+
+                <h4 id="reactnative">React Native</h4>
+
+                <p><a href="https://facebook.github.io/react-native/">React Native</a> is a platform developed by Facebook for creating native mobile applications using React. Unlike Ionic, which produces a hybrid application, React Native produces a truly native UI. It provides a set of standard React components which are bound to their native counterparts. It also allows you to create your own components and bind them to native code written in Objective-C, Java or Swift.</p>
+
+                <h4 id="materialui">Material UI</h4>
+
+                <p>There's a <a href="http://www.material-ui.com">material design component</a> library available for React as well. Compared to Angular's version, this one is more mature and has a wider range of components available.</p>
+
+                <h4 id="nextjs">Next.js</h4>
+
+                <p><a href="https://github.com/zeit/next.js/">Next.js</a> is a framework for the server-side rendering of React applications. It provides a flexible way to completely or partially render your application on the server, return the result to the client and continue in the browser. It tries to make the complex task of creating universal applications as simple as possible so the set up is designed to be as simple as possible with a minimal amount of new primitives and requirements for the structure of your project.</p>
+
+                <h4 id="mobx">MobX</h4>
+
+                <p><a href="https://github.com/mobxjs/mobx">MobX</a> is an alternative library for managing the state of an application. Instead of keeping the state in a single immutable store, like Redux does, it encourages you to store only the minimal required state and derive the rest from it. It provides a set of decorators to define observables and observers and introduce reactive logic to your state.</p>
+
+                <ul>
+                  <li><strong>Further reading</strong>: <a href="https://www.sitepoint.com/manage-javascript-application-state-mobx/">How to Manage Your JavaScript Application State with MobX</a></li>
+                </ul>
+
+
+                <h4 id="storybook">Storybook</h4>
+
+                <p><a href="https://getstorybook.io/">Storybook</a> is a component development environment for React. It allows you to quickly set up a separate application to showcase your components. On top of that, it provides numerous add-ons to document, develop, test and design your components. We've found it to be extremely useful to be able to develop components independently from the rest of the application. You can <a href="https://www.sitepoint.com/react-storybook-develop-beautiful-user-interfaces-with-ease/">learn more about Storybook</a> from a previous article.</p>
+
+                <div class="box note">
+                        <h4>Other Tools</h4>
+                        <div class="body">
+                                <p>There are plenty of other libraries and tools available in <a href="https://github.com/enaqx/awesome-react">the Awesome React list</a>.</p>
+                        </div>
+                </div>
+
+
+
+                <h2 id="adoptionlearningcurveanddevelopmentexperience">Adoption, Learning Curve and Development Experience</h2>
+
+                <p>An important criterion for choosing a new technology is how easy it is to learn. Of course, the answer depends on a wide range of factors such as your previous experience and a general familiarity with the related concepts and patterns. However, we can still try to assess the number of new things you'll need to learn to get started with a given framework. Now, if we assume that you already know ES6+, build tools and all of that, let's see what else you'll need to understand.</p>
+
+                <h3 id="react-4">React</h3>
+
+                <p>With React, the first thing you'll encounter is JSX. It does seem awkward to write for some developers. However, it doesn't add that much complexity --- just expressions, which are actually JavaScript, and a special HTML-like syntax. You'll also need to learn how to write components, use props for configuration and manage internal state. You don't need to learn any new logical structures or loops since all of this is plain JavaScript. </p>
+
+                <p>The <a href="https://facebook.github.io/react/docs/hello-world.html">official tutorial</a> is an excellent place to start learning React. Once you're done with that, <a href="https://reacttraining.com/react-router/web/guides/quick-start">get familiar with the router</a>. The react router v4 might be slightly complex and unconventional, but nothing to worry about. Using Redux will require a paradigm shift to learn how to accomplish already familiar tasks in a manner suggested by the library. The free <a href="https://egghead.io/courses/getting-started-with-redux">Getting Started with Redux</a> video course can quickly introduce you to the core concepts. Depending on the size and the complexity of your project you'll need to find and learn some additional libraries and this might be the tricky part, but after that everything should be smooth sailing. </p>
+
+
+
+                <p>We were genuinely surprised at how easy it was to get started using React. Even people with a backend development background and limited experience in frontend development were able to catch up quickly. The error messages you might encounter along the way are usually clear and provide explanations on how to resolve the underlying problem. The hardest part may be finding the right libraries for all of the required capabilities, but structuring and developing an application is remarkably simple. </p>
+
+                <h3 id="angular-4">Angular</h3>
+
+                <p>Learning Angular will introduce you to more new concepts than React. First of all, you'll need to get comfortable with TypeScript. For developers with experience in statically typed languages such as Java or .NET this might be easier to understand than JavaScript, but for pure JavaScript developers, this might require some effort. </p>
+
+
+
+                <p>The framework itself is rich in topics to learn, starting from basic ones such as modules, dependency injection, decorators, components, services, pipes, templates, and directives, to more advanced topics such as change detection, zones, AoT compilation, and Rx.js. These are all covered in the <a href="https://angular.io/docs/ts/latest/quickstart.html">documentation</a>. Rx.js is a heavy topic on its own and is described in much detail on the <a href="http://reactivex.io/">official website</a>. While relatively easy to use on a basic level it gets more complicated when moving on to advanced topics. </p>
+
+                <p>All in all, we noticed that the entry barrier for Angular is higher than for React. The sheer number of new concepts is confusing to newcomers. And even after you've started, the experience might be a bit rough since you need to keep in mind things like Rx.js subscription management, change detection performance and <a href="https://angular.io/docs/ts/latest/guide/template-syntax.html">bananas in a box</a> (yes, this is an actual advice from the documentation). We often encountered error messages that are too cryptic to understand, so we had to google them and pray for an exact match.</p>
+
+                <p>It might seem that we favor React here, and we definitely do. We've had experience onboarding new developers to both Angular and React projects of comparable size and complexity and somehow with React it always went smoother. But, like I said earlier, this depends on a broad range of factors and might work differently for you.</p>
+
+                <h2 id="puttingitintocontext">Putting it Into Context</h2>
+
+                <p>You might have already noted that each framework has its own set of capabilities, both with their good and bad sides. But this analysis has been done outside of any particular context and thus doesn't provide an answer on which framework should you choose. To decide on that, you'll need to review it from a perspective of your project. This is something you'll need to do on your own.</p>
+
+                <p>To get started, try answering these questions about your project and when you do, match the answers against what you've learned about the two frameworks. This list might not be complete, but should be enough to get you started:</p>
+
+                <ol>
+                <li>How big is the project?</li>
+
+                <li>How long is it going to be maintained for?</li>
+
+                <li>Is all of the functionality clearly defined in advance or are you expected to be flexible?</li>
+
+                <li>If all of the features are already defined, what capabilities do you need?</li>
+
+                <li>Are the domain model and business logic complex?</li>
+
+                <li>What platforms are you targeting? Web, mobile, desktop?</li>
+
+                <li>Do you need server-side rendering? Is SEO important?</li>
+
+                <li>Will you be handling a lot of real-time event streams?</li>
+
+                <li>How big is your team?</li>
+
+                <li>How experienced are your developers and what is their background?</li>
+
+                <li>Are there any ready-made component libraries that you would like to use?</li>
+                </ol>
+
+                <p>If you're starting a big project and you would like to minimize the risk of making a bad choice, consider creating a proof-of-concept product first. Pick some of the key features of the projects and try to implement them in a simplistic manner using one of the frameworks. PoCs usually don't take a lot if time to build, but they'll give you some valuable personal experience on working with the framework and allow you to validate the key technical requirements. If you're satisfied with the results, you can continue with full-blown development. If not, failing fast will save you lot of headaches in the long run.</p>
+
+                <h2 id="oneframeworktorulethemall">One Framework to Rule Them All?</h2>
+
+                <p>Once you've picked a framework for one project, you'll get tempted to use the exact same tech stack for your upcoming projects. Don't. Even though it's a good idea to keep your tech stack consistent, don't blindly use the same approach every time. Before starting each project, take a moment to answer the same questions once more. Maybe for the next project, the answers will be different or the landscape will change. Also, if you have the luxury of doing a small project with a non-familiar tech stack, go for it. Such experiments will provide you with invaluable experience. Keep your mind open and learn from your mistakes. At some point, a certain technology will just feel natural and <em>right</em>.</p>
+
+
+
+        </div>
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>Getting React Projects Ready Fast with Pre-configured Builds</h1>
+                <h3>by Pavels Jelisejevs </h3>
+                <p>Starting a new React project nowadays is not as simple as we'd like it to be. Instead of instantly diving into the code and bringing your application to life, you have to spend time configuring the right build tools to set up a local development environment, unit testing, and a production build. But there are projects where all you need is a simple setup to get things running quickly and with minimal effort.</p>
+
+                <p><a href="https://github.com/facebookincubator/create-react-app">Create React App</a> provides just that. It's a CLI tool from Facebook that allows you to generate a new React project and use a pre-configured Webpack build for development. Using it, you'll never have to look at the Webpack config again.</p>
+
+
+
+                <h2 id="howdoescreatereactappwork">How Does Create React App Work?</h2>
+
+                <p>Create React App is a standalone tool that should be installed globally via <a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">npm</a>, and called each time you need to create a new project:</p>
+
+                <pre><code class="bash language-bash">npm install -g create-react-app
+                </code></pre>
+
+                <p>To create a new project, run:</p>
+
+                <pre><code class="bash language-bash">create-react-app react-app
+                </code></pre>
+
+                <p>Create React App will set up the following project structure:</p>
+
+                <pre><code class="bash language-bash">.
+├── .gitignore
+├── README.md
+├── package.json
+├── node_modules
+├── public
+│   ├── favicon.ico
+│   └── index.html
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    └── logo.svg
+                </code></pre>
+
+                <p>It will also add a <code>react-scripts</code> package to your project that will contain all of the configuration and build scripts. In other words, your project depends <code>react-scripts</code>, not on <code>create-react-app</code> itself. Once the installation is complete, you can start working on your project.</p>
+
+                <h2 id="startingalocaldevelopmentserver">Starting a Local Development Server</h2>
+
+                <p>The first thing you'll need is a local development environment. Running <code>npm start</code> will fire up a Webpack development server with a watcher that will automatically reload the application once you change something. Hot reloading, however, is only supported for styles.</p>
+
+                <p>The application will be generated with a number of features built-in.</p>
+
+                <h3 id="es6andes7">ES6 and ES7</h3>
+
+                <p>The application comes with its own Babel preset, <a href="https://github.com/facebookincubator/create-react-app/tree/master/packages/babel-preset-react-app">babel-preset-react-app</a>, to support a set of ES6 and ES7 features. It even supports some of the newer features like async/await, and import/export statements. However, certain features, like decorators, have been intentionally left out.</p>
+
+                <h3 id="assetimport">Asset import</h3>
+
+                <p>You can also import CSS files from your JS modules that allow you to bundle styles that are only relevant for the modules that you ship. The same thing can be done for images and fonts.</p>
+
+                <h3 id="eslint">ESLint</h3>
+
+                <p>During development, your code will also be run through <a href="https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/">ESLint</a>, a static code analyzer that will help you spot errors during development.</p>
+
+                <h3 id="environmentvariables">Environment variables</h3>
+
+                <p>You can use Node environment variables to inject values into your code at built-time. React-scripts will automatically look for any environment variables starting with <code>REACT_APP_</code> and make them available under the global <code>process.env</code>. These variables can be in a <code>.env</code> file for convenience:</p>
+
+                <pre><code class="bash language-bash">REACT_APP_BACKEND=http://my-api.com
+                REACT_APP_BACKEND_USER=root
+                </code></pre>
+
+                <p>You can then reference them in your code:</p>
+
+                <pre><code class="javascript language-javascript">fetch({process.env.REACT_APP_SECRET_CODE}/endpoint)
+                </code></pre>
+
+                <h3 id="proxyingtoabackend">Proxying to a backend</h3>
+
+                <p>If your application will be working with a remote backend, you might need to be able to proxy requests during local development to bypass CORS. This can be set up by adding a proxy field to your <code>package.json</code> file:</p>
+
+                <pre><code class="bash language-bash">"proxy": "http://localhost:4000",
+                </code></pre>
+
+                <p>This way, the server will forward any request that doesn't point to a static file the given address.</p>
+
+                <h2 id="runningunittests">Running Unit Tests</h2>
+
+                <p>Executing <code>npm test</code> will run tests using Jest and start a watcher to re-run them whenever you change something:</p>
+
+                <pre><code class="bash language-bash">PASS  src/App.test.js
+    ✓ renders without crashing (7ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.123s, estimated 1s
+Ran all test suites.
+
+Watch Usage
+    › Press p to filter by a filename regex pattern.
+    › Press q to quit watch mode.
+    › Press Enter to trigger a test run.
+                </code></pre>
+
+                <p><a href="https://facebook.github.io/jest/">Jest</a> is a test runner also developed by Facebook as an alternative to Mocha or Karma. It runs the tests on a Node environment instead of a real browser, but provides some of the browser-specific globals using <a href="https://github.com/tmpvar/jsdom">jsdom</a>.</p>
+
+                <p>Jest also comes integrated with your VCS and by default will only run tests on files changed since your last commit. For more on this, refer to “<a href="https://www.sitepoint.com/test-react-components-jest/">How to Test React Components Using Jest</a>”.</p>
+
+                <h2 id="creatingaproductionbundle">Creating a Production Bundle</h2>
+
+                <p>When you finally have something you deploy, you can create a production bundle using <code>npm run build</code>. This will generate an optimized build of your application, ready to be deployed to your environment. The generated artifacts will be placed in the build folder: </p>
+
+                <pre><code>.
+├── asset-manifest.json
+├── favicon.ico
+├── index.html
+└── static
+    ├── css
+    │   ├── main.9a0fe4f1.css
+    │   └── main.9a0fe4f1.css.map
+    ├── js
+    │   ├── main.3b7bfee7.js
+    │   └── main.3b7bfee7.js.map
+    └── media
+        └── logo.5d5d9eef.svg
+                </code></pre>
+
+                <p>The JavaScript and CSS code will be minified, and CSS will additionally be run through <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to enable better cross-browser compatibility.</p>
+
+                <h3 id="deployment">Deployment</h3>
+
+                <p>React-scripts provides a way to deploy your application to GitHub pages by simply adding a homepage property to <code>package.json</code>. There's also a separate <a href="https://github.com/mars/create-react-app-buildpack">Heroku build pack</a>.</p>
+
+                <h2 id="optingout">Opting Out</h2>
+
+                <p>If at some point you feel that the features provided are no longer enough for your project, you can always opt out of using react-scripts by running <code>npm run eject</code>. This will copy the Webpack configuration and build scripts from <code>react-scripts</code> into your project and remove the dependency. After that, you're free to modify the configuration however you see fit.</p>
+
+
+
+
+
+
+                <h2 id="inconclusion">In Conclusion</h2>
+
+                <p>If you're looking to start a new React project look no further. Create React App will allow you to quickly start working on your application instead of writing yet another Webpack config. </p>
+
+
+
+        </div>
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>Styling in React: From External CSS to Styled Components</h1>
+                <h3>by Chris Laughlin</h3>
+                <p><strong>While many aspects of building applications with React have been standardized to some degree, styling is one area where there are still a lot of competing options. Each has its pros and cons, and there's no clear best choice.</strong></p>
+
+                <p>In this article, I'll provide a condensed overview of the progression in web application styling with regards to React components. I'll also give a brief introduction to <a href="https://github.com/styled-components/styled-components">styled-components</a>.</p>
+
+
+
+                <h2 id="evolutionofstylinginjavascript">Evolution of Styling in JavaScript</h2>
+
+                <p>The initial release of CSS was in 1996, and not much has changed since. In its third major release, and with a fourth on the way, it has continued to grow by adding new features and has maintained its reputation as a fundamental web technology. CSS will always be the gold standard for styling web components, but how it's used is changing every day.</p>
+
+                <p>From the days when we could build a website from sliced up images to the times when custom, hand-rolled CSS could reflect the same as an image, the evolution of CSS implementation has grown with the movement of JavaScript and the web as a platform.</p>
+
+                <p>Since React's release in 2013, component-built web applications have become the norm. The implementation of CSS has, in turn, been questioned. The main argument against using CSS in-line with React has been the separation of concerns (SoC). <strong>SoC</strong> is a design principle that describes the division of a program into sections, each of which addresses a different concern. This principle was used mainly when developers kept the three main web technologies in separate files: styles (CSS), markup (HTML) and logic (JavaScript).</p>
+
+                <p>This changed with the introduction of JSX in React. The development team argued that what we had been doing was, in fact, <em>the separation of technologies, not concerns</em>. One could ask, since JSX moved the markup into the JavaScript code, why should the styles be separate?</p>
+
+                <p>As opposed to divorcing styles and logic, different approaches can be used to merge them in-line. An example of this can be seen below:</p>
+
+                <pre><code class="markup language-markup">&lt;button style="background: red; border-radius: 8px; color: white;"&gt;Click Me&lt;/button&gt;
+                </code></pre>
+
+                <p>In-line styles move the CSS definitions from the CSS file. This thereby removes the need to import the file and saves on bandwidth, but sacrifices readability, maintainability, and style inheritance.</p>
+
+                <h3 id="cssmodules">CSS Modules</h3>
+
+                <p><strong>button.css</strong></p>
+
+                <pre><code class="css language-css">.button {
+    background: red;
+    border-radius: 8px;
+    color: white;
+}
+                </code></pre>
+
+                <p><strong>button.js</strong></p>
+
+                <pre><code class="jsx language-jsx">import styles from './button.css';
+                document.body.innerHTML = `&lt;button class="${styles.button}"&gt;test&lt;/button&gt;`;
+                </code></pre>
+
+                <p>As we can see from the code example above, the CSS still lives in its own file. However, when <a href="https://github.com/css-modules/css-modules">CSS Modules</a> is bundled with Webpack or another modern bundler, the CSS is added as a script tag to the HTML file. The class names are also hashed to provide a more granular style, resolving the problems that come with cascading style sheets.</p>
+
+                <p>The process of hashing involves generating a unique string instead of a class name. Having a class name of <code>btn</code> will result in a hash of <code>DhtEg</code> which prevents styles cascading and applying styles to unwanted elements.</p>
+
+                <p><strong>index.html</strong></p>
+
+                <pre><code class="jsx language-jsx">&lt;style&gt;
+.DhtEg {
+    background: red;
+    border-radius: 8px;
+    color: white;
+}
+&lt;/style&gt;
+
+…
+
+&lt;button class="DhtEg"&gt;test&lt;/button&gt;
+                </code></pre>
+
+                <p>From the example above we can see the style tag element added by CSS Modules, with the hashed class name and the DOM element we have that uses the hash.</p>
+
+                <h3 id="glamor">Glamor</h3>
+
+                <p><a href="https://github.com/threepointone/glamor">Glamor</a> is a CSS-in-JS library that allows us to declare our CSS in the same file as our JavaScript. Glamor, again, hashes the class names but provides a clean syntax to build CSS style sheets via JavaScript.</p>
+
+                <p>The style definition is built via a JavaScript variable that describes each of the attributes using <a href="https://en.wikipedia.org/wiki/Camel_case">camel case</a> syntax. The use of camel case is important as CSS defines all attributes in <em>train case</em>. The main difference is the change of the attribute name. This can be an issue when copying and pasting CSS from other parts of our application or CSS examples. For example <code>overflow-y</code> would be changed to <code>overFlowY</code>. However, with this syntax change, Glamor supports media queries and shadow elements, giving more power to our styles:</p>
+
+                <p><strong>button.js</strong></p>
+
+                <pre><code class="jsx language-jsx">import { css } from 'glamor';
+
+const rules = css({
+    background: red;
+    borderRadius: 8px;
+    color: 'white';
+});
+
+const button = () =&gt; {
+    return &lt;button {...rules}&gt;Click Me&lt;/button&gt;;
+};
+                </code></pre>
+
+                <h2 id="styledcomponents">styled-components</h2>
+
+                <p><a href="https://www.styled-components.com/">styled-components</a> is a new library that focuses on keeping React components and styles together. Providing a clean and easy-to-use interface for styling both React and React Native, styled-components is changing not only the implementation but the thought process of building styled React components.</p>
+
+                <p>styled-components can be installed from npm via:</p>
+
+                <pre><code class="bash language-bash">npm install styled-components
+                </code></pre>
+
+                <p>Imported as any standard npm package:</p>
+
+                <pre><code class="jsx language-jsx">import styled from 'styled-components';
+                </code></pre>
+
+                <p>Once installed, it's time to start making styled React components easy and enjoyable.</p>
+
+                <h2 id="buildinggenericstyledreactcomponents">Building Generic Styled React Components</h2>
+
+                <p>Styled React components can be built in many ways. The styled-components library provides patterns that enable us to build well-structured UI applications. Building from small UI components &mdash; such as buttons, inputs, typography and tabs &mdash; creates a more unified and coherent application.</p>
+
+                <p>Using our button example from before, we can build a generic button using styled-components:</p>
+
+                <pre><code class="jsx language-jsx">const Button = styled.button`
+    background: red;
+    border-radius: 8px;
+    color: white;
+`;
+
+class Application extends React.Component {
+    render() {
+    return (
+        &lt;Button&gt;Click Me&lt;/Button&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><a href="http://codepen.io/SitePoint/pen/bWpoPO">Codepen</a></p>
+
+                <p>As we can see, we're able to create our generic button while keeping the CSS in-line with the JavaScript. styled-components provides a wide range of elements that we can style. We can do this by using direct element references or by passing strings to the default function.</p>
+
+                <pre><code class="jsx language-jsx">const Button = styled.button`
+    background: red;
+    border-radius: 8px;
+    color: white;
+`;
+
+const Paragraph = styled.p`
+    background: green;
+`;
+
+const inputBg = 'yellow';
+const Input = styled.input`
+    background: ${inputBg};
+    color: black;
+`;
+
+const Header = styled('h1')`
+    background: #65a9d7;
+    font-size: 26px;
+`
+
+class Application extends React.Component {
+    render() {
+    return (
+        &lt;div&gt;
+        &lt;Button&gt;Click Me&lt;/Button&gt;
+        &lt;Paragraph&gt;Read ME&lt;/Paragraph&gt;
+        &lt;Input
+            placeholder="Type in me"
+        /&gt;
+        &lt;Header&gt;I'm a H1&lt;/Header&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><a href="http://codepen.io/SitePoint/pen/NjNaQo">Codepen</a></p>
+
+                <p>The main advantage to this styling method is being able to write pure CSS. As seen in the Glamor example, the CSS attribute names have had to be changed to camel case, as they were attributes of a JavaScript object.</p>
+
+                <p>styled-components also produces React friendly primitives that act like the existing elements. Harnessing JavaScript <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">template literals</a> allows us to use the full power of CSS to style components. As seen in the input element example, we can define external JavaScript variables and apply these to our styles.</p>
+
+                <p>With these simple components, we can easily build a style guide for our application. But in many cases, we'll also need more complicated components that can change based on external factors.</p>
+
+                <h2 id="customisablestyledreactcomponents">Customizable Styled React Components</h2>
+
+                <p>The customizable nature of styled-components is the real strength. This could commonly be applied to a button that needs to change styles based on context. In this case, we have two button sizes &mdash; small and large. Below is the pure CSS method:</p>
+
+                <p><strong>CSS</strong></p>
+
+                <pre><code class="css language-css">button {
+    background: red;
+    border-radius: 8px;
+    color: white;
+}
+
+.small {
+    height: 40px;
+    width: 80px;
+}
+
+.medium {
+    height: 50px;
+    width: 100px;
+}
+
+.large {
+    height: 60px;
+    width: 120px;
+}
+                </code></pre>
+
+                <p><strong>JavaScript</strong></p>
+
+                <pre><code class="jsx language-jsx">class Application extends React.Component {
+    render() {
+    return (
+        &lt;div&gt;
+        &lt;button className="small"&gt;Click Me&lt;/button&gt;
+        &lt;button className="large"&gt;Click Me&lt;/button&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><a href="http://codepen.io/SitePoint/pen/eWZeOp">Codepen</a></p>
+
+                <p>When we reproduce this using styled-components, we create a Button component that has the basic default style for the background. As the component acts like a React component, we can make use of props and change the style outcome accordingly:</p>
+
+                <pre><code class="jsx language-jsx">const Button = styled.button`
+    background: red;
+    border-radius: 8px;
+    color: white;
+    height: ${props =&gt; props.small ? 40 : 60}px;
+    width: ${props =&gt; props.small ? 60 : 120}px;
+`;
+
+class Application extends React.Component {
+    render() {
+    return (
+        &lt;div&gt;
+        &lt;Button small&gt;Click Me&lt;/Button&gt;
+        &lt;Button large&gt;Click Me&lt;/Button&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><a href="http://codepen.io/SitePoint/pen/qmZVWm">Codepen</a></p>
+
+
+
+
+                <h2 id="advancedusage">Advanced Usage</h2>
+
+                <p>styled-components provides the ability to create complex advanced components, and we can use existing JavaScript patterns to compose components. The example below demonstrates how components are composed &mdash; in the use case of notification messages that all follow a basic style, but each type having a different background color. We can build a basic, styled component and compose on top to create advanced components:</p>
+
+                <pre><code class="jsx language-jsx">const BasicNotification = styled.p`
+    background: lightblue;
+    padding: 5px;
+    margin: 5px;
+    color: black;
+`;
+
+const SuccessNotification = styled(BasicNotification)`
+    background: lightgreen;
+`;
+
+const ErrorNotification = styled(BasicNotification)`
+    background: lightcoral;
+    font-weight: bold;
+`;
+
+class Application extends React.Component {
+    render() {
+    return (
+        &lt;div&gt;
+        &lt;BasicNotification&gt;Basic Message&lt;/BasicNotification&gt;
+        &lt;SuccessNotification&gt;Success Message&lt;/SuccessNotification&gt;
+        &lt;ErrorNotification&gt;Error Message&lt;/ErrorNotification&gt;
+        &lt;/div&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><a href="https://codepen.io/SitePoint/pen/JNXOjW">Codepen</a></p>
+
+                <p>As styled-components allows us to pass standard DOM elements and other components, we can compose advanced features from basic components.</p>
+
+                <h2 id="componentstructure">Component Structure</h2>
+
+                <p>From our advanced and basic example, we can then build a component structure. Most standard React applications have a components directory: we place our styled components in a <code>styledComponents</code> directory. Our <code>styledComponents</code> directory holds all the basic and composed components. These are then imported into the display components used by our application. The directory layout can be seen below:</p>
+
+                <pre><code class="bash language-bash">src/
+    components/
+    addUser.js
+    styledComponents/
+        basicNotification.js
+        successNotification.js
+        errorNotification.js
+                </code></pre>
+
+                <h2 id="conclusion-1">Conclusion</h2>
+
+
+
+                <p>As we've seen in this post, the ways in which we can style our components varies greatly &mdash; none of which is a clear winning method. This article has shown that styled-components has pushed the implementation of styling elements forward, and has caused us to question our thought processes with regards to our approach. </p>
+
+                <p>Every developer, including myself, has their favorite way of doing things, and it’s good to know the range of different methods out there to use depending on the application we're working on. Styling systems and languages have advanced greatly throughout the years, and there's no question that they are sure to develop further and change more in the future. It’s a very exciting and interesting time in front-end development.</p>
+
+
+
+        </div>
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>An Introduction to JSX</h1>
+                <h3>by Matt Burnett</h3>
+                <p>When React was first introduced, one of the features that caught most people's attention (and drew the most criticism) was JSX. If you're learning React, or have ever seen any code examples, you probably did a double-take at the syntax. What is this strange amalgamation of HTML and JavaScript? Is this even real code?</p>
+
+
+
+                <p>Let's take a look at what JSX actually is, how it works, and why the heck we'd want to be mixing HTML and JS in the first place!</p>
+
+                <h2 id="whatisjsx">What is JSX?</h2>
+
+                <p>Defined by the React Docs as an "extension to JavaScript" or “syntax sugar for calling <code>React.createElement(component, props, ...children))</code>”, JSX is what makes writing your React Components easy.</p>
+
+                <p>JSX is considered a <a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain-specific language (DSL)</a>, which can look very similar to a template language, such as Mustache, Thymeleaf, Razor, Twig, or others.</p>
+
+                <p>It doesn't render out to HTML directly, but instead renders to React Classes that are consumed by the Virtual DOM. Eventually, through the mysterious magic of the Virtual DOM, it will make its way to the page and be rendered out to HTML.</p>
+
+                <h2 id="howdoesitwork">How Does it Work?</h2>
+
+                <p>JSX is basically still just JavaScript with some extra functionality. With JSX, you can write code that looks very similar to HTML or XML, but you have the power of seamlessly mixing JavaScript methods and variables into your code. JSX is interpreted by a transpiler, such as <a href="https://babeljs.io/">Babel</a>, and rendered to JavaScript code that the UI Framework (React, in this case) can understand.</p>
+
+                <p>Don't like JSX? That's cool. It's technically not required, and the React Docs actually include a section on using “<a href="https://facebook.github.io/react/docs/react-without-jsx.html">React Without JSX</a>”. Let me warn you right now, though, it's not pretty. Don't believe me? Take a look.</p>
+
+                <p><strong>JSX:</strong></p>
+
+                <pre><code class="jsx language-jsx">class SitePoint extends Component {
+    render() {
+    return (
+        &lt;div&gt;My name is &lt;span&gt;{this.props.myName}&lt;/span&gt;&lt;/div&gt;
+    )
+    }
+}
+                </code></pre>
+
+                <p><strong>React Sans JSX:</strong></p>
+
+                <pre><code class="jsx language-jsx">class SitePoint extends Component {
+    render() {
+    return React.createElement(
+        "div",
+        null,
+        "My name is",
+        React.createElement(
+            "span",
+            null,
+            this.props.myName
+        )
+    )
+    }
+}
+                </code></pre>
+
+                <p>Sure, looking at those small example pieces of code on that page you might be thinking, "Oh, that's not so bad, I could do that." But could you imagine writing an entire application like that?</p>
+
+                <p>The example is just two simple nested HTML elements, nothing fancy. Basically, just a nested <code>Hello World</code>. Trying to write your React application without JSX would be extremely time consuming and, if you're like most of us other developers out here working as characters in DevLand™, it will very likely quickly turn into a convoluted spaghetti code mess. Yuck!</p>
+
+                <p>Using frameworks and libraries and things like that are meant to make our lives easier, not harder. I'm sure we've all seen the overuse and abuse of libraries or frameworks in our careers, but using JSX with your React is definitely not one of those cases.</p>
+
+                <h2 id="whataboutseparationofconcerns">What About Separation of Concerns?</h2>
+
+                <p>Now, for those of us who learned to not mix our HTML with our JS --- how bad it was, and how if we did, our applications would be haunted by the Bug Gods of the Apocalypse --- mixing your HTML inside of your JavaScript probably seems like all kinds of wrong. After all, you have to maintain a Separation of Concerns at all costs! The world depends on it!</p>
+
+                <p>I know, I was there, <strong>I was you</strong>.</p>
+
+                <p>But, as weird as it may seem, it's really <em>not that bad</em>, and your concerns are still separated. As someone who's been working with React for long enough to be very comfortable with it, using small pieces of HTML/XML inside your JavaScript codebase is really kinda … magical. It takes the management of HTML out of the equation, and leaves you with nice, solid code. Just code. It helps to ease the pain of trying to use a markup language --- which was designed for building word documents --- for building applications, and brings it back to the control of the application's code.</p>
+
+                <p>Another issue of not separating out your JavaScript from your HTML: what if your JS fails to download or run, and the user is only left with HTML/CSS to render? If you're building your application the React way, then your HTML (and maybe even your CSS if you're using WebPack), is bundled in with your JavaScript itself. So the user really only has one small HTML file to download, then a large JavaScript payload that contains everything else.</p>
+
+                <p>Worrying about search engines and SEO is unfortunately still a legitimate concern. We all know that the major search engines now render JavaScript, but initial rendering with JavaScript can still be slower, which could have an effect on your overall ranking. To mitigate this, it's possible to do an initial render of your React on the server before sending it to the client. This will not only allow search engines to pull your site quicker, but also provide your users with a quicker <a href="https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint">First Meaningful Paint</a>.</p>
+
+                <p>Doing this can become complicated quickly, but at the time of this writing, SitePoint itself actually uses this method. Brad Denver did a fantastic write-up of how it was done here: “<a href="https://www.sitepoint.com/universal-react-rendering-sitepoint/">Universal Rendering: How We Rebuilt SitePoint</a>”.</p>
+
+                <p>Rendering server-side is still only going to help with failed loads (which are uncommon) or slow load times (much more common). It won't help with users who completely disable JavaScript. Sorry, but a React app is still a JavaScript-based application. You can do a lot behind the scenes, but once you start mixing in app functionality and state management (e.g. Flux, Redux, or MobX), your time investment vs potential payoff starts going negative.</p>
+
+                <h2 id="notjustforreact">Not Just for React</h2>
+
+                <p>JSX with React is pretty great stuff. But what if you're using another framework or library, but still want to use it? Well, you're in luck --- because JSX technically isn't tied to React. It's still just DSL or "syntax sugar", remember? Vue.js actually supports JSX <a href="https://vuejs.org/v2/guide/render-function.html">out of the box</a>, and there have been attempts to use it with other frameworks such as Angular 2 and Ember.</p>
+
+                <p>I hope this JSX quick introduction helped to give you a better understanding of just what JSX is, how it can help you, and how it can be used to create your applications. Now get back out there and make some cool stuff!</p>
+
+
+
+        </div>
+
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>Working with Data in React: Properties &amp; State</h1>
+                <h3>Eric Greene</h3>
+                <p>Managing data is essential to any application. Orchestrating the flow of data through the user interface (UI) of an application can be challenging. Often, today’s web applications have complex UIs such that modifying the data in one area of the UI can directly and indirectly affect other areas of the UI. Two-way data binding via Knockout.js and Angular.js are popular solutions to this problem.</p>
+
+
+
+                <p>For some applications (especially with a simple data flow), two-way binding can be a sufficient and quick solution. For more complex applications, two-way data binding can prove to be insufficient and a hindrance to effective UI design. React does not solve the larger problem of application data flow (although <a href="https://www.sitepoint.com/building-a-react-universal-blog-app-implementing-flux/">Flux does</a>), but it does solve the problem of data flow within a single component.</p>
+
+                <p>Within the context of a single component, React solves both the problem of data flow, as well as updating the UI to reflect the results of the data flow. The second problem of UI updates is solved using a pattern named Reconciliation which involves innovative ideas such as a Virtual DOM. The next article will examine Reconciliation in detail. This article is focused on the first problem of data flow, and the kinds of data React uses within its components.</p>
+
+                <h2>Kinds of Component Data</h2>
+
+                <p>Data within React Components is stored as either properties or state.</p>
+
+                <p>Properties are the input values to the component. They are used when rendering the component and initializing state (discussed shortly). After instantiating the component, properties should be considered immutable. Property values can only be set when instantiating the component, then when the component is re-rendered in the DOM, React will compare between the old and new property values to determine what DOM updates are required.</p>
+
+                <p>Here is a <a href="http://codepen.io/SitePoint/pen/XKqQqN/">CodePen demonstration</a> of setting the property values and updating the DOM in consideration of updated property values, screenshot below.</p>
+
+                <img src="../images/reactant1/datacodepen1.png" />
+
+
+
+                <p>State data can be changed by the component and is usually wired into the component’s event handlers. Typically, updating the state triggers React components re-render themselves. Before a component is initialized, its state must be initialized. The initialized values can include constant values, as well as, property values (as mentioned above).</p>
+
+                <p>In comparison with frameworks such as Angular.js, properties can be thought of as one-way bound data, and state as two-way bound data. This is not a perfect analogy since Angular.js uses one kind of data object which is used two different ways, and React is using two data objects, each with their specific usages.</p>
+
+                <h2>Properties</h2>
+
+                <p>My previous <a href="https://www.sitepoint.com/getting-started-react/">React article</a> covered the syntax to specify and access properties. The article explored the use of JavaScript and JSX with static as well as dynamic properties in various code demonstrations. Expanding on the earlier exploration, let’s look at some interesting details regarding working with properties.</p>
+
+                <p>When adding a CSS class name to a component, the property name <code>className</code> must be used, rather than <code>class</code> must be used. React requires this because ES2015 identifies the word <code>class</code> as a reserved keyword and is used for defining objects. To avoid confusion with this keyword, the property name <code>className</code> is used. If a property named <code>class</code> is used, React will display a helpful console message informing the developer that the property name needs to be changed to <code>className</code>.</p>
+
+                <p>Observe the incorrect <code>class</code> property name, and the helpful warning message displayed in the Microsoft Edge console window.</p>
+
+                <img src="../images/reactant1/1469284535working-with-data-in-react-properties-state01.png" alt="Incorrect class property name"  />
+
+                <p>Changing the <code>class</code> property to <code>className</code>, results in the warning message not being displayed.</p>
+
+                <img src="../images/reactant1/1469284540working-with-data-in-react-properties-state02.png" alt="class property changed to ClassName" />
+
+                <p>When the property name is changed from <code>class</code> to <code>className</code> the warning message does not appear. Cehck out the <a href="https://codepen.io/SitePoint/pen/akGxGW/">complete CodePen demonstration</a>, screenshot below.</p>
+
+                <img src="../images/reactant1/datacodepen2.png" />
+
+
+
+                <p>In addition to property names such as <code>className</code>, React properties have other interesting aspects. For example, mutating component properties is an anti-pattern. Properties can be set when instantiating a component, but should not be mutated afterwards. This includes changing properties after instantiating the component, as well as after rendering it. Mutating values within a component are considered state, and tracked with the <code>state</code> property rather than the <code>props</code> property.</p>
+
+                <p>In the following code sample, <code>SomeComponent</code> is instantiated with <code>createElement</code>, and then the property values are manipulated afterwards.</p>
+
+                <strong>JavaScript:</strong>
+
+                <pre><code class="JavaScript language-JavaScript">var someComponent = React.createElement(SomeComponent);
+
+someComponent.props.prop1 = "some value";
+someComponent.props.prop2 = "some value";
+                </code></pre>
+
+                <strong>JSX:</strong>
+
+                <pre><code class="jsx language-jsx">var someComponent = &amp;lt;SomeComponent /&amp;gt;;
+
+someComponent.props.prop1 = "some value";
+someComponent.props.prop2 = "some value";
+                </code></pre>
+
+
+                <p>Manipulating the <code>props</code> of the instantiated component could result in errors that would be hard to trace. Also, changing the properties does not trigger an update to the component, resulting in the component and the properties could be out of sync.</p>
+
+                <p>Instead, properties should be set as part of the component instantiation process, as shown below.</p>
+
+                <strong>JavaScript:</strong>
+
+                <pre><code class="JavaScript language-JavaScript">var someComponent = React.createElement(SomeComponent, {
+    prop1: "some value",
+    prop2: "some value"
+});
+                </code></pre>
+
+                <strong>JSX:</strong>
+
+                <pre><code class="jsx language-jsx">var someComponent = &lt;SomeComponent prop1="some value" prop2="some value" /&gt;
+                </code></pre>
+
+                <p>The component can then be re-rendered at which point React will perform its Reconciliation process to determine how the new property values affect the DOM. Then, the DOM is updated with the changes.</p>
+
+                <p>See the first CodePen demonstration at the top of this article for a demonstration of the DOM updates.</p>
+
+                <h2>State</h2>
+
+                <p>State represents data that is changed by a component, usually through interaction with the user. To facilitate this change, event handlers are registered for the appropriate DOM elements. When the events occur, the updated values are retrieved from the DOM, and notify the component of the new state. Before the component can utilize state, the state must be initialized via the <code>getInitialState</code> function. Typically, the <code>getInitialState</code> function initializes the state using static values, passed in properties, or another data store.</p>
+
+                <pre><code class="JavaScript language-JavaScript">var Message = React.createClass({
+
+    getInitialState: function() {
+        return { message: this.props.message };
+    },
+                </code></pre>
+
+                <p>Once the state is initialized, the state values can be used like property values when rendering the component. To capture the user interactions which update the state, event handlers are registered. To keep the React components self-contained, event handler function objects can be passed in as properties or defined directly on the component object definition itself. See the <a href="http://codepen.io/SitePoint/pen/JKvVvy/">Codepen demo</a>, with screenshot below.</p>
+
+                <img src="../images/reactant1/datacodepen2.png" />
+
+
+
+                <p>One of the benefits of React is that standard HTML events are used. Included with standard HTML events is the standard HTML Event object. Learning special event libraries, event handlers, or custom event objects is not needed. Because modern browsers are largely compatible, intermediary cross-browser libraries such as jQuery are not needed.</p>
+
+                <p>To handle the state changes, the <code>setState</code> function is used to set the new value on the appropriate state properties. Calling this function causes the component to re-render itself.</p>
+
+                <p>As shown below in the Visual Studio Code editor, the <code>setState</code> function is called from the <code>_messageChange</code> event handler.</p>
+
+                <img class="aligncenter size-full wp-image-135674" src="../images/reactant1/1469284546working-with-data-in-react-properties-state03.png" alt="Visual Studio code editor" width="477" height="330" />
+
+
+
+
+
+                <h2>Conclusion</h2>
+
+                <p>React components provide two mechanisms for working with data: properties and state. Dividing data between immutable properties and mutable state more clearly identifies the role of each kind of data, and the component’s relationship to it. In general, properties are preferred because they simplify the flow of data. State is useful for capturing data updates resulting from user interactions and other UI events.</p>
+
+                <p>The relationship between properties and state facilitate the flow of data through a component. Properties can be used to initialize state, and state values can be used to set properties when instantiating and rendering a component. New values from user interaction are captured via state, and then used to update the properties.</p>
+
+                <p>The larger flow of data within an application is accomplished via a pattern named <a href="http://facebook.github.io/flux/">Flux</a>.</p>
+
+
+
+        </div>
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>React for Angular Developers</h1>
+                <h3>by Mark Brown</h3>
+                <p><strong>This article is for developers who are familiar with Angular 1.x and would like to learn more about React. We'll look at the different approaches they take to building rich web applications, the overlapping functionality and the gaps that React doesn't attempt to fill.</strong></p>
+
+                <p>After reading, you'll have an understanding of the problems that React sets out to solve and how you can use the knowledge you have already to get started using React in your own projects.</p>
+
+                <h2 id="frameworks-vs-libraries">Frameworks vs Libraries</h2>
+
+
+
+                <p><a href="https://angularjs.org/">Angular</a> is a <em>framework</em>, whereas <a href="https://facebook.github.io/react/">React</a> is a <em>library</em> focused only on the view layer. There are costs and benefits associated with both using frameworks and a collection of loosely coupled libraries.</p>
+
+                <p>Frameworks try to offer a complete solution, and they may help organize code through patterns and conventions if you're part of a large team. However, having a large API adds cognitive load when you're writing, and you'll spend a lot more time reading documentation and remembering patterns --- especially in the early days when you're still learning.</p>
+
+                <p>Using a collection of loosely coupled libraries with small APIs is easier to learn and master, but it means that when you run into problems you'll need to solve them with more code or pull in external libraries as required. This usually results in you having to write <em>your own</em> framework to reduce boilerplate.</p>
+
+
+
+
+
+
+                <h2 id="out-of-the-box">Out Of The Box</h2>
+
+                <p>Angular gives you a rich feature set for building web applications. Among its features are:</p>
+
+                <ul>
+                <li>HTML templates with dynamic expressions in double curlies <code>{{ }}</code></li>
+                <li>built-in directives like <code>ng-model</code>, <code>ng-repeat</code> and <code>ng-class</code> for extending the capability of HTML</li>
+                <li>controllers for grouping logic and passing data to the view</li>
+                <li>two-way binding as a simple way to keep your view and controller in sync</li>
+                <li>a large collection of modules like <code>$http</code> for communicating with the server and <code>ngRoute</code> for routing</li>
+                <li>custom directives for creating your own HTML syntax</li>
+                <li>dependency injection for limiting exposure of objects to specific parts of the application</li>
+                <li>services for shared business logic</li>
+                <li>filters for view formatting helpers.</li>
+                </ul>
+
+                <p>React, on the other hand, gives you:</p>
+
+                <ul>
+                <li>JSX syntax for templates with JavaScript expressions in single curlies <code>{ }</code></li>
+                <li>components, which are most like Angular's element directives.</li>
+                </ul>
+
+                <p>React is unopinionated when it comes to the rest of your application structure and it encourages the use of standard JavaScript APIs over framework abstractions. Rather than providing a wrapper like <a href="http://www.sitepoint.com/api-calls-angularjs-http-service/">$http</a> for server communication, you can use <a href="http://www.sitepoint.com/introduction-to-the-fetch-api/">fetch()</a> instead. You're free to use constructs like services and filters, but React won't provide an abstraction for them. You can put them in JavaScript modules and require them as needed in your components.</p>
+
+                <p>So, while Angular gives you a lot more abstractions for common tasks, React deliberately avoids this to keep you writing standard JavaScript more often and to use external dependencies for everything else.</p>
+
+
+
+
+
+
+                <h2 id="bootstrapping">Bootstrapping</h2>
+
+                <p>Initializing Angular apps requires a module, a list of dependencies and a root element.</p>
+
+                <pre><code>let app = angular.module('app', [])
+let root = document.querySelector('#root');
+angular.element(root).ready(function() {
+    angular.bootstrap(root, ['app']);
+});
+                </code></pre>
+
+                <p>The entry point for React is rendering a component into a root node. It's possible to have multiple root components, too:</p>
+
+                <pre><code>let root = document.querySelector('#root');
+                ReactDOM.render(&lt;App /&gt;, root)
+                </code></pre>
+
+                <h2 id="templates">Templates</h2>
+
+                <p>The anatomy of an Angular view is complex and has many responsibilities. Your HTML templates contain a mix of directives and expressions, which tie the view and the associated controllers together. Data flows throughout multiple contexts via <code>$scope</code>.</p>
+
+                <p>In React, it's components <em>all the way down</em>, data flows in one direction from the top of the component tree down to the leaf nodes. <a href="http://www.sitepoint.com/getting-started-react-jsx/">JSX</a> is the most common syntax for writing components, transforming a familiar XML structure into JavaScript. Whilst this does <em>resemble</em> a template syntax, it compiles into nested function calls.</p>
+
+                <pre><code>const App = React.createClass({
+    render: function() {
+    return (
+        &lt;Component&gt;
+            &lt;div&gt;{ 2 + 1 }&lt;/div&gt;
+            &lt;Component prop="value" /&gt;
+            &lt;Component time={ new Date().getTime() }&gt;
+                &lt;Component /&gt;
+            &lt;/Component&gt;
+        &lt;/Component&gt;
+        )
+    }
+})
+                </code></pre>
+
+                <p>The compiled code below should help clarify how the JSX expressions above map to <code style="word-break: break-word;">createElement(component, props, children)</code> function calls:</p>
+
+                <pre><code>var App = React.createClass({
+    render: function render() {
+        return React.createElement(
+            Component,
+                null,
+                React.createElement("div", null, 2 + 1),
+                React.createElement(Component, { prop: "value" }),
+            React.createElement(
+            Component,
+            { time: new Date().getTime() },
+            React.createElement(Component, null)
+            )
+        );
+    }
+});
+                </code></pre>
+
+                <h2 id="template-directives">Template Directives</h2>
+
+                <p>Let's look at how some of Angular's most used template directives would be written in React components. Now, React doesn't have templates, so these examples are JSX code that would sit inside a component's <code>render</code> function. For example:</p>
+
+                <pre><code>class MyComponent extends React.Component {
+    render() {
+        return (
+            // JSX lives here
+        )
+    }
+}
+                </code></pre>
+
+                <h3 id="ng-repeat">ng-repeat</h3>
+
+                <pre><code class="language-markup">&lt;ul&gt;
+                  &lt;li ng-repeat="word in words"&gt;{ word }&lt;/li&gt;
+                &lt;/ul&gt;
+                </code></pre>
+
+                <p>We can use standard JavaScript looping mechanisms such as <code>map</code> to get an array of elements in JSX.</p>
+
+                <pre><code class="language-markup">&lt;ul&gt;
+    { words.map((word)=&gt; &lt;li&gt;{ word }&lt;/li&gt; )}
+&lt;/ul&gt;
+                </code></pre>
+
+                <h3 id="ng-class">ng-class</h3>
+
+                <pre><code class="language-markup">&lt;form ng-class="{ active: active, error: error }"&gt;
+                &lt;/form&gt;
+                </code></pre>
+
+                <p>In React, we're left to our own devices to create our space-separated list of classes for the <code>className</code> property. It's common to use an existing function such as Jed Watson's <a href="https://github.com/JedWatson/classnames">classNames</a> for this purpose.</p>
+
+                <pre><code class="language-markup">&lt;form className={ classNames({active: active, error: error}) }&gt;
+&lt;/form&gt;
+                </code></pre>
+
+                <p>The way to think about these attributes in JSX is as if you're setting properties on those nodes directly. That's why it's <code>className</code> rather than the <code>class</code> attribute name.</p>
+
+                <pre><code>formNode.className = "active error";
+                </code></pre>
+
+                <h3 id="ng-if">ng-if</h3>
+
+                <pre><code class="language-markup">&lt;div&gt;
+    &lt;p ng-if="enabled"&gt;Yep&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+
+                <p><code>if … else</code> statements don't work inside JSX, because JSX is just syntactic sugar for function calls and object construction. It's typical to use ternary operators for this or to move conditional logic to the top of the render method, outside of the JSX.</p>
+
+                <pre><code>// ternary
+&lt;div&gt;
+    { enabled ? &lt;p&gt;Enabled&lt;/p&gt; : null }
+&lt;/div&gt;
+
+// if/else outside of JSX
+let node = null;
+if (enabled) {
+    node = &lt;p&gt;Enabled&lt;/p&gt;;
+}
+&lt;div&gt;{ node }&lt;/div&gt;
+                </code></pre>
+
+                <h3 id="ng-show-ng-hide">ng-show / ng-hide</h3>
+
+                <pre><code class="language-markup">&lt;p ng-show="alive"&gt;Living&lt;/p&gt;
+&lt;p ng-hide="alive"&gt;Ghost&lt;/p&gt;
+                </code></pre>
+
+                <p>In React, you can set style properties directly or add a utility class, such as <code>.hidden { display: none }</code>, to your CSS for the purpose of hiding your elements (which is how Angular handles it).</p>
+
+                <pre><code class="language-markup">&lt;p style={ display: alive ? 'block' : 'none' }&gt;Living&lt;/p&gt;
+&lt;p style={ display: alive ? 'none' : 'block' }&gt;Ghost&lt;/p&gt;
+
+&lt;p className={ classNames({ hidden: !alive }) }&gt;Living&lt;/p&gt;
+&lt;p className={ classNames({ hidden: alive }) }&gt;Ghost&lt;/p&gt;
+                </code></pre>
+
+                <p>You've got the hang of it now. Instead of a special template syntax and attributes, you'll need to use JavaScript to achieve what you want instead.</p>
+
+                <h2 id="an-example-component">An Example Component</h2>
+
+                <p>React's <em>Components</em> are most like Angular's <em>Directives</em>. They're used primarily to abstract complex DOM structures and behavior into reusable pieces. Below is an example of a slideshow component that accepts an array of slides, renders a list of images with navigational elements and keeps track of its own <code>activeIndex</code> state to highlight the active slide.</p>
+
+                <pre><code class="language-markup">&lt;div ng-controller="SlideShowController"&gt;
+    &lt;slide-show slides="slides"&gt;&lt;/slide-show&gt;
+&lt;/div&gt;</code></pre>
+
+                <pre><code>app.controller("SlideShowController", function($scope) {
+    $scope.slides = [{
+        imageUrl: "allan-beaver.jpg",
+        caption: "Allan Allan Al Al Allan"
+    }, {
+        imageUrl: "steve-beaver.jpg",
+        caption: "Steve Steve Steve"
+    }];
+});
+
+app.directive("slideShow", function() {
+    return {
+        restrict: 'E',
+        scope: {
+            slides: '='
+        },
+        template: `
+            &lt;div class="slideshow"&gt;
+                &lt;ul class="slideshow-slides"&gt;
+                &lt;li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }"&gt;
+                    &lt;figure&gt;
+                    &lt;img ng-src="{{ slide.imageUrl }}" /&gt;
+                    &lt;figcaption ng-show="slide.caption"&gt;{{ slide.caption }}&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class="slideshow-dots"&gt;
+                    &lt;li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }"&gt;
+                        &lt;a ng-click="jumpToSlide($index)"&gt;{{ $index + 1 }}&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        `,
+        link: function($scope, element, attrs) {
+            $scope.activeIndex = 0;
+
+            $scope.jumpToSlide = function(index) {
+                $scope.activeIndex = index;
+            };
+        }
+    };
+});
+                </code></pre>
+
+                <h3>The Slideshow Component in Angular</h3>
+
+                <p data-height="425" data-theme-id="6441" data-slug-hash="QyNJxO" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/QyNJxO/">Angular Slideshow</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+                <p>This component in React would be rendered inside another component and passed the slides data via <a href="https://medium.com/react-tutorials/react-properties-ef11cd55caa0#.cbg8xkxpe">props</a>.</p>
+
+                <pre><code>let _slides = [{
+    imageUrl: "allan-beaver.jpg",
+    caption: "Allan Allan Al Al Allan"
+}, {
+    imageUrl: "steve-beaver.jpg",
+    caption: "Steve Steve Steve"
+}];
+
+class App extends React.Component {
+    render() {
+        return &lt;SlideShow slides={ _slides } /&gt;
+    }
+}
+                </code></pre>
+
+                <p>React components have a local scope in <code>this.state</code>, which you can modify by calling <code>this.setState({ key: value })</code>. Any changes to state causes the component to re-render itself.</p>
+
+                <pre><code>class SlideShow extends React.Component {
+    constructor() {
+            super()
+            this.state = { activeIndex: 0 };
+        }
+        jumpToSlide(index) {
+            this.setState({ activeIndex: index });
+        }
+        render() {
+            return (
+                &lt;div className="slideshow"&gt;
+                    &lt;ul className="slideshow-slides"&gt;
+                        {
+                            this.props.slides.map((slide, index) =&gt; (
+                                &lt;li className={ classNames({ active: index == this.state.activeIndex }) }&gt;
+                                    &lt;figure&gt;
+                                        &lt;img src={ slide.imageUrl } /&gt;
+                                        { slide.caption ? &lt;figcaption&gt;{ slide.caption }&lt;/figcaption&gt; : null }
+                                    &lt;/figure&gt;
+                                &lt;/li&gt;
+                            ))
+                        }
+                    &lt;/ul&gt;
+                    &lt;ul className="slideshow-dots"&gt;
+                        {
+                            this.props.slides.map((slide, index) =&gt; (
+                                &lt;li className={ (index == this.state.activeIndex) ? 'active': '' }&gt;
+                                    &lt;a onClick={ (event)=&gt; this.jumpToSlide(index) }&gt;{ index + 1 }&lt;/a&gt;
+                                &lt;/li&gt;
+                            ))
+                    }
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p><a href="https://facebook.github.io/react/docs/events.html">Events in React</a> look like old-school inline event handlers such as <code>onClick</code>. Don't feel bad, though: under the hood it does the right thing and creates highly performant delegated event listeners.</p>
+
+                <h3>The Slideshow Component in React</h3>
+
+                <p data-height="425" data-theme-id="6441" data-slug-hash="ZQWmoj" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/ZQWmoj/">React SlideShow</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+                <h2 id="two-way-binding">Two-Way Binding</h2>
+
+                <p>Angular's trusty <code>ng-model</code> and <code>$scope</code> form a link where the data flows back and forth between a form element and properties on a JavaScript object in a controller.</p>
+
+                <pre><code>app.controller("TwoWayController", function($scope) {
+    $scope.person = {
+        name: 'Bruce'
+    };
+                });</code></pre>
+
+                <pre><code class="language-markup">&lt;div ng-controller="TwoWayController"&gt;
+    &lt;input ng-model="person.name" /&gt;
+    &lt;p&gt;Hello {{ person.name }}!&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+
+                <p>React eschews this pattern in favor of a one-way data flow instead. The same types of views can be built with both patterns though.</p>
+
+                <pre><code>class OneWayComponent extends React.Component {
+    constructor() {
+        super()
+        this.state = { name: 'Bruce' }
+    }
+    change(event) {
+        this.setState({ name: event.target.value });
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;input value={ this.state.name } onChange={ (event)=&gt; this.change(event) } /&gt;
+                &lt;p&gt;Hello { this.state.name }!&lt;/p&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p>The <code>&lt;input&gt;</code> here is called a "controlled input". This means its value is only ever changed when the <code>render</code> function is called (on every key stroke in the example above). The component itself is called "stateful" because it manages its own data. This isn't recommended for the majority of components. The ideal is to keep components "stateless" and have data passed to them via <code>props</code> instead.</p>
+
+                <p data-height="404" data-theme-id="6441" data-slug-hash="BjKGPW" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/BjKGPW/">One-Way Data Flow in React</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+                <p>Typically, a stateful <a href="https://medium.com/@learnreact/container-components-c0e67432e005#.osha0yxns">Container  Component</a> or <a href="http://blog.andrewray.me/the-reactjs-controller-view-pattern/">Controller View</a> sits at the top of the tree with many stateless child components underneath. For more information on this, read <a href="https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#what-components-should-have-state">What Components Should Have State?</a> from the docs.</p>
+
+                <h3 id="call-your-parents">Call Your Parents</h3>
+
+                <p>Whilst data flows down in one direction, it's possible to call methods on the parent through callbacks. This is usually done in response to some user input. This flexibility gives you a lot of control when refactoring components to their simplest presentational forms. If the refactored components have no state at all, they can be written as pure functions.</p>
+
+                <pre><code>// A presentational component written as a pure function
+const OneWayComponent = (props)=&gt; (
+    &lt;div&gt;
+        &lt;input value={ props.name } onChange={ (event)=&gt; props.onChange(event.target.value) } /&gt;
+        &lt;p&gt;Hello { props.name }!&lt;/p&gt;
+    &lt;/div&gt;
+);
+
+class ParentComponent extends React.Component {
+    constructor() {
+        super()
+        this.state = { name: 'Bruce' };
+    }
+    change(value) {
+        this.setState({name: value});
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;OneWayComponent name={ this.state.name } onChange={ this.change.bind(this) } /&gt;
+                &lt;p&gt;Hello { this.state.name }!&lt;/p&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+                </code></pre>
+
+                <p>This might seem like a round-about pattern at first if you're familiar with two-way data binding. The benefit of having a lot of small presentational "dumb" components that just accept data as <code>props</code> and render them is that they are simpler by default, and simple components have <em>far</em> fewer bugs. This also prevents the UI from being in an inconsistent state, which often occurs if data is in multiple places and needs to be maintained separately.</p>
+
+                <h2 id="dependency-injection-services-filters">Dependency Injection, Services, Filters</h2>
+
+                <p>JavaScript Modules are a much better way to handle dependencies. You can use them today with a tool like <a href="https://github.com/webpack/webpack">Webpack</a>, <a href="https://github.com/systemjs/systemjs">SystemJS</a> or <a href="http://browserify.org/">Browserify</a>.</p>
+
+                <pre><code>// An Angular directive with dependencies
+app.directive('myComponent', ['Notifier', '$filter', function(Notifier, $filter) {
+    const formatName = $filter('formatName');
+
+    // use Notifier / formatName
+
+}]
+
+// ES6 Modules used by a React component
+import Notifier from "services/notifier";
+import { formatName } from "filters";
+
+class MyComponent extends React.Component {
+
+    // use Notifier / formatName
+
+}
+                </code></pre>
+
+                <h2 id="sounds-great-can-i-use-both">Sounds Great. Can I Use Both!?</h2>
+
+                <p>Yes! It's possible to render React components inside an existing Angular application. Ben Nadel has put together a good post with screencast on how to <a href="http://www.bennadel.com/blog/2902-rendering-reactjs-components-in-angularjs-using-angularjs-directives.htm">render React components inside an Angular directive</a>. There's also <a href="https://github.com/ngReact/ngReact">ngReact</a>, which provides a <code>react-component</code> directive for acting as the glue between React and Angular.</p>
+
+                <p>If you've run into rendering performance problems in certain parts of your Angular application, it's possible you'll get a performance boost by delegating some of that rendering to React. That being said, it's not ideal to include two large JavaScript libraries that solve a lot of the same problems. Even though React is just the view layer, it's roughly the same size as Angular, so that weight may be prohibitive based on your use case.</p>
+
+                <p>While React and Angular solve some of the same problems, they go about it in very different ways. React favors a functional, declarative approach, where components are pure functions free of side effects. This functional style of programming leads to fewer bugs and is simpler to reason about.</p>
+
+                <h2 id="how-about-angular-2">How About Angular 2?</h2>
+
+                <p>Components in Angular 2 resemble React components in a lot of ways. <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html#!#showing-component-properties-with-interpolation">The example components in the docs</a> have a class and template in close proximity. Events look similar. It explains how to build views using a <a href="https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html#the-injector-tree">Component Hierarchy</a>, just as you would if you were building it in React, and it embraces ES6 modules for dependency injection.</p>
+
+                <pre><code>// Angular 2
+@Component({
+    selector: 'hello-component',
+    template: `
+        &lt;h4&gt;Give me some keys!&lt;/h4&gt;
+        &lt;input (keyup)="onKeyUp($event)" /&gt;
+        &lt;div&gt;{{ values }}&lt;/div&gt;
+    `
+})
+class HelloComponent {
+    values='';
+    onKeyUp(event) {
+        this.values += event.target.value + ' | ';
+    }
+}
+
+// React
+class HelloComponent extends React.Component {
+    constructor(props) {
+    super()
+    this.state = { values: '' };
+}
+onKeyUp(event) {
+    const values = `${this.state.values + event.target.value} | `;
+    this.setState({ values: values });
+}
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h4&gt;Give me some keys!&lt;/h4&gt;
+                &lt;div&gt;&lt;input onKeyUp={ this.onKeyUp.bind(this) } /&gt;&lt;/div&gt;
+                &lt;div&gt;{ this.state.values }&lt;/div&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p>A lot of the work on Angular 2 has been making it perform DOM updates a lot more efficiently. The previous template syntax and complexities around scopes led to a lot of performance problems in large apps.</p>
+
+                <h2 id="a-complete-application">A Complete Application</h2>
+
+                <p>In this article I've focused on templates, directives and forms, but if you're building a complete application, you're going to require other things to help you manage your data model, server communication and routing at a minimum. When I first learned Angular and React, I created an example Gmail application to understand how they worked and to see what the developer experience was like before I started using them in real applications.</p>
+
+                <p>You might find it interesting to look through these example apps to compare the differences in React and Angular. The React example is written in CoffeeScript with <a href="https://github.com/jsdf/coffee-react">CJSX</a>, although the React community has since gathered around <a href="http://www.2ality.com/2015/04/webpack-es6.html">ES6 with Babel and Webpack</a>, so that's the tooling I would suggest adopting if you're starting today.</p>
+
+                <ul>
+                <li><a href="https://github.com/markbrown4/gmail-react">https://github.com/markbrown4/gmail-react</a></li>
+                <li><a href="https://github.com/markbrown4/gmail-angular">https://github.com/markbrown4/gmail-angular</a></li>
+                </ul>
+
+                <p>There's also the TodoMVC applications you could look at to compare:</p>
+
+                <ul>
+                <li><a href="http://todomvc.com/examples/react/">http://todomvc.com/examples/react/</a></li>
+                <li><a href="http://todomvc.com/examples/angularjs/">http://todomvc.com/examples/angularjs/</a></li>
+                </ul>
+
+
+
+        </div>
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1>A Guide to Testing React Components</h1>
+                <h3>by Camile Reyes</h3>
+                <p>React is a framework that has made headway within the JavaScript developer community. React has a powerful composition framework for designing components. React components are bits of reusable code you can wield in your web application.</p>
+
+
+
+                <p>React components are not tightly coupled from the DOM, but how easy are they to unit test? In this take, let’s explore what it takes to unit test React components. I’ll show the thought process for making your components testable.</p>
+
+                <p>Keep in mind, I’m only talking about <strong>unit tests</strong>, which are a special kind of test. (For more on the different kinds of tests, I recommend you read “<a href="https://www.sitepoint.com/javascript-testing-unit-functional-integration/">JavaScript Testing: Unit vs Functional vs Integration Tests</a>”.)</p>
+
+                <p>With unit tests, I’m interested in two things: rapid and neck-breaking feedback. With this, I can iterate through changes with a high degree of confidence and code quality. This gives you a level of reassurance that your React components will not land dead on the browser. Being capable of getting good feedback at a rapid rate gives you a competitive edge --- one that you’ll want to keep in today’s world of agile software development.</p>
+
+                <p>For the demo, let’s do a list of the great apes, which is filterable through a checkbox. You can find the entire codebase on <a href="https://github.com/beautifulcoder/test-react-components">GitHub</a>. For the sake of brevity, I’ll show only the code samples that are of interest. This article assumes a working level of knowledge with React components.</p>
+
+                <p>If you go download and run the demo sample code, you’ll see a page like this:</p>
+
+                <p><img src="../images/reactant1/1505167158test_react_components.png" alt="The Great Apes Demo in React Components" /></p>
+
+                <h2 id="writetestablecomponents">Write Testable Components</h2>
+
+                <p>In React, a good approach is to start with a hierarchy of components. The <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">single responsibility principle</a> comes to mind when building each individual component. React components use object composition and relationships.</p>
+
+                <p>For the list of the great apes, for example, I have this approach:</p>
+
+                <pre><code class="text language-text">FilterableGreatApeList
+|_ GreatApeSearchBar
+|_ GreatApeList
+    |_ GreatApeRow
+                </code></pre>
+
+                <p>Take a look at how a great ape list has many great ape rows with data. React components make use of this composition data model, and it's also testable.</p>
+
+                <p>In React components, avoid using inheritance to build reusable components. If you come from a classic object-oriented programming background, keep this in mind. React components don’t know their children ahead of time. Testing components that descend from a long chain of ancestors can be a nightmare.</p>
+
+                <p>I’ll let you explore the <a href="https://github.com/beautifulcoder/test-react-components/blob/master/src/FilterableGreatApeList.js"><code>FilterableGreatApeList</code></a> on your own. It's a React component with two separate components that are of interest here. Feel free to explore the unit tests that come with it, too.</p>
+
+                <p>To build a testable <code>GreatApeSearchBar</code>, for example, do this:</p>
+
+                <pre><code class="jsx language-jsx">class GreatApeSearchBar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleShowExtantOnlyChange = this.handleShowExtantOnlyChange.bind(this);
+    }
+
+    handleShowExtantOnlyChange(e) {
+        this.props.onShowExtantOnlyInput(e.target.checked);
+    }
+
+    render() {
+        return(
+            &lt;form&gt;
+                &lt;input
+                    id="GreatApeSearchBar-showExtantOnly"
+                    type="checkbox"
+                    checked={this.props.showExtantOnly}
+                    onChange={this.handleShowExtantOnlyChange}
+                /&gt;
+
+                &lt;label htmlFor="GreatApeSearchBar-showExtantOnly"&gt;Only show extant species&lt;/label&gt;
+            &lt;/form&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p>This component has a checkbox with a label and wires up a click event. This approach may already be all too familiar to you, which is a very good thing.</p>
+
+                <p>Note that with React, testable components come for free, straight out of the box. There's nothing special here – an event handler, JSX, and a render method.</p>
+
+                <p>The next React component in the hierarchy is the <code>GreatApeList</code>, and it looks like this:</p>
+
+                <pre><code class="jsx language-jsx">class GreatApeList extends Component {
+    render() {
+        let rows = [];
+
+        this.props.apes.forEach((ape) =&gt; {
+            if (!this.props.showExtantOnly) {
+                rows.push(&lt;GreatApeRow key={ape.name} ape={ape} /&gt;);
+
+            return;
+        }
+
+            if (ape.isExtant) {
+                rows.push(&lt;GreatApeRow key={ape.name} ape={ape} /&gt;);
+            }
+        });
+
+        return (
+            &lt;div&gt;
+                {rows}
+            &lt;/div&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p>It's a React component that has the <code>GreatApeRow</code> component and it’s using object composition. This is React’s most powerful composition model at work. Note the lack of inheritance when you build reusable yet testable components.</p>
+
+                <p>In programming, <a href="https://en.wikipedia.org/wiki/Object_composition">object composition</a> is a design pattern that enables data-driven elements. To think of it another way, a <code>GreatApeList</code> has many <code>GreatApeRow</code> objects. It's this relationship between UI components that drives the design. React components have this mindset built in. This way of looking at UI elements allows you to write some nice unit tests.</p>
+
+                <p>Here, you check for the <code>this.props.showExtantOnly</code> flag that comes from the checkbox. This <code>showExtantOnly</code> property gets set through the event handler in <code>GreatApeSearchBar</code>.</p>
+
+                <p>For unit tests, how do you unit test React components that depend on other components? How about components intertwined with each other? These are great questions to keep in mind as we get into testing soon. React components may yet have secrets one can unlock.</p>
+
+                <p>For now, let’s look at the <code>GreatApeRow</code>, which houses the great ape data:</p>
+
+                <pre><code class="jsx language-jsx">class GreatApeRow extends Component {
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;img
+                    className="GreatApeRow-image"
+                    src={this.props.ape.image}
+                    alt={this.props.ape.name}
+                /&gt;
+
+                &lt;p className="GreatApeRow-detail"&gt;
+                    &lt;b&gt;Species:&lt;/b&gt; {this.props.ape.name}
+                &lt;/p&gt;
+
+                &lt;p className="GreatApeRow-detail"&gt;
+                    &lt;b&gt;Age:&lt;/b&gt; {this.props.ape.age}
+                &lt;/p&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+                </code></pre>
+
+                <p>With React components, it's practical to isolate each UI element with a laser focus on a single concern. This has key advantages when it comes to unit testing. As long as you stick to this design pattern, you’ll find it seamless to write unit tests.</p>
+
+                <h2 id="testutilities">Test Utilities</h2>
+
+                <p>Let’s recap our biggest concern when it comes to testing React components. How do I unit test a single component in isolation? Well, as it turns out, there's a nifty utility that enables you to do that.</p>
+
+                <p>The <a href="https://facebook.github.io/react/docs/shallow-renderer.html">Shallow Renderer</a> in React allows you to render a component one level deep. From this, you can assert facts about what the render method does. What's remarkable is that it doesn't require a DOM.</p>
+
+                <p>Using ES6, you use it like this:</p>
+
+                <pre><code class="jsx language-jsx">import ShallowRenderer from 'react-test-renderer/shallow';
+                </code></pre>
+
+                <p>In order for unit tests to run fast, you need a way to test components in isolation. This way, you can focus on a single problem, test it, and move on to the next concern. This becomes empowering as the solution grows and you're able to refactor at will --- staying close to the code, making rapid changes, and gaining reassurance it will work in a browser.</p>
+
+                <p>One advantage of this approach is you think better about the code. This produces the best solution that deals with the problem at hand. I find it liberating when you’re not chained to a ton of distractions. The human brain does a terrible job at dealing with more than one problem at a time.</p>
+
+                <p>The only question remaining is, how far can this little utility take us with React components?</p>
+
+                <h2 id="putitalltogether">Put It All Together</h2>
+
+                <p>Take a look at <code>GreatApeList</code>, for example. What's the main concern you're trying to solve? This component shows you a list of great apes based on a filter.</p>
+
+                <p>An effective unit test is to pass in a list and check facts about what this React component does. We want to ensure it filters the great apes based on a flag.</p>
+
+                <p>One approach is to do this:</p>
+
+                <pre><code class="jsx language-jsx">import GreatApeList from './GreatApeList';
+
+const APES = [{ name: 'Australopithecus afarensis', isExtant: false },
+    { name: 'Orangutan', isExtant: true }];
+
+// Arrange
+const renderer = new ShallowRenderer();
+renderer.render(&lt;GreatApeList
+    apes={APES}
+    showExtantOnly={true} /&gt;);
+
+// Act
+const component = renderer.getRenderOutput();
+const rows = component.props.children;
+
+// Assert
+expect(rows.length).toBe(1);
+                </code></pre>
+
+                <p>Note that I’m testing React components using Jest. For more on this, check out “<a href="https://www.sitepoint.com/test-react-components-jest/">How to Test React Components Using Jest</a>”.</p>
+
+                <p>In JSX, take a look at <code>showExtantOnly={true}</code>. The JSX syntax allows you to set a state to your React components. This opens up many ways to unit test components given a specific state. JSX understands basic JavaScript types, so a <code>true</code> flag gets set as a boolean.</p>
+
+                <p>With the list out of the way, how about the <code>GreatApeSearchBar</code>? It has this event handler in the <code>onChange</code> property that might be of interest.</p>
+
+                <p>One good unit test is to do this:</p>
+
+                <pre><code class="jsx language-jsx">import GreatApeSearchBar from './GreatApeSearchBar';
+
+// Arrange
+let showExtantOnly = false;
+const onChange = (e) =&gt; { showExtantOnly = e };
+
+const renderer = new ShallowRenderer();
+renderer.render(&lt;GreatApeSearchBar
+    showExtantOnly={true}
+    onShowExtantOnlyInput={onChange} /&gt;);
+
+// Act
+const component = renderer.getRenderOutput();
+const checkbox = component.props.children[0];
+
+checkbox.props.onChange({ target: { checked: true } });
+
+// Assert
+expect(showExtantOnly).toBe(true);
+                </code></pre>
+
+                <p>To handle and test events, you use the same shallow rendering method. The <code>getRenderOutput</code> method is useful for binding callback functions to components with events. Here, the <code>onShowExtantOnlyInput</code> property gets assigned the callback <code>onChange</code> function.</p>
+
+                <p>On a more trivial unit test, what about the <code>GreatApeRow</code> React component? It displays great ape information using HTML tags. Turns out, you can use the shallow renderer to test this component too.</p>
+
+                <p>For example, let’s ensure we render an image:</p>
+
+                <pre><code class="jsx language-jsx">import GreatApeRow from './GreatApeRow';
+
+const APE = {
+    image: 'https://en.wikipedia.org/wiki/File:Australopithecus_afarensis.JPG',
+    name: 'Australopithecus afarensis'
+};
+
+// Arrange
+const renderer = new ShallowRenderer();
+renderer.render(&lt;GreatApeRow ape={APE} /&gt;);
+
+// Act
+const component = renderer.getRenderOutput();
+const apeImage = component.props.children[0];
+
+// Assert
+expect(apeImage).toBeDefined();
+expect(apeImage.props.src).toBe(APE.image);
+expect(apeImage.props.alt).toBe(APE.name);
+                </code></pre>
+
+                <p>With React components, it all centers around the <code>render</code> method. This makes it somewhat intuitive to know exactly what you need to test. A shallow renderer makes it so you can laser focus on a single component while eliminating noise.</p>
+
+
+
+
+
+                <h2 id="conclusion-2">Conclusion</h2>
+
+                <p>As shown, React components are very testable. There's no excuse to forgo writing good unit tests for your components.</p>
+
+                <p>The nice thing is that JSX works for you in each individual test, not against you. With JSX, you can pass in booleans, callbacks, or whatever else you need. Keep this in mind as you venture out into unit testing React components on your own.</p>
+
+                <p>The shallow renderer test utility gives you all you need for good unit tests. It only renders one level deep and allows you to test in isolation. You're not concerned with any arbitrary child in the hierarchy that might break your unit tests.</p>
+
+                <p>With the Jest tooling, I like how it gives you feedback only on the specific files you're changing. This shortens the feedback loop and adds laser focus. I hope you see how valuable this can be when you tackle some tough issues.</p>
+
+
+
+        </div>
+
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+
+
+
+        </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../assets/js/book.js"></script>
+<script type="text/javascript" src="../assets/js/prism.js"></script>
+</html>

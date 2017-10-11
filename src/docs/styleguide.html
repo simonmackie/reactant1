@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>SitePoint Book CSS Styleguide</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<div class="page-frontmatter front set-front-matter">
+			<div class="title-name">
+			<h2>Book Name</h2>
+			<p>by Author Name</p>
+		</div>
+
+			<p class="copyright">Copyright &copy; 2015 SitePoint Pty. Ltd.</p>
+
+			<ul class="credits">
+					<li><strong>Product Manager:</strong> Simon Mackie</li>
+					<li><strong>English Editor:</strong> Ralph Mason</li>
+					<li><strong>Technical Reviewer:</strong> Rachel Andrew</li>
+					<li><strong>Cover Designer:</strong> Alex Walker</li>
+			</ul>
+
+			<h2>Notice of Rights</h2>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia.</p>
+
+			<h2>Notice of Liability</h2>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. </p>
+
+			<h2>Trademark Notice</h2>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. </p>
+
+			<div class="small-centered">
+			<p><img src="images/sitepoint-logo-2012.png" alt="SitePoint logo" width="160">
+			<br>Published by SitePoint Pty. Ltd.</p>
+
+			<p>48 Cambridge Street Collingwood
+				<br>VIC Australia 3066
+				<br>Web: www.sitepoint.com
+				<br>Email: business@sitepoint.com</p>
+
+				<p>ISBN 978-0-9941826-2-3 (print)</p>
+					<p>ISBN 978-0-9943469-4-0 (ebook)
+						<br>Printed and bound in the United States of America</p>
+			</div>
+
+		</div>
+
+		<div class="page-about front set-front-matter">
+			<h2>About Author Name</h2>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. Nunc eget dapibus urna, ut maximus quam. Cras id tellus eu libero tincidunt varius. Aenean urna mauris, blandit a ipsum sed, euismod pharetra enim. Etiam dignissim cursus tellus, sodales sollicitudin libero interdum sed. Ut convallis purus mi, ut sodales eros scelerisque a. Maecenas justo turpis, viverra a lobortis ac, interdum nec ipsum. </p>
+
+			<h2>About SitePoint</h2>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. Nunc eget dapibus urna, ut maximus quam. Cras id tellus eu libero tincidunt varius. Aenean urna mauris, blandit a ipsum sed, euismod pharetra enim. Etiam dignissim cursus tellus, sodales sollicitudin libero interdum sed. Ut convallis purus mi, ut sodales eros scelerisque a. Maecenas justo turpis, viverra a lobortis ac, interdum nec ipsum. </p>
+
+		</div>
+
+		<div class="page-dedication front set-front-matter">
+				<div class="dedication">Dedication name</div>
+		</div>
+
+		<div class="page-toc front set-front-matter">
+			<h1 id="table-of-contents">Table of Contents</h1>
+			<ul id="insert-toc" class="toc">
+
+			</ul>
+
+		</div>
+
+		<div class="preface set-front-matter">
+			<h1 id="preface">Preface</h1>
+
+			<p>CSS has grown from a language for formatting documents into a robust language for designing web applications. Its syntax is easy to learn, making CSS a great entry point for those new to programming. Indeed, it's often the second language that developers learn, right behind HTML.</p>
+
+			<p>The simplicity of CSS is deceptive, however. It belies the complexity of the box model, stacking contexts, specificity, and the cascade. It's tough to develop interfaces that work across a variety of screen sizes and with an assortment of input mechanisms. CSS mastery lies in understanding these concepts and how to mitigate them.</p>
+
+			<p>Mastering CSS development also means learning how to work with new tools such as linters, optimizers, and preprocessors. Linters inspect your code for potential trouble spots. Preprocessors make writing and organizing CSS easier. Optimizers improve CSS quality, and reduce the number of bytes delivered to the browser. And of course, there's the question of CSS architecture: which selectors to use, how to modularize files, and how to prevent selector creep.</p>
+
+			<p>CSS<span class="fn">Cascading Stylesheets</span> is also growing in its capabilities. Until now, we've had to use clunky methods such as float, or weighty JavaScript libraries to create the kinds of layouts made possible with the flexbox and multi-column layout modules. Three-dimensional effects were impossible―or required images―before the rise of CSS transforms. What's on the horizon is even more exciting.</p>
+
+			<p>It's really a fascinating time to be a front-end developer. My hope is that you'll come away from this book with a better sense of how CSS works and how to write it well.</p>
+
+			<h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
+
+			<p>This book is for intermediate-level CSS developers, as it assumes a fair amount of experience with HTML and CSS. No time is spent covering the basics of CSS syntax. Coverage of CSS concepts such as the box model and positioning are included to illuminate tricky concepts for the experienced developer. They're not meant as an introduction for beginners. Experience with JavaScript/DOM Scripting is helpful, but not necessary.</p>
+
+			<h2 id="preface-conventions-used">Conventions Used</h2>
+
+			<p>You'll notice that we've used certain typographic and layout styles throughout this book to signify different types of information. Look out for the following items.</p>
+
+			<h3>Code Samples</h3>
+
+			<p>Code in this book is displayed using a fixed-width font, like so:</p>
+
+			<code class="codeblock"><pre>
+&lt;h1&gt;A Perfect Summer's Day&lt;/h1&gt;
+&lt;p&gt;It was a lovely day for a walk in the park. The birds were singing and the kids were all back at school.&lt;/p&gt;
+			</pre></code>
+
+			<p>If the code is to be found in the book's code archive, the name of the file will appear at the top of the program listing, like this:</p>
+
+			<figure class="codefig">
+				<figcaption>example.css</figcaption>
+
+				<code><pre>
+.footer {
+  background-color: #CCC;
+  border-top: 1px solid #333;
+}
+				</pre></code>
+
+			</figure>
+
+			<p>If only part of the file is displayed, this is indicated by the word <em>excerpt</em>:</p>
+
+			<figure class="codefig">
+				<figcaption>example.css <em>(excerpt)</em></figcaption>
+
+				<code><pre>
+.footer {
+  background-color: #CCC;
+  border-top: 1px solid #333;
+}
+				</pre></code>
+
+			</figure>
+
+			<p>If additional code is to be inserted into an existing example, the new code will be displayed in bold:</p>
+
+			<code class="codeblock"><pre>
+function animate() {
+  <strong>new_variable = "Hello";</strong>
+}
+			</pre></code>
+
+			<p>Where existing code is required for context, rather than repeat all of it, ⋮ will be displayed:</p>
+
+			<code class="codeblock"><pre>
+function animate() {
+  ⋮
+  <strong>new_variable = "Hello";</strong>
+}
+			</pre></code>
+
+			<p>Some lines of code should be entered on one line, but we've had to wrap them be- cause of page constraints. An ➥ indicates a line break that exists for formatting purposes only, and should be ignored:</p>
+
+			<code class="codeblock"><pre>
+URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?responsive1");
+			</pre></code>
+
+			<h3 id="preface-tips">Tips, Notes, and Warnings</h3>
+
+			<div class="box tip">
+				<h4>Hey, You!</h4>
+                <div class="body">
+				    <p>Tips provide helpful little pointers.</p>
+                </div>
+			</div>
+
+			<div class="box note">
+				<h4>Ahem, Excuse Me ...</h4>
+                <div class="body">
+				    <p>Notes are useful asides that are related—but not critical—to the topic at hand. Think of them as extra tidbits of information.</p>
+                </div>
+			</div>
+
+			<div class="box attention">
+				<h4>Make Sure You Always ...</h4>
+                <div class="body">
+				    <p>... pay attention to these important points.</p>
+                </div>
+			</div>
+
+			<div class="box warning">
+				<h4>Watch Out!</h4>
+                <div class="body">
+				    <p>Warnings highlight any gotchas that are likely to trip you up along the way.</p>
+                </div>
+			</div>
+
+
+
+			<h3 id="preface-lists">Lists</h3>
+
+			<p>Unordered list</p>
+
+			<ul>
+				<li>descendant combinator, or whitespace character</li>
+				<li>child combinator, or &gt;</li>
+				<li>adjacent sibling combinator, or +</li>
+				<li>general sibling combinator, or ~</li>
+			</ul>
+
+			<p>Ordered List</p>
+
+			<ol>
+				<li>Decrease the value of line-height for the <code>::first–letter pseudo-element</code>. A value of .5 seems to work most of the time.</li>
+				<li>Set a line-height with units on the <code>::first–letter</code> pseudo-element.</li>
+				<li>Set a line-height with units on either the body or the <code>::first–letter</code> parent.</li>
+			</ol>
+
+			<p>Definition List</p>
+
+			<dl>
+				<dt><code>::before</code></dt>
+				<dd>inserts additional generated content before the content of an element</dd>
+				<dt><code>::after</code></dt>
+				<dd>inserts additional generated content after the content of an element</dd>
+				<dt><code>::first–letter</code></dt>
+				<dd>selects the first letter of an element</dd>
+				<dt><code>::first–line</code></dt>
+				<dd>selects the first line of an element</dd>
+				<dt><code>::selection</code></dt>
+				<dd>styles text selected by the cursor</dd>
+			</dl>
+
+            <h3 id="preface-footnotes">Footnotes and Links</h3>
+
+			<p>Links can be written out in full or displayed in the footnotes. To write a link out in full simple include it in the document. Here is a link to Google (<a href="http://google.com">http://google.com</a>). To display a link in the footnotes, or any other text in footnotes, wrap it in a span with a class of 'fn'. Prince will turn it into a footnote and add the correct number as superscript in the text. Here is a link to Google<span class="fn">http://google.com</span>.</p>
+
+			<p>Footnotes can be any text you like, just wrap it in a span with a class of 'fn'<span class="fn">These footnotes are pretty much magical, and have their own pseudo-classes to style them</span>.</p>
+
+
+
+
+
+
+
+		</div>
+		<div class="chapter page-count-restart">
+			<h1 id="chapter1">An exciting chapter</h1>
+
+			<p>Ea usu brute expetenda. Et<span class="fn">This footnote should be number 1 in chapter 1</span> solet eloquentiam pro. Usu etiam omittam partiendo ad, duo graece mediocritatem ne. Usu te mutat atomorum scriptorem, cu per erat meis. Appetere facilisi forensibus an vis.</p>
+
+			<h3 id="ch1-figures">Figures:</h3>
+
+			<figure class="imagefig">
+					<img src="images/figure-image.jpg">
+					<figcaption>This is a figure caption</figcaption>
+			</figure>
+
+
+
+			<p>We can also have smaller images displayed inline, they don't have a caption or a figure number. They have a class of inline-image.</p>
+			<p>You can also add a class of "image-left", "image-right" or "image-center".</p>
+			<img src="images/figure-inline.jpg" class="inline-image image-left">
+
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim vestibulum velit et suscipit. Ut eu lacus ut odio hendrerit pulvinar. Duis laoreet arcu sit amet maximus tincidunt. Proin massa tellus, gravida et orci ut, volutpat tempus neque. Phasellus porttitor ipsum non arcu pellentesque mollis. Donec euismod vel libero et gravida. Cras in dignissim lorem.</p>
+
+			<img src="images/figure-inline.jpg" class="inline-image image-right">
+
+			<p>Proin id fermentum ligula. Nunc ac accumsan massa. Nulla viverra mi quam, ultricies tristique elit placerat ac. Quisque ut ex erat. Donec nunc ligula, faucibus ut bibendum vitae, placerat et sapien. Pellentesque hendrerit, neque eu posuere aliquet, sem ex volutpat ex, et aliquam ex mauris eget quam. Duis ullamcorper elit sem. Nulla facilisi. Donec elementum nibh dapibus, consectetur ex rutrum, bibendum risus. Cras dictum semper velit in accumsan.</p>
+
+			<img src="images/figure-inline.jpg" class="inline-image image-center">
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. Nunc eget dapibus urna, ut maximus quam. Cras id tellus eu libero tincidunt varius. Aenean urna mauris, blandit a ipsum sed, euismod pharetra enim. Etiam dignissim cursus tellus, sodales sollicitudin libero interdum sed. Ut convallis purus mi, ut sodales eros scelerisque a. Maecenas justo turpis, viverra a lobortis ac, interdum nec ipsum. </p>
+
+			<p>Vel dolorem feugait ex, ei vim maiestatis reprehendunt, sumo gubergren id has. Imperdiet adversarium eum te, vel omnis modus nihil no, vix esse munere dolores no. Ius laoreet senserit ut, ex accumsan delicata<span class="fn">This footnote should be number 2 in chapter 1</span>  contentiones sit. Eu meis semper est. Usu ad unum incorrupte. Ius te congue numquam omittam, ferri evertitur id pri.</p>
+
+			<h3 id="ch1-tables">Tables:</h3>
+
+			<table class="table-3-col table-striped">
+					<caption>Three column table striped</caption>
+					<thead>
+					<tr>
+							<th>Heading 1</th>
+							<th>Heading 2</th>
+							<th>Heading 3</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+					</tr>
+					</tbody>
+			</table>
+
+			<table class="table-5-col">
+					<caption>Five column table not striped</caption>
+					<thead>
+					<tr>
+							<th>Heading 1</th>
+							<th>Heading 2</th>
+							<th>Heading 3</th>
+							<th>Heading 4</th>
+							<th>Heading 5</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					</tbody>
+			</table>
+		</div>
+
+		<div class="chapter">
+			<h1 id="chapter2">Another chapter</h1>
+			<p>Lorem ipsum dolor sit amet, mel quem quot consul id, probatus sapientem adipiscing sea in. Cum dicta error senserit id, ad nullam partiendo torquatos his, pro ne facilisi expetendis. Et molestie evertitur eos, mei ad dolores<span class="fn">This footnote should be number 1 in chapter 2</span>  omittam. In eros scribentur pri, te debet laoreet deserunt his. Est in agam melius dolorem.</p>
+
+			<p>Ea usu brute expetenda. Et solet eloquentiam pro. Usu etiam omittam partiendo ad, duo graece mediocritatem ne. Usu te mutat atomorum scriptorem, cu per erat meis. Appetere facilisi forensibus an vis.</p>
+
+			<table class="table-5-col">
+					<caption>Five column table not striped</caption>
+					<thead>
+					<tr>
+							<th>Heading 1</th>
+							<th>Heading 2</th>
+							<th>Heading 3</th>
+							<th>Heading 4</th>
+							<th>Heading 5</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					 <tr>
+							<td>Content 1</td>
+							<td>Content 2</td>
+							<td>Content 3</td>
+							<td>Content 4</td>
+							<td>Content 5</td>
+					</tr>
+					</tbody>
+			</table>
+
+			<p>Vel dolorem feugait ex, ei vim maiestatis reprehendunt, sumo gubergren id has. Imperdiet adversarium eum te, vel omnis modus nihil no, vix esse munere dolores no. Ius laoreet senserit ut, ex accumsan delicata contentiones sit. Eu meis semper est. Usu ad unum incorrupte. Ius te congue numquam omittam, ferri evertitur id pri.</p>
+
+			<figure class="imagefig">
+					<img src="images/figure-image.jpg">
+					<figcaption>This is a figure caption</figcaption>
+			</figure>
+
+
+			<p>Omnes ocurreret ut sea. Eum ex disputando reprehendunt, et malorum posidonium necessitatibus eos. Vis atomorum reprehendunt id. Mea eu rebum libris suscipiantur. Ei tibique fastidii vulputate quo, solet euripidis eos ex. Has ut soluta vocibus apeirian, agam mandamus qualisque an vim.</p>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. Nunc eget dapibus urna, ut maximus quam. Cras id tellus eu libero tincidunt varius. Aenean urna mauris, blandit a ipsum sed, euismod pharetra enim. Etiam dignissim cursus tellus, sodales sollicitudin libero interdum sed. Ut convallis purus mi, ut sodales eros scelerisque a. Maecenas justo turpis, viverra a lobortis ac, interdum nec ipsum. </p>
+
+			<p>Suspendisse tempus felis at urna finibus, vitae ultrices nulla accumsan. Phasellus sed elit auctor, bibendum eros non, tristique urna. Mauris in enim sit amet ligula aliquet lacinia. Ut bibendum urna ut nisl maximus, vitae ultrices lorem rutrum. Nunc eget dapibus urna, ut maximus quam. Cras id tellus eu libero tincidunt varius. Aenean urna mauris, blandit a ipsum sed, euismod pharetra enim. Etiam dignissim cursus tellus, sodales sollicitudin libero interdum sed. Ut convallis purus mi, ut sodales eros scelerisque a. Maecenas justo turpis, viverra a lobortis ac, interdum nec ipsum. </p>
+
+			<figure class="imagefig">
+					<img src="images/figure-image.jpg">
+					<figcaption>This is a figure caption</figcaption>
+			</figure>
+
+			<p>Cum ea legimus erroribus repudiandae. Nam ut nisl semper maiestatis, has fugit perpetua an. No eam volutpat repudiandae, errem tollit scripta ex est, saperet expetenda scribentur ea pro. No purto omnium patrioque sed, ius ad ferri autem.</p>
+		</div>
+	</body>
+<script type="text/javascript" src="../assets/js/book.js"></script>
+
+</html>

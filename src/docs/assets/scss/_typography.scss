@@ -1,0 +1,168 @@
+body {
+    @include font-body;
+}
+
+code, pre {
+    @include font-monospace;
+    white-space: pre-wrap;
+}
+
+/* stop things breaking in weird places */
+
+h1,h2,h3,h4 {
+	page-break-after: avoid;
+	page-break-inside:avoid;
+}
+
+
+h1+p, h2+p, h3+p {
+	page-break-before: avoid;
+}
+
+.chapter-page{
+   page-break-inside: avoid;
+    page-break-after: always;
+}
+
+table, figure, .box {
+	page-break-inside: avoid;
+}
+
+/* headings */
+.ch-head {
+  font-size: 21pt;
+  position: relative;
+  height: 300px;
+  font-family: 'Raleway';
+  font-weight: 600;
+  //color: color(theme,blue);
+  margin-top: 13pt;
+  text-align: right;
+  padding: 300px 0rem 0;
+  page-break-after: always
+}
+
+.ch-head::before {
+  content: counter(chapternum);
+  //color: color(theme,blue);
+  font-size: 200pt;
+  position: absolute;
+
+  padding-left: 20px;
+  right: 20px;
+  margin-top: 0pt;
+  height: 200px;
+}
+
+.ch-head::after {
+  content: "";
+  display: block;
+  clear: both;
+  position: absolute;
+  top: 200px;
+}
+
+.ch-head+h1 {
+    width: 65%;
+    font-size: 66px;
+    border-right: 1px solid #999;
+    line-height: 100%;
+    padding-right: 20px;
+    text-align: right;
+    position: relative;
+    top: -300px;
+    page-break-before: avoid;
+    page-break-after: always;
+}
+
+
+
+
+/*
+h1 {
+
+    font-family: font(title, family);
+    font-weight: bold;
+    font-size: 21pt;
+    color: color(theme, black);
+    display: inline-block;
+    //border-bottom: 1px solid color(theme,orange);
+    margin-left: -30pt;
+    padding: 0 0 0 30pt;
+    line-height: .8;
+}
+
+h2 {
+    font-family: font(title, family);
+    font-weight: bold;
+    font-size: 17pt;
+    color: color(theme, black);
+    display: inline-block;
+    //border-bottom: 1px solid color(theme,orange);
+    margin-left:-30pt;
+    margin-bottom: 0;
+    padding: 0 0 0 30pt;
+    line-height: .8;
+}
+*/
+h2 code {
+  font-size: 90%;
+}
+
+.front h2 {
+  color: color(theme, black);
+  //font-size: 14pt;
+  padding:0;
+  margin: 0;
+  border: none;
+  display: block;
+  line-height: 1.5;
+}
+
+.front h2+p {
+  margin-top:0;
+  padding-top: 0;
+}
+/*
+h3 {
+  color: color(theme, black);
+  margin-bottom: 0;
+}
+
+h3, h4, h5, h6 {
+    font-family: font(title, family);
+    font-weight: bold;
+    font-size: 14pt;
+}
+*/
+/* lists */
+
+ul, ol {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+li {
+    margin-left: 20px;
+}
+
+ul li {
+    list-style-image: url(../images/bullet.png);
+}
+
+dt {
+    float: left;
+    clear: left;
+    width: 90pt;
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 0 90pt;
+}
+
+dt code {
+    font-weight: bold;
+}
+
+/* tables */

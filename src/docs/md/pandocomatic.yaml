@@ -1,0 +1,10 @@
+templates:
+  education-research:
+    preprocessors: []
+    pandoc:
+      from: markdown
+      to: html5
+      standalone: true
+      toc: true
+      mathjax: true
+    postprocessors: []
