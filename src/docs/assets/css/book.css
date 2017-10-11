@@ -10,7 +10,7 @@ Details: A stylesheet for formatting SitePoint books. This stylesheet imports th
  * @author Lea Verou
  */
 @import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Raleway");
-/* line 8, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 8, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
@@ -31,14 +31,14 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-/* line 31, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 31, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-/* line 37, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 37, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
   text-shadow: none;
@@ -46,7 +46,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 @media print {
-  /* line 44, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+  /* line 44, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
   code[class*="language-"],
   pre[class*="language-"] {
     text-shadow: none;
@@ -54,28 +54,28 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 /* Code blocks */
-/* line 51, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 51, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
 }
 
-/* line 57, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 57, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #f5f2f0;
 }
 
 /* Inline code */
-/* line 63, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 63, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
   white-space: normal;
 }
 
-/* line 69, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 69, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -83,17 +83,17 @@ pre[class*="language-"] {
   color: slategray;
 }
 
-/* line 76, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 76, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.punctuation {
   color: #999;
 }
 
-/* line 80, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 80, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .namespace {
   opacity: .7;
 }
 
-/* line 84, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 84, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.property,
 .token.tag,
 .token.boolean,
@@ -104,7 +104,7 @@ pre[class*="language-"] {
   color: #905;
 }
 
-/* line 94, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 94, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.selector,
 .token.attr-name,
 .token.string,
@@ -114,7 +114,7 @@ pre[class*="language-"] {
   color: #690;
 }
 
-/* line 103, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 103, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.operator,
 .token.entity,
 .token.url,
@@ -124,54 +124,54 @@ pre[class*="language-"] {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 112, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 112, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.atrule,
 .token.attr-value,
 .token.keyword {
   color: #07a;
 }
 
-/* line 118, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 118, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.function {
   color: #DD4A68;
 }
 
-/* line 122, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 122, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.regex,
 .token.important,
 .token.variable {
   color: #e90;
 }
 
-/* line 128, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 128, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.important,
 .token.bold {
   font-weight: bold;
 }
 
-/* line 132, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 132, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.italic {
   font-style: italic;
 }
 
-/* line 136, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 136, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .token.entity {
   cursor: help;
 }
 
-/* line 140, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 140, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 pre.line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-/* line 146, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 146, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 pre.line-numbers > code {
   position: relative;
 }
 
-/* line 150, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 150, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .line-numbers .line-numbers-rows {
   position: absolute;
   pointer-events: none;
@@ -188,14 +188,14 @@ pre.line-numbers > code {
   user-select: none;
 }
 
-/* line 167, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 167, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .line-numbers-rows > span {
   pointer-events: none;
   display: block;
   counter-increment: linenumber;
 }
 
-/* line 173, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_prism.scss */
+/* line 173, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_prism.scss */
 .line-numbers-rows > span:before {
   content: counter(linenumber);
   color: #999;
@@ -217,13 +217,13 @@ font-family: font(body, family);
 color: color(theme);
 color: color(theme, orange);
 color: color(backgrounds, codeblock); */
-/* line 97, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 96, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 html {
   font-size: 12pt;
   line-height: 18pt;
 }
 
-/* line 102, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 101, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body, .article {
   font-family: 'Libre Franklin', serif;
   font-weight: 300;
@@ -234,7 +234,7 @@ body, .article {
   margin: auto;
 }
 
-/* line 111, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 110, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 p {
   font-size: 1rem;
   font-family: 'Libre Franklin', serif;
@@ -242,7 +242,7 @@ p {
   color: #333;
 }
 
-/* line 117, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 116, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h1, .h1 {
   font-family: Raleway, sans-serif;
   font-weight: 800;
@@ -252,7 +252,7 @@ h1, .h1 {
   margin-bottom: 1.5rem;
 }
 
-/* line 125, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 124, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h2, .h2 {
   font-family: Raleway, sans-serif;
   font-weight: 600;
@@ -262,7 +262,7 @@ h2, .h2 {
   margin-bottom: 0rem;
 }
 
-/* line 133, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 132, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h3, .h3 {
   font-family: Raleway, sans-serif;
   font-size: 1.25rem;
@@ -271,7 +271,7 @@ h3, .h3 {
   margin-bottom: 1.5rem;
 }
 
-/* line 140, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 139, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h4, .h4 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -279,7 +279,7 @@ h4, .h4 {
   margin-bottom: 1.5rem;
 }
 
-/* line 146, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 145, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h5, .h5 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -287,59 +287,59 @@ h5, .h5 {
   margin-bottom: 0rem;
 }
 
-/* line 152, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
   margin-bottom: 1.5rem;
 }
 
-/* line 156, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 155, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
 
 /* Let's make sure all's aligned */
-/* line 162, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 161, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 hr, .hr {
   border: 1px solid;
   margin: -1px 0;
 }
 
-/* line 166, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 165, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 a, b, i, strong, em, small, code {
   line-height: 0;
 }
 
-/* line 169, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 168, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sub, sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-/* line 174, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 173, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 177, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 176, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* GRID  */
-/* line 197, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 196, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body {
   position: relative;
 }
 
-/* line 200, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 199, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:active:after {
   display: none;
 }
 
-/* line 204, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_config.scss */
+/* line 203, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:after {
   background: linear-gradient(to bottom, rgba(200, 225, 255, 0.6) 1px, transparent 1px);
   background-size: 18pt 18pt;
@@ -404,7 +404,7 @@ top left book title and current page */
   }
   @top-left {
     margin: 40pt 0 40pt 0;
-    content: "Jump Start Sketch";
+    content: "Jump Start SketchYour First Week With React";
     font-size: 9pt;
     font-family: "Libre Franklin";
   }
@@ -424,67 +424,67 @@ top left book title and current page */
 }
 
 /* add this class to any front matter page that should have roman numeral style numbering */
-/* line 69, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 69, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .set-front-matter {
   page: front_matter;
 }
 
-/* line 71, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 71, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .preface, .chapter, .page-frontmatter, .page-about, .page-dedication, .page-toc, .appendix {
   page-break-before: always;
   counter-reset: figurenum tablenum footnote;
 }
 
-/* line 76, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 76, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .page-count-restart {
   counter-reset: page 1;
 }
 
 /* increment chapter counter */
-/* line 81, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 81, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .chapter {
   counter-increment: chapternum;
 }
 
-/* line 85, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 85, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .appendix {
   counter-increment: appendixnum;
 }
 
 /* reset chapter and figure counters on the body */
-/* line 91, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 91, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 body {
   counter-reset: chapternum appendixnum figurenum tablenum footnote;
 }
 
 /* get the title of the current chapter - this will be the content of the h1
 reset figure counter as figures start from 1 in each chapter */
-/* line 97, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 97, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 h1 {
   string-set: doctitle content();
 }
 
-/* line 101, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 101, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .appendix h1::before {
   content: "Appendix " counter(appendixnum, upper-alpha) ": ";
 }
 
 /* increment and display figure counter */
-/* line 106, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 106, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 figcaption:before {
   counter-increment: figurenum;
   content: counter(chapternum) "-" counter(figurenum) ". ";
 }
 
 /* increment and display table counter */
-/* line 112, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 112, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 table caption:before {
   counter-increment: tablenum;
   content: counter(chapternum) "." counter(tablenum) ". ";
 }
 
 /* footnotes */
-/* line 118, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 118, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .fn {
   float: footnote;
   footnote-style-position: inside;
@@ -494,13 +494,13 @@ table caption:before {
   line-height: 1.5;
 }
 
-/* line 124, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 124, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .fn {
   counter-increment: footnote;
 }
 
 /* this is the marker for the footnote in the content. It is generated by Prince. */
-/* line 129, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 129, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .fn::footnote-call {
   content: counter(footnote);
   font-size: 9pt;
@@ -509,7 +509,7 @@ table caption:before {
 }
 
 /* this is the number of the footnote in the footnotes section of the page. */
-/* line 137, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 137, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .fn::footnote-marker {
   font-size: 9pt;
   vertical-align: super;
@@ -524,7 +524,7 @@ table caption:before {
 }
 
 /* front matter bits */
-/* line 151, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .page-frontmatter {
   font-family: "Libre Franklin";
   font-weight: normal;
@@ -532,17 +532,17 @@ table caption:before {
   line-height: 1.5;
 }
 
-/* line 155, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 155, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .small-centered {
   text-align: center;
 }
 
-/* line 159, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 159, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .copyright {
   text-align: center;
 }
 
-/* line 163, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 163, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.credits {
   list-style: none;
   margin: 0 0 1em 0;
@@ -550,18 +550,18 @@ ul.credits {
   column-count: 2;
 }
 
-/* line 170, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 170, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.credits li {
   margin: 0;
   list-style: none;
 }
 
-/* line 175, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 175, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .page-dedication {
   text-align: center;
 }
 
-/* line 180, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 180, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 .page-dedication .dedication {
   position: absolute;
   margin: auto;
@@ -574,7 +574,7 @@ ul.credits li {
 }
 
 /* table of contents */
-/* line 192, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 192, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc {
   list-style: none;
   margin: 0;
@@ -582,7 +582,7 @@ ul.toc {
   font-size: 13pt;
 }
 
-/* line 199, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 199, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li.levelH1 {
   margin-top: 20pt;
   font-size: 17pt;
@@ -590,14 +590,14 @@ ul.toc li.levelH1 {
   font-weight: bold;
 }
 
-/* line 206, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 206, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li.levelH2 {
   padding-left: 30pt;
   font-family: "Raleway";
   font-size: 12pt;
 }
 
-/* line 212, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 212, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li.levelH3 {
   padding-left: 60pt;
   font-family: "Raleway";
@@ -605,7 +605,7 @@ ul.toc li.levelH3 {
 }
 
 /* Insert the string Chapter followed by generated chapter counter NOT before Preface. */
-/* line 219, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 219, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li.levelH1:not(.toc-appendix) a:not([href^="#preface"])::before {
   content: "Chapter " target-counter(attr(href), chapternum) ":";
   color: #777;
@@ -615,7 +615,7 @@ ul.toc li.levelH1:not(.toc-appendix) a:not([href^="#preface"])::before {
 }
 
 /* Insert the string Appendix followed by generated chapter counter before appendix. */
-/* line 228, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 228, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li.levelH1.toc-appendix a::before {
   content: "Appendix " target-counter(attr(href), appendixnum, upper-alpha);
   color: #333;
@@ -624,46 +624,46 @@ ul.toc li.levelH1.toc-appendix a::before {
 }
 
 /* create page numbers using target-counter in the TOC */
-/* line 236, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 236, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc a::after {
   content: leader(".") target-counter(attr(href), page);
   font-size: 13pt;
 }
 
 /* the preface uses lower-roman*/
-/* line 242, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 242, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc .toc-preface a::after {
   content: leader(".") target-counter(attr(href), page, lower-roman);
 }
 
-/* line 247, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 247, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li {
   line-height: 2;
   list-style: none;
 }
 
-/* line 252, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 252, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li code {
   font-size: 90%;
 }
 
-/* line 256, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 256, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 ul.toc li a {
   text-decoration: none;
 }
 
-/* line 260, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 260, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 a {
   color: #000;
 }
 
 /* add page number to cross references */
-/* line 265, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-setup.scss */
+/* line 265, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-setup.scss */
 a.xref:after {
   content: " (page " target-counter(attr(href, url), page) ")";
 }
 
-/* line 1, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 1, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 body {
   font-family: "Libre Franklin";
   font-weight: normal;
@@ -671,7 +671,7 @@ body {
   line-height: 1.5;
 }
 
-/* line 5, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 5, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 code, pre {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
@@ -681,43 +681,43 @@ code, pre {
 }
 
 /* stop things breaking in weird places */
-/* line 12, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 12, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h1, h2, h3, h4 {
   page-break-after: avoid;
   page-break-inside: avoid;
 }
 
-/* line 18, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 18, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h1 + p, h2 + p, h3 + p {
   page-break-before: avoid;
 }
 
-/* line 22, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 22, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .chapter-page {
   page-break-inside: avoid;
   page-break-after: always;
 }
 
-/* line 27, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 27, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 table, figure, .box {
   page-break-inside: avoid;
 }
 
-/* headings */
-/* line 32, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* headings 
 .ch-head {
   font-size: 21pt;
   position: relative;
   height: 300px;
   font-family: 'Raleway';
   font-weight: 600;
+  //color: color(theme,blue);
   margin-top: 13pt;
   text-align: right;
   padding: 300px 0rem 0;
-  page-break-after: always;
+  page-break-after: always
 }
-
-/* line 45, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+*/
+/* line 45, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .ch-head::before {
   content: counter(chapternum);
   font-size: 200pt;
@@ -728,7 +728,7 @@ table, figure, .box {
   height: 200px;
 }
 
-/* line 57, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 56, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .ch-head::after {
   content: "";
   display: block;
@@ -737,7 +737,7 @@ table, figure, .box {
   top: 200px;
 }
 
-/* line 65, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 64, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .ch-head + h1 {
   width: 65%;
   font-size: 66px;
@@ -746,7 +746,6 @@ table, figure, .box {
   padding-right: 20px;
   text-align: right;
   position: relative;
-  top: -300px;
   page-break-before: avoid;
   page-break-after: always;
 }
@@ -778,12 +777,12 @@ h2 {
     line-height: .8;
 }
 */
-/* line 108, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 107, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h2 code {
   font-size: 90%;
 }
 
-/* line 112, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 111, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .front h2 {
   color: #333;
   padding: 0;
@@ -793,7 +792,7 @@ h2 code {
   line-height: 1.5;
 }
 
-/* line 122, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 121, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .front h2 + p {
   margin-top: 0;
   padding-top: 0;
@@ -812,23 +811,23 @@ h3, h4, h5, h6 {
 }
 */
 /* lists */
-/* line 140, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 139, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 ul, ol {
   padding-left: 0;
   margin-left: 0;
 }
 
-/* line 145, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 144, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 li {
   margin-left: 20px;
 }
 
-/* line 149, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 148, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 ul li {
   list-style-image: url(../images/bullet.png);
 }
 
-/* line 153, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 152, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dt {
   float: left;
   clear: left;
@@ -836,18 +835,18 @@ dt {
   font-weight: bold;
 }
 
-/* line 160, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 159, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dd {
   margin: 0 0 0 90pt;
 }
 
-/* line 164, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_typography.scss */
+/* line 163, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dt code {
   font-weight: bold;
 }
 
 /* tables */
-/* line 1, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 1, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box {
   background-color: #f2f2e1;
   margin: 1.5rem 0 1.5rem 1rem;
@@ -855,27 +854,27 @@ dt code {
   z-index: 1;
 }
 
-/* line 8, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 8, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box h4 {
   background-color: #ededdd;
   padding: 0.2em 0.5em;
   margin: 0;
-  margin-bottom: 5pt;
+  margin-bottom: .75rem;
 }
 
-/* line 16, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 16, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box .body {
   font-size: 9pt;
   padding: 0 5pt;
 }
 
-/* line 21, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 21, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box .body p {
   margin: 0;
-  padding: 0 0 5pt 0;
+  padding: 0 0 1rem 0;
 }
 
-/* line 26, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 26, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.tip h4,
 .box.note h4,
 .box.attention h4,
@@ -883,7 +882,7 @@ dt code {
   padding-left: 32pt;
 }
 
-/* line 33, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 33, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.tip .body,
 .box.note .body,
 .box.attention .body,
@@ -891,7 +890,7 @@ dt code {
   padding-left: 24pt;
 }
 
-/* line 40, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 40, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.tip:before {
   background: url(../images/box-tip.svg);
   content: " ";
@@ -905,7 +904,7 @@ dt code {
   left: -5pt;
 }
 
-/* line 45, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 45, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.note:before {
   background: url(../images/box-note.svg);
   content: " ";
@@ -919,7 +918,7 @@ dt code {
   left: -5pt;
 }
 
-/* line 50, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 50, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.attention:before {
   background: url(../images/box-attention.svg);
   content: " ";
@@ -933,7 +932,7 @@ dt code {
   left: -5pt;
 }
 
-/* line 55, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 55, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.warning:before {
   background: url(../images/box-warning.svg);
   content: " ";
@@ -948,7 +947,7 @@ dt code {
 }
 
 /* code*/
-/* line 61, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 61, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 figure {
   margin: 0;
   -webkit-margin-before: 0em;
@@ -957,7 +956,7 @@ figure {
   -webkit-margin-end: 0px;
 }
 
-/* line 68, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 68, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codeblock {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
@@ -966,7 +965,7 @@ figure {
   padding: 0.2em 0.5em 0;
 }
 
-/* line 74, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 74, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codefig code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
@@ -975,7 +974,7 @@ figure {
   white-space: pre-line;
 }
 
-/* line 81, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 81, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codefig figcaption {
   font-size: 8pt;
   font-weight: bold;
@@ -988,7 +987,7 @@ figure {
   margin-bottom: 0;
 }
 
-/* line 94, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 94, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 pre[class*="language-"] {
   padding: 1.5rem;
   margin: 0 0 1.5rem 0;
@@ -996,13 +995,13 @@ pre[class*="language-"] {
 }
 
 /* tables */
-/* line 101, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 101, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table {
   border-collapse: collapse;
   margin-top: 1em;
 }
 
-/* line 106, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 106, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table caption {
   font-weight: bold;
   text-align: left;
@@ -1010,56 +1009,56 @@ table caption {
   padding-bottom: 5pt;
 }
 
-/* line 113, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 113, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table tbody {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
 
-/* line 119, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 119, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table thead {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
 
-/* line 125, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 125, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 th {
   background-color: #d6deeb;
   padding: 0.3em;
   text-align: left;
 }
 
-/* line 131, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 131, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 td {
   padding: 0.3em;
   vertical-align: top;
 }
 
-/* line 136, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 136, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .table-striped tr:nth-child(2n) {
   background-color: #ededdd;
 }
 
 /* figures*/
-/* line 141, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 141, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 img {
   max-width: 100%;
 }
 
-/* line 146, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 146, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig {
   text-align: center;
 }
 
-/* line 151, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig img {
   display: block;
   max-width: 100%;
 }
 
-/* line 156, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 156, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig figcaption {
   font-size: 8pt;
   margin-bottom: 1.5rem;
@@ -1068,53 +1067,50 @@ img {
 }
 
 /* other images */
-/* line 165, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 165, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-inline {
   max-width: 100%;
 }
 
-/* line 169, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 169, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-left {
   float: left;
   margin: 0 10pt 10pt 0;
 }
 
-/* line 174, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 174, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-right {
   float: right;
   margin: 0 0 10pt 10pt;
 }
 
-/* line 179, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 179, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-center {
   display: block;
   margin: 0 auto;
 }
 
-/* line 184, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/* line 184, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-left + p, .image-right + p {
   margin-top: 0;
 }
 
-/* line 189, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
-.chapter-page {
-  page-break-inside: avoid;
-  page-break-after: always;
-}
-
-/* line 192, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
-.chapter-page h1 {
-  width: 65%;
-}
-
-/* line 196, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_components.scss */
+/*
+.chapter-page{
+   page-break-inside: avoid;
+    page-break-after: always;
+    h1 {
+        width:65%;
+    }
+}*/
+/* line 196, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .block {
   page-break-inside: avoid;
   page-break-after: always;
 }
 
 @media screen {
-  /* line 3, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_page-fake.scss */
+  /* line 3, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-fake.scss */
   body {
     width: 7in;
     outline: 1px orange dashed;
@@ -1124,38 +1120,38 @@ img {
 
 /* add things here specific to this book */
 /* classes to control column width of tables*/
-/* line 22, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/book.scss */
+/* line 22, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/book.scss */
 .table-3-col {
   table-layout: fixed;
   width: 100%;
 }
 
-/* line 71, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_lib.scss */
+/* line 71, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_lib.scss */
 .table-3-col th, .table-3-col td {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* line 62, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_lib.scss */
+/* line 62, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_lib.scss */
 .table-3-col th:nth-child(1) {
   width: 20% 40% 40%;
 }
 
-/* line 26, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/book.scss */
+/* line 26, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/book.scss */
 .table-5-col {
   table-layout: fixed;
   width: 100%;
 }
 
-/* line 71, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_lib.scss */
+/* line 71, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_lib.scss */
 .table-5-col th, .table-5-col td {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* line 62, /Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/src/assets/scss/_lib.scss */
+/* line 62, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_lib.scss */
 .table-5-col th:nth-child(1) {
   width: 20% 20% 20% 20% 20%;
 }

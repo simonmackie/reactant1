@@ -10,7 +10,7 @@
     //font-size: 12pt;
     padding: $title-padding;
     margin: 0;
-    margin-bottom: 5pt;
+    margin-bottom: .75rem;
 }
 
 .box .body {
@@ -20,7 +20,7 @@
 
 .box .body p {
     margin: 0;
-    padding: 0 0 5pt 0;
+    padding: 0 0 1rem 0;
 }
 
 .box.tip h4,
@@ -185,14 +185,14 @@ img {
     margin-top: 0;
 }
 // chapter page
-
+/*
 .chapter-page{
    page-break-inside: avoid;
     page-break-after: always;
     h1 {
         width:65%;
     }
-}
+}*/
 .block{
     page-break-inside: avoid;
     page-break-after: always;
