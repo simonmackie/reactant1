@@ -50,7 +50,7 @@ figure,
     font-family: 'Raleway';
     //outline: 1px blue dashed;
     color: #aaa;
-    height: 200px;
+    //height: 200px;
     font-weight: 600; //color: color(theme,blue);
     margin-top: 25rem;
     right: 0%;
@@ -63,10 +63,11 @@ figure,
     content: counter(chapternum); //color: color(theme,blue);
     font-size: 120pt;
     color: #777;
+    line-height: 100%;
+    vertical-align: middle;
     position: absolute;
-    //padding-left: 20px;
-    top: -20px;
-    height: 150px;
+    top: 2rem;
+    height: 1.5em;
     left: 0;
     text-align: center;
     width: 100%;
