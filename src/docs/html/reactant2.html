@@ -1,0 +1,3016 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>5 Practical React Projects</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|PT+Mono|Raleway" rel="stylesheet">
+    <link href="../assets/css/book.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    
+
+    
+    
+    <div class="page-frontmatter front set-front-matter">
+        <div class="title-name">
+            <h1>5 Practical React Projects</h1>
+
+        </div>
+
+        <p class="copyright">Copyright &copy; 2017 SitePoint Pty. Ltd.</p>
+
+        <ul class="credits">
+            <li><strong>Product Manager:</strong> Simon Mackie</li>
+            <li><strong>Cover Designer:</strong> Alex Walker</li>
+        </ul>
+
+        <h2>Notice of Rights</h2>
+
+        <p>All rights reserved. No part of this book may be reproduced, stored in a retrieval system or transmitted in any form or by any means, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical articles or reviews.</p>
+
+        <h2>Notice of Liability</h2>
+
+        <p>The author and publisher have made every effort to ensure the accuracy of the information herein. However, the information contained in this book is sold without warranty, either express or implied. Neither the authors and SitePoint Pty. Ltd., nor its dealers or distributors will be held liable for any damages to be caused either directly or indirectly by the instructions contained in this book, or by the software or hardware products described herein. </p>
+        <div class="block">
+        <h2>Trademark Notice</h2>
+
+        <p>Rather than indicating every occurrence of a trademarked name as such, this book uses the names only in an editorial fashion and to the benefit of the trademark owner with no intention of infringement of the trademark.</p>
+
+        <div class="small-centered">
+            <p><img src="../images/sitepoint-gray.svg" alt="SitePoint logo" width="160">
+                <br>Published by SitePoint Pty. Ltd.</p>
+
+            <p>48 Cambridge Street Collingwood
+                <br>VIC Australia 3066
+                <br>Web: www.sitepoint.com
+                <br>Email: books@sitepoint.com</p>
+
+            <p>ISBN 978-0-9943469-6-4 (print)</p>
+            <p>ISBN 978-0-9943470-2-2 (ebook)
+                <br>Printed and bound in the United States of America</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="page-about front set-front-matter">
+
+
+        <h2>About SitePoint</h2>
+
+        <p>SitePoint specializes in publishing fun, practical, and easy-to-understand content for web professionals. Visit <a href="http://www.sitepoint.com/">http://www.sitepoint.com/</a> to access our blogs, books, newsletters, articles, and community forums. You’ll find a stack of information on JavaScript, PHP, Ruby, mobile development, design, and more. </p>
+
+    </div>
+
+
+       
+    <div class="page-toc front set-front-matter">
+        <h1 id="table-of-contents">Table of Contents</h1>
+        <ul id="insert-toc" class="toc">
+        </ul>
+
+    </div>
+
+    <div class="preface set-front-matter">
+        <h1 id="preface">Preface</h1>
+        <p>Preface Goes here</p>
+
+        <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
+
+        <p>This book is for ....</p>
+
+        <h2 id="preface-conventions-used">Conventions Used</h2>
+
+        <p>You’ll notice that we’ve used certain typographic and layout styles throughout this book to signify different types of information. Look out for the following items.</p>
+
+        <h3>Code Samples</h3>
+
+        <p>Code in this book is displayed using a fixed-width font, like so:</p>
+
+        <pre><code class="language-html">
+&lt;h1&gt;A Perfect Summer's Day&lt;/h1&gt;
+&lt;p&gt;It was a lovely day for a walk in the park. The birds were singing and the kids were all back at school.&lt;/p&gt;
+			</code></pre>
+
+        <p>If the code is to be found in the book’s code archive, the name of the file will appear at the top of the program listing, like this:</p>
+
+        <figure class="codefig">
+            <figcaption>example.css</figcaption>
+            <pre><code class="language-css">
+        .footer {
+            background-color: #CCC;
+            border-top: 1px solid #333;
+        }
+        </code></pre>
+        </figure>
+
+        <p>If only part of the file is displayed, this is indicated by the word <em>excerpt</em>:</p>
+
+<figure class="codefig">
+<figcaption>example.css <em>(excerpt)</em></figcaption>
+<pre><code class="language-css">
+    .footer {
+        background-color: #CCC;
+        border-top: 1px solid #333;
+        }
+    </code></pre>
+        </figure>
+
+        <p>If additional code is to be inserted into an existing example, the new code will be displayed in bold:</p>
+
+<pre><code class="language-javascript">
+ function animate() {
+  <strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Where existing code is required for context, rather than repeat all of it, ⋮ will be displayed:</p>
+
+<pre><code class="language-javascript">
+function animate() {
+    ⋮
+<strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Some lines of code should be entered on one line, but we’ve had to wrap them because of page constraints. An ➥ indicates a line break that exists for formatting purposes only, and should be ignored:</p>
+
+<pre><code class="language-javascript">
+URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?responsive1");
+</code></pre>
+
+        <h3 id="preface-tips">Tips, Notes, and Warnings</h3>
+
+        <div class="box tip">
+            <h4>Hey, You!</h4>
+            <div class="body">
+                <p>Tips provide helpful little pointers.</p>
+            </div>
+        </div>
+
+        <div class="box note">
+            <h4>Ahem, Excuse Me ...</h4>
+            <div class="body">
+                <p>Notes are useful asides that are related—but not critical—to the topic at hand. Think of them as extra tidbits of information.</p>
+            </div>
+        </div>
+
+        <div class="box attention">
+            <h4>Make Sure You Always ...</h4>
+            <div class="body">
+                <p>... pay attention to these important points.</p>
+            </div>
+        </div>
+
+        <div class="box warning">
+            <h4>Watch Out!</h4>
+            <div class="body">
+                <p>Warnings highlight any gotchas that are likely to trip you up along the way.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- this is chapter 1, page-count-restart restarts the numbering -->
+    <div class="chapter page-count-restart">
+        <div class="ch-page">
+            <div class="ch-head">Chapter</div>
+            <h1 id="chap1">How to Create a Reddit Clone Using React and Firebase</h1>
+            <h3>by Nirmalya Ghosh</h3>
+        </div>
+
+
+
+
+<p>In this article, we'll be using <a href="https://firebase.google.com/">Firebase</a> along with Create React App to build an app that will function similar to <a href="https://www.reddit.com/">Reddit</a>. It will allow the user to submit a new link that can then be voted on.</p>
+
+<p>Here's a <a href="https://sitepoint-editors.github.io/reddit-clone/">live demo</a> of what we'll be building.</p>
+
+
+
+<h2 id="whyfirebase">Why Firebase?</h2>
+
+<p>Using Firebase will make it very easy for us to show real-time data to the user. Once a user votes on a link, the feedback will be instantaneous. Firebase's Realtime Database will help us in developing this feature. Also, it will help us to understand how to bootstrap a React application with Firebase.</p>
+
+<h2 id="whyreact">Why React?</h2>
+
+<p>React is particularly known for creating user interfaces using a component architecture. Each component can contain internal <a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">state</a> or be passed data as <a href="https://facebook.github.io/react/docs/components-and-props.html">props</a>. State and props are the two most important concepts in React. These two things help us determine the state of our application at any point in time. If you're not familiar with these terms, please head over to the <a href="https://facebook.github.io/react/docs/hello-world.html">React docs</a> first.</p>
+
+<div class="box note">
+        <h4>Using a State Container</h4>
+        <div class="body">
+                <p>Note: you can also use a state container like <a href="http://redux.js.org/">Redux</a> or <a href="https://mobx.js.org/">MobX</a>, but for the sake of simplicity, we won't be using one for this tutorial.</p>
+        </div>
+    </div>
+
+
+<p><em>Note: you can also use a state container like <a href="http://redux.js.org/">Redux</a> or <a href="https://mobx.js.org/">MobX</a>, but for the sake of simplicity, we won't be using one for this tutorial.</em></p>
+
+<p>The whole project is <a href="https://github.com/sitepoint-editors/reddit-clone">available on GitHub</a>.</p>
+
+
+
+
+<h2 id="settinguptheproject">Setting up the Project</h2>
+
+<p>Let's walk through the steps to set up our project structure and any necessary dependencies.</p>
+
+<h3 id="installingcreatereactapp">Installing create-react-app</h3>
+
+<p>If you haven't already, you need to install <strong>create-react-app</strong>. To do so, you can type the following in your terminal:</p>
+
+<pre><code class="bash language-bash">npm install -g create-react-app
+</code></pre>
+
+<p>Once you've installed it globally, you can use it to scaffold a React project inside any folder.</p>
+
+<p>Now, let's create a new app and call it <strong>reddit-clone</strong>.</p>
+
+<pre><code class="bash language-bash">create-react-app reddit-clone
+</code></pre>
+
+<p>This will scaffold a new <strong>create-react-app</strong> project inside the <strong>reddit-clone</strong> folder. Once the bootstrapping is done, we can go inside <strong>reddit-clone</strong> directory and fire up the development server:</p>
+
+<pre><code class="bash language-bash">npm start
+</code></pre>
+
+<p>At this point, you can go to <a href="http://localhost:3000/">http://localhost:3000/</a> and see your app skeleton up and running.</p>
+
+<h3 id="structuringtheapp">Structuring the app</h3>
+
+<p>For maintenance, I always like to separate my <strong>containers</strong> and <strong>components</strong>. Containers are the smart components that contain the business logic of our application and manage Ajax requests. Components are simply dumb presentational components. They can have their own internal state, which can be used to control the logic of that component (e.g. showing the current state of a <a href="https://facebook.github.io/react/docs/forms.html#controlled-components">controlled</a> input component).</p>
+
+<p>After removing the unnecessary logo and CSS files, this is how your app should look now. We created a <code>components</code> folder and a <code>containers</code> folder. Let's move <code>App.js</code> inside the <code>containers/App</code> folder and create <code>registerServiceWorker.js</code> inside the <code>utils</code> folder.</p>
+
+<p><img src="../images/reactant2/1496945149structuring-the-app.png" alt="Structuring the app" /></p>
+
+<p>Your <code>src/containers/App/index.js</code> file should look like this:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/App/index.js
+
+import React, { Component } from 'react';
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div className="App"&gt;
+        Hello World
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default App;
+</code></pre>
+
+<p>Your <code>src/index.js</code> file should look like this:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+import registerServiceWorker from './utils/registerServiceWorker';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
+registerServiceWorker();
+</code></pre>
+
+<p>Go to your browser, and if everything works fine, you'll see <strong>Hello World</strong> on your screen.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/0653c7477298aa4a2b341397b28904f03abacfc6">commit</a> on GitHub.</p>
+
+<h3 id="addingreactrouter">Adding react-router</h3>
+
+<p><a href="https://github.com/ReactTraining/react-router">React-router</a> will help us define the routes for our app. It's very customizable and very popular in the React ecosystem.</p>
+
+<p>We'll be using version <strong>3.0.0</strong> of <strong>react-router</strong>.</p>
+
+<pre><code class="bash language-bash">npm install --save react-router@3.0.0
+</code></pre>
+
+<p>Now, add a new file <code>routes.js</code> inside the <code>src</code> folder with the following code:</p>
+
+<pre><code class="jsx language-jsx">// routes.js
+
+import React from 'react';
+import { Router, Route } from 'react-router';
+
+import App from './containers/App';
+
+const Routes = (props) =&gt; (
+  &lt;Router {...props}&gt;
+    &lt;Route path="/" component={ App }&gt;
+    &lt;/Route&gt;
+  &lt;/Router&gt;
+);
+
+export default Routes;
+</code></pre>
+
+<p>The <code>Router</code> component wraps all the <code>Route</code> components. Based on the <code>path</code> prop of the <code>Route</code> component, the component passed to the <code>component</code> prop will be rendered on the page. Here, we're setting up the root URL (<code>/</code>) to load our <code>App</code> component using the <code>Router</code> component.</p>
+
+<pre><code class="jsx language-jsx">&lt;Router {...props}&gt;
+  &lt;Route path="/" component={ &lt;div&gt;Hello World!&lt;/div&gt; }&gt;
+  &lt;/Route&gt;
+&lt;/Router&gt;
+</code></pre>
+
+<p>The above code is also valid. For the path <code>/</code>, the <code>&lt;div&gt;Hello World!&lt;/div&gt;</code> will be mounted.</p>
+
+<p>Now, we need to call our <code>routes.js</code> file from our <code>src/index.js</code> file. The file should have the following content:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { browserHistory } from 'react-router';
+
+import App from './containers/App';
+import Routes from './routes';
+import registerServiceWorker from './utils/registerServiceWorker';
+
+ReactDOM.render(
+  &lt;Routes history={browserHistory} /&gt;,
+  document.getElementById('root')
+);
+
+registerServiceWorker();
+</code></pre>
+
+<p>Basically, we're mounting our <code>Router</code> component from our <code>routes.js</code> file. We pass in the <code>history</code> prop to it so that the routes know how to handle <a href="https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/history.md#history">history tracking</a>.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/80929148bc71d1e16e7fde09fd34469bce142113">commit</a> on GitHub.</p>
+
+<h3 id="addingfirebase">Adding Firebase</h3>
+
+<p>If you don't have a <a href="https://firebase.google.com/">Firebase</a> account, create one now (it's free!) by going to their website. After you're done creating a new account, log in to your account and go to the <a href="https://console.firebase.google.com/">console</a> page and click on <strong>Add project</strong>.</p>
+
+<p>Enter the name of your project (I'll call mine <strong>reddit-clone</strong>), choose your country, and click on the <strong>Create project</strong> button.</p>
+
+<p>Now, before we proceed, we need to change the <strong>rules</strong> for the database since, by default, Firebase expects the user to be authenticated to be able to read and write data. If you select your project and click on the <strong>Database</strong> tab on the left, you'll be able to see your database. You need to click on the <strong>Rules</strong> tab on the top that will redirect us to a screen which will have the following data:</p>
+
+<pre><code class="javascript language-javascript">{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+</code></pre>
+
+<p>We need to change this to the following:</p>
+
+<pre><code class="javascript language-javascript">{
+  "rules": {
+    ".read": "auth === null",
+    ".write": "auth === null"
+  }
+}
+</code></pre>
+
+<p>This will let users update the database without logging in. If we implemented a flow in which we had authentication before making updates to the database, we would need the default rules provided by Firebase. To keep this application simple, we <em>won't</em> be doing authentication.</p>
+
+
+<div class="box attention">
+        <h4>You Must Make This Modification</h4>
+        <div class="body">
+            <p>If you don't make this modification, Firebase won't let you update the database from your app.</p>
+        </div>
+    </div>
+
+<p>Now, let's add the <code>firebase</code> npm module to our app by running the following code:</p>
+
+<pre><code class="bash language-bash">npm install --save firebase
+</code></pre>
+
+<p>Next, import that module in your <code>App/index.js</code> file as:</p>
+
+<pre><code class="jsx language-jsx">// App/index.js
+
+import * as firebase from "firebase";
+</code></pre>
+
+<p>When we select our project after logging in to Firebase, we'll get an option <strong>Add Firebase to your web app</strong>.</p>
+
+<p><img src="../images/reactant2/1497022354Screen-Shot-2017-06-09-at-21.04.10.png" alt="Add Firebase to your web app" /></p>
+
+<p>If we click on that option, a modal will appear that will show us the <code>config</code> variable which we will use in our <code>componentWillMount</code> method.</p>
+
+<p><img src="../images/reactant2/1497022441Screen-Shot-2017-06-09-at-21.06.23.png" alt="Configs" /></p>
+
+<p>Let's create the Firebase config file. We'll call this file <code>firebase-config.js</code>, and it will contain all the configs necessary to connect our app with Firebase:</p>
+
+<pre><code class="jsx language-jsx">// App/firebase-config.js
+
+export default {
+  apiKey: "AIzaSyBRExKF0cHylh_wFLcd8Vxugj0UQRpq8oc",
+  authDomain: "reddit-clone-53da5.firebaseapp.com",
+  databaseURL: "https://reddit-clone-53da5.firebaseio.com",
+  projectId: "reddit-clone-53da5",
+  storageBucket: "reddit-clone-53da5.appspot.com",
+  messagingSenderId: "490290211297"
+};
+</code></pre>
+
+<p>We'll import our Firebase config into <code>App/index.js</code>:</p>
+
+<pre><code class="jsx language-jsx">// App/index.js
+
+import config from './firebase-config';
+</code></pre>
+
+<p>We'll initialize our Firebase database connection in the <code>constructor</code>.</p>
+
+<pre><code class="jsx language-jsx">// App/index.js
+
+constructor() {
+  super();
+
+  // Initialize Firebase
+  firebase.initializeApp(config);
+}
+</code></pre>
+
+<p>In the <code>componentWillMount()</code> lifecycle hook, we use the package <code>firebase</code> we just installed and call its <code>initializeApp</code> method and passed the <code>config</code> variable to it. This object contains all the data about our app. The <code>initializeApp</code> method will connect our application to our Firebase database so that we can read and write data.</p>
+
+<p>Let's add some data to Firebase to check if our configuration is correct. Go to the <em>Database</em> tab and add the following structure to your database:</p>
+
+<p><img src="../images/reactant2/1496945151test-data.png" alt="Test data" /></p>
+
+<p>Clicking on <em>Add</em> will save the data to our database.</p>
+
+<p><img src="../images/reactant2/1496945145demo-data.png" alt="Demo data" /></p>
+
+<p>Now, let's add some code to our <code>componentWillMount</code> method to make the data appear on our screen:</p>
+
+<pre><code class="jsx language-jsx">// App/index.js
+
+componentWillMount() {
+  …
+
+  let postsRef = firebase.database().ref('posts');
+
+  let _this = this;
+
+  postsRef.on('value', function(snapshot) {
+    console.log(snapshot.val());
+
+    _this.setState({
+      posts: snapshot.val(),
+      loading: false
+      });
+      });
+    }
+</code></pre>
+
+<p><code>firebase.database()</code> gives us a reference to the database service. Using <code>ref()</code>, we can get a specific reference from the database. For example, if we call <code>ref('posts')</code>, we'll be getting the <code>posts</code> reference from our database and storing that reference in <code>postsRef</code>.</p>
+
+<p><code>postsRef.on('value', …)</code> gives us the updated value whenever there's any change in the database. This is very useful when we need a real-time update to our user interface based on any database events.</p>
+
+<p>Using <code>postsRef.once('value', …)</code> will only give us the data once. This is useful for data that only needs to be loaded once and isn't expected to change frequently or require active listening.</p>
+
+<p>After we get the updated value in our <code>on()</code> callback, we store the values in our <code>posts</code> state.</p>
+
+<p>Now we'll see the data appearing on our console.</p>
+
+<p><img src="../images/reactant2/1496945147sample-data.png" alt="Sample data" /></p>
+
+<p>Also, we'll be passing this data down to our children. So, we need to modify the <code>render</code> function of our <code>App/index.js</code> file:</p>
+
+<pre><code class="jsx language-jsx">// App/index.js
+
+render() {
+  return (
+    &lt;div className="App"&gt;
+      {this.props.children &amp;&amp; React.cloneElement(
+        ➥this.props.children, {
+        firebaseRef: firebase.database().ref('posts'),
+        posts: this.state.posts,
+        loading: this.state.loading
+      })}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<p>The main objective here is to make the posts data available in all our children components, which will be passed through <code>react-router</code>.</p>
+
+<p>We're checking if <code>this.props.children</code> exists or not, and if it exists we clone that element and pass all our props to all our children. This is a very efficient way of passing props to dynamic children.</p>
+
+<p>Calling <a href="https://facebook.github.io/react/docs/react-api.html#cloneelement">cloneElement</a> will shallowly merge the already existing props in <code>this.props.children</code> and the props we passed here (<code>firebaseRef</code>, <code>posts</code> and <code>loading</code>).</p>
+
+<p>Using this technique, the <code>firebaseRef</code>, <code>posts</code> and <code>loading</code> props will be available to all routes.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/2c09fc56e503027f5c4a98306816752cee18b48c">commit</a> on GitHub.</p>
+
+<h2 id="connectingtheappwithfirebase">Connecting the App with Firebase</h2>
+
+<p>Firebase can only store data as objects; <a href="https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html">it doesn't have any native support for arrays</a>. We'll store the data in the following format:</p>
+
+<p><img src="../images/reactant2/1496945143database-structure.png" alt="Database structure" /></p>
+
+<p>Add the data in the screenshot above manually so that you can test your views.</p>
+
+<h3 id="addviewsforalltheposts">Add views for all the posts</h3>
+
+<p>Now we'll add views to show all the posts. Create a file <code>src/containers/Posts/index.js</code> with the following content:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/Posts/index.js
+
+import React, { Component } from 'react';
+
+class Posts extends Component {
+  render() {
+    if (this.props.loading) {
+      return (
+        &lt;div&gt;
+          Loading…
+        &lt;/div&gt;
+      );
+    }
+
+    return (
+      &lt;div className="Posts"&gt;
+        { this.props.posts.map((post) =&gt; {
+            return (
+              &lt;div&gt;
+                { post.title }
+              &lt;/div&gt;
+            );
+        })}
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Posts;
+</code></pre>
+
+<p>Here, we're just mapping over the data and rendering it to the user interface.</p>
+
+<p>Next, we need to add this to our <code>routes.js</code> file:</p>
+
+<pre><code class="jsx language-jsx">// routes.js
+
+…
+&lt;Router {...props}&gt;
+  &lt;Route path="/" component={ App }&gt;
+    &lt;Route path="/posts" component={ Posts } /&gt;
+  &lt;/Route&gt;
+&lt;/Router&gt;
+…
+</code></pre>
+
+<p>This is because we want the posts to show up only on the <code>/posts</code> route. So we just pass the <code>Posts</code> component to the <code>component</code> prop and <code>/posts</code> to the <code>path</code> prop of the <code>Route</code> component of react-router.</p>
+
+<p>If we go to the URL <a href="http://localhost:3000/posts">localhost:3000/posts</a>, we'll see the posts from our Firebase database.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/40591cc8e36f5e65ae477d12307dd7c0d600a38b">commit</a> on GitHub.</p>
+
+<h3 id="addviewstowriteanewpost">Add views to write a new post</h3>
+
+<p>Now, let's create a view from where we can add a new post. Create a file <code>src/containers/AddPost/index.js</code> with the following content:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/AddPost/index.js
+
+import React, { Component } from 'react';
+
+class AddPost extends Component {
+  constructor() {
+    super();
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  state = {
+    title: ''
+  };
+
+  handleChange = (e) =&gt; {
+    this.setState({
+      title: e.target.value
+    });
+  }
+
+  handleSubmit = (e) =&gt; {
+    e.preventDefault();
+
+    this.props.firebaseRef.push({
+      title: this.state.title
+    });
+
+    this.setState({
+      title: ''
+    });
+  }
+
+  render() {
+    return (
+      &lt;div className="AddPost"&gt;
+        &lt;input
+          type="text"
+          placeholder="Write the title of your post"
+          onChange={ this.handleChange }
+          value={ this.state.title }
+        /&gt;
+        &lt;button
+          type="submit"
+          onClick={ this.handleSubmit }
+        &gt;
+          Submit
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default AddPost;
+</code></pre>
+
+<p>Here, the <code>handleChange</code> method updates our state with the value present in the input box. Now, when we click on the button, the <code>handleSubmit</code> method is triggered. The <code>handleSubmit</code> method is responsible for making the API request to write to our database. We do it using the <code>firebaseRef</code> prop that we passed to all the children.</p>
+
+<pre><code class="jsx language-jsx">this.props.firebaseRef.push({
+  title: this.state.title
+});
+</code></pre>
+
+<p>The above block of code sets the current value of the title to our database.</p>
+
+<p>After the new post has been stored in the database, we make the input box empty again, ready to add a new post.</p>
+
+<p>Now we need to add this page to our routes:</p>
+
+<pre><code class="jsx language-jsx">// routes.js
+
+import React from 'react';
+import { Router, Route } from 'react-router';
+
+import App from './containers/App';
+import Posts from './containers/Posts';
+import AddPost from './containers/AddPost';
+
+const Routes = (props) =&gt; (
+  &lt;Router {...props}&gt;
+    &lt;Route path="/" component={ App }&gt;
+      &lt;Route path="/posts" component={ Posts } /&gt;
+      &lt;Route path="/add-post" component={ AddPost } /&gt;
+    &lt;/Route&gt;
+  &lt;/Router&gt;
+);
+
+export default Routes;
+</code></pre>
+
+<p>Here, we just added the <code>/add-post</code> route so that we can add a new post from that route. Hence, we passed the <code>AddPost</code> component to its component prop.</p>
+
+<p>Also, let's modify the <code>render</code> method of our <code>src/containers/Posts/index.js</code> file so that it can iterate over objects instead of arrays (since Firebase doesn't store arrays).</p>
+
+<pre><code class="jsx language-jsx">// src/containers/Posts/index.js
+
+render() {
+    let posts = this.props.posts;
+
+    if (this.props.loading) {
+      return (
+        &lt;div&gt;
+          Loading...
+        &lt;/div&gt;
+      );
+    }
+
+    return (
+      &lt;div className="Posts"&gt;
+        { Object.keys(posts).map(function(key) {
+            return (
+              &lt;div key={key}&gt;
+                { posts[key].title }
+              &lt;/div&gt;
+            );
+        })}
+      &lt;/div&gt;
+    );
+  }
+</code></pre>
+
+<p>Now, if we go to <a href="http://localhost:3000/add-post">localhost:3000/add-post</a>, we can add a new post. After clicking on the <strong>submit</strong> button, the new post will appear immediately on the <a href="http://localhost:3000/posts">posts page</a>.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/c83e09b46989a7fb9ec8d40d8fdadd570fb2eaec">commit</a> on GitHub.</p>
+
+<h3 id="implementvoting">Implement voting</h3>
+
+<p>Now we need to allow users to vote on a post. For that, let's modify the <code>render</code> method of our <code>src/containers/App/index.js</code>:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/App/index.js
+
+render() {
+  return (
+    &lt;div className="App"&gt;
+      {this.props.children &amp;&amp; React.cloneElement(this.props.
+        ➥children, {
+        // https://github.com/ReactTraining/react-router/blob/v3/
+        ➥examples/passing-props-to-children/app.js#L56-L58
+        firebase: firebase.database(),
+        posts: this.state.posts,
+        loading: this.state.loading
+      })}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<p>We changed the <code>firebase</code> prop from <code>firebaseRef: firebase.database().ref('posts')</code> to <code>firebase: firebase.database()</code> because we'll be using Firebase's <a href="https://firebase.google.com/docs/database/web/read-and-write"><code>set</code></a> method to update our voting count. In this way, if we had more Firebase refs, it would be very easy for us to handle them by using only the <code>firebase</code> prop.</p>
+
+<p>Before proceeding with the voting, let's modify the <code>handleSubmit</code> method in our <code>src/containers/AddPost/index.js</code> file a little bit:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/AddPost/index.js
+
+handleSubmit = (e) =&gt; {
+  …
+  this.props.firebase.ref('posts').push({
+    title: this.state.title,
+    upvote: 0,
+    downvote: 0
+  });
+  …
+}
+</code></pre>
+
+<p>We renamed our <code>firebaseRef</code> prop to <code>firebase</code> prop. So, we change the <code>this.props.firebaseRef.push</code> to <code>this.props.firebase.ref('posts').push</code>.</p>
+
+<p>Now we need to modify our <code>src/containers/Posts/index.js</code> file to accommodate the voting.</p>
+
+<p>The <code>render</code> method should be modified to this:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/Posts/index.js
+
+render() {
+  let posts = this.props.posts;
+  let _this = this;
+
+  if (!posts) {
+    return false;
+  }
+
+  if (this.props.loading) {
+    return (
+      &lt;div&gt;
+        Loading...
+      &lt;/div&gt;
+    );
+  }
+
+  return (
+    &lt;div className="Posts"&gt;
+      { Object.keys(posts).map(function(key) {
+          return (
+            &lt;div key={key}&gt;
+              &lt;div&gt;Title: { posts[key].title }&lt;/div&gt;
+              &lt;div&gt;Upvotes: { posts[key].upvote }&lt;/div&gt;
+              &lt;div&gt;Downvotes: { posts[key].downvote }&lt;/div&gt;
+              &lt;div&gt;
+                &lt;button
+                  onClick={ _this.handleUpvote.bind(this, 
+                    ➥posts[key], key) }
+                  type="button"
+                &gt;
+                  Upvote
+                &lt;/button&gt;
+                &lt;button
+                  onClick={ _this.handleDownvote.bind(this, 
+                    ➥posts[key], key) }
+                  type="button"
+                &gt;
+                  Downvote
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          );
+      })}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<p>When the buttons are clicked, the <strong>upvote</strong> or <strong>downvote</strong> count will be incremented in our Firebase DB. To handle that logic, we create two more methods: <code>handleUpvote()</code> and <code>handleDownvote()</code>:</p>
+
+<pre><code class="jsx language-jsx">// src/containers/Posts/index.js
+
+handleUpvote = (post, key) =&gt; {
+  this.props.firebase.ref('posts/' + key).set({
+    title: post.title,
+    upvote: post.upvote + 1,
+    downvote: post.downvote
+  });
+}
+
+handleDownvote = (post, key) =&gt; {
+  this.props.firebase.ref('posts/' + key).set({
+    title: post.title,
+    upvote: post.upvote,
+    downvote: post.downvote + 1
+  });
+}
+</code></pre>
+
+<p>In these two methods, whenever a user clicks on either of the buttons, the respective count is incremented in the database and is instantly updated in the browser.</p>
+
+<p>If we open two tabs with <a href="http://localhost:3000/posts">localhost:3000/posts</a> and click on the voting buttons of the posts, we'll see each of the tabs get updated almost instantly. This is the magic of using a real-time database like Firebase.</p>
+
+<p>You can check my <a href="https://github.com/sitepoint-editors/reddit-clone/commit/54a15d22b5e18771ea6084ae70575e0fc47ed016">commit</a> on GitHub.</p>
+
+<p>In the <a href="https://github.com/sitepoint-editors/reddit-clone">repository</a>, I've added the <code>/posts</code> route to the <code>IndexRoute</code> of the application just to show the posts on <a href="http://localhost:3000/">localhost:3000</a> by default. You can check that <a href="https://github.com/sitepoint-editors/reddit-clone/commit/7c621a212fe47036248c3317dedb1eb5788dce71">commit</a> on GitHub.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The end result is admittedly a bit barebones, as we didn't try to implement any design (although <a href="https://sitepoint-editors.github.io/reddit-clone/">the demo</a> has some basic styles added). We also didn't add any authentication, in order to reduce the complexity and the length of the tutorial, but obviously any real-world application would require it.</p>
+
+<p>Firebase is really useful for places where you don't want to create and maintain a separate back-end application, or where you want real-time data without investing too much time developing your APIs. It plays really well with React, as you can hopefully see from the article.</p>
+
+<p>I hope this tutorial helps you in your future projects. Please feel free to share your feedback in the comments section below.</p>
+
+<h3 id="furtherreading">Further reading</h3>
+
+<ul>
+<li><a href="https://www.sitepoint.com/create-react-app/">Getting React Projects Ready Fast with Pre-configured Builds</a></li>
+
+<li><a href="https://www.sitepoint.com/tutorial-build-a-react-js-application-with-user-login-and-authentication/">Build a React Application with User Login and Authentication</a></li>
+
+<li><a href="https://howtofirebase.com/firebase-authentication-for-web-d58aad62cf6d">Firebase Authentication for Web</a></li>
+
+<li><a href="https://css-tricks.com/learning-react-router/">Leveling Up With React: React Router</a></li>
+</ul>
+            
+ 
+
+ 
+
+    </div>
+
+    <div class="chapter">
+        <div class="ch-head">Chapter</div>
+        <h1 id="chap2">Build a CRUD App Using React, Redux and FeathersJS</h1>
+        <h3>by Michael Wanyoike</h3>
+        <p>Building a modern project requires splitting the logic into front-end and back-end code. The reason behind this move is to promote code re-usability. For example, we may need to build a native mobile application that accesses the back-end API. Or we may be developing a module that will be part of a large modular platform.</p>
+
+
+
+<p>The popular way of building a server-side API is to use a library like Express or Restify. These libraries make creating RESTful routes easy. The problem with these libraries is that we'll find ourselves writing a <em>ton</em> of <strong>repeating code</strong>. We'll also need to write code for authorization and other middleware logic.</p>
+
+<p>To escape this dilemma, we can use a framework like <a href="http://loopback.io/getting-started/">Loopback</a> or <a href="http://feathersjs.com/">Feathers</a> to help us generate an API.</p>
+
+<p>At the time of writing, Loopback has more GitHub stars and downloads than Feathers. Loopback is a great library for generating RESTful CRUD endpoints in a short period of time. However, it does have a slight learning curve and the <a href="http://loopback.io/doc/en/lb3/">documentation</a> is not easy to get along with. It has stringent framework requirements. For example, all models must inherit one of its built-in model class. If you need real-time capabilities in Loopback, be prepared to do some additional coding to make it work.</p>
+
+
+<p>FeathersJS, on the other hand, is much easier to get started with and has realtime support built-in. Quite recently, the Auk version was released (because Feathers is so modular, they use bird names for version names) which introduced a vast number of changes and improvements in a number of areas. According to a <a href="https://blog.feathersjs.com/feathers-flightpath-issue-2-11ae674b1e1e">post</a> they published on their blog, they are now the <strong>4th most popular real-time web framework</strong>. It has excellent <a href="https://docs.feathersjs.com/">documentation</a>, and they've covered pretty much any area we can think of on building a real-time API.</p>
+
+<p>What makes Feathers amazing is its simplicity. The entire framework is modular and we only need to install the features we need. Feathers itself is a thin wrapper built on top of <a href="https://www.npmjs.com/package/express">Express</a>, where they've added new features --- <a href="https://docs.feathersjs.com/services/readme.html">services</a> and <a href="https://docs.feathersjs.com/hooks/readme.html">hooks</a>. Feathers also allows us to effortlessly send and receive data over WebSockets.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you get started with the tutorial, you'll need to have a solid foundation in the following topics:</p>
+
+<ul>
+<li>How to write <a href="https://www.sitepoint.com/es6-default-parameters/">ES6 JavaScript code</a></li>
+
+<li>How to create <a href="https://www.sitepoint.com/getting-started-react-jsx/">React</a> components</li>
+
+<li><a href="https://www.sitepoint.com/immutability-javascript/">Immutability in JavaScript</a></li>
+
+<li>How to <a href="https://www.sitepoint.com/premium/screencasts/managing-state-with-redux">manage state with Redux</a></li>
+</ul>
+
+<p>On your machine, you'll need to have installed recent versions of:</p>
+
+<ul>
+<li>NodeJS 6+</li>
+
+<li><a href="https://www.mongodb.com/cloud/atlas">Mongodb 3.4+</a></li>
+
+<li><a href="https://yarnpkg.com/en/">Yarn</a> package manager (optional)</li>
+
+<li>Chrome browser</li>
+</ul>
+
+<p>If you've never written a database API in JavaScript before, I'd recommend first taking a look at <a href="https://www.sitepoint.com/creating-restful-apis-express-4/">this tutorial on creating RESTful APIs</a>.</p>
+
+
+
+
+
+
+<h2 id="scaffoldtheapp">Scaffold the App</h2>
+
+<p>We'e going to build a CRUD contact manager application using <a href="https://facebook.github.io/react/">React</a>, <a href="http://redux.js.org/">Redux</a>, Feathers and <a href="https://www.mongodb.com/cloud/atlas">MongoDB</a>. You can take a look at the completed project <a href="https://GitHub.com/sitepoint-editors/redux-crud-example">here</a>.</p>
+
+<p>In this tutorial, I'll show you how to build the application from the bottom up. We'll kick-start our project using the <a href="https://www.sitepoint.com/create-react-app/">create-react-app</a> tool.</p>
+
+<pre><code class="bash language-bash"># scaffold a new react project
+create-react-app react-contact-manager
+cd react-contact-manager
+
+# delete unnecessary files
+rm src/logo.svg src/App.css
+</code></pre>
+
+<p>Use your favorite code editor and remove all the content in index.css. Open App.js and rewrite the code like this:</p>
+
+<pre><code class="jsx language-jsx">import React, { Component } from 'react';
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Contact Manager&lt;/h1&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default App;
+</code></pre>
+
+<p>Make sure to run <code>yarn start</code> to ensure the project is running as expected. Check the console tab to ensure that our project is running cleanly with no warnings or errors. If everything is running smoothly, use <code>Ctrl+C</code> to stop the server.</p>
+
+<h2 id="buildtheapiserverwithfeathers">Build the API Server with Feathers</h2>
+
+<p>Let's proceed with generating the back-end API for our CRUD project using the <code>feathers-cli</code> tool.</p>
+
+<pre><code class="bash language-bash"># Install Feathers command-line tool
+npm install -g feathers-cli
+
+# Create directory for the back-end code
+mkdir backend
+cd backend
+
+# Generate a feathers back-end API server
+feathers generate app
+
+? Project name | backend
+? Description | contacts API server
+? What folder should the source files live in? | src
+? Which package manager are you using (has to be installed 
+➥globally)? | Yarn
+? What type of API are you making? | REST, Realtime via Socket.io
+
+# Generate RESTful routes for Contact Model
+feathers generate service
+
+? What kind of service is it? | Mongoose
+? What is the name of the service? | contact
+? Which path should the service be registered on? | /contacts
+? What is the database connection string? | 
+➥mongodb://localhost:27017/backend
+
+
+# Install email field type
+yarn add mongoose-type-email
+
+# Install the nodemon package
+yarn add nodemon --dev
+</code></pre>
+
+<p>Open <code>backend/package.json</code> and update the start script to use <a href="https://GitHub.com/remy/nodemon">nodemon</a> so that the API server will restart automatically whenever we make changes.</p>
+
+<pre><code class="jsx language-jsx">// backend/package.json
+
+…
+"scripts": {
+  ...
+  "start": "nodemon src/",
+  …
+},
+…
+</code></pre>
+
+<p>Let's open <code>backend/config/default.json</code>. This is where we can configure MongoDB connection parameters and other settings. I've also increased the default paginate value to 50, since in this tutorial we won't write front-end logic to deal with pagination.</p>
+
+<pre><code class="jsx language-jsx">{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 50,
+    "max": 50
+  },
+  "mongodb": "mongodb://localhost:27017/backend"
+}
+</code></pre>
+
+<p>Open <code>backend/src/models/contact.model.js</code> and update the code as follows:</p>
+
+<pre><code class="jsx language-jsx">// backend/src/models/contact.model.js
+
+require('mongoose-type-email');
+
+module.exports = function (app) {
+  const mongooseClient = app.get('mongooseClient');
+  const contact = new mongooseClient.Schema({
+    name : {
+      first: {
+        type: String,
+        required: [true, 'First Name is required']
+      },
+      last: {
+        type: String,
+        required: false
+      }
+    },
+    email : {
+      type: mongooseClient.SchemaTypes.Email,
+      required: [true, 'Email is required']
+    },
+    phone : {
+      type: String,
+      required: [true, 'Phone is required'],
+      validate: {
+        validator: function(v) {
+          return /^\+(?:[0-9] ?){6,14}[0-9]$/.test(v);
+        },
+        message: '{VALUE} is not a 
+        ➥valid international phone number!'
+      }
+    },
+    createdAt: { type: Date, 'default': Date.now },
+    updatedAt: { type: Date, 'default': Date.now }
+  });
+
+  return mongooseClient.model('contact', contact);
+};
+</code></pre>
+
+<p>In addition to generating the contact service, Feathers has also generated a test case for us. We need to fix the service name first for it to pass:</p>
+
+<pre><code class="jsx language-jsx">// backend/test/services/contact.test.js
+
+const assert = require('assert');
+const app = require('../../src/app');
+
+describe('\'contact\' service', () =&gt; {
+  it('registered the service', () =&gt; {
+    const service = app.service('contacts'); // change 
+    ➥contact to contacts
+
+    assert.ok(service, 'Registered the service');
+  });
+});
+</code></pre>
+
+<p>Open a new terminal and inside the backend directory, execute <code>yarn test</code>. You should have all the tests running successfully. Go ahead and execute <code>yarn start</code> to start the backend server. Once the server has finished starting it should print the line: <code>'Feathers application started on localhost:3030'</code>.</p>
+
+<p>Launch your browser and access the url: <a href="http://localhost:3030/contacts">http://localhost:3030/contacts</a>. You should expect to receive the following JSON response:</p>
+
+<pre><code class="javascript language-javascript">{"total":0,"limit":50,"skip":0,"data":[]}
+</code></pre>
+
+<p>Now let's use Postman to confirm all CRUD restful routes are working. You can launch Postman using <a href="https://www.getpostman.com/run-collection/39470d10b78a47070620">this link</a>.</p>
+
+
+
+<p>If you're new to Postman, check out this <a href="https://www.sitepoint.com/api-building-and-testing-made-easier-with-postman/">tutorial</a>. When you hit the SEND button, you should get your data back as the response along with three additional fields --- <code>_id</code>, <code>createdAt</code> and <code>updatedAt</code>.</p>
+
+<p>Use the following JSON data to make a POST request using Postman. Paste this in the body and set content-type to <code>application/json</code>:</p>
+
+<pre><code class="javascript language-javascript">{
+  "name": {
+    "first": "Tony",
+    "last": "Stark"
+  },
+  "phone": "+18138683770",
+  "email": "tony@starkenterprises.com"
+}
+</code></pre>
+
+<h2 id="buildtheui">Build the UI</h2>
+
+<p>Let's start by installing the necessary front-end dependencies. We'll use <a href="https://semantic-ui.com/">semantic-ui css</a>/<a href="https://react.semantic-ui.com/introduction">semantic-ui react</a> to style our pages and <a href="https://reacttraining.com/react-router/">react-router-dom</a> to handle route navigation.</p>
+
+
+
+<div class="box attention">
+        <h4>Where To Install</h4>
+        <div class="body">
+                <p>Make sure you are installing <em>outside</em> the backend directory.</p>
+        </div>
+    </div>
+
+<pre><code class="bash language-bash">// Install semantic-ui
+yarn add semantic-ui-css semantic-ui-react
+
+// Install react-router
+yarn add react-router-dom
+</code></pre>
+
+<p>Update the project structure by adding the following directories and files:</p>
+
+<pre><code class="text language-text">|-- react-contact-manager
+    |-- backend
+    |-- node_modules
+    |-- public
+    |-- src
+        |-- App.js
+        |-- App.test.js
+        |-- index.css
+        |-- index.js
+        |-- components
+        |   |-- contact-form.js #(new)
+        |   |-- contact-list.js #(new)
+        |-- pages
+            |-- contact-form-page.js #(new)
+            |-- contact-list-page.js #(new)
+</code></pre>
+
+<p>Let's quickly populate the JS files with some placeholder code.</p>
+
+<p>For the component <code>contact-list.js</code>, we'll write it in this syntax since it will be a purely presentational component.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-list.js
+
+import React from 'react';
+
+export default function ContactList(){
+  return (
+    &lt;div&gt;
+      &lt;p&gt;No contacts here&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+
+<p>For the top-level containers, I use pages. Let's provide some code for the <code>contact-list-page.js</code></p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-list-page.js
+
+import React, { Component} from 'react';
+import ContactList from '../components/contact-list';
+
+class ContactListPage extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;List of Contacts&lt;/h1&gt;
+        &lt;ContactList/&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default ContactListPage;
+</code></pre>
+
+<p>For the <code>contact-form</code> component, it needs to be smart, since it's required to manage its own state, specifically form fields. For now, we'll place this placeholder code.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-form.js
+import React, { Component } from 'react';
+
+class ContactForm extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Form under construction&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default ContactForm;
+</code></pre>
+
+<p>Populate the <code>contact-form-page</code> with this code:</p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-form-page.js
+
+import React, { Component} from 'react';
+import ContactForm from '../components/contact-form';
+
+class ContactFormPage extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;ContactForm/&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default ContactFormPage;
+</code></pre>
+
+<p>Now, let's create the navigation menu and define the routes for our App. <code>App.js</code> is often referred to as the 'layout template' for the Single Page Application.</p>
+
+<pre><code class="jsx language-jsx">// src/App.js
+
+import React, { Component } from 'react';
+import { NavLink, Route } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+import ContactListPage from './pages/contact-list-page';
+import ContactFormPage from './pages/contact-form-page';
+
+class App extends Component {
+  render() {
+    return (
+      &lt;Container&gt;
+        &lt;div className="ui two item menu"&gt;
+          &lt;NavLink className="item" activeClassName="active" 
+          ➥exact to="/"&gt;
+            Contacts List
+          &lt;/NavLink&gt;
+          &lt;NavLink className="item" activeClassName="active" 
+          ➥exact to="/contacts/new"&gt;
+            Add Contact
+          &lt;/NavLink&gt;
+        &lt;/div&gt;
+        &lt;Route exact path="/" component={ContactListPage}/&gt;
+        &lt;Route path="/contacts/new" component={ContactFormPage}/&gt;
+        &lt;Route path="/contacts/edit/:_id" 
+        ➥component={ContactFormPage}/&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+
+export default App;
+</code></pre>
+
+<p>Finally, update the <code>index.js</code> file with this code where we import semantic-ui CSS for styling and BrowserRouter for using the HTML5 history API that keeps our app in sync with the URL.</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import 'semantic-ui-css/semantic.min.css';
+import './index.css';
+
+ReactDOM.render(
+  &lt;BrowserRouter&gt;
+    &lt;App /&gt;
+  &lt;/BrowserRouter&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+
+<p>Go back to the terminal and execute <code>yarn start</code>. You should have a similar view to the screenshot below:</p>
+
+<p><img src="../images/reactant2/149164191501-build-ui.png" alt="Screenshot of the empty list of contacts" /></p>
+
+<h2 id="managereactstatewithredux">Manage React State with Redux</h2>
+
+<p>Stop the server with <code>ctrl+c</code> and install the following packages using yarn package manager:</p>
+
+<pre><code class="bash language-bash">yarn add redux react-redux redux-promise-middleware redux-thunk 
+➥redux-devtools-extension axios
+</code></pre>
+
+<p>Phew! That's a whole bunch of packages for setting up Redux. I assume you are already familiar with Redux if you're reading this tutorial. <a href="https://github.com/gaearon/redux-thunk">Redux-thunk</a> allows writing action creators as async functions while <a href="https://www.npmjs.com/package/redux-promise-middleware">redux-promise-middleware</a> reduces some Redux boilerplate code for us by handling dispatching of pending, fulfilled, and rejected actions on our behalf.</p>
+
+<p>Feathers does include a light-weight client package that helps communicate with the API, but it's also really easy to use other client packages. For this tutorial, we'll use the <a href="https://www.npmjs.com/package/axios">Axios</a> HTTP client.</p>
+
+<p>The <a href="https://www.npmjs.com/package/redux-devtools-extension">redux-devtools-extension</a> an amazing tool that keeps track of dispatched actions and state changes. You'll need to install its <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en">chrome extension</a> for it to work.</p>
+
+<p><img src="../images/reactant2/149164192002-redux-dev-tool-chrome.png" alt="Chrome Redux Dev Tool" /></p>
+
+<p>Next, let's setup our Redux directory structure as follows:</p>
+
+<pre><code class="text language-text">|-- react-contact-manager
+    |-- backend
+    |-- node_modules
+    |-- public
+    |-- src
+        |-- App.js
+        |-- App.test.js
+        |-- index.css
+        |-- index.js
+        |-- contact-data.js #new
+        |-- store.js #new
+        |-- actions #new
+            |-- contact-actions.js #new
+            |-- index.js #new
+        |-- components
+        |-- pages
+        |-- reducers #new
+            |-- contact-reducer.js #new
+            |-- index.js #new
+</code></pre>
+
+<p>Let's start by populating <code>contacts-data.js</code> with some test data:</p>
+
+<pre><code class="jsx language-jsx">// src/contact-data.js
+
+export const contacts = [
+  {
+    _id: "1",
+    name: {
+      first:"John",
+      last:"Doe"
+    },
+    phone:"555",
+    email:"john@gmail.com"
+  },
+  {
+    _id: "2",
+    name: {
+      first:"Bruce",
+      last:"Wayne"
+    },
+    phone:"777",
+    email:"bruce.wayne@gmail.com"
+  }
+];
+</code></pre>
+
+<p>Define <code>contact-actions.js</code> with the following code. For now, we'll fetch data from the <code>contacts-data.js</code> file.</p>
+
+<pre><code class="jsx language-jsx">// src/actions/contact-actions.js
+
+import { contacts } from '../contacts-data';
+
+export function fetchContacts(){
+  return dispatch =&gt; {
+    dispatch({
+      type: 'FETCH_CONTACTS',
+      payload: contacts
+    })
+  }
+}
+</code></pre>
+
+<p>In <code>contact-reducer.js</code>, let's write our handler for the <code>'FETCH_CONTACT'</code> action. We'll store the contacts data in an array called <code>'contacts'</code>.</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/contact-reducer.js
+
+const defaultState = {
+  contacts: []
+}
+
+export default (state=defaultState, action={}) =&gt; {
+  switch (action.type) {
+    case 'FETCH_CONTACTS': {
+      return {
+        ...state,
+        contacts: action.payload
+      }
+    }
+    default:
+      return state;
+  }
+}
+</code></pre>
+
+<p>In <code>reducers/index.js</code>, we'll combine all reducers here for easy export to our Redux store.</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/index.js
+
+import { combineReducers } from 'redux';
+import ContactReducer from './contact-reducer';
+
+const reducers = {
+  contactStore: ContactReducer
+}
+
+const rootReducer = combineReducers(reducers);
+
+export default rootReducer;
+</code></pre>
+
+<p>In <code>store.js</code>, we'll import the necessary dependencies to construct our Redux store. We'll also set up the <code>redux-devtools-extension</code> here to enable us to monitor the Redux store using the <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en">Chrome extension</a>.</p>
+
+<pre><code class="jsx language-jsx">// src/store.js
+
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import promise from "redux-promise-middleware";
+import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from "./reducers";
+
+const middleware = composeWithDevTools(applyMiddleware(promise(),
+➥ thunk));
+
+export default createStore(rootReducer, middleware);
+</code></pre>
+
+<p>Open <code>index.js</code> and update the render method where we inject the store using Redux's Provider class.</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from "./store"
+import 'semantic-ui-css/semantic.min.css';
+import './index.css';
+
+ReactDOM.render(
+  &lt;BrowserRouter&gt;
+    &lt;Provider store={store}&gt;
+      &lt;App /&gt;
+    &lt;/Provider&gt;
+  &lt;/BrowserRouter&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+
+<p>Let's run <code>yarn start</code> to make sure everything is running so far.</p>
+
+<p>Next, we'll <strong>connect</strong> our component <code>contact-list</code> with the Redux store we just created. Open <code>contact-list-page</code> and update the code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-list-page
+
+import React, { Component} from 'react';
+import { connect } from 'react-redux';
+import ContactList from '../components/contact-list';
+import { fetchContacts } from '../actions/contact-actions';
+
+class ContactListPage extends Component {
+
+  componentDidMount() {
+    this.props.fetchContacts();
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;List of Contacts&lt;/h1&gt;
+        &lt;ContactList contacts={this.props.contacts}/&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+// Make contacts  array available in  props
+function mapStateToProps(state) {
+  return {
+      contacts : state.contactStore.contacts
+  }
+}
+
+export default connect(mapStateToProps, {fetchContacts})
+➥(ContactListPage);
+</code></pre>
+
+<p>We've made the contacts array in store and the <code>fetchContacts</code> function available to <code>ContactListPage</code> component via <code>this.props</code> variable. We can now pass the contacts array down to the <code>ContactList</code> component.</p>
+
+<p>For now, let's update the code such that we can display a list of contacts.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-list
+
+import React from 'react';
+
+export default function ContactList({contacts}){
+
+  const list = () =&gt; {
+    return contacts.map(contact =&gt; {
+      return (
+        &lt;li key={contact._id}&gt;{contact.name.first} 
+        ➥{contact.name.last}&lt;/li&gt;
+      )
+    })
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;ul&gt;
+        { list() }
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+
+<p>If you go back to the browser, you should have something like this:</p>
+
+<p><img src="../images/reactant2/149164192203-contacts-list.png" alt="Screenshot of the contact list showing two contacts" /></p>
+
+<p>Let's make the list UI look more attractive by using semantic-ui's <em>Card</em> component. In the components folder, create a new file <code>contact-card.js</code> and paste this code:</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-card.js
+
+import React from 'react';
+import { Card, Button, Icon } from 'semantic-ui-react'
+
+export default function ContactCard({contact, deleteContact}) {
+  return (
+    &lt;Card&gt;
+      &lt;Card.Content&gt;
+        &lt;Card.Header&gt;
+          &lt;Icon name='user outline'/&gt; {contact.name.first}
+          ➥ {contact.name.last}
+        &lt;/Card.Header&gt;
+        &lt;Card.Description&gt;
+          &lt;p&gt;&lt;Icon name='phone'/&gt; {contact.phone}&lt;/p&gt;
+          &lt;p&gt;&lt;Icon name='mail outline'/&gt; {contact.email}&lt;/p&gt;
+        &lt;/Card.Description&gt;
+      &lt;/Card.Content&gt;
+      &lt;Card.Content extra&gt;
+        &lt;div className="ui two buttons"&gt;
+          &lt;Button basic color="green"&gt;Edit&lt;/Button&gt;
+          &lt;Button basic color="red"&gt;Delete&lt;/Button&gt;
+        &lt;/div&gt;
+      &lt;/Card.Content&gt;
+    &lt;/Card&gt;
+  )
+}
+
+ContactCard.propTypes = {
+  contact: React.PropTypes.object.isRequired
+}
+</code></pre>
+
+<p>Update <code>contact-list</code> component to use the new <code>ContactCard</code> component</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-list.js
+
+import React from 'react';
+import { Card } from 'semantic-ui-react';
+import ContactCard from './contact-card';
+
+export default function ContactList({contacts}){
+
+  const cards = () =&gt; {
+    return contacts.map(contact =&gt; {
+      return (
+        &lt;ContactCard key={contact._id} contact={contact}/&gt;
+      )
+    })
+  }
+
+  return (
+    &lt;Card.Group&gt;
+      { cards() }
+    &lt;/Card.Group&gt;
+  )
+}
+</code></pre>
+
+<p>The list page should now look like this:</p>
+
+<p><img src="../images/reactant2/149164192404-contacts-card.png" alt="The two contacts rendered with the semantic-ui styles" /></p>
+
+<h2 id="serversidevalidationwithreduxform">Server-side Validation with Redux-Form</h2>
+
+<p>Now that we know the Redux store is properly linked up with the React components, we can now make a real fetch request to the database and use the data populate our contact list page. There are several ways to do this, but the way I'll show is surprisingly simple.</p>
+
+<p>First, we need to configure an Axios client that can connect to the back-end server.</p>
+
+<pre><code class="jsx language-jsx">// src/actions/index.js
+import axios from "axios";
+
+export const client = axios.create({
+  baseURL: "http://localhost:3030",
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+</code></pre>
+
+<p>Next, we'll update the <code>contact-actions.js</code> code to fetch contacts from the database via a GET request using the Axios client.</p>
+
+<pre><code class="jsx language-jsx">// src/actions/contact-actions.js
+
+import { client } from './';
+
+const url = '/contacts';
+
+export function fetchContacts(){
+  return dispatch =&gt; {
+    dispatch({
+      type: 'FETCH_CONTACTS',
+      payload: client.get(url)
+    })
+  }
+}
+</code></pre>
+
+<p>Update <code>contact-reducer.js</code> as well since the action and the payload being dispatched is now different.</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/contact-reducer.js
+
+…
+    case "FETCH_CONTACTS_FULFILLED": {
+      return {
+        ...state,
+        contacts: action.payload.data.data || action.payload.data
+        ➥ // in case pagination is disabled
+      }
+    }
+…
+</code></pre>
+
+<p>After saving, refresh your browser, and ensure the back-end server is running at <code>localhost:3030</code>. The contact list page should now be displaying data from the database.</p>
+
+<h2 id="handlecreateandupdaterequestsusingreduxform">Handle Create and Update Requests using Redux-Form</h2>
+
+<p>Next, let's look at how to add new contacts, and to do that we need forms. At first, building a form looks quite easy. But when we start thinking about client-side validation and controlling when errors should be displayed, it becomes tricky. In addition, the back-end server does its own validation, which we also need to display its errors on the form.</p>
+
+<p>Rather than implement all the form functionality ourselves, we'll enlist the help of a library called <a href="https://www.npmjs.com/package/redux-form">Redux-Form</a>. We'll also use a nifty package called <a href="https://www.npmjs.com/package/classnames">Classnames</a> that will help us highlight fields with validation errors.</p>
+
+<p>We need to stop the server with <code>ctrl+c</code> before installing the following packages:</p>
+
+<pre><code class="bash language-bash">yarn add redux-form classnames
+</code></pre>
+
+<p>We can now start the server after the packages have finished installing.</p>
+
+<p>Let's first quickly add this css class to the <code>index.css</code> file to style the form errors:</p>
+
+<pre><code class="css language-css">/* src/index.css */
+
+.error {
+  color: #9f3a38;
+}
+</code></pre>
+
+<p>Then let's add redux-form's reducer to the <code>combineReducers</code> function in <code>reducers/index.js</code></p>
+
+<pre><code class="jsx language-jsx">// src/reducers/index.js
+
+…
+import { reducer as formReducer } from 'redux-form';
+
+const reducers = {
+  contactStore: ContactReducer,
+  form: formReducer
+}
+…
+</code></pre>
+
+<p>Next, open <code>contact-form.js</code> and build the form UI with this code:</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-form
+
+import React, { Component } from 'react';
+import { Form, Grid, Button } from 'semantic-ui-react';
+import { Field, reduxForm } from 'redux-form';
+import classnames from 'classnames';
+
+class ContactForm extends Component {
+
+  renderField = ({ input, label, type, meta: { touched, error }
+  ➥ }) =&gt; (
+    &lt;Form.Field className={classnames({error:touched &amp;&amp; error})}&gt;
+      &lt;label&gt;{label}&lt;/label&gt;
+      &lt;input {...input} placeholder={label} type={type}/&gt;
+      {touched &amp;&amp; error &amp;&amp; &lt;span className="error"&gt;
+      ➥{error.message}&lt;/span&gt;}
+    &lt;/Form.Field&gt;
+  )
+
+  render() {
+    const { handleSubmit, pristine, submitting, loading } = this.
+    ➥props;
+
+    return (
+      &lt;Grid centered columns={2}&gt;
+        &lt;Grid.Column&gt;
+          &lt;h1 style={{marginTop:"1em"}}&gt;Add New Contact&lt;/h1&gt;
+          &lt;Form onSubmit={handleSubmit} loading={loading}&gt;
+            &lt;Form.Group widths='equal'&gt;
+              &lt;Field name="name.first" type="text" component=
+              ➥{this.renderField} label="First Name"/&gt;
+              &lt;Field name="name.last" type="text" component=
+              ➥{this.renderField} label="Last Name"/&gt;
+            &lt;/Form.Group&gt;
+            &lt;Field name="phone" type="text" component=
+            ➥{this.renderField} label="Phone"/&gt;
+            &lt;Field name="email" type="text" component=
+            ➥{this.renderField} label="Email"/&gt;
+            &lt;Button primary type='submit' disabled={pristine || 
+            ➥submitting}&gt;Save&lt;/Button&gt;
+          &lt;/Form&gt;
+        &lt;/Grid.Column&gt;
+      &lt;/Grid&gt;
+    )
+  }
+}
+
+export default reduxForm({form: 'contact'})(ContactForm);
+</code></pre>
+
+<p>Take the time to examine the code; there's a lot going on in there. See the <a href="http://redux-form.com/6.6.1/docs/GettingStarted.md/">reference guide</a> to understand how redux-form works. Also, take a look at semantic-ui-react <a href="http://react.semantic-ui.com/introduction">documentation</a> and read about its elements to understand how they are used in this context.</p>
+
+<p>Next, we'll define the actions necessary for adding a new contact to the database. The first action will provide a new <code>contact</code> object to the Redux form. While the second action will post the <code>contact</code> data to the API server.</p>
+
+<p>Append the following code to <code>contact-actions.js</code></p>
+
+<pre><code class="jsx language-jsx">// src/actions/contact-actions.js
+
+…
+
+export function newContact() {
+  return dispatch =&gt; {
+    dispatch({
+      type: 'NEW_CONTACT'
+    })
+  }
+}
+
+export function saveContact(contact) {
+  return dispatch =&gt; {
+    return dispatch({
+      type: 'SAVE_CONTACT',
+      payload: client.post(url, contact)
+    })
+  }
+}
+</code></pre>
+
+<p>In the <code>contact-reducer</code>, we need to handle actions for <code>'NEW_CONTACT'</code>, <code>'SAVE_CONTACT_PENDING'</code>, <code>'SAVE_CONTACT_FULFILLED'</code>, and <code>'SAVE_CONTACT_REJECTED'</code>. We need to declare the following variables:</p>
+
+<ul>
+<li><strong>contact</strong> - initialize empty object</li>
+
+<li><strong>loading</strong> - update ui with progress info</li>
+
+<li><strong>errors</strong> - store server validation errors in case something goes wrong</li>
+</ul>
+
+<p>Add this code inside <code>contact-reducer</code>'s switch statement:</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/contact-reducer.js
+
+…
+const defaultState = {
+  contacts: [],
+  contact: {name:{}},
+  loading: false,
+  errors: {}
+}
+…
+case 'NEW_CONTACT': {
+      return {
+        ...state,
+        contact: {name:{}}
+      }
+    }
+
+    case 'SAVE_CONTACT_PENDING': {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+
+    case 'SAVE_CONTACT_FULFILLED': {
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload.data],
+        errors: {},
+        loading: false
+      }
+    }
+
+    case 'SAVE_CONTACT_REJECTED': {
+      const data = action.payload.response.data;
+      // convert feathers error formatting to match client-side
+      ➥ error formatting
+      const { "name.first":first, "name.last":last, phone, email 
+      ➥} = data.errors;
+      const errors = { global: data.message, name: { first,last },
+      ➥ phone, email };
+      return {
+        ...state,
+        errors: errors,
+        loading: false
+      }
+    }
+  …
+</code></pre>
+
+<p>Open <code>contact-form-page.js</code> and update the code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-form-page
+
+import React, { Component} from 'react';
+import { Redirect } from 'react-router';
+import { SubmissionError } from 'redux-form';
+import { connect } from 'react-redux';
+import { newContact, saveContact } from '../actions/
+➥contact-actions';
+import ContactForm from '../components/contact-form';
+
+
+class ContactFormPage extends Component {
+
+  state = {
+    redirect: false
+  }
+
+  componentDidMount() {
+    this.props.newContact();
+  }
+
+  submit = (contact) =&gt; {
+    return this.props.saveContact(contact)
+      .then(response =&gt; this.setState({ redirect:true }))
+      .catch(err =&gt; {
+         throw new SubmissionError(this.props.errors)
+       })
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        {
+          this.state.redirect ?
+          &lt;Redirect to="/" /&gt; :
+          &lt;ContactForm contact={this.props.contact} loading=
+          ➥{this.props.loading} onSubmit={this.submit} /&gt;
+        }
+      &lt;/div&gt;
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    contact: state.contactStore.contact,
+    errors: state.contactStore.errors
+  }
+}
+
+export default connect(mapStateToProps, {newContact, 
+➥ saveContact})(ContactFormPage);
+</code></pre>
+
+<p>Let's now go back to the browser and try to intentionally save an incomplete form</p>
+
+<p><img src="../images/reactant2/149164192605-server-side-validation.png" alt="New contact form showing validation errors" /></p>
+
+<p>As you can see, server-side validation prevents us from saving an incomplete contact. We're using the <strong>SubmissionError</strong> class to pass <code>this.props.errors</code> to the form, just in case you're wondering.</p>
+
+<p>Now, finish filling in the form completely. After clicking save, we should be directed to the list page.</p>
+
+<p><img src="../images/reactant2/149164192806-save-contact.png" alt="Close-up of the contact cards" /></p>
+
+<h2 id="clientsidevalidationwithreduxform">Client-side Validation with Redux Form</h2>
+
+<p>Let's take a look at how client-side validation can be implemented. Open <code>contact-form</code> and paste this code outside the ContactForm class. Also, update the default export as shown:</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-form.js
+
+…
+const validate = (values) =&gt; {
+  const errors = {name:{}};
+  if(!values.name || !values.name.first) {
+    errors.name.first = {
+      message: 'You need to provide First Name'
+    }
+  }
+  if(!values.phone) {
+    errors.phone = {
+      message: 'You need to provide a Phone number'
+    }
+  } else if(!/^\+(?:[0-9] ?){6,14}[0-9]$/.test(values.phone)) {
+    errors.phone = {
+      message: 'Phone number must be
+      ➥ in International format'
+    }
+  }
+  if(!values.email) {
+    errors.email = {
+      message: 'You need to provide an Email address'
+    }
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.
+  ➥test(values.email)) {
+    errors.email = {
+      message: 'Invalid email address'
+    }
+  }
+  return errors;
+}
+…
+
+export default reduxForm({form: 'contact', validate})
+➥(ContactForm);
+</code></pre>
+
+<p>After saving the file, go back to the browser and try adding invalid data. This time, the client side validation blocks submitting of data to the server.</p>
+
+<p><img src="../images/reactant2/149164193407-client-side-validation.png" alt="Client-side validation errors" /></p>
+
+<p>Now, go ahead and input valid data. We should have at least three new contacts by now.</p>
+
+<p><img src="../images/reactant2/149164193708-save-contact.png" alt="contact list with three contact cards" /></p>
+
+<h2 id="implementcontactupdates">Implement Contact Updates</h2>
+
+<p>Now that we can add new contacts, let's see how we can update existing contacts. We'll start with the <code>contact-actions.js</code> file, where we need to define two actions --- one for fetching a single contact, and another for updating the contact.</p>
+
+<pre><code class="jsx language-jsx">// src/actions/contact-actions.js
+
+…
+export function fetchContact(_id) {
+  return dispatch =&gt; {
+    return dispatch({
+      type: 'FETCH_CONTACT',
+      payload: client.get(`${url}/${_id}`)
+    })
+  }
+}
+
+export function updateContact(contact) {
+  return dispatch =&gt; {
+    return dispatch({
+      type: 'UPDATE_CONTACT',
+      payload: client.put(`${url}/${contact._id}`
+      ➥, contact)
+    })
+  }
+}
+</code></pre>
+
+<p>Let's add the following cases to <code>contact-reducer</code> to update state when a contact is being fetched from the database and when it's being updated.</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/contact-reducer.js
+
+…
+case 'FETCH_CONTACT_PENDING': {
+  return {
+    ...state,
+    loading: true,
+    contact: {name:{}}
+  }
+}
+
+case 'FETCH_CONTACT_FULFILLED': {
+  return {
+    ...state,
+    contact: action.payload.data,
+    errors: {},
+    loading: false
+  }
+}
+
+case 'UPDATE_CONTACT_PENDING': {
+  return {
+    ...state,
+    loading: true
+  }
+}
+
+case 'UPDATE_CONTACT_FULFILLED': {
+  const contact = action.payload.data;
+  return {
+    ...state,
+    contacts: state.contacts.map(item =&gt; item._id ===
+    ➥ contact._id ? contact : item),
+    errors: {},
+    loading: false
+  }
+}
+
+case 'UPDATE_CONTACT_REJECTED': {
+  const data = action.payload.response.data;
+  const { "name.first":first, "name.last":last, phone, email }
+  ➥ = data.errors;
+  const errors = { global: data.message, name: { first,last },
+  ➥ phone, email };
+  return {
+    ...state,
+    errors: errors,
+    loading: false
+  }
+}
+…
+</code></pre>
+
+<p>Next, let's pass the new fetch and save actions to the <code>contact-form-page.js</code>. We'll also change the <code>componentDidMount()</code> and <code>submit()</code> logic to handle both create and update scenarios. Be sure to update each section of code as indicated below.</p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-form-page.js
+
+…
+import { newContact, saveContact, fetchContact, updateContact }
+➥ from '../actions/contact-actions';
+
+…
+
+componentDidMount = () =&gt; {
+  const { _id } = this.props.match.params;
+  if(_id){
+    this.props.fetchContact(_id)
+  } else {
+    this.props.newContact();
+  }
+}
+
+submit = (contact) =&gt; {
+  if(!contact._id) {
+    return this.props.saveContact(contact)
+      .then(response =&gt; this.setState({ redirect:true }))
+      .catch(err =&gt; {
+         throw new SubmissionError(this.props.errors)
+       })
+  } else {
+    return this.props.updateContact(contact)
+      .then(response =&gt; this.setState({ redirect:true }))
+      .catch(err =&gt; {
+         throw new SubmissionError(this.props.errors)
+       })
+  }
+}
+
+…
+
+export default connect(
+  mapStateToProps, {newContact, saveContact, fetchContact,
+    ➥ updateContact})(ContactFormPage);
+</code></pre>
+
+<p>We'll enable <code>contact-form</code> to asynchronously receive data from the <code>fetchContact()</code> action. To populate a Redux Form, we use its initialize function that's been made available to us via the <code>props</code>. We'll also update the page title with a script to reflect whether we are editing or adding new a contact.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-form.js
+
+…
+componentWillReceiveProps = (nextProps) =&gt; { // Receive Contact
+➥ data Asynchronously
+  const { contact } = nextProps;
+  if(contact._id !== this.props.contact._id) { // Initialize 
+  ➥ form only once
+    this.props.initialize(contact)
+  }
+}
+…
+
+  &lt;h1 style={{marginTop:"1em"}}&gt;{this.props.contact._id ?
+    ➥ 'Edit Contact' : 'Add New Contact'}&lt;/h1&gt;
+
+…
+</code></pre>
+
+<p>Now, let's convert the <strong>Edit</strong> button in <code>contact-card.js</code> to a link that will direct the user to the form.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-card.js
+
+…
+import { Link } from 'react-router-dom';
+
+…
+  &lt;div className="ui two buttons"&gt;
+    &lt;Link to={`/contacts/edit/${contact._id}`} className="ui
+    ➥ basic button green"&gt;Edit&lt;/Link&gt;
+    &lt;Button basic color="red"&gt;Delete&lt;/Button&gt;
+  &lt;/div&gt;
+…
+</code></pre>
+
+<p>Once the list page has finished refreshing, choose any contact and hit the Edit button.</p>
+
+<p><img src="../images/reactant2/149165593409-update-contact.png" alt="Edit form displaying an existing contact" /></p>
+
+<p>Finish making your changes and hit save.</p>
+
+<p><img src="../images/reactant2/149164194110-contact-updated.png" alt="List of edited contacts" /></p>
+
+<p>By now, your application should be able to allow users to add new contacts and update existing ones.</p>
+
+<h2 id="implementdeleterequest">Implement Delete Request</h2>
+
+<p>Let's now look at the final CRUD operation: delete. This one is much simpler to code. We start at the <code>contact-actions.js</code> file.</p>
+
+<pre><code class="jsx language-jsx">// src/actions/contact-actions.js
+
+…
+export function deleteContact(_id) {
+  return dispatch =&gt; {
+    return dispatch({
+      type: 'DELETE_CONTACT',
+      payload: client.delete(`${url}/${_id}`)
+    })
+  }
+}
+</code></pre>
+
+<p>By now, you should have gotten the drill. Define a case for the <code>deleteContact()</code> action in <code>contact-reducer.js</code>.</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/contact-reducer.js
+
+…
+case 'DELETE_CONTACT_FULFILLED': {
+    const _id = action.payload.data._id;
+    return {
+      ...state,
+      contacts: state.contacts.filter(item =&gt; item._id !== _id)
+    }
+  }
+…
+</code></pre>
+
+<p>Next, we import the <code>deleteContact()</code> action to <code>contact-list-page.js</code> and pass it to the <code>ContactList</code> component.</p>
+
+<pre><code class="jsx language-jsx">// src/pages/contact-list-page.js
+
+…
+import { fetchContacts, deleteContact } from
+➥ '../actions/contact-actions';
+…
+
+&lt;ContactList contacts={this.props.contacts}
+➥ deleteContact={this.props.deleteContact}/&gt;
+
+…
+
+export default connect(mapStateToProps, {fetchContacts,
+➥ deleteContact})(ContactListPage);
+</code></pre>
+
+<p>The <code>ContactList</code> component, in turn, passes the <code>deleteContact()</code> action to the <code>ContactCard</code> component</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-list.js
+
+…
+export default function ContactList({contacts, deleteContact}){
+➥ // replace this line
+
+const cards = () =&gt; {
+  return contacts.map(contact =&gt; {
+    return (
+      &lt;ContactCard
+      key={contact._id}
+      contact={contact}
+      deleteContact={deleteContact} /&gt; // and this one
+    )
+  })
+}
+…
+</code></pre>
+
+<p>Finally, we update <strong>Delete</strong> button in <code>ContactCard</code> to execute the <code>deleteContact()</code> action, via the <code>onClick</code> attribute.</p>
+
+<pre><code class="jsx language-jsx">// src/components/contact-card.js
+
+…
+&lt;Button basic color="red" onClick={() =&gt;
+➥ deleteContact(contact._id)} &gt;Delete&lt;/Button&gt;
+…
+</code></pre>
+
+<p>Wait for the browser to refresh, then try to delete one or more contacts. The delete button should work as expected.</p>
+
+<p>As a challenge, try to modify the delete button's <code>onClick</code> handler so that it asks the user to confirm or cancel the delete action. Paste your solution in the comments below.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>By now, you should have learned the basics of creating a CRUD web app in JavaScript. It may seem we've written quite a lot of code to manage only one model. We could have done less work if we had used an MVC framework. The problem with these frameworks is that they become harder to maintain as the code grows.</p>
+
+<p>A Flux-based framework, such as Redux, allows us to build large complex projects that are easy to manage. If you don't like the verbose code that Redux requires you to write, then you could also look at <a href="https://www.sitepoint.com/manage-javascript-application-state-mobx/">Mobx</a> as an alternative.</p>
+
+<p>At least I hope you now have a good impression of FeathersJS. With little effort, we were able to generate a database API with only a few commands and a bit of coding. Although we have only scratched the surface in exploring its capabilities, you will at least agree with me that it is a robust solution for creating APIs.</p>
+
+    </div>
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1 id="todoappreact">How to Build a Todo App Using React, Redux, and Immutable.js</h1>
+                <h3>by Dan Prince</h3>
+                <p>The way <a href="https://facebook.github.io/react">React</a> uses components and a one-way data flow makes it ideal for describing the structure of user interfaces. However, its tools for working with state are kept deliberately simple --- to help remind us that React is just the View in the traditional <a href="http://blog.codinghorror.com/understanding-model-view-controller/">Model-View-Controller</a> architecture.</p>
+
+
+
+<p>There's nothing to stop us from building large applications with just React, but we would quickly discover that to keep our code simple, we'd need to manage our state elsewhere.</p>
+
+<p>Whilst there's no <em>official</em> solution for dealing with application state, there are some libraries that align particularly well with React's paradigm. In this post, we'll pair React with two such libraries and use them to build a simple application.</p>
+
+<h2 id="redux">Redux</h2>
+
+<p><a href="https://redux.js.org">Redux</a> is a tiny library that acts as a container for our application state, by combining ideas from <a href="https://facebook.github.io/flux">Flux</a> and <a href="https://github.com/evancz/elm-architecture-tutorial">Elm</a>. We can use Redux to manage any kind of application state, providing we stick to the following guidelines:</p>
+
+<ol>
+<li>our state is kept in a single store</li>
+
+<li>changes come from <em>actions</em> and not <em>mutations</em></li>
+</ol>
+
+<p>At the core of a Redux store is a function that takes the current application state and an action and combines them to create a new application state. We call this function a <strong>reducer</strong>.</p>
+
+<p>Our React components will be responsible for sending actions to our store, and in turn our store will tell the components when they need to re-render.</p>
+
+<h2 id="immutablejs">ImmutableJS</h2>
+
+<p>Because Redux doesn't allow us to mutate the application state, it can be helpful to enforce this by modeling application state with immutable data structures.</p>
+
+<p><a href="https://facebook.github.io/immutable-js">ImmutableJS</a> offers us a number of immutable data structures with mutative interfaces, and they're implemented <a href="https://www.youtube.com/watch?v=I7IdS-PbEgI">in an efficient way</a>, inspired by the implementations in Clojure and Scala.</p>
+
+<h2 id="demo">Demo</h2>
+
+<p>We're going to use React with Redux and ImmutableJS to build a simple todo list that allows us to add todos and toggle them between complete and incomplete. You can <a href="http://codepen.io/SitePoint/pen/bpxapd/">find a CodePen demo here</a>, and the che code is available in a <a href="https://github.com/sitepoint-editors/immutable-redux-todo">repository on GitHub</a>.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>We'll get started by creating a project folder and initializing a <code>package.json</code> file with <code>npm init</code>. Then we'll install the dependencies we're going to need.</p>
+
+<pre><code class="bash language-bash">npm install --save react react-dom redux react-redux immutable
+npm install --save-dev webpack babel-core babel-loader babel-preset-es2015
+➥ babel-preset-react
+</code></pre>
+
+<p>We'll be using <a href="https://facebook.github.io/jsx/">JSX</a> and <a href="http://www.ecma-international.org/ecma-262/6.0/">ES2015</a>, so we'll compile our code with <a href="http://babeljs.io">Babel</a>, and we're going to do this as part of the module bundling process with <a href="https://webpack.github.io/">Webpack</a>.</p>
+
+<p>First, we'll create our Webpack configuration in <code>webpack.config.js</code>:</p>
+
+<pre><code class="javascript language-javascript">module.exports = {
+  entry: './src/app.js',
+  output: {
+    path: __dirname,
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: { presets: [ 'es2015', 'react' ] }
+      }
+    ]
+  }
+};
+</code></pre>
+
+<p>Finally, we'll extend our <code>package.json</code> by adding an npm script to compile our code with source maps:</p>
+
+<pre><code class="javascript language-javascript">"script": {
+  "build": "webpack --debug"
+}
+</code></pre>
+
+<p>We'll need to run <code>npm run build</code> each time we want to compile our code.</p>
+
+<h2 id="reactandcomponents">React and Components</h2>
+
+<p>Before we implement any components, it can be helpful to create some dummy data. This helps us get a feel for what we're going to need our components to render:</p>
+
+<pre><code class="javascript language-javascript">const dummyTodos = [
+  { id: 0, isDone: true,  text: 'make components' },
+  { id: 1, isDone: false, text: 'design actions' },
+  { id: 2, isDone: false, text: 'implement reducer' },
+  { id: 3, isDone: false, text: 'connect components' }
+];
+</code></pre>
+
+<p>For this application, we're only going to need two React components, <code>&lt;Todo /&gt;</code> and <code>&lt;TodoList /&gt;</code>.</p>
+
+<pre><code class="javascript language-javascript">// src/components.js
+
+import React from 'react';
+
+export function Todo(props) {
+  const { todo } = props;
+  if(todo.isDone) {
+    return &lt;strike&gt;{todo.text}&lt;/strike&gt;;
+  } else {
+    return &lt;span&gt;{todo.text}&lt;/span&gt;;
+  }
+}
+
+export function TodoList(props) {
+  const { todos } = props;
+  return (
+    &lt;div className='todo'&gt;
+      &lt;input type='text' placeholder='Add todo' /&gt;
+      &lt;ul className='todo__list'&gt;
+        {todos.map(t =&gt; (
+          &lt;li key={t.id} className='todo__item'&gt;
+            &lt;Todo todo={t} /&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<p>At this point, we can test these components by creating an <code>index.html</code> file in the project folder and populating it with the following markup. (You can find a simple stylesheet <a href="https://github.com/sitepoint-editors/immutable-redux-todo/blob/master/style.css">on GitHub</a>):</p>
+
+<pre><code class="markup language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;Immutable Todo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="app"&gt;&lt;/div&gt;
+    &lt;script src="bundle.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>We'll also need an application entry point at <code>src/app.js</code>.</p>
+
+<pre><code class="javascript language-javascript">// src/app.js
+
+import React from 'react';
+import { render } from 'react-dom';
+import { TodoList } from './components';
+
+const dummyTodos = [
+  { id: 0, isDone: true,  text: 'make components' },
+  { id: 1, isDone: false, text: 'design actions' },
+  { id: 2, isDone: false, text: 'implement reducer' },
+  { id: 3, isDone: false, text: 'connect components' }
+];
+
+render(
+  &lt;TodoList todos={dummyTodos} /&gt;,
+  document.getElementById('app')
+);
+</code></pre>
+
+<p>Compile the code with <code>npm run build</code>, then navigate your browser to the <code>index.html</code> file and make sure that it's working.</p>
+
+<h2 id="reduximmutable">Redux and Immutable</h2>
+
+<p>Now that we're happy with the user interface, we can start to think about the state behind it. Our dummy data is a great place to start from, and we can easily translate it into ImmutableJS collections:</p>
+
+<pre><code class="javascript language-javascript">import { List, Map } from 'immutable';
+
+const dummyTodos = List([
+  Map({ id: 0, isDone: true,  text: 'make components' }),
+  Map({ id: 1, isDone: false, text: 'design actions' }),
+  Map({ id: 2, isDone: false, text: 'implement reducer' }),
+  Map({ id: 3, isDone: false, text: 'connect components' })
+]);
+</code></pre>
+
+<p>ImmutableJS maps don't work in the same way as JavaScript's objects, so we'll need to make some slight tweaks to our components. Anywhere there was a property access before (e.g. <code>todo.id</code>) needs to become a method call instead (<code>todo.get('id')</code>).</p>
+
+<h3 id="designingactions">Designing Actions</h3>
+
+<p>Now that we've got the shape and structure figured out, we can start thinking about the actions that will update it. In this case, we'll only need two actions, one to add a new todo and the other to toggle an existing one.</p>
+
+<p>Let's define some functions to create these actions:</p>
+
+<pre><code class="javascript language-javascript">// src/actions.js
+
+// succinct hack for generating passable unique ids
+const uid = () =&gt; Math.random().toString(34).slice(2);
+
+export function addTodo(text) {
+  return {
+    type: 'ADD_TODO',
+    payload: {
+      id: uid(),
+      isDone: false,
+      text: text
+    }
+  };
+}
+
+export function toggleTodo(id) {
+  return {
+    type: 'TOGGLE_TODO',
+    payload: id
+  }
+}
+</code></pre>
+
+<p>Each action is just a JavaScript object with a type and payload properties. The type property helps us decide what to do with the payload when we process the action later.</p>
+
+<h3 id="designingareducer">Designing a Reducer</h3>
+
+<p>Now that we know the shape of our state and the actions that update it, we can build our reducer. Just as a reminder, the reducer is a function that takes a state and an action, then uses them to compute a new state.</p>
+
+<p>Here's the initial structure for our reducer:</p>
+
+<pre><code class="javascript language-javascript">// src/reducer.js
+
+import { List, Map } from 'immutable';
+
+const init = List([]);
+
+export default function(todos=init, action) {
+  switch(action.type) {
+    case 'ADD_TODO':
+      // …
+    case 'TOGGLE_TODO':
+      // …
+    default:
+      return todos;
+  }
+}
+</code></pre>
+
+<p>Handling the <code>ADD_TODO</code> action is quite simple, as we can use the <a href="https://facebook.github.io/immutable-js/docs/#/List/push">.push()</a> method, which will return a new list with the todo appended at the end:</p>
+
+<pre><code class="javascript language-javascript">case 'ADD_TODO':
+  return todos.push(Map(action.payload));
+</code></pre>
+
+<p>Notice that we're also converting the todo object into an immutable map before it's pushed onto the list.</p>
+
+<p>The more complex action we need to handle is <code>TOGGLE_TODO</code>:</p>
+
+<pre><code class="javascript language-javascript">case 'TOGGLE_TODO':
+  return todos.map(t =&gt; {
+    if(t.get('id') === action.payload) {
+      return t.update('isDone', isDone =&gt; !isDone);
+    } else {
+      return t;
+    }
+  });
+</code></pre>
+
+<p>We're using <a href="https://facebook.github.io/immutable-js/docs/#/List/map">.map()</a> to iterate over the list and find the todo whose <code>id</code> matches the action. Then we call <a href="https://facebook.github.io/immutable-js/docs/#/Map/update">.update()</a>, which takes a key and a function, then it returns a new copy of the map, with the value at the key replaced with the result of passing the initial value to the update function.</p>
+
+<p>It might help to see the literal version:</p>
+
+<pre><code class="javascript language-javascript">const todo = Map({ id: 0, text: 'foo', isDone: false });
+todo.update('isDone', isDone =&gt; !isDone);
+// =&gt; { id: 0, text: 'foo', isDone: true }
+</code></pre>
+
+<h2 id="connectingeverything">Connecting Everything</h2>
+
+<p>Now we've got our actions and reducer ready, we can create a store and connect it to our React components:</p>
+
+<pre><code class="javascript language-javascript">// src/app.js
+
+import React from 'react';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { TodoList } from './components';
+import reducer from './reducer';
+
+const store = createStore(reducer);
+
+render(
+  &lt;TodoList todos={store.getState()} /&gt;,
+  document.getElementById('app')
+);
+</code></pre>
+
+<p>We'll need to make our components aware of this store. We'll use the <a href="https://github.com/reactjs/react-redux">react-redux</a> to help simplify this process. It allows us to create store-aware containers that wrap around our components, so that we don't have to change our original implementations.</p>
+
+<p>We're going to need a container around our <code>&lt;TodoList /&gt;</code> component. Let's see what this looks like:</p>
+
+<pre><code class="javascript language-javascript">// src/containers.js
+
+import { connect } from 'react-redux';
+import * as components from './components';
+import { addTodo, toggleTodo } from './actions';
+
+export const TodoList = connect(
+  function mapStateToProps(state) {
+    // …
+  },
+  function mapDispatchToProps(dispatch) {
+    // …
+  }
+)(components.TodoList);
+</code></pre>
+
+<p>We create containers with the <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">connect</a> function. When we call <code>connect()</code>, we pass two functions, <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code>.</p>
+
+<p>The <code>mapStateToProps</code> function takes the store's current state as an argument (in our case, a list of todos), then it expects the return value to be an object that describes a mapping from that state to props for our wrapped component:</p>
+
+<pre><code class="javascript language-javascript">function mapStateToProps(state) {
+  return { todos: state };
+}
+</code></pre>
+
+<p>It might help to visualize this on an instance of the wrapped React component:</p>
+
+<pre><code class="javascript language-javascript">&lt;TodoList todos={state} /&gt;
+</code></pre>
+
+<p>We'll also need to supply a <code>mapDispatchToProps</code> function, which is passed the store's <code>dispatch</code> method, so that we can use it to dispatch the actions from our action creators:</p>
+
+<pre><code class="javascript language-javascript">function mapDispatchToProps(dispatch) {
+  return {
+    addTodo: text =&gt; dispatch(addTodo(text)),
+    toggleTodo: id =&gt; dispatch(toggleTodo(id))
+  };
+}
+</code></pre>
+
+<p>Again, it might help to visualize all these props together on an instance of our wrapped React component:</p>
+
+<pre><code class="javascript language-javascript">&lt;TodoList todos={state}
+  addTodo={text =&gt; dispatch(addTodo(text))}
+  toggleTodo={id =&gt; dispatch(toggleTodo(id))} /&gt;
+</code></pre>
+
+<p>Now that we've mapped our component to the action creators, we can call them from event listeners:</p>
+
+<pre><code class="javascript language-javascript">export function TodoList(props) {
+  const { todos, toggleTodo, addTodo } = props;
+
+  const onSubmit = (event) =&gt; {
+    const input = event.target;
+    const text = input.value;
+    const isEnterKey = (event.which == 13);
+    const isLongEnough = text.length &gt; 0;
+
+    if(isEnterKey &amp;&amp; isLongEnough) {
+      input.value = '';
+      addTodo(text);
+    }
+  };
+
+  const toggleClick = id =&gt; event =&gt; toggleTodo(id);
+
+  return (
+    &lt;div className='todo'&gt;
+      &lt;input type='text'
+         className='todo__entry'
+         placeholder='Add todo'
+         onKeyDown={onSubmit} /&gt;
+      &lt;ul className='todo__list'&gt;
+        {todos.map(t =&gt; (
+          &lt;li key={t.get('id')}
+            className='todo__item'
+            onClick={toggleClick(t.get('id'))}&gt;
+            &lt;Todo todo={t.toJS()} /&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<p>The containers will automatically subscribe to changes in the store, and they'll re-render the wrapped components whenever their mapped props change.</p>
+
+<p>Finally, we need to make the containers aware of the store, using the <code>&lt;Provider /&gt;</code> component:</p>
+
+<pre><code class="javascript language-javascript">// src/app.js
+
+import React from 'react';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducer';
+import { TodoList } from './containers';
+//                          ^^^^^^^^^^
+
+const store = createStore(reducer);
+
+render(
+  &lt;Provider store={store}&gt;
+    &lt;TodoList /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('app')
+);
+</code></pre>
+
+
+
+
+
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There's no denying that the ecosystem around React and Redux can be quite complex and intimidating for beginners, but the good news is that almost all of these concepts are transferable. We've barely touched the surface of Redux's architecture, but already we've seen enough to help us start learning about <a href="https://github.com/evancz/elm-architecture-tutorial">The Elm Architecture</a>, or pick up a ClojureScript library like <a href="https://github.com/omcljs/om">Om</a> or <a href="https://github.com/Day8/re-frame">Re-frame</a>. Likewise, we've only seen a fraction of the possibilities with immutable data, but now we're better equipped to start learning a language like <a href="http://clojure.org/">Clojure</a> or <a href="https://www.haskell.org/">Haskell</a>.</p>
+
+<p>Whether you're just exploring the state of web application development, or you spend all day writing JavaScript, experience with action-based architectures and immutable data is already becoming a vital skill for developers, and <em>right now</em> is a great time to be learning the essentials.</p>
+    
+                
+                
+        </div>    
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1 id="serevr-rendered-react">Writing Server-rendered React Apps with Next.js</h1>
+                <h3>by Jatin Shridhar</h3>
+                <p>he dust has settled a bit as far as the JavaScript front-end ecosystem is considered. React has arguably the biggest mindshare at this point, but has a lot of bells and whistles you need to get comfortable with. Vue offers a considerably simpler alternative. And then there are Angular and Ember – which, while still popular, are not the first recommendations for starting a new project.</strong></p>
+
+
+
+<p>So, while React is the most popular option, it still requires lot of tooling to write production-ready apps. <a href="https://www.npmjs.com/package/create-react-app">Create React App</a> solves many of the pain points of starting, but the jury is still out on how long you can go without <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject">ejecting</a>. And when you start looking into the current best practices around front-end, single-page applications (SPAs) – like server-side rendering, code splitting, and CSS-in-JS – it’s a lot to find your way through.</p>
+
+<p>That’s where <a href="https://github.com/zeit/next.js">Next</a> comes in.</p>
+
+<h2 id="whynext">Why Next?</h2>
+
+<p>Next provides a simple yet customizable solution to building production-ready SPAs. Remember how web apps were built in PHP (before “web apps” was even a term)? You create some files in a directory, write your script and you're good to deploy. That's the kind of simplicity Next aims at, for the JavaScript ecosystem.</p>
+
+<p>Next is not a brand new framework per se. It fully embraces React, but provides a framework on top of that for building SPAs while following best practices. You still write React components. Anything you can do with Next, you can do with a combination of React, Webpack, Babel, one of 17 CSS-in-JS alternatives, lazy imports and what not. But while building with Next, you aren't thinking about which CSS-in-JS alternative to use, or how to set up Hot Module Replacement (HMR), or which of many routing options to choose. You're just using Next --- and it <em>just works</em>.</p>
+
+<blockquote>
+  <p>I'd like to think I know a thing or two about JavaScript, but Next.JS saves me an ENORMOUS amount of time. --- <a href="https://twitter.com/_ericelliott/status/867160902184845312">Eric Elliott</a></p>
+</blockquote>
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>Next requires minimal setup. This gets you all the dependencies you need for starting:</p>
+
+<pre><code class="bash language-bash">$ npm install next react react-dom --save
+</code></pre>
+
+<p>Create a directory for your app, and inside that create a directory called <code>pages</code>. The file system is the API. Every <code>.js</code> file becomes a route that gets automatically processed and rendered.</p>
+
+<p>Create a file <code>./pages/index.js</code> inside your project with these contents:</p>
+
+<pre><code class="jsx language-jsx">export default () =&gt; (
+  &lt;div&gt;Hello, Next!&lt;/div&gt;
+)
+</code></pre>
+
+<p>Populate <code>package.json</code> inside your project with this:</p>
+
+<pre><code class="javascript language-javascript">{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
+</code></pre>
+
+<p>Then just run <code>npm run dev</code> in the root directory of your project. Go to <a href="http://localhost:3000">http://localhost:3000</a> and you should be able to see your app, running in all its glory!</p>
+
+<p>Just with this much you get:</p>
+
+<ul>
+<li>automatic transpilation and bundling (with Webpack and Babel)</li>
+
+<li>Hot Module Replacement</li>
+
+<li>server-side rendering of <code>./pages</code></li>
+
+<li>static file serving: <code>./static/</code> is mapped to <code>/static/</code>.</li>
+</ul>
+
+<p>Good luck doing that with Vanilla React with this much setup!</p>
+
+<h2 id="features">Features</h2>
+
+<p>Let's dig into some of the features of modern SPA apps, why they matter, and how they <em>just work</em> with Next.</p>
+
+<h3 id="automaticcodesplitting">Automatic code splitting</h3>
+
+<p><strong>Why it Matters?</strong>
+Code splitting is important for ensuring fast time to <a href="https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint">first meaningful paint</a>. It's not uncommon to have JavaScript bundle sizes reaching up to several megabytes these days. Sending all that JavaScript over the wire for every single page is a huge waste of bandwidth.</p>
+
+<p><strong>How to get it with Next</strong>
+With Next, <em>only</em> the declared imports are served with each page. So, let's say you have 10 dependencies in your <code>package.json</code>, but <code>./pages/index.js</code> only uses one of them.</p>
+
+<p><strong>pages/login.js</strong></p>
+
+<pre><code class="jsx language-jsx">import times from 'lodash.times'
+export default () =&gt; (
+  return &lt;div&gt;times(5, &lt;h2&gt; Hello, there! &lt;/h2&gt;)&lt;/div&gt;;
+)
+</code></pre>
+
+<p>Now, when the user opens the login page, it's not going to load <em>all</em> the JavaScript, but only the modules required for this page.</p>
+
+<p>So a certain page may have fat imports, like this:</p>
+
+<pre><code class="jsx language-jsx">import React from 'react'
+import d3 from 'd3'
+import jQuery from 'jquery'
+</code></pre>
+
+<p>But this won't affect the performance of the rest of the pages. Faster load times FTW.</p>
+
+<h3 id="scopedcss">Scoped CSS</h3>
+
+<p><strong>Why it Matters?</strong>
+CSS rules, by default, are global. Say you have a CSS rule like this:</p>
+
+<pre><code class="css language-css">.title {
+  font-size: 40px;
+}
+</code></pre>
+
+<p>Now, you might have two components, <code>Post</code> and <code>Profile</code>, both of which may have a div with class <code>title</code>. The CSS rule you defined is going to apply to both of them. So, you define two rules now, one for selector <code>.post .title</code>, the other for <code>.profile .title</code>. It's manageable for small apps, but you can only think of so many class names.</p>
+
+<p>Scoped CSS lets you define CSS with components, and those rules apply to only those components, making sure that you're not afraid of unintended effects every time you touch your CSS.</p>
+
+<p><strong>With Next</strong>
+Next comes with <a href="https://github.com/zeit/styled-jsx">styled-jsx</a>, which provides support for isolated scoped CSS. So, you just have a <code>&lt;style&gt;</code> component inside your React Component render function:</p>
+
+<pre><code class="jsx language-jsx">export default () =&gt; (
+  &lt;div&gt;
+    Hello world
+    &lt;p&gt;These colors are scoped!&lt;/p&gt;
+
+    &lt;style jsx&gt;{\
+      p {
+        color: blue;
+      }
+      div {
+        background: red;
+      }
+    `}&lt;/style&gt;
+  &lt;/div&gt;
+)
+</code></pre>
+
+<p>You also get the colocation benefits on having the styling (CSS), behavior (JS), and the template (JSX) all in one place. No more searching for the relevant class name to see what styles are being applied to it.</p>
+
+<h3 id="dynamicimports">Dynamic Imports</h3>
+
+<p><strong>Why it matters?</strong>
+Dynamic imports let you dynamically load parts of a JavaScript application at runtime. There are several motivations for this, as listed in the <a href="https://github.com/tc39/proposal-dynamic-import">proposal</a>:</p>
+
+<blockquote>
+  <p>This could be because of factors only known at runtime (such as the user's language), for performance reasons (not loading code until it is likely to be used), or for robustness reasons (surviving failure to load a non-critical module).</p>
+</blockquote>
+
+<p><strong>With Next</strong>
+Next supports the dynamic import proposal and lets you split code into manageable chunks. So, you can write code like this that dynamically loads a React component after initial load:</p>
+
+<pre><code class="jsx language-jsx">import dynamic from 'next/dynamic'
+
+const DynamicComponentWithCustomLoading = dynamic(
+  import('../components/hello2'),
+  {
+    loading: () =&gt; &lt;p&gt;The component is loading...&lt;/p&gt;
+  }
+)
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithCustomLoading /&gt;
+    &lt;p&gt;Main content.&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<h3 id="routing">Routing</h3>
+
+<p><strong>Why it matters?</strong>
+A problem with changing pages via JavaScript is that the routes don't change with that. During their initial days, SPAs were criticized for breaking the web. These days, most frameworks have some robust routing mechanism. React has the widely used <code>react-router</code> package. With Next, however, you don't need to install a separate package.</p>
+
+<p><strong>With Next</strong>
+Client-side routing can be enabled via a <code>next/link</code> component. Consider these two pages:</p>
+
+<pre><code class="jsx language-jsx">// pages/index.js
+import Link from 'next/link'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{' '}
+    &lt;Link href="/contact"&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{' '}
+    to find contact information.
+  &lt;/div&gt;
+</code></pre>
+
+<pre><code class="jsx language-jsx">// pages/contact.js
+export default () =&gt; &lt;p&gt;The Contact Page.&lt;/p&gt;
+</code></pre>
+
+<p>Not only that, you can add <code>prefetch</code> prop to <code>Link</code> component, to prefetch pages even before the links are clicked. This enables super-fast transition between routes.</p>
+
+<h3 id="serverrendering">Server rendering</h3>
+
+<p>Most of the JavaScript-based SPAs just don't work without JavaScript disabled. However, it doesn't have to be that way. Next renders pages on the server, and they can be loaded just like good old rendered web pages when JavaScript is disabled. Every component inside the <code>pages</code> directory gets server-rendered automatically and their scripts inlined. This has the added performance advantage of very fast first loads, since you can just send a rendered page without making additional HTTP requests for the JavaScript files.</p>
+
+
+
+
+
+<h2 id="nextsteps">Next Steps</h2>
+
+<p>That should be enough to get you interested in Next, and if you're working on a web app, or even an Electron-based application, Next provides some valuable abstractions and defaults to build upon.</p>
+
+<p>To learn more about Next, <a href="https://learnnextjs.com">Learning Next.js</a> is an excellent place to start, and may be all you'll need.</p>
+    
+                
+                
+        </div>  
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1 id="building-a-game">Building a Game with Three.js, React and WebGL</h1>
+                <h3>by Andrew Ray</h3>
+                <p>I'm making a game titled "<a href="http://charismachameleon.com">Charisma The Chameleon</a>." It's built with Three.js, React and WebGL. This is an introduction to how these technologies work together using <a href="https://github.com/toxicFork/react-three-renderer">react-three-renderer</a> (abbreviated R3R).</p>
+
+
+
+
+
+<h2 id="howitallbegan">How It All Began</h2>
+
+<p>Some time ago, <a href="https://twitter.com/floydophone">Pete Hunt</a> made a joke about building a game using React in the #reactjs IRC channel:</p>
+
+<blockquote>
+  <p>I bet we could make a first person shooter with React!
+  Enemy has <code>&lt;Head /&gt;</code> <code>&lt;Body&gt;</code> <code>&lt;Legs&gt;</code> etc.</p>
+</blockquote>
+
+<p>I laughed. He laughed. Everyone had a great time. "Who on earth would do that?" I wondered.</p>
+
+<p>Years later, that's exactly what I'm doing.</p>
+
+<p><a href="http://charismachameleon.com"><img src="../images/reactant2/1463984085sitepoint-2mb.gif" alt="Gameplay GIF of Charisma The Chameleon" /></a></p>
+
+<p><a href="http://charismachameleon.com">Charisma The Chameleon</a> is a game where you collect power-ups that make you shrink to solve an infinite fractal maze. I've been a React developer for a few years, and I was curious if there was a way to drive Three.js using React. That's when R3R caught my eye.</p>
+
+<h2 id="whyreact">Why React?</h2>
+
+<p>I know what you're thinking: <strong>why?</strong> Humor me for a moment. Here's some reasons to consider using React to drive your 3D scene:</p>
+
+<ul>
+<li>"Declarative" views let you cleanly separate your scene rendering from your game logic.</li>
+
+<li>Design easy to reason about components, like <code>&lt;Player /&gt;</code>, <code>&lt;Wall /&gt;</code>, <code>&lt;Level /&gt;</code>, etc.</li>
+
+<li>"Hot" (live) reloading of game assets. Change textures and models and see them update live in your scene!</li>
+
+<li>Inspect and debug your 3D scene as markup with native browser tools, like the Chrome inspector.</li>
+
+<li>Manage game assets in a dependency graph using Webpack, eg <code>&lt;Texture src={ require('../assets/image.png') } /&gt;</code></li>
+</ul>
+
+<p>Let's set up a scene to get an understanding of how this all works.</p>
+
+
+
+
+<h2 id="reactandwebgl">React and WebGL</h2>
+
+<p>I've created a <a href="https://github.com/DelvarWorld/r3r-sitepoint-demo">sample GitHub repository</a> to accompany this article. Clone the repository and follow the instructions in the README to run the code and follow along. It stars SitePointy the 3D Robot!</p>
+
+<p><img src="../images/reactant2/1463983585sitepointy.jpg" alt="SitePointy the 3D robot screenshot" /></p>
+
+
+<div class="box warning">
+        <h4>Watch Out!</h4>
+        <div class="body">
+            <p>R3R is still in beta. Its API is volatile and may change in the future. It only handles a subset of Three.js at the moment. I've found it complete enough to build a full game, but your mileage may vary.</p>
+        </div>
+    </div>
+<h3 id="organizingviewcode">Organizing view code</h3>
+
+<p>The main benefit of using React to drive WebGL is our view code is <strong>decoupled</strong> from our game logic. That means our rendered entities are small components that are easy to reason about.</p>
+
+<p>R3R exposes a declarative API that wraps Three.js. For example, we can write:</p>
+
+<pre><code class="jsx language-jsx">&lt;scene&gt;
+  &lt;perspectiveCamera
+    position={ new THREE.Vector3( 1, 1, 1 )
+  /&gt;
+&lt;/scene&gt;
+</code></pre>
+
+<p>Now we have an empty 3D scene with a camera. Adding a mesh to the scene is as simple as including a <code>&lt;mesh /&gt;</code> component, and giving it <code>&lt;geometry /&gt;</code> and a <code>&lt;material /&gt;</code>.</p>
+
+<pre><code class="jsx language-jsx">&lt;scene&gt;
+  …
+  &lt;mesh&gt;
+    &lt;boxGeometry
+      width={ 1 }
+      height={ 1 }
+      depth={ 1 }
+    /&gt;
+    &lt;meshBasicMaterial
+      color={ 0x00ff00 }
+    /&gt;
+&lt;/mesh&gt;
+</code></pre>
+
+<p>Under the hood, this creates a <a href="http://Three.js.org/docs/#Reference/Scenes/Scene">THREE.Scene</a> and automatically adds a mesh with <a href="http://Three.js.org/docs/#Reference/Extras.Geometries/BoxGeometry">THREE.BoxGeometry</a>. R3R handles diffing the old scene with any changes. If you add a new mesh to the scene, the original mesh won't be recreated. Just as with vanilla React and the DOM, the 3D scene is <strong>only updated with the differences.</strong></p>
+
+<p>Because we're working in React, we can separate game entities into component files. The <a href="https://github.com/DelvarWorld/r3r-sitepoint-demo/blob/master/src/components/Robot.js">Robot.js file</a> in the example repository demonstrates how to represent the main character with pure React view code. It's a "stateless functional" component, meaning it doesn't hold any local state:</p>
+
+<pre><code class="jsx language-jsx">const Robot = ({ position, rotation }) =&gt; &lt;group
+  position={ position }
+  rotation={ rotation }
+&gt;
+  &lt;mesh rotation={ localRotation }&gt;
+    &lt;geometryResource
+      resourceId="robotGeometry"
+    /&gt;
+    &lt;materialResource
+      resourceId="robotTexture"
+    /&gt;
+  &lt;/mesh&gt;
+&lt;/group&gt;;
+</code></pre>
+
+<p>And now we include the <code>&lt;Robot /&gt;</code> in our 3D scene!</p>
+
+<pre><code class="jsx language-jsx">&lt;scene&gt;
+  …
+  &lt;mesh&gt;…&lt;/mesh&gt;
+  &lt;Robot
+    position={…}
+    rotation={…}
+  /&gt;
+&lt;/scene&gt;
+</code></pre>
+
+<p>You can see more examples of the API on the <a href="https://github.com/toxicFork/react-three-renderer#usage">R3R GitHub repository</a>, or view the complete example setup in <a href="https://github.com/DelvarWorld/r3r-sitepoint-demo/blob/master/src/components/Game.js#L60-L77">the accompanying project</a>.</p>
+
+<h3 id="organizinggamelogic">Organizing Game Logic</h3>
+
+<p>The second half of the equation is handling game logic. Let's give SitePointy, our robot, some simple animation.</p>
+
+<p><img src="../images/reactant2/1463984896sitepointy-animation.gif" alt="SitePointy having the time of its life" /></p>
+
+<p>How do game loops traditionally work? They accept user input, analyze the old "state of the world," and return the new state of the world for rendering. For convenience, let's store our "game state" object in component state. In a more mature project, you could move the game state into a Redux or Flux store.</p>
+
+<p>We'll use the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame</code></a> API callback to drive our game loop, and run the loop in <a href="https://github.com/DelvarWorld/r3r-sitepoint-demo/blob/master/src/containers/GameContainer.js#L58-L62">GameContainer.js</a>. To animate the robot, let's calculate a new position based on the timestamp passed to <code>requestAnimationFrame</code>, then store the new position in state.</p>
+
+<pre><code class="jsx language-jsx">// …
+gameLoop( time ) {
+  this.setState({
+    robotPosition: new THREE.Vector3(
+      Math.sin( time * 0.01 ), 0, 0
+    )
+  });
+}
+</code></pre>
+
+<p>Calling <code>setState()</code> triggers a re-render of the child components, and the 3D scene updates. We pass the state down from the container component to the presentational <code>&lt;Game /&gt;</code> component:</p>
+
+<pre><code class="jsx language-jsx">render() {
+  const { robotPosition } = this.state;
+  return &lt;Game
+    robotPosition={ robotPosition }
+  /&gt;;
+}
+</code></pre>
+
+<p>There's a useful pattern we can apply to help organize this code. Updating the robot position is a simple time-based calculation. In the future, it might also take into account the previous robot position from the previous game state. A function that takes in some data, processes it, and returns new data, is often referred to as a <strong>reducer</strong>. We can abstract out the movement code into a reducer function!</p>
+
+<p>Now we can write a clean, simple game loop that only has function calls in it:</p>
+
+<pre><code class="jsx language-jsx">import robotMovementReducer from './game-reducers/
+➥robotMovementReducer.js';
+
+// …
+
+gameLoop() {
+  const oldState = this.state;
+  const newState = robotMovementReducer( 
+  ➥ oldState );
+  this.setState( newState );
+}
+</code></pre>
+
+<p>To add more logic to the game loop, such as processing physics, create another reducer function and pass it the result of the previous reducer:</p>
+
+<pre><code class="jsx language-jsx">const newState = physicsReducer( robotMovementReducer( oldState ) );
+</code></pre>
+
+<p>As your game engine grows, organizing game logic into separate functions becomes critical. This organization is straightforward with the reducer pattern.</p>
+
+<h3 id="assetmanagement">Asset management</h3>
+
+<p>This is still an evolving area of R3R. For textures, you specify a <code>url</code> attribute on the JSX tag. Using Webpack, you can require the local path to the image:</p>
+
+<pre><code class="jsx language-jsx">&lt;texture url={ require( '../local/image/path.png' ) } /&gt;
+</code></pre>
+
+<p>With this setup, if you change the image on disk, your 3D scene will live update! This is invaluable for rapidly iterating game design and content.</p>
+
+<p>For other assets like 3D models, you still have to process them using the built-in loaders from Three.js, like the <a href="http://threejs.org/docs/#Reference/Loaders/JSONLoader">JSONLoader</a>. I experimented with using a custom Webpack loader for loading 3D model files, but in the end it was too much work for no benefit. It's easier to treat the model as binary data and load them with the <a href="https://www.npmjs.com/package/file-loader">file-loader</a>. This still affords live reloading of model data. You can see this in action in <a href="https://github.com/DelvarWorld/r3r-sitepoint-demo/blob/master/src/containers/GameContainer.js#L40-L42">the example code</a>.</p>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>R3R supports the React developer tools extension for both <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">Chrome</a> and <a href="https://addons.mozilla.org/en-US/firefox/addon/react-devtools/">Firefox</a>. You can inspect your scene as if it were the vanilla DOM! Hovering over elements in the inspector shows their bounding box in the scene. You can also hover over texture definitions to see which objects in the scene use those textures.</p>
+
+<p><img src="../images/reactant2/1468523219react-debug.jpg" alt="Debugging a scene using react-three-renderer and React devtools" /></p>
+
+<p>You can also join us in the <a href="https://gitter.im/toxicFork/react-three-renderer">react-three-renderer Gitter chat room</a> for help debugging your applications.</p>
+
+<h2 id="performanceconsiderations">Performance Considerations</h2>
+
+<p>While building Charisma The Chameleon, I've run into several performance issues that are unique to this workflow.</p>
+
+<ul>
+<li>My <strong>hot reload time</strong> with Webpack was as long as thirty seconds! This is because large assets have to be re-written to the bundle on every reload. The solution was to implement <a href="https://github.com/erikras/react-redux-universal-hot-example/issues/616#issuecomment-228956242">Webpack's DLLPlugin</a>, which cut down reload times to below five seconds.</li>
+
+<li>Ideally your scene should only call <strong>one <code>setState()</code></strong> per frame render. After profiling my game, React itself is the main bottleneck. Calling <code>setState()</code> more than once per frame can cause double renders and reduce performance.</li>
+
+<li>Past a certain number of objects, <strong>R3R will perform worse</strong> than vanilla Three.js code. For me this was around 1,000 objects. You can compare R3R to Three.js under "Benchmarks" <a href="http://toxicfork.github.io/react-three-renderer-example/">in the examples</a>.</li>
+</ul>
+
+<p>The Chrome DevTools Timeline feature is an amazing tool for debugging performance. It's easy to visually inspect your game loop, and it's more readable than the "Profile" feature of the DevTools.</p>
+
+<h2 id="thatsit">That's It!</h2>
+
+<p>Check out <a href="http://charismachameleon.com">Charisma The Chameleon</a> to see what's possible using this setup. While this toolchain is still quite young, I've found React with R3R to be integral to organizing my WebGL game code cleanly. You can also check out the small but growing <a href="http://toxicfork.github.io/react-three-renderer-example/">R3R examples page</a> to see some well organized code samples.</p>
+    
+                
+                
+        </div>    
+
+
+
+
+
+
+        
+
+</body>
+
+<script type="text/javascript" src="../assets/js/book.js"></script>
+<script src="../assets/js/prism.js"></script>
+</html>
