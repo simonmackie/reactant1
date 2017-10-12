@@ -11,7 +11,7 @@ Details: A stylesheet for formatting SitePoint books. This stylesheet imports th
 @import 'page-setup';
 @import 'typography';
 @import 'components';
-
+@import 'overrides'; // Prism overrides
 @import 'page-fake'; // this is temporary PDF live-reload emulation code.
 
 

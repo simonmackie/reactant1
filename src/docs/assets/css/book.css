@@ -1142,6 +1142,18 @@ img {
   page-break-after: always;
 }
 
+/* This file is for over-rides for generated CSS we don't want to change directly- chiefly Prism at this stage - 
+ Alex Walker
+*/
+/* line 5, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_overrides.scss */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: rgba(255, 255, 255, 0);
+}
+
 @media screen {
   /* line 3, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_page-fake.scss */
   body {
