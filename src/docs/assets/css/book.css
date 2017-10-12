@@ -219,13 +219,13 @@ font-family: font(body, family);
 color: color(theme);
 color: color(theme, orange);
 color: color(backgrounds, codeblock); */
-/* line 96, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 95, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 html {
   font-size: 12pt;
   line-height: 18pt;
 }
 
-/* line 101, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 100, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body, .article {
   font-family: 'Libre Franklin', serif;
   font-weight: 300;
@@ -236,7 +236,7 @@ body, .article {
   margin: auto;
 }
 
-/* line 110, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 109, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 p {
   font-size: 1rem;
   font-family: 'Libre Franklin', serif;
@@ -244,7 +244,7 @@ p {
   color: #333;
 }
 
-/* line 116, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 115, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h1, .h1 {
   font-family: Raleway, sans-serif;
   font-weight: 800;
@@ -254,7 +254,7 @@ h1, .h1 {
   margin-bottom: 1.5rem;
 }
 
-/* line 124, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 123, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h2, .h2 {
   font-family: Raleway, sans-serif;
   font-weight: 600;
@@ -264,7 +264,7 @@ h2, .h2 {
   margin-bottom: 0rem;
 }
 
-/* line 132, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 131, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h3, .h3 {
   font-family: Raleway, sans-serif;
   font-size: 1.25rem;
@@ -273,7 +273,7 @@ h3, .h3 {
   margin-bottom: 1.5rem;
 }
 
-/* line 139, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 138, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h4, .h4 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -281,7 +281,7 @@ h4, .h4 {
   margin-bottom: 1.5rem;
 }
 
-/* line 145, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 144, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h5, .h5 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -289,59 +289,59 @@ h5, .h5 {
   margin-bottom: 0rem;
 }
 
-/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 150, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
   margin-bottom: 1.5rem;
 }
 
-/* line 155, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 154, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
 
 /* Let's make sure all's aligned */
-/* line 161, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 160, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 hr, .hr {
   border: 1px solid;
   margin: -1px 0;
 }
 
-/* line 165, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 164, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 a, b, i, strong, em, small, code {
   line-height: 0;
 }
 
-/* line 168, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 167, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sub, sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-/* line 173, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 172, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 176, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 175, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* GRID  */
-/* line 196, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 195, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body {
   position: relative;
 }
 
-/* line 199, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 198, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:active:after {
   display: none;
 }
 
-/* line 203, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 202, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:after {
   background: linear-gradient(to bottom, rgba(200, 225, 255, 0.6) 1px, transparent 1px);
   background-size: 18pt 18pt;
@@ -369,11 +369,11 @@ body:after {
 }
 
 @page :left {
-  margin: 17mm 25mm 15mm 20mm;
+  margin: 22mm 25mm 15mm 20mm;
 }
 
 @page :right {
-  margin: 17mm 20mm 15mm 25mm;
+  margin: 22mm 20mm 15mm 25mm;
 }
 
 /* styles for the right hand spread
@@ -382,14 +382,14 @@ top right the content of the current chapter then the page number */
   @top-right {
     content: string(doctitle);
     margin: 40pt 0 40pt 0;
-    font-size: 11pt;
+    font-size: 9pt;
     font-family: "Libre Franklin";
   }
   @top-right-corner {
     content: counter(page);
     margin: 40pt 0 40pt 0;
     padding-left: 10pt;
-    font-size: 11pt;
+    font-size: 9pt;
     font-family: "Libre Franklin";
   }
 }

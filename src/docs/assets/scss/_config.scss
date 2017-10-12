@@ -8,8 +8,8 @@ $local-path: "/Users/alexmwalker/Sites/PrinceXML-V1/PrinceXML/sp-book-print-css/
 
 $page-width: 8in;
 $page-height: 10in;
-$spread-left-margin: 17mm 25mm 15mm 20mm;
-$spread-right-margin: 17mm 20mm 15mm 25mm;
+$spread-left-margin: 22mm 25mm 15mm 20mm;
+$spread-right-margin: 22mm 20mm 15mm 25mm;
 
 
 
@@ -42,7 +42,6 @@ $fonts: (
     code: (
         family: monospace,
         size: 1rem,
-
         weight: normal,
         line-height: 1.5
     ),
