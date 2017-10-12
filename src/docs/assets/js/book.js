@@ -16,7 +16,7 @@ spBook.Settings = function() {
   return {
     fixedLine: 60,
     breakInsert: "<br>➥ ",
-    tocSelectors: '.preface h1,.preface h2,.preface h3,.chapter h1,.chapter h2,.chapter h3,.appendix h1,.appendix h2,.appendix h3',
+    tocSelectors: '.preface h1,.chapter h1,.appendix h1',
     tocHasPreface: true,
   }
 

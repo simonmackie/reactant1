@@ -406,7 +406,7 @@ top left book title and current page */
   }
   @top-left {
     margin: 40pt 0 40pt 0;
-    content: "Jump Start SketchYour First Week With React";
+    content: "Your First Week With React";
     font-size: 9pt;
     font-family: "Libre Franklin";
   }
