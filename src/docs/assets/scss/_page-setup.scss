@@ -38,7 +38,7 @@ top left book title and current page */
   @top-left-corner {
       content: counter(page);
       margin: 40pt 0 40pt 0;
-      padding-right: 10pt;
+      padding-right: 9pt;
       font-size: 9pt;
       font-family: "Libre Franklin";
   }
