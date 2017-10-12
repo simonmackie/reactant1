@@ -177,8 +177,8 @@ URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?resp
     </div>
     <!-- this is chapter 1, page-count-restart restarts the numbering -->
     <div class="chapter page-count-restart">
-        <div class="ch-page">
-            <div class="ch-head"></div>
+         
+            <div class="ch-head">Chapter</div>
             <h1 id="chap1">How to Tell if React is the Best Fit for Your Next Project</h1>
             <h3>by Maria Antonietta Perna</h3>
             <p>Nowadays, users expect sleek, performant web applications that behave more and more like native apps. Techniques have been devised to decrease the waiting time for a website to load on a user's first visit. However, in web applications that expose a lot of interactivity, the time elapsing between a user action taking place and the app's response is also important. Native apps feel snappy, and web apps are expected to behave the same, even on less than ideal internet connections.</p>
@@ -394,7 +394,7 @@ Happy hacking!
 
         <p>Let's do a quick test run to ensure our new project has no errors:</p>
 
-        <pre><code>$ yarn start
+        <pre><code class="bash language-bash">$ yarn start
 
 Starting development server…
 Compiled successfully!
@@ -1351,7 +1351,7 @@ Watch Usage
 
                 <p><strong>button.js</strong></p>
 
-                <pre><code class="jsx language-jsx">import styles from './button.css';
+                <pre><code class="js language-js">import styles from './button.css';
                 document.body.innerHTML = `&lt;button class="${styles.button}"&gt;test&lt;/button&gt;`;
                 </code></pre>
 
@@ -1361,7 +1361,7 @@ Watch Usage
 
                 <p><strong>index.html</strong></p>
 
-                <pre><code class="jsx language-jsx">&lt;style&gt;
+                <pre><code class="js language-js">&lt;style&gt;
 .DhtEg {
     background: red;
     border-radius: 8px;
@@ -1408,7 +1408,7 @@ const button = () =&gt; {
 
                 <p>Imported as any standard npm package:</p>
 
-                <pre><code class="jsx language-jsx">import styled from 'styled-components';
+                <pre><code class="js language-js">import styled from 'styled-components';
                 </code></pre>
 
                 <p>Once installed, it's time to start making styled React components easy and enjoyable.</p>
@@ -1419,7 +1419,7 @@ const button = () =&gt; {
 
                 <p>Using our button example from before, we can build a generic button using styled-components:</p>
 
-                <pre><code class="jsx language-jsx">const Button = styled.button`
+                <pre><code class="js language-js">const Button = styled.button`
     background: red;
     border-radius: 8px;
     color: white;
@@ -1438,7 +1438,7 @@ class Application extends React.Component {
 
                 <p>As we can see, we're able to create our generic button while keeping the CSS in-line with the JavaScript. styled-components provides a wide range of elements that we can style. We can do this by using direct element references or by passing strings to the default function.</p>
 
-                <pre><code class="jsx language-jsx">const Button = styled.button`
+                <pre><code class="js language-js">const Button = styled.button`
     background: red;
     border-radius: 8px;
     color: white;
@@ -1513,7 +1513,7 @@ class Application extends React.Component {
 
                 <p><strong>JavaScript</strong></p>
 
-                <pre><code class="jsx language-jsx">class Application extends React.Component {
+                <pre><code class="js language-js">class Application extends React.Component {
     render() {
     return (
         &lt;div&gt;
@@ -1529,7 +1529,7 @@ class Application extends React.Component {
 
                 <p>When we reproduce this using styled-components, we create a Button component that has the basic default style for the background. As the component acts like a React component, we can make use of props and change the style outcome accordingly:</p>
 
-                <pre><code class="jsx language-jsx">const Button = styled.button`
+                <pre><code class="js language-js">const Button = styled.button`
     background: red;
     border-radius: 8px;
     color: white;
@@ -1558,7 +1558,7 @@ class Application extends React.Component {
 
                 <p>styled-components provides the ability to create complex advanced components, and we can use existing JavaScript patterns to compose components. The example below demonstrates how components are composed &mdash; in the use case of notification messages that all follow a basic style, but each type having a different background color. We can build a basic, styled component and compose on top to create advanced components:</p>
 
-                <pre><code class="jsx language-jsx">const BasicNotification = styled.p`
+                <pre><code class="js language-js">const BasicNotification = styled.p`
     background: lightblue;
     padding: 5px;
     margin: 5px;
@@ -1644,7 +1644,7 @@ class Application extends React.Component {
 
                 <p><strong>JSX:</strong></p>
 
-                <pre><code class="jsx language-jsx">class SitePoint extends Component {
+                <pre><code class="js language-js">class SitePoint extends Component {
     render() {
     return (
         &lt;div&gt;My name is &lt;span&gt;{this.props.myName}&lt;/span&gt;&lt;/div&gt;
@@ -1655,7 +1655,7 @@ class Application extends React.Component {
 
                 <p><strong>React Sans JSX:</strong></p>
 
-                <pre><code class="jsx language-jsx">class SitePoint extends Component {
+                <pre><code class="js language-js">class SitePoint extends Component {
     render() {
     return React.createElement(
         "div",
@@ -1768,7 +1768,7 @@ someComponent.props.prop2 = "some value";
 
                 <strong>JSX:</strong>
 
-                <pre><code class="jsx language-jsx">var someComponent = &amp;lt;SomeComponent /&amp;gt;;
+                <pre><code class="js language-js">var someComponent = &amp;lt;SomeComponent /&amp;gt;;
 
 someComponent.props.prop1 = "some value";
 someComponent.props.prop2 = "some value";
@@ -1789,7 +1789,7 @@ someComponent.props.prop2 = "some value";
 
                 <strong>JSX:</strong>
 
-                <pre><code class="jsx language-jsx">var someComponent = &lt;SomeComponent prop1="some value" prop2="some value" /&gt;
+                <pre><code class="js language-js">var someComponent = &lt;SomeComponent prop1="some value" prop2="some value" /&gt;
                 </code></pre>
 
                 <p>The component can then be re-rendered at which point React will perform its Reconciliation process to determine how the new property values affect the DOM. Then, the DOM is updated with the changes.</p>
@@ -1933,7 +1933,7 @@ angular.element(root).ready(function() {
 
                 <p>The compiled code below should help clarify how the JSX expressions above map to <code style="word-break: break-word;">createElement(component, props, children)</code> function calls:</p>
 
-                <pre><code>var App = React.createClass({
+                <pre><code class="jsx language-jsx">var App = React.createClass({
     render: function render() {
         return React.createElement(
             Component,
@@ -2041,7 +2041,7 @@ if (enabled) {
     &lt;slide-show slides="slides"&gt;&lt;/slide-show&gt;
 &lt;/div&gt;</code></pre>
 
-                <pre><code>app.controller("SlideShowController", function($scope) {
+                <pre><code class="jsx language-jsx">app.controller("SlideShowController", function($scope) {
     $scope.slides = [{
         imageUrl: "allan-beaver.jpg",
         caption: "Allan Allan Al Al Allan"
@@ -2092,7 +2092,7 @@ app.directive("slideShow", function() {
 
                 <p>This component in React would be rendered inside another component and passed the slides data via <a href="https://medium.com/react-tutorials/react-properties-ef11cd55caa0#.cbg8xkxpe">props</a>.</p>
 
-                <pre><code>let _slides = [{
+                <pre><code class="jsx language-jsx">let _slides = [{
     imageUrl: "allan-beaver.jpg",
     caption: "Allan Allan Al Al Allan"
 }, {
@@ -2109,7 +2109,7 @@ class App extends React.Component {
 
                 <p>React components have a local scope in <code>this.state</code>, which you can modify by calling <code>this.setState({ key: value })</code>. Any changes to state causes the component to re-render itself.</p>
 
-                <pre><code>class SlideShow extends React.Component {
+                <pre><code class="jsx language-jsx">class SlideShow extends React.Component {
     constructor() {
             super()
             this.state = { activeIndex: 0 };
@@ -2158,7 +2158,7 @@ class App extends React.Component {
 
                 <p>Angular's trusty <code>ng-model</code> and <code>$scope</code> form a link where the data flows back and forth between a form element and properties on a JavaScript object in a controller.</p>
 
-                <pre><code>app.controller("TwoWayController", function($scope) {
+                <pre><code class="jsx language-jsx">app.controller("TwoWayController", function($scope) {
     $scope.person = {
         name: 'Bruce'
     };
@@ -2172,7 +2172,7 @@ class App extends React.Component {
 
                 <p>React eschews this pattern in favor of a one-way data flow instead. The same types of views can be built with both patterns though.</p>
 
-                <pre><code>class OneWayComponent extends React.Component {
+                <pre><code class="jsx language-jsx">class OneWayComponent extends React.Component {
     constructor() {
         super()
         this.state = { name: 'Bruce' }
@@ -2202,7 +2202,7 @@ class App extends React.Component {
 
                 <p>Whilst data flows down in one direction, it's possible to call methods on the parent through callbacks. This is usually done in response to some user input. This flexibility gives you a lot of control when refactoring components to their simplest presentational forms. If the refactored components have no state at all, they can be written as pure functions.</p>
 
-                <pre><code>// A presentational component written as a pure function
+                <pre><code class="jsx language-jsx">// A presentational component written as a pure function
 const OneWayComponent = (props)=&gt; (
     &lt;div&gt;
         &lt;input value={ props.name } onChange={ (event)=&gt; props.onChange(event.target.value) } /&gt;
@@ -2235,7 +2235,7 @@ class ParentComponent extends React.Component {
 
                 <p>JavaScript Modules are a much better way to handle dependencies. You can use them today with a tool like <a href="https://github.com/webpack/webpack">Webpack</a>, <a href="https://github.com/systemjs/systemjs">SystemJS</a> or <a href="http://browserify.org/">Browserify</a>.</p>
 
-                <pre><code>// An Angular directive with dependencies
+                <pre><code class="jsx language-jsx">// An Angular directive with dependencies
 app.directive('myComponent', ['Notifier', '$filter', function(Notifier, $filter) {
     const formatName = $filter('formatName');
 
@@ -2266,7 +2266,7 @@ class MyComponent extends React.Component {
 
                 <p>Components in Angular 2 resemble React components in a lot of ways. <a href="https://angular.io/docs/ts/latest/guide/displaying-data.html#!#showing-component-properties-with-interpolation">The example components in the docs</a> have a class and template in close proximity. Events look similar. It explains how to build views using a <a href="https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html#the-injector-tree">Component Hierarchy</a>, just as you would if you were building it in React, and it embraces ES6 modules for dependency injection.</p>
 
-                <pre><code>// Angular 2
+                <pre><code class="jsx language-jsx">// Angular 2
 @Component({
     selector: 'hello-component',
     template: `
@@ -2369,7 +2369,7 @@ onKeyUp(event) {
 
                 <p>To build a testable <code>GreatApeSearchBar</code>, for example, do this:</p>
 
-                <pre><code class="jsx language-jsx">class GreatApeSearchBar extends Component {
+                <pre><code class="js language-js">class GreatApeSearchBar extends Component {
     constructor(props) {
         super(props);
 
@@ -2403,7 +2403,7 @@ onKeyUp(event) {
 
                 <p>The next React component in the hierarchy is the <code>GreatApeList</code>, and it looks like this:</p>
 
-                <pre><code class="jsx language-jsx">class GreatApeList extends Component {
+                <pre><code class="js language-js">class GreatApeList extends Component {
     render() {
         let rows = [];
 
@@ -2438,7 +2438,7 @@ onKeyUp(event) {
 
                 <p>For now, let’s look at the <code>GreatApeRow</code>, which houses the great ape data:</p>
 
-                <pre><code class="jsx language-jsx">class GreatApeRow extends Component {
+                <pre><code class="js language-js">class GreatApeRow extends Component {
     render() {
         return (
             &lt;div&gt;
@@ -2471,7 +2471,7 @@ onKeyUp(event) {
 
                 <p>Using ES6, you use it like this:</p>
 
-                <pre><code class="jsx language-jsx">import ShallowRenderer from 'react-test-renderer/shallow';
+                <pre><code class="js language-js">import ShallowRenderer from 'react-test-renderer/shallow';
                 </code></pre>
 
                 <p>In order for unit tests to run fast, you need a way to test components in isolation. This way, you can focus on a single problem, test it, and move on to the next concern. This becomes empowering as the solution grows and you're able to refactor at will --- staying close to the code, making rapid changes, and gaining reassurance it will work in a browser.</p>
@@ -2488,7 +2488,7 @@ onKeyUp(event) {
 
                 <p>One approach is to do this:</p>
 
-                <pre><code class="jsx language-jsx">import GreatApeList from './GreatApeList';
+                <pre><code class="js language-js">import GreatApeList from './GreatApeList';
 
 const APES = [{ name: 'Australopithecus afarensis', isExtant: false },
     { name: 'Orangutan', isExtant: true }];
@@ -2515,7 +2515,7 @@ expect(rows.length).toBe(1);
 
                 <p>One good unit test is to do this:</p>
 
-                <pre><code class="jsx language-jsx">import GreatApeSearchBar from './GreatApeSearchBar';
+                <pre><code class="js language-js">import GreatApeSearchBar from './GreatApeSearchBar';
 
 // Arrange
 let showExtantOnly = false;
@@ -2542,7 +2542,7 @@ expect(showExtantOnly).toBe(true);
 
                 <p>For example, let’s ensure we render an image:</p>
 
-                <pre><code class="jsx language-jsx">import GreatApeRow from './GreatApeRow';
+                <pre><code class="js language-js">import GreatApeRow from './GreatApeRow';
 
 const APE = {
     image: 'https://en.wikipedia.org/wiki/File:Australopithecus_afarensis.JPG',
