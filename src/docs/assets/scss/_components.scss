@@ -199,16 +199,13 @@ img {
 .image-left + p, .image-right + p {
     margin-top: 0;
 }
-// chapter page
-/*
-.chapter-page{
-   page-break-inside: avoid;
-    page-break-after: always;
-    h1 {
-        width:65%;
-    }
-}*/
+
 .block{
     page-break-inside: avoid;
     page-break-after: always;
+}
+
+.breakbefore{
+    page-break-before: always;
+    break-before: always
 }

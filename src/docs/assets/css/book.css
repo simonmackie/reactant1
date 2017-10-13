@@ -704,7 +704,7 @@ code,
 pre {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: .8rem;
   line-height: 1.5;
   white-space: pre-wrap;
 }
@@ -1169,18 +1169,16 @@ img {
   margin-top: 0;
 }
 
-/*
-.chapter-page{
-   page-break-inside: avoid;
-    page-break-after: always;
-    h1 {
-        width:65%;
-    }
-}*/
-/* line 211, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 203, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .block {
   page-break-inside: avoid;
   page-break-after: always;
+}
+
+/* line 208, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.breakbefore {
+  page-break-before: always;
+  break-before: always;
 }
 
 /* This file is for over-rides for generated CSS we don't want to change directly- chiefly Prism at this stage - 
