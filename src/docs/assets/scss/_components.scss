@@ -1,40 +1,50 @@
 .box {
     background-color: color(backgrounds, box-body);
-    margin: 1.5rem 0 1.5rem 1rem;
+    margin: 1.5rem 0 1.5rem 0rem;
     position: relative;
     z-index: 1;
+    border: 1px color(backgrounds, box-title) solid;
+    border-width: 0 1px 1px 1px;
+    border-radius: 25px;
 }
 
 .box h4 {
     background-color: color(backgrounds, box-title);
     //font-size: 12pt;
     padding: $title-padding;
-    margin: 0;
-    margin-bottom: .75rem;
+    margin: 1.5rem 0 0.75rem 0;
+    line-height: 1.95rem;
+    border-radius: 25px;
+    color: #345;
 }
 
 .box .body {
     font-size: 9pt;
-    padding: 0 5pt;
+    padding: 0 2rem;
+    
 }
 
 .box .body p {
     margin: 0;
-    padding: 0 0 1rem 0;
+    padding: 0 0 0.75rem 0;
+    line-height: 1.5rem;
+    font-weight: 300;
 }
 
 .box.tip h4,
+.box.codepen h4,
 .box.note h4,
 .box.attention h4,
 .box.warning h4 {
-    padding-left: 32pt;
+    padding-left: 3rem;
 }
 
 .box.tip .body,
 .box.note .body,
+.box.codepen .body,
 .box.attention .body,
 .box.warning .body {
-    padding-left: 24pt;
+    padding-left: 3rem;
 }
 
 .box.tip:before {
@@ -54,6 +64,11 @@
 
 .box.warning:before {
     background: url(../images/box-warning.svg);
+    @include box-icon;
+}
+
+.box.codepen:before {
+    background: url(../images/box-codepen.svg);
     @include box-icon;
 }
 
@@ -184,16 +199,13 @@ img {
 .image-left + p, .image-right + p {
     margin-top: 0;
 }
-// chapter page
-/*
-.chapter-page{
-   page-break-inside: avoid;
-    page-break-after: always;
-    h1 {
-        width:65%;
-    }
-}*/
+
 .block{
     page-break-inside: avoid;
     page-break-after: always;
+}
+
+.breakbefore{
+    page-break-before: always;
+    break-before: always
 }

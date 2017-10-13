@@ -275,7 +275,7 @@ h3, .h3 {
 
 /* line 138, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 h4, .h4 {
-  font-size: 1rem;
+  font-size: 1.15rem;
   line-height: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -330,18 +330,44 @@ sub {
   bottom: -0.25em;
 }
 
+/* line 179, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+ol li {
+  line-height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-increment: step-counter;
+}
+
+/* line 188, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+ol li::before {
+  content: counter(step-counter);
+  margin: .25rem 1rem 0 0;
+  display: block;
+  float: left;
+  font-size: 80%;
+  background-color: #00c8c8;
+  background: #ddeeff;
+  color: #778899;
+  font-weight: bold;
+  width: 1.75rem;
+  line-height: 1.75rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
 /* GRID  */
-/* line 195, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 219, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body {
   position: relative;
 }
 
-/* line 198, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 222, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:active:after {
   display: none;
 }
 
-/* line 202, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
+/* line 226, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_config.scss */
 body:after {
   background: linear-gradient(to bottom, rgba(200, 225, 255, 0.6) 1px, transparent 1px);
   background-size: 18pt 18pt;
@@ -682,9 +708,10 @@ pre {
   line-height: 1.5;
   white-space: pre-wrap;
 }
+pre code {
+  font-size: .8rem;
+}
 
-/* stop things breaking in weird places */
-/* line 13, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h1,
 h2,
 h3,
@@ -725,7 +752,7 @@ figure,
   position: absolute;
   width: 30%;
   font-family: 'Raleway';
-  color: #aaa;
+  color: #9ab;
   font-weight: 600;
   margin-top: 25rem;
   right: 0%;
@@ -737,7 +764,7 @@ figure,
 .ch-head::before {
   content: counter(chapternum);
   font-size: 120pt;
-  color: #777;
+  color: #445266;
   line-height: 100%;
   vertical-align: middle;
   position: absolute;
@@ -756,6 +783,7 @@ figure,
   float: right;
   border-right: 1px solid #999;
   line-height: 100%;
+  color: #334455;
   margin-right: 30%;
   text-align: right;
   padding-right: 2rem;
@@ -764,19 +792,20 @@ figure,
   page-break-after: avoid;
 }
 
-/* line 93, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 94, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .ch-head + h1 + h3 {
   margin: 0 30% 3rem 0;
   font-size: 24px;
   line-height: 100%;
   padding-right: 2rem;
-  color: #999;
+  color: #9ab;
+  letter-spacing: 0.5px;
   text-align: right;
   page-break-before: avoid;
   page-break-after: always;
 }
 
-/* line 107, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 109, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .ch-head + h1 + h3 + * {
   clear: both;
   page-break-before: always;
@@ -809,12 +838,12 @@ h2 {
     line-height: .8;
 }
 */
-/* line 141, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 143, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h2 code {
   font-size: 90%;
 }
 
-/* line 145, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 147, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .front h2 {
   color: #333;
   padding: 0;
@@ -824,7 +853,7 @@ h2 code {
   line-height: 1.5;
 }
 
-/* line 154, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 156, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 .front h2 + p {
   margin-top: 0;
   padding-top: 0;
@@ -843,24 +872,24 @@ h3, h4, h5, h6 {
 }
 */
 /* lists */
-/* line 174, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 176, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 ul,
 ol {
   padding-left: 0;
   margin-left: 0;
 }
 
-/* line 180, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 182, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 li {
   margin-left: 20px;
 }
 
-/* line 184, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 186, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 ul li {
   list-style-image: url(../images/bullet.png);
 }
 
-/* line 188, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 190, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dt {
   float: left;
   clear: left;
@@ -868,12 +897,12 @@ dt {
   font-weight: bold;
 }
 
-/* line 195, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 197, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dd {
   margin: 0 0 0 90pt;
 }
 
-/* line 199, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
+/* line 201, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 dt code {
   font-weight: bold;
 }
@@ -881,106 +910,119 @@ dt code {
 /* tables */
 /* line 1, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box {
-  background-color: #f2f2e1;
-  margin: 1.5rem 0 1.5rem 1rem;
+  background-color: #f5faff;
+  margin: 1.5rem 0 1.5rem 0rem;
   position: relative;
   z-index: 1;
+  border: 1px #ebf2fa solid;
+  border-width: 0 1px 1px 1px;
+  border-radius: 25px;
 }
 
-/* line 8, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 11, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box h4 {
-  background-color: #ededdd;
+  background-color: #ebf2fa;
   padding: 0.2em 0.5em;
-  margin: 0;
-  margin-bottom: .75rem;
-}
-
-/* line 16, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
-.box .body {
-  font-size: 9pt;
-  padding: 0 5pt;
+  margin: 1.5rem 0 0.75rem 0;
+  line-height: 1.95rem;
+  border-radius: 25px;
+  color: #345;
 }
 
 /* line 21, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
-.box .body p {
-  margin: 0;
-  padding: 0 0 1rem 0;
+.box .body {
+  font-size: 9pt;
+  padding: 0 2rem;
 }
 
-/* line 26, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 27, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.box .body p {
+  margin: 0;
+  padding: 0 0 0.75rem 0;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
+/* line 34, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.tip h4,
+.box.codepen h4,
 .box.note h4,
 .box.attention h4,
 .box.warning h4 {
-  padding-left: 32pt;
+  padding-left: 3rem;
 }
 
-/* line 33, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 42, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.tip .body,
 .box.note .body,
+.box.codepen .body,
 .box.attention .body,
 .box.warning .body {
-  padding-left: 24pt;
-}
-
-/* line 40, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
-.box.tip:before {
-  background: url(../images/box-tip.svg);
-  content: " ";
-  height: 32pt;
-  width: 32pt;
-  display: block;
-  background-size: 31pt 31pt;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -5pt;
-  left: -5pt;
-}
-
-/* line 45, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
-.box.note:before {
-  background: url(../images/box-note.svg);
-  content: " ";
-  height: 32pt;
-  width: 32pt;
-  display: block;
-  background-size: 31pt 31pt;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -5pt;
-  left: -5pt;
+  padding-left: 3rem;
 }
 
 /* line 50, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
-.box.attention:before {
-  background: url(../images/box-attention.svg);
+.box.tip:before {
+  background: url(../images/box-tip.svg);
   content: " ";
-  height: 32pt;
-  width: 32pt;
+  height: 2.25rem;
+  width: 2.25rem;
   display: block;
-  background-size: 31pt 31pt;
+  background-size: 2.25rem 2.25rem;
   background-repeat: no-repeat;
   position: absolute;
-  top: -5pt;
-  left: -5pt;
 }
 
 /* line 55, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.box.note:before {
+  background: url(../images/box-note.svg);
+  content: " ";
+  height: 2.25rem;
+  width: 2.25rem;
+  display: block;
+  background-size: 2.25rem 2.25rem;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+/* line 60, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.box.attention:before {
+  background: url(../images/box-attention.svg);
+  content: " ";
+  height: 2.25rem;
+  width: 2.25rem;
+  display: block;
+  background-size: 2.25rem 2.25rem;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+/* line 65, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .box.warning:before {
   background: url(../images/box-warning.svg);
   content: " ";
-  height: 32pt;
-  width: 32pt;
+  height: 2.25rem;
+  width: 2.25rem;
   display: block;
-  background-size: 31pt 31pt;
+  background-size: 2.25rem 2.25rem;
   background-repeat: no-repeat;
   position: absolute;
-  top: -5pt;
-  left: -5pt;
+}
+
+/* line 70, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.box.codepen:before {
+  background: url(../images/box-codepen.svg);
+  content: " ";
+  height: 2.25rem;
+  width: 2.25rem;
+  display: block;
+  background-size: 2.25rem 2.25rem;
+  background-repeat: no-repeat;
+  position: absolute;
 }
 
 /* code*/
-/* line 61, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 76, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 figure {
   margin: 0;
   -webkit-margin-before: 0em;
@@ -989,7 +1031,7 @@ figure {
   -webkit-margin-end: 0px;
 }
 
-/* line 68, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 83, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codeblock {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
@@ -998,7 +1040,7 @@ figure {
   padding: 0.2em 0.5em 0;
 }
 
-/* line 74, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 89, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codefig code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
@@ -1007,7 +1049,7 @@ figure {
   white-space: pre-line;
 }
 
-/* line 81, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 96, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .codefig figcaption {
   font-size: 8pt;
   font-weight: bold;
@@ -1020,7 +1062,7 @@ figure {
   margin-bottom: 0;
 }
 
-/* line 94, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 109, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 pre[class*="language-"] {
   padding: 1.5rem;
   margin: 0 0 1.5rem 0;
@@ -1028,13 +1070,13 @@ pre[class*="language-"] {
 }
 
 /* tables */
-/* line 101, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 116, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table {
   border-collapse: collapse;
   margin-top: 1em;
 }
 
-/* line 106, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 121, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table caption {
   font-weight: bold;
   text-align: left;
@@ -1042,56 +1084,56 @@ table caption {
   padding-bottom: 5pt;
 }
 
-/* line 113, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 128, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table tbody {
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
 
-/* line 119, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 134, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 table thead {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
 
-/* line 125, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 140, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 th {
   background-color: #d6deeb;
   padding: 0.3em;
   text-align: left;
 }
 
-/* line 131, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 146, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 td {
   padding: 0.3em;
   vertical-align: top;
 }
 
-/* line 136, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .table-striped tr:nth-child(2n) {
   background-color: #ededdd;
 }
 
 /* figures*/
-/* line 141, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 156, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 img {
   max-width: 100%;
 }
 
-/* line 146, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 161, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig {
   text-align: center;
 }
 
-/* line 151, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 166, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig img {
   display: block;
   max-width: 100%;
 }
 
-/* line 156, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 171, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .imagefig figcaption {
   font-size: 8pt;
   margin-bottom: 1.5rem;
@@ -1100,46 +1142,56 @@ img {
 }
 
 /* other images */
-/* line 165, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 180, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-inline {
   max-width: 100%;
 }
 
-/* line 169, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 184, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-left {
   float: left;
   margin: 0 10pt 10pt 0;
 }
 
-/* line 174, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 189, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-right {
   float: right;
   margin: 0 0 10pt 10pt;
 }
 
-/* line 179, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 194, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-center {
   display: block;
   margin: 0 auto;
 }
 
-/* line 184, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 199, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .image-left + p, .image-right + p {
   margin-top: 0;
 }
 
-/*
-.chapter-page{
-   page-break-inside: avoid;
-    page-break-after: always;
-    h1 {
-        width:65%;
-    }
-}*/
-/* line 196, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+/* line 203, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
 .block {
   page-break-inside: avoid;
   page-break-after: always;
+}
+
+/* line 208, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_components.scss */
+.breakbefore {
+  page-break-before: always;
+  break-before: always;
+}
+
+/* This file is for over-rides for generated CSS we don't want to change directly- chiefly Prism at this stage - 
+ Alex Walker
+*/
+/* line 5, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_overrides.scss */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: rgba(255, 255, 255, 0);
 }
 
 @media screen {

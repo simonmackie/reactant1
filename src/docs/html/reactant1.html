@@ -76,17 +76,18 @@
     <div class="preface set-front-matter">
         <h1 id="preface">Preface</h1>
         <p>React is a remarkable JavaScript library that's taken the development community by storm. In a nutshell, it's made it easier for developers to build interactive user interfaces for web, mobile and desktop platforms. One of its best features is its freedom from the problematic bugs inherent in MVC frameworks, where inconsistent views is a recurring problem for big projects. Today, thousands of companies worldwide are using React, including big names such as Netflix and AirBnB. React has become immensely popular, such that a number of apps have been ported to React --- including WhatsApp, Instagram and Dropbox.</p>
-        <p>This book is a collection of articles selected from SitePoint's <a href="https://www.sitepoint.com/javascript/react/">React Hub</a> that will guide you through your first week with the amzingly flexible library.</a></p>
+        <p>This book is a collection of articles selected from SitePoint's <a href="https://www.sitepoint.com/javascript/react/">React Hub</a> that will guide you through your first week with the amzingly flexible library.</p>
 
         <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
 
         <p>This book is for novice React developers. You’ll need to be familiar with HTML and CSS and have a reasonable level of understanding of JavaScript in order to follow the discussion.</p>
 
+
         <h2 id="preface-conventions-used">Conventions Used</h2>
 
         <p>You’ll notice that we’ve used certain typographic and layout styles throughout this book to signify different types of information. Look out for the following items.</p>
 
-        <h3>Code Samples</h3>
+        <h3 class="breakbefore">Code Samples</h3>
 
         <p>Code in this book is displayed using a fixed-width font, like so:</p>
 
@@ -114,7 +115,7 @@ URL.open("http://www.sitepoint.com/responsive-web-
 ➥design-real-user-testing/?responsive1");
 </code></pre>
 
-        <h3 id="preface-tips">Tips, Notes, and Warnings</h3>
+        <h3 id="preface-tips" class="breakbefore">Tips, Notes, and Warnings</h3>
 
         <div class="box tip">
             <h4>Hey, You!</h4>
@@ -1413,7 +1414,14 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="http://codepen.io/SitePoint/pen/bWpoPO">Codepen</a></p>
+                <p><a href="http://codepen.io/SitePoint/pen/bWpoPO">Codepen </a></p>
+                
+            <div class="box codepen">
+                <h4>Codepen Example</h4>
+                <div class="body">
+                    <p><a href="http://codepen.io/SitePoint/pen/bWpoPO">http://codepen.io/SitePoint/pen/bWpoPO</a></p>
+                </div>
+            </div>
 
                 <p>As we can see, we're able to create our generic button while keeping the CSS in-line with the JavaScript. styled-components provides a wide range of elements that we can style. We can do this by using direct element references or by passing strings to the default function.</p>
 
@@ -2593,7 +2601,7 @@ expect(apeImage.props.alt).toBe(APE.name);
 
 		
 
-</div>
+
 </body>
 
 <script type="text/javascript" src="../assets/js/book.js"></script>
