@@ -32,6 +32,7 @@
 }
 
 .box.tip h4,
+.box.codepen h4,
 .box.note h4,
 .box.attention h4,
 .box.warning h4 {
@@ -40,6 +41,7 @@
 
 .box.tip .body,
 .box.note .body,
+.box.codepen .body,
 .box.attention .body,
 .box.warning .body {
     padding-left: 3rem;
@@ -62,6 +64,11 @@
 
 .box.warning:before {
     background: url(../images/box-warning.svg);
+    @include box-icon;
+}
+
+.box.codepen:before {
+    background: url(../images/box-codepen.svg);
     @include box-icon;
 }
 
