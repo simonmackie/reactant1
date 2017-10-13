@@ -704,13 +704,14 @@ code,
 pre {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-weight: normal;
-  font-size: .8rem;
+  font-size: 1rem;
   line-height: 1.5;
   white-space: pre-wrap;
 }
+pre code {
+  font-size: .8rem;
+}
 
-/* stop things breaking in weird places */
-/* line 13, /Users/alexmwalker/Sites/Books/reactant1/src/docs/assets/scss/_typography.scss */
 h1,
 h2,
 h3,
