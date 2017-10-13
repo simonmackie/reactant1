@@ -38,14 +38,14 @@
 
 @mixin box-icon {
     content: " ";
-    height: 32pt;
-    width: 32pt;
+    height: 2.25rem;
+    width: 2.25rem;
     display: block;
-    background-size: 31pt 31pt;
+    background-size: 2.25rem 2.25rem;
     background-repeat: no-repeat;
     position: absolute;
-    top: -5pt;
-    left:-5pt;
+    //top: -5pt;
+    //left:-5pt;
 }
 
 
