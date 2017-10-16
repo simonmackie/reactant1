@@ -76,7 +76,7 @@
     <div class="preface set-front-matter">
         <h1 id="preface">Preface</h1>
         <p>React is a remarkable JavaScript library that's taken the development community by storm. In a nutshell, it's made it easier for developers to build interactive user interfaces for web, mobile and desktop platforms. One of its best features is its freedom from the problematic bugs inherent in MVC frameworks, where inconsistent views is a recurring problem for big projects. Today, thousands of companies worldwide are using React, including big names such as Netflix and AirBnB. React has become immensely popular, such that a number of apps have been ported to React --- including WhatsApp, Instagram and Dropbox.</p>
-        <p>This book is a collection of articles selected from SitePoint's <a href="https://www.sitepoint.com/javascript/react/">React Hub</a> that will guide you through your first week with the amzingly flexible library.</p>
+        <p>This book is a collection of articles, selected from SitePoint's <a href="https://www.sitepoint.com/javascript/react/">React Hub</a>, that will guide you through your first week with the amazingly flexible library.</p>
 
         <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
 
@@ -652,8 +652,7 @@ URL.open("http://www.sitepoint.com/responsive-web-
         <pre><code class="bash language-bash">$ create-react-app message-app
 
 …
-Success! Created message-app at /home/mike/Projects/github/
-➥message-app
+Success! Created message-app at /home/mike/Projects/github/message-app
 Inside that directory, you can run several commands:
 
     yarn start
@@ -1206,7 +1205,7 @@ class App extends Component {
                 <p>You can use Node environment variables to inject values into your code at built-time. React-scripts will automatically look for any environment variables starting with <code>REACT_APP_</code> and make them available under the global <code>process.env</code>. These variables can be in a <code>.env</code> file for convenience:</p>
 
                 <pre><code class="bash language-bash">REACT_APP_BACKEND=http://my-api.com
-                REACT_APP_BACKEND_USER=root
+REACT_APP_BACKEND_USER=root
                 </code></pre>
 
                 <p>You can then reference them in your code:</p>
@@ -1414,7 +1413,6 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="http://codepen.io/SitePoint/pen/bWpoPO">Codepen </a></p>
                 
             <div class="box codepen">
                 <h4>Codepen Example</h4>
@@ -1462,7 +1460,14 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="http://codepen.io/SitePoint/pen/NjNaQo">Codepen</a></p>
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/NjNaQo">http://codepen.io/SitePoint/pen/NjNaQo</a></p>
+                    </div>
+                </div>
+
+
 
                 <p>The main advantage to this styling method is being able to write pure CSS. As seen in the Glamor example, the CSS attribute names have had to be changed to camel case, as they were attributes of a JavaScript object.</p>
 
@@ -1512,7 +1517,15 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="http://codepen.io/SitePoint/pen/eWZeOp">Codepen</a></p>
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/eWZeOp">http://codepen.io/SitePoint/pen/eWZeOp</a></p>
+                    </div>
+                </div>
+
+
 
                 <p>When we reproduce this using styled-components, we create a Button component that has the basic default style for the background. As the component acts like a React component, we can make use of props and change the style outcome accordingly:</p>
 
@@ -1536,9 +1549,14 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="http://codepen.io/SitePoint/pen/qmZVWm">Codepen</a></p>
 
 
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/qmZVWm">http://codepen.io/SitePoint/pen/qmZVWm</a></p>
+                    </div>
+                </div>
 
 
                 <h2 id="advancedusage">Advanced Usage</h2>
@@ -1574,7 +1592,15 @@ class Application extends React.Component {
 }
                 </code></pre>
 
-                <p><a href="https://codepen.io/SitePoint/pen/JNXOjW">Codepen</a></p>
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="https://codepen.io/SitePoint/pen/JNXOjW">https://codepen.io/SitePoint/pen/JNXOjW</a></p>
+                    </div>
+                </div>
+
+
 
                 <p>As styled-components allows us to pass standard DOM elements and other components, we can compose advanced features from basic components.</p>
 
@@ -1711,9 +1737,15 @@ class Application extends React.Component {
 
                 <p>Properties are the input values to the component. They are used when rendering the component and initializing state (discussed shortly). After instantiating the component, properties should be considered immutable. Property values can only be set when instantiating the component, then when the component is re-rendered in the DOM, React will compare between the old and new property values to determine what DOM updates are required.</p>
 
-                <p>Here is a <a href="http://codepen.io/SitePoint/pen/XKqQqN/">CodePen demonstration</a> of setting the property values and updating the DOM in consideration of updated property values, screenshot below.</p>
 
-                <img src="../images/reactant1/datacodepen1.png" />
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p>Here is a <a href="http://codepen.io/SitePoint/pen/XKqQqN/">CodePen demonstration</a> of setting the property values and updating the DOM in consideration of updated property values.</p>
+                    </div>
+                </div>
+
+
 
 
 
@@ -1735,11 +1767,16 @@ class Application extends React.Component {
 
                 <img src="../images/reactant1/1469284540working-with-data-in-react-properties-state02.png" alt="class property changed to ClassName" />
 
-                <p>When the property name is changed from <code>class</code> to <code>className</code> the warning message does not appear. Check out the <a href="https://codepen.io/SitePoint/pen/akGxGW/">complete CodePen demonstration</a>, screenshot below.</p>
-
-                <img src="../images/reactant1/datacodepen2.png" />
+                <p>When the property name is changed from <code>class</code> to <code>className</code> the warning message does not appear. Check out the complete CodePen demonstration:</p>
 
 
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="https://codepen.io/SitePoint/pen/akGxGW/">https://codepen.io/SitePoint/pen/akGxGW/</a>.</p>
+                    </div>
+                </div>
 
                 <p>In addition to property names such as <code>className</code>, React properties have other interesting aspects. For example, mutating component properties is an anti-pattern. Properties can be set when instantiating a component, but should not be mutated afterwards. This includes changing properties after instantiating the component, as well as after rendering it. Mutating values within a component are considered state, and tracked with the <code>state</code> property rather than the <code>props</code> property.</p>
 
@@ -1795,11 +1832,16 @@ someComponent.props.prop2 = "some value";
     },
                 </code></pre>
 
-                <p>Once the state is initialized, the state values can be used like property values when rendering the component. To capture the user interactions which update the state, event handlers are registered. To keep the React components self-contained, event handler function objects can be passed in as properties or defined directly on the component object definition itself. See the <a href="http://codepen.io/SitePoint/pen/JKvVvy/">Codepen demo</a>, with screenshot below.</p>
-
-                <img src="../images/reactant1/datacodepen2.png" />
+                <p>Once the state is initialized, the state values can be used like property values when rendering the component. To capture the user interactions which update the state, event handlers are registered. To keep the React components self-contained, event handler function objects can be passed in as properties or defined directly on the component object definition itself.</p>
 
 
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/JKvVvy/">http://codepen.io/SitePoint/pen/JKvVvy/</a>.</p>
+                    </div>
+                </div>
 
                 <p>One of the benefits of React is that standard HTML events are used. Included with standard HTML events is the standard HTML Event object. Learning special event libraries, event handlers, or custom event objects is not needed. Because modern browsers are largely compatible, intermediary cross-browser libraries such as jQuery are not needed.</p>
 
@@ -1885,7 +1927,7 @@ someComponent.props.prop2 = "some value";
 
                 <p>Initializing Angular apps requires a module, a list of dependencies and a root element.</p>
 
-                <pre><code class="language-typescript">let app = angular.module('app', [])
+                <pre><code class="language-javascript">let app = angular.module('app', [])
 let root = document.querySelector('#root');
 angular.element(root).ready(function() {
     angular.bootstrap(root, ['app']);
@@ -1894,8 +1936,8 @@ angular.element(root).ready(function() {
 
                 <p>The entry point for React is rendering a component into a root node. It's possible to have multiple root components, too:</p>
 
-                <pre><code class="language-typescript">let root = document.querySelector('#root');
-                ReactDOM.render(&lt;App /&gt;, root)
+                <pre><code class="language-javascript">let root = document.querySelector('#root');
+ReactDOM.render(&lt;App /&gt;, root)
                 </code></pre>
 
                 <h2 id="templates">Templates</h2>
@@ -2029,7 +2071,7 @@ if (enabled) {
     &lt;slide-show slides="slides"&gt;&lt;/slide-show&gt;
 &lt;/div&gt;</code></pre>
 
-                <pre><code class="language-typescript">app.controller("SlideShowController", function($scope) {
+                <pre><code class="language-javascript">app.controller("SlideShowController", function($scope) {
     $scope.slides = [{
         imageUrl: "allan-beaver.jpg",
         caption: "Allan Allan Al Al Allan"
@@ -2080,7 +2122,15 @@ app.directive("slideShow", function() {
 
                 <h3>The Slideshow Component in Angular</h3>
 
-                <p data-height="425" data-theme-id="6441" data-slug-hash="QyNJxO" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/QyNJxO/">Angular Slideshow</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/QyNJxO/">http://codepen.io/SitePoint/pen/QyNJxO/</a></p>
+                    </div>
+                </div>
+
+
+
 
 
                 <p>This component in React would be rendered inside another component and passed the slides data via <a href="https://medium.com/react-tutorials/react-properties-ef11cd55caa0#.cbg8xkxpe">props</a>.</p>
@@ -2115,8 +2165,7 @@ class App extends React.Component {
                 &lt;div className="slideshow"&gt;
                     &lt;ul className="slideshow-slides"&gt;
                         {
-                        this.props.slides.map((slide, 
-                        ➥index) =&gt; (
+                        this.props.slides.map((slide, index) =&gt; (
                             &lt;li className={ classNames
                                 ➥({ active: index == this.
                                 ➥state.activeIndex }) }&gt;
@@ -2133,8 +2182,7 @@ class App extends React.Component {
                     &lt;/ul&gt;
                     &lt;ul className="slideshow-dots"&gt;
                         {
-                        this.props.slides.map((slide, index) 
-                        ➥=&gt; (
+                        this.props.slides.map((slide, index) =&gt; (
                             &lt;li className={ (index == this.
                                 ➥state.activeIndex) ? 
                                 ➥'active': '' }&gt;
@@ -2155,7 +2203,15 @@ class App extends React.Component {
 
                 <h3>The Slideshow Component in React</h3>
 
-                <p data-height="425" data-theme-id="6441" data-slug-hash="ZQWmoj" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/ZQWmoj/">React SlideShow</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/ZQWmoj/">http://codepen.io/SitePoint/pen/ZQWmoj/</a></p>
+                    </div>
+                </div>
+
+
 
 
                 <h2 id="two-way-binding">Two-Way Binding</h2>
@@ -2198,7 +2254,17 @@ class App extends React.Component {
 
                 <p>The <code>&lt;input&gt;</code> here is called a "controlled input". This means its value is only ever changed when the <code>render</code> function is called (on every key stroke in the example above). The component itself is called "stateful" because it manages its own data. This isn't recommended for the majority of components. The ideal is to keep components "stateless" and have data passed to them via <code>props</code> instead.</p>
 
-                <p data-height="404" data-theme-id="6441" data-slug-hash="BjKGPW" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/BjKGPW/">One-Way Data Flow in React</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+                <div class="box codepen">
+                    <h4>Codepen Example</h4>
+                    <div class="body">
+                        <p><a href="http://codepen.io/SitePoint/pen/BjKGPW/">http://codepen.io/SitePoint/pen/BjKGPW/</a></p>
+                    </div>
+                </div>
+
+
+
+
 
 
                 <p>Typically, a stateful <a href="https://medium.com/@learnreact/container-components-c0e67432e005#.osha0yxns">Container  Component</a> or <a href="http://blog.andrewray.me/the-reactjs-controller-view-pattern/">Controller View</a> sits at the top of the tree with many stateless child components underneath. For more information on this, read <a href="https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#what-components-should-have-state">What Components Should Have State?</a> from the docs.</p>
@@ -2420,15 +2486,13 @@ onKeyUp(event) {
 
         this.props.apes.forEach((ape) =&gt; {
             if (!this.props.showExtantOnly) {
-                rows.push(&lt;GreatApeRow key={ape.name} ape={ape}
-                ➥ /&gt;);
+                rows.push(&lt;GreatApeRow key={ape.name} ape={ape} /&gt;);
 
             return;
         }
 
             if (ape.isExtant) {
-                rows.push(&lt;GreatApeRow key={ape.name} ape={ape}
-                ➥ /&gt;);
+                rows.push(&lt;GreatApeRow key={ape.name} ape={ape} /&gt;);
             }
         });
 
@@ -2503,8 +2567,7 @@ onKeyUp(event) {
 
                 <pre><code class="js language-js">import GreatApeList from './GreatApeList';
 
-const APES = [{ name: 'Australopithecus afarensis', isExtant:
-➥ false },
+const APES = [{ name: 'Australopithecus afarensis', isExtant: false },
     { name: 'Orangutan', isExtant: true }];
 
 // Arrange
