@@ -13,7 +13,10 @@
 
 <body>
     
-
+        <div>
+                
+            <img src="../images/reactant2/cover.svg">    
+            </div>
     
     
     <div class="page-frontmatter front set-front-matter">
@@ -50,9 +53,7 @@
                 <br>Web: www.sitepoint.com
                 <br>Email: books@sitepoint.com</p>
 
-            <p>ISBN 978-0-9943469-6-4 (print)</p>
-            <p>ISBN 978-0-9943470-2-2 (ebook)
-                <br>Printed and bound in the United States of America</p>
+
         </div>
         </div>
     </div>
@@ -77,11 +78,14 @@
 
     <div class="preface set-front-matter">
         <h1 id="preface">Preface</h1>
-        <p>Preface Goes here</p>
+
+        
+        <p>This book is a collection of in-depth tutorials, selected from SitePoint's <a href="https://www.sitepoint.com/javascript/react/">React Hub</a>, that will guide you through some fun and practical projects. Along the way, you’ll pick up lots of useful development tips.</p>
+
 
         <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
 
-        <p>This book is for ....</p>
+        <p>This book is for develeopers with some React experience. If you’re a novice, please read <a href="https://www.sitepoint.com/premium/books/your-first-week-with-react"><em>Your First Week With React</em></a> before tackling this book.</p>
 
         <h2 id="preface-conventions-used">Conventions Used</h2>
 
@@ -196,7 +200,7 @@ URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?resp
 
 <p>Using Firebase will make it very easy for us to show real-time data to the user. Once a user votes on a link, the feedback will be instantaneous. Firebase's Realtime Database will help us in developing this feature. Also, it will help us to understand how to bootstrap a React application with Firebase.</p>
 
-<h2 id="whyreact">Why React?</h2>
+<h2 id="whyreact1">Why React?</h2>
 
 <p>React is particularly known for creating user interfaces using a component architecture. Each component can contain internal <a href="https://facebook.github.io/react/docs/state-and-lifecycle.html">state</a> or be passed data as <a href="https://facebook.github.io/react/docs/components-and-props.html">props</a>. State and props are the two most important concepts in React. These two things help us determine the state of our application at any point in time. If you're not familiar with these terms, please head over to the <a href="https://facebook.github.io/react/docs/hello-world.html">React docs</a> first.</p>
 
@@ -825,7 +829,7 @@ handleDownvote = (post, key) =&gt; {
 
 <p>In the <a href="https://github.com/sitepoint-editors/reddit-clone">repository</a>, I've added the <code>/posts</code> route to the <code>IndexRoute</code> of the application just to show the posts on <a href="http://localhost:3000/">localhost:3000</a> by default. You can check that <a href="https://github.com/sitepoint-editors/reddit-clone/commit/7c621a212fe47036248c3317dedb1eb5788dce71">commit</a> on GitHub.</p>
 
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion1">Conclusion</h2>
 
 <p>The end result is admittedly a bit barebones, as we didn't try to implement any design (although <a href="https://sitepoint-editors.github.io/reddit-clone/">the demo</a> has some basic styles added). We also didn't add any authentication, in order to reduce the complexity and the length of the tutorial, but obviously any real-world application would require it.</p>
 
@@ -868,7 +872,7 @@ handleDownvote = (post, key) =&gt; {
 
 <p>FeathersJS, on the other hand, is much easier to get started with and has realtime support built-in. Quite recently, the Auk version was released (because Feathers is so modular, they use bird names for version names) which introduced a vast number of changes and improvements in a number of areas. According to a <a href="https://blog.feathersjs.com/feathers-flightpath-issue-2-11ae674b1e1e">post</a> they published on their blog, they are now the <strong>4th most popular real-time web framework</strong>. It has excellent <a href="https://docs.feathersjs.com/">documentation</a>, and they've covered pretty much any area we can think of on building a real-time API.</p>
 
-<p>What makes Feathers amazing is its simplicity. The entire framework is modular and we only need to install the features we need. Feathers itself is a thin wrapper built on top of <a href="https://www.npmjs.com/package/express">Express</a>, where they've added new features --- <a href="https://docs.feathersjs.com/services/readme.html">services</a> and <a href="https://docs.feathersjs.com/hooks/readme.html">hooks</a>. Feathers also allows us to effortlessly send and receive data over WebSockets.</p>
+<p>What makes Feathers amazing is its simplicity. The entire framework is modular and we only need to install the features we need. Feathers itself is a thin wrapper built on top of <a href="https://www.npmjs.com/package/express">Express</a>, where they've added new features – <a href="https://docs.feathersjs.com/services/readme.html">services</a> and <a href="https://docs.feathersjs.com/hooks/readme.html">hooks</a>. Feathers also allows us to effortlessly send and receive data over WebSockets.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -1071,7 +1075,7 @@ describe('\'contact\' service', () =&gt; {
 
 
 
-<p>If you're new to Postman, check out this <a href="https://www.sitepoint.com/api-building-and-testing-made-easier-with-postman/">tutorial</a>. When you hit the SEND button, you should get your data back as the response along with three additional fields --- <code>_id</code>, <code>createdAt</code> and <code>updatedAt</code>.</p>
+<p>If you're new to Postman, check out this <a href="https://www.sitepoint.com/api-building-and-testing-made-easier-with-postman/">tutorial</a>. When you hit the SEND button, you should get your data back as the response along with three additional fields – <code>_id</code>, <code>createdAt</code> and <code>updatedAt</code>.</p>
 
 <p>Use the following JSON data to make a POST request using Postman. Paste this in the body and set content-type to <code>application/json</code>:</p>
 
@@ -1901,7 +1905,7 @@ export default reduxForm({form: 'contact', validate})
 
 <h2 id="implementcontactupdates">Implement Contact Updates</h2>
 
-<p>Now that we can add new contacts, let's see how we can update existing contacts. We'll start with the <code>contact-actions.js</code> file, where we need to define two actions --- one for fetching a single contact, and another for updating the contact.</p>
+<p>Now that we can add new contacts, let's see how we can update existing contacts. We'll start with the <code>contact-actions.js</code> file, where we need to define two actions – one for fetching a single contact, and another for updating the contact.</p>
 
 <pre><code class="jsx language-jsx">// src/actions/contact-actions.js
 
@@ -2155,7 +2159,7 @@ const cards = () =&gt; {
 
 <p>As a challenge, try to modify the delete button's <code>onClick</code> handler so that it asks the user to confirm or cancel the delete action. Paste your solution in the comments below.</p>
 
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion2">Conclusion</h2>
 
 <p>By now, you should have learned the basics of creating a CRUD web app in JavaScript. It may seem we've written quite a lot of code to manage only one model. We could have done less work if we had used an MVC framework. The problem with these frameworks is that they become harder to maintain as the code grows.</p>
 
@@ -2171,7 +2175,7 @@ const cards = () =&gt; {
                 <div class="ch-head">Chapter</div>
                 <h1 id="todoappreact">How to Build a Todo App Using React, Redux, and Immutable.js</h1>
                 <h3>by Dan Prince</h3>
-                <p>The way <a href="https://facebook.github.io/react">React</a> uses components and a one-way data flow makes it ideal for describing the structure of user interfaces. However, its tools for working with state are kept deliberately simple --- to help remind us that React is just the View in the traditional <a href="http://blog.codinghorror.com/understanding-model-view-controller/">Model-View-Controller</a> architecture.</p>
+                <p>The way <a href="https://facebook.github.io/react">React</a> uses components and a one-way data flow makes it ideal for describing the structure of user interfaces. However, its tools for working with state are kept deliberately simple – to help remind us that React is just the View in the traditional <a href="http://blog.codinghorror.com/understanding-model-view-controller/">Model-View-Controller</a> architecture.</p>
 
 
 
@@ -2566,7 +2570,7 @@ render(
 
 
 
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion3">Conclusion</h2>
 
 <p>There's no denying that the ecosystem around React and Redux can be quite complex and intimidating for beginners, but the good news is that almost all of these concepts are transferable. We've barely touched the surface of Redux's architecture, but already we've seen enough to help us start learning about <a href="https://github.com/evancz/elm-architecture-tutorial">The Elm Architecture</a>, or pick up a ClojureScript library like <a href="https://github.com/omcljs/om">Om</a> or <a href="https://github.com/Day8/re-frame">Re-frame</a>. Likewise, we've only seen a fraction of the possibilities with immutable data, but now we're better equipped to start learning a language like <a href="http://clojure.org/">Clojure</a> or <a href="https://www.haskell.org/">Haskell</a>.</p>
 
@@ -2593,10 +2597,10 @@ render(
 
 <p>Next provides a simple yet customizable solution to building production-ready SPAs. Remember how web apps were built in PHP (before “web apps” was even a term)? You create some files in a directory, write your script and you're good to deploy. That's the kind of simplicity Next aims at, for the JavaScript ecosystem.</p>
 
-<p>Next is not a brand new framework per se. It fully embraces React, but provides a framework on top of that for building SPAs while following best practices. You still write React components. Anything you can do with Next, you can do with a combination of React, Webpack, Babel, one of 17 CSS-in-JS alternatives, lazy imports and what not. But while building with Next, you aren't thinking about which CSS-in-JS alternative to use, or how to set up Hot Module Replacement (HMR), or which of many routing options to choose. You're just using Next --- and it <em>just works</em>.</p>
+<p>Next is not a brand new framework per se. It fully embraces React, but provides a framework on top of that for building SPAs while following best practices. You still write React components. Anything you can do with Next, you can do with a combination of React, Webpack, Babel, one of 17 CSS-in-JS alternatives, lazy imports and what not. But while building with Next, you aren't thinking about which CSS-in-JS alternative to use, or how to set up Hot Module Replacement (HMR), or which of many routing options to choose. You're just using Next – and it <em>just works</em>.</p>
 
 <blockquote>
-  <p>I'd like to think I know a thing or two about JavaScript, but Next.JS saves me an ENORMOUS amount of time. --- <a href="https://twitter.com/_ericelliott/status/867160902184845312">Eric Elliott</a></p>
+  <p>I'd like to think I know a thing or two about JavaScript, but Next.JS saves me an ENORMOUS amount of time. – <a href="https://twitter.com/_ericelliott/status/867160902184845312">Eric Elliott</a></p>
 </blockquote>
 
 <h2 id="gettingstarted">Getting Started</h2>
@@ -2811,7 +2815,7 @@ export default () =&gt; &lt;p&gt;The Contact Page.&lt;/p&gt;
 
 <p><a href="http://charismachameleon.com">Charisma The Chameleon</a> is a game where you collect power-ups that make you shrink to solve an infinite fractal maze. I've been a React developer for a few years, and I was curious if there was a way to drive Three.js using React. That's when R3R caught my eye.</p>
 
-<h2 id="whyreact">Why React?</h2>
+<h2 id="whyreact2">Why React?</h2>
 
 <p>I know what you're thinking: <strong>why?</strong> Humor me for a moment. Here's some reasons to consider using React to drive your 3D scene:</p>
 
