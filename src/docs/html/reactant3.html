@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>React: Tools &amp; Resources</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|PT+Mono|Raleway" rel="stylesheet">
+    <link href="../assets/css/book.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    
+
+    
+    
+    <div class="page-frontmatter front set-front-matter">
+        <div class="title-name">
+            <h1>React: Tools &amp; Resources</h1>
+
+        </div>
+
+        <p class="copyright">Copyright &copy; 2017 SitePoint Pty. Ltd.</p>
+
+        <ul class="credits">
+            <li><strong>Product Manager:</strong> Simon Mackie</li>
+            <li><strong>Cover Designer:</strong> Alex Walker</li>
+        </ul>
+
+        <h2>Notice of Rights</h2>
+
+        <p>All rights reserved. No part of this book may be reproduced, stored in a retrieval system or transmitted in any form or by any means, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical articles or reviews.</p>
+
+        <h2>Notice of Liability</h2>
+
+        <p>The author and publisher have made every effort to ensure the accuracy of the information herein. However, the information contained in this book is sold without warranty, either express or implied. Neither the authors and SitePoint Pty. Ltd., nor its dealers or distributors will be held liable for any damages to be caused either directly or indirectly by the instructions contained in this book, or by the software or hardware products described herein. </p>
+        <div class="block">
+        <h2>Trademark Notice</h2>
+
+        <p>Rather than indicating every occurrence of a trademarked name as such, this book uses the names only in an editorial fashion and to the benefit of the trademark owner with no intention of infringement of the trademark.</p>
+
+        <div class="small-centered">
+            <p><img src="../images/sitepoint-gray.svg" alt="SitePoint logo" width="160">
+                <br>Published by SitePoint Pty. Ltd.</p>
+
+            <p>48 Cambridge Street Collingwood
+                <br>VIC Australia 3066
+                <br>Web: www.sitepoint.com
+                <br>Email: books@sitepoint.com</p>
+
+
+        </div>
+        </div>
+    </div>
+
+    <div class="page-about front set-front-matter">
+
+
+        <h2>About SitePoint</h2>
+
+        <p>SitePoint specializes in publishing fun, practical, and easy-to-understand content for web professionals. Visit <a href="http://www.sitepoint.com/">http://www.sitepoint.com/</a> to access our blogs, books, newsletters, articles, and community forums. You’ll find a stack of information on JavaScript, PHP, Ruby, mobile development, design, and more. </p>
+
+    </div>
+
+
+       
+    <div class="page-toc front set-front-matter">
+        <h1 id="table-of-contents">Table of Contents</h1>
+        <ul id="insert-toc" class="toc">
+        </ul>
+
+    </div>
+
+    <div class="preface set-front-matter">
+        <h1 id="preface">Preface</h1>
+        <p>Preface Goes here</p>
+
+        <h2 id="preface-who-should-read-this-book">Who Should Read This Book</h2>
+
+        <p>This book is for ....</p>
+
+        <h2 id="preface-conventions-used">Conventions Used</h2>
+
+        <p>You’ll notice that we’ve used certain typographic and layout styles throughout this book to signify different types of information. Look out for the following items.</p>
+
+        <h3>Code Samples</h3>
+
+        <p>Code in this book is displayed using a fixed-width font, like so:</p>
+
+        <pre><code class="language-html">
+&lt;h1&gt;A Perfect Summer's Day&lt;/h1&gt;
+&lt;p&gt;It was a lovely day for a walk in the park. The birds were singing and the kids were all back at school.&lt;/p&gt;
+			</code></pre>
+
+        <p>If the code is to be found in the book’s code archive, the name of the file will appear at the top of the program listing, like this:</p>
+
+        <figure class="codefig">
+            <figcaption>example.css</figcaption>
+            <pre><code class="language-css">
+        .footer {
+            background-color: #CCC;
+            border-top: 1px solid #333;
+        }
+        </code></pre>
+        </figure>
+
+        <p>If only part of the file is displayed, this is indicated by the word <em>excerpt</em>:</p>
+
+<figure class="codefig">
+<figcaption>example.css <em>(excerpt)</em></figcaption>
+<pre><code class="language-css">
+    .footer {
+        background-color: #CCC;
+        border-top: 1px solid #333;
+        }
+    </code></pre>
+        </figure>
+
+        <p>If additional code is to be inserted into an existing example, the new code will be displayed in bold:</p>
+
+<pre><code class="language-javascript">
+ function animate() {
+  <strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Where existing code is required for context, rather than repeat all of it, ⋮ will be displayed:</p>
+
+<pre><code class="language-javascript">
+function animate() {
+    ⋮
+<strong>new_variable = "Hello";</strong>
+}
+</code></pre>
+
+        <p>Some lines of code should be entered on one line, but we’ve had to wrap them because of page constraints. An ➥ indicates a line break that exists for formatting purposes only, and should be ignored:</p>
+
+<pre><code class="language-javascript">
+URL.open("http://www.sitepoint.com/responsive-web-design-real-user-testing/?responsive1");
+</code></pre>
+
+        <h3 id="preface-tips">Tips, Notes, and Warnings</h3>
+
+        <div class="box tip">
+            <h4>Hey, You!</h4>
+            <div class="body">
+                <p>Tips provide helpful little pointers.</p>
+            </div>
+        </div>
+
+        <div class="box note">
+            <h4>Ahem, Excuse Me ...</h4>
+            <div class="body">
+                <p>Notes are useful asides that are related—but not critical—to the topic at hand. Think of them as extra tidbits of information.</p>
+            </div>
+        </div>
+
+        <div class="box attention">
+            <h4>Make Sure You Always ...</h4>
+            <div class="body">
+                <p>... pay attention to these important points.</p>
+            </div>
+        </div>
+
+        <div class="box warning">
+            <h4>Watch Out!</h4>
+            <div class="body">
+                <p>Warnings highlight any gotchas that are likely to trip you up along the way.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- this is chapter 1, page-count-restart restarts the numbering -->
+    <div class="chapter page-count-restart">
+        <div class="ch-page">
+            <div class="ch-head">Chapter</div>
+            <h1 id="chap1">Getting Started with Redux</h1>
+            <h3>by Michael Wanyoike</h3>
+        </div>
+
+
+
+
+<p>A typical web application is usually composed of several UI components that share data. Often, multiple components are tasked with the responsibility of displaying different properties of the same object. This object represents state which can change at any time. Keeping state consistent among multiple components can be a nightmare, especially if there are multiple channels being used to update the same object.</p>
+
+
+
+<p>Take, for example, a site with a shopping cart. At the top we have a UI component showing the number of items in the cart. We could also have another UI component that displays the total cost of items in the cart. If a user clicks the <strong>Add to Cart</strong> button, both of these components should update immediately with the correct figures. If the user decides to remove an item from the cart, change quantity, add a protection plan, use a coupon or change shipping location, then the relevant UI components should update to display the correct information. As you can see, a simple shopping cart can quickly become <em>difficult to keep in sync</em> as the scope of its features grows.</p>
+
+<p>In this guide, I'll introduce you to a framework known as <a href="https://github.com/reactjs/redux">Redux</a>, which can help you build complex projects in way that's easy to scale and maintain. To make learning easier, we'll use a simplified <strong>shopping cart project</strong> to learn how Redux works. You'll need to be at least familiar with the <a href="https://www.sitepoint.com/getting-started-react-beginners-guide/">React</a> library, as you'll later need to integrate it with Redux.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before we get started, make sure you're familiar with the following topics:</p>
+
+<ul>
+<li><a href="https://www.sitepoint.com/introduction-functional-javascript/">Functional JavaScript</a></li>
+
+<li><a href="https://www.sitepoint.com/oriented-programming-1/">Object-oriented JavaScript</a></li>
+
+<li><a href="https://www.sitepoint.com/shorthand-javascript-techniques/">ES6 JavaScript Syntax</a></li>
+</ul>
+
+<p>Also, ensure you have the following setup on your machine:</p>
+
+<ul>
+<li><a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">a NodeJS environment</a></li>
+
+<li><a href="https://www.sitepoint.com/yarn-vs-npm/">a Yarn setup</a> (recommended)</li>
+</ul>
+
+<p>You can access the entire code used in this tutorial on <a href="https://github.com/brandiqa/redux-shopping-cart">GitHub</a>.</p>
+
+
+
+
+
+<h2 id="whatisredux">What is Redux?</h2>
+
+<p>Redux is a popular JavaScript framework that provides a predictable state container for applications. Redux is based on a simplified version of Flux, a framework developed by Facebook. Unlike standard MVC frameworks, where data can flow between UI components and storage in both directions, Redux strictly allows data to flow in one direction only. See the below illustration:</p>
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602352001-redux-flow-chart.png">
+    <figcaption>Redux Flow Chart</figcaption>
+</figure>
+
+
+
+<p>In Redux, all data – i.e. <strong>state</strong> – is held in a container known as the <strong><a href="http://redux.js.org/docs/basics/Store.html">store</a></strong>. There can only be one of these within an application. The store is essentially a state tree where states for all objects are kept. Any UI component can access the state of a particular object directly from the store. To change a state from a local or remote component, an <strong><a href="http://redux.js.org/docs/basics/Actions.html">action</a></strong> needs to be dispatched. <strong>Dispatch</strong> in this context means sending actionable information to the store. When a store receives an <code>action</code>, it delegates it to the relevant <strong><a href="http://redux.js.org/docs/basics/Reducers.html">reducer</a></strong>. A <code>reducer</code> is simply a pure function that looks at the previous state, performs an action and returns a new state. To see all this in action, we need to start coding.</p>
+
+<h2 id="understandimmutabilityfirst">Understand Immutability First</h2>
+
+<p>Before we start, I need you to first understand what <strong>immutability</strong> means in JavaScript. According to the Oxford English Dictionary, immutability means being <strong>unchangeable</strong>. In programming, we write code that changes the values of variables all the time. This is referred to as <strong>mutability</strong>. The way we do this can often cause unexpected bugs in our projects. If your code only deals with primitive data types (numbers, strings, booleans), then you don't need to worry. However, if you're working with Arrays and Objects, performing <strong>mutable</strong> operations on them can create unexpected bugs. To demonstrate this, open your terminal and launch the Node interactive shell:</p>
+
+<pre><code class="bash language-bash">node
+</code></pre>
+
+<p>Next, let's create an array, then later assign it to another variable:</p>
+
+<pre><code class="jsx language-jsx">&gt; let a = [1,2,3]
+&gt; let b = a
+&gt; b.push(9)
+&gt; console.log(b)
+[ 1, 2, 3, 9 ] // b output
+&gt; console.log(a)
+[ 1, 2, 3, 9 ] // a output
+</code></pre>
+
+<p>As you can see, updating <code>array b</code> caused <code>array a</code> to change as well. This happens because Objects and Arrays are known <strong>referential data types</strong> – meaning that such data types don't actually hold values themselves, but are pointers to a memory location where the values are stored. By assigning <code>a</code> to <code>b</code>, we merely created a second pointer that references the same location. To fix this, we need to copy the referenced values to a new location. In JavaScript, there are three different ways of achieving this:</p>
+
+<ol>
+<li>using immutable data structures created by <a href="https://facebook.github.io/immutable-js/">Immutable.js</a></li>
+
+<li>using JavaScript libraries such as <a href="http://underscorejs.org/">Underscore</a> and <a href="https://lodash.com/">Lodash</a> to execute immutable operations</li>
+
+<li>using native <strong>ES6</strong> functions to execute immutable operations.</li>
+</ol>
+
+<p>For this article, we'll use the <strong>ES6</strong> way, since it's already available in the NodeJS environment. Inside your <code>NodeJS</code> terminal, execute the following:</p>
+
+<pre><code class="jsx language-jsx">&gt; a = [1,2,3] // reset a
+[ 1, 2, 3 ]
+&gt; b = Object.assign([],a) // copy array a to b
+[ 1, 2, 3 ]
+&gt; b.push(8)
+&gt; console.log(b)
+[ 1, 2, 3, 8 ] // b output
+&gt; console.log(a)
+[ 1, 2, 3 ] // a output
+</code></pre>
+
+<p>In the above code example, array <code>b</code> can now be modified without affecting array <code>a</code>. We've used <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign()</a> to create a new copy of values that variable <code>b</code> will now point to. We can also use the <code>rest operator(...)</code> to perform an immutable operation like this:</p>
+
+<pre><code class="jsx language-jsx">&gt; a = [1,2,3]
+[ 1, 2, 3 ]
+&gt; b = [...a, 4, 5, 6]
+[ 1, 2, 3, 4, 5, 6 ]
+&gt; a
+[ 1, 2, 3 ]
+</code></pre>
+
+<p>The rest operator works with object literals too! I won't go deep into this subject, but here are some additional ES6 functions that we'll use to perform immutable operations:</p>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">spread syntax</a> – useful in append operations</li>
+
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">map function</a> – useful in an update operation</li>
+
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter function</a> – useful in a delete operation</li>
+</ul>
+
+<p>In case the documentation I've linked isn't useful, don't worry, as you'll see how they're used in practice. Let's start coding!</p>
+
+<h2 id="settingupredux">Setting up Redux</h2>
+
+<p>The fastest way to set up a Redux development environment is to use the <code>create-react-app</code> tool. Before we begin, make sure you've installed and updated <code>nodejs</code>, <code>npm</code> and <code>yarn</code>. Let's set up a Redux project by generating a <code>redux-shopping-cart</code> project and installing the <a href="https://www.npmjs.com/package/redux">Redux</a> package:</p>
+
+<pre><code class="bash language-bash">create-react-app redux-shopping-cart
+
+cd redux-shopping-cart
+yarn add redux # or npm install redux
+</code></pre>
+
+<p>Delete all files inside the <code>src</code> folder except <code>index.js</code>. Open the file and clear out all existing code. Type the following:</p>
+
+<pre><code class="jsx language-jsx">import { createStore } from "redux";
+
+const reducer = function(state, action) {
+  return state;
+}
+
+const store = createStore(reducer);
+</code></pre>
+
+<p>Let me explain what the above piece of code does:</p>
+
+<ul>
+<li><strong>1st statement</strong>. We import a <code>createStore()</code> function from the Redux package.</li>
+
+<li><strong>2nd statement</strong>. We create an empty function known as a <strong>reducer</strong>. The first argument, <code>state</code>, is current data held in the store. The second argument, <code>action</code>, is a container for:
+
+
+<ul>
+<li><strong>type</strong> – a simple string constant e.g. <code>ADD</code>, <code>UPDATE</code>, <code>DELETE</code> etc.</li>
+
+<li><strong>payload</strong> – data for updating state</li></ul>
+</li>
+
+<li><strong>3rd statement</strong>. We create a Redux store, which can only be constructed using a reducer as a parameter. The data kept in the Redux store can be accessed directly, but can only be updated via the supplied reducer.</li>
+</ul>
+
+<p>You may have noticed I mentioned current data as if it already exists. Currently, our <code>state</code> is undefined or null. To remedy this, just assign a default value to state like this to make it an empty array:</p>
+
+<pre><code class="jsx language-jsx">const reducer = function(state=[], action) {
+  return state;
+}
+</code></pre>
+
+<p>Now, let's get practical. The reducer we created is generic. Its name doesn't describe what it's for. Then there's the issue of how we work with multiple reducers. The answer is to use a <code>combineReducers</code> function that's supplied by the Redux package. Update your code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+…
+import { combineReducers } from 'redux';
+
+const productsReducer = function(state=[], action) {
+  return state;
+}
+
+const cartReducer = function(state=[], action) {
+  return state;
+}
+
+const allReducers = {
+  products: productsReducer,
+  shoppingCart: cartReducer
+}
+
+const rootReducer = combineReducers(allReducers);
+
+let store = createStore(rootReducer);
+</code></pre>
+
+<p>In the code above, we've renamed the generic reducer to <code>cartReducer</code>. There's also a new empty reducer named <code>productsReducer</code> that I've created just to show you how to combine multiple reducers within a single store using the <code>combineReducers</code> function.</p>
+
+<p>Next, we'll look at how we can define some test data for our reducers. Update the code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+…
+const initialState = {
+  cart: [
+    {
+      product: 'bread 700g',
+      quantity: 2,
+      unitCost: 90
+    },
+    {
+      product: 'milk 500ml',
+      quantity: 1,
+      unitCost: 47
+    }
+  ]
+}
+
+const cartReducer = function(state=initialState, action) {
+  return state;
+}
+…
+let store = createStore(rootReducer);
+
+console.log("initial state: ", store.getState());
+</code></pre>
+
+<p>Just to confirm that the store has some initial data, we use <code>store.getState()</code> to print out the current state in the console. You can run the dev server by executing <code>npm start</code> or <code>yarn start</code> in the console. Then press <code>Ctrl+Shift+I</code> to open the inspector tab in Chrome in order to view the console tab.</p>
+
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602352302-redux-initial-state.png">
+    <figcaption>Redux Initial State</figcaption>
+</figure>
+
+
+
+<p>Currently, our <code>cartReducer</code> does nothing, yet it's supposed to manage the state of our shopping cart items within the Redux store. We need to define actions for adding, updating and deleting shopping cart items. Let's start by defining logic for a <code>ADD_TO_CART</code> action:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+…
+const ADD_TO_CART = 'ADD_TO_CART';
+
+const cartReducer = function(state=initialState, action) {
+  switch (action.type) {
+    case ADD_TO_CART: {
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    }
+
+    default:
+      return state;
+  }
+}
+…
+</code></pre>
+
+<p>Take your time to analyze and understand the code. A reducer is expected to handle different action types, hence the need for a <code>SWITCH</code> statement. When an action of type <code>ADD_TO_CART</code> is dispatched anywhere in the application, the code defined here will handle it. As you can see, we're using the information provided in <code>action.payload</code> to combine to an existing state in order to create a new state.</p>
+
+<p>Next, we'll define an <code>action</code>, which is needed as a parameter for <code>store.dispatch()</code>. <strong>Actions</strong> are simply JavaScript objects that must have <code>type</code> and an optional payload. Let's go ahead and define one right after the <code>cartReducer</code> function:</p>
+
+<pre><code class="jsx language-jsx">…
+function addToCart(product, quantity, unitCost) {
+  return {
+    type: ADD_TO_CART,
+    payload: { product, quantity, unitCost }
+  }
+}
+…
+</code></pre>
+
+<p>Here, we've defined a function that returns a plain JavaScript object. Nothing fancy. Before we dispatch, let's add some code that will allow us to listen to store event changes. Place this code right after the <code>console.log()</code> statement:</p>
+
+<pre><code class="jsx language-jsx">…
+let unsubscribe = store.subscribe(() =&gt;
+  console.log(store.getState())
+);
+
+unsubscribe();
+</code></pre>
+
+<p>Next, let's add several items to the cart by dispatching actions to the store. Place this code before <code>unsubscribe()</code>:</p>
+
+<pre><code class="jsx language-jsx">…
+store.dispatch(addToCart('Coffee 500gm', 1, 250));
+store.dispatch(addToCart('Flour 1kg', 2, 110));
+store.dispatch(addToCart('Juice 2L', 1, 250));
+</code></pre>
+
+<p>For clarification purposes, I'll illustrate below how the entire code should look after making all the above changes:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import { createStore } from "redux";
+import { combineReducers } from 'redux';
+
+const productsReducer = function(state=[], action) {
+  return state;
+}
+
+const initialState = {
+  cart: [
+    {
+      product: 'bread 700g',
+      quantity: 2,
+      unitCost: 90
+    },
+    {
+      product: 'milk 500ml',
+      quantity: 1,
+      unitCost: 47
+    }
+  ]
+}
+
+const ADD_TO_CART = 'ADD_TO_CART';
+
+const cartReducer = function(state=initialState, action) {
+  switch (action.type) {
+    case ADD_TO_CART: {
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    }
+
+    default:
+      return state;
+  }
+}
+
+function addToCart(product, quantity, unitCost) {
+  return {
+    type: ADD_TO_CART,
+    payload: {
+      product,
+      quantity,
+      unitCost
+    }
+  }
+}
+
+const allReducers = {
+  products: productsReducer,
+  shoppingCart: cartReducer
+}
+
+const rootReducer = combineReducers(allReducers);
+
+let store = createStore(rootReducer);
+
+console.log("initial state: ", store.getState());
+
+let unsubscribe = store.subscribe(() =&gt;
+  console.log(store.getState())
+);
+
+store.dispatch(addToCart('Coffee 500gm', 1, 250));
+store.dispatch(addToCart('Flour 1kg', 2, 110));
+store.dispatch(addToCart('Juice 2L', 1, 250));
+
+unsubscribe();
+</code></pre>
+
+<p>After you've saved your code, Chrome should automatically refresh. Check the console tab to confirm that the new items have been added:</p>
+
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602353003-redux-dispatch-actions.png">
+    <figcaption>Redux Actions Dispatched</figcaption>
+</figure>
+
+
+
+
+<h2 id="organizingreduxcode">Organizing Redux Code</h2>
+
+<p>The <code>index.js</code> file has quickly grown large. This is not how Redux code is written. I've only done this to show you how simple Redux is. Let's look at how a Redux project should be organized. First, create the following folders and files within the <code>src</code> folder, as illustrated below:</p>
+
+<pre><code class="text language-text">src/
+├── actions
+│   └── cart-actions.js
+├── index.js
+├── reducers
+│   ├── cart-reducer.js
+│   ├── index.js
+│   └── products-reducer.js
+└── store.js
+</code></pre>
+
+<p>Next, let's start moving code from <code>index.js</code> to the relevant files:</p>
+
+<pre><code class="jsx language-jsx">// src/actions/cart-actions.js
+
+export const ADD_TO_CART = 'ADD_TO_CART';
+
+export function addToCart(product, quantity, unitCost) {
+  return {
+    type: ADD_TO_CART,
+    payload: { product, quantity, unitCost }
+  }
+}
+</code></pre>
+
+<pre><code class="jsx language-jsx">// src/reducers/products-reducer.js
+
+export default function(state=[], action) {
+  return state;
+}
+</code></pre>
+
+<pre><code class="jsx language-jsx">// src/reducers/cart-reducer.js
+
+import  { ADD_TO_CART }  from '../actions/cart-actions';
+
+const initialState = {
+  cart: [
+    {
+      product: 'bread 700g',
+      quantity: 2,
+      unitCost: 90
+    },
+    {
+      product: 'milk 500ml',
+      quantity: 1,
+      unitCost: 47
+    }
+  ]
+}
+
+export default function(state=initialState, action) {
+  switch (action.type) {
+    case ADD_TO_CART: {
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    }
+
+    default:
+      return state;
+  }
+}
+</code></pre>
+
+<pre><code class="jsx language-jsx">// src/reducers/index.js
+
+import { combineReducers } from 'redux';
+import productsReducer from './products-reducer';
+import cartReducer from './cart-reducer';
+
+const allReducers = {
+  products: productsReducer,
+  shoppingCart: cartReducer
+}
+
+const rootReducer = combineReducers(allReducers);
+
+export default rootReducer;
+</code></pre>
+
+<pre><code class="jsx language-jsx">// src/store.js
+
+import { createStore } from "redux";
+import rootReducer from './reducers';
+
+let store = createStore(rootReducer);
+
+export default store;
+</code></pre>
+
+<pre><code class="jsx language-jsx">// src/index.js
+
+import store from './store.js';
+import { addToCart }  from './actions/cart-actions';
+
+console.log("initial state: ", store.getState());
+
+let unsubscribe = store.subscribe(() =&gt;
+  console.log(store.getState())
+);
+
+store.dispatch(addToCart('Coffee 500gm', 1, 250));
+store.dispatch(addToCart('Flour 1kg', 2, 110));
+store.dispatch(addToCart('Juice 2L', 1, 250));
+
+unsubscribe();
+</code></pre>
+
+<p>After you've finished updating the code, the application should run as before now that it's better organized. Let's now look at how we can update and delete items from the shopping cart. Open <code>cart-reducer.js</code> and update the code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/cart-actions.js
+…
+export const UPDATE_CART = 'UPDATE_CART';
+export const DELETE_FROM_CART = 'DELETE_FROM_CART';
+…
+export function updateCart(product, quantity, unitCost) {
+  return {
+    type: UPDATE_CART,
+    payload: {
+      product,
+      quantity,
+      unitCost
+    }
+  }
+}
+
+export function deleteFromCart(product) {
+  return {
+    type: DELETE_FROM_CART,
+    payload: {
+      product
+    }
+  }
+}
+</code></pre>
+
+<p>Next, update <code>cart-reducer.js</code> as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/reducers/cart-reducer.js
+…
+export default function(state=initialState, action) {
+  switch (action.type) {
+    case ADD_TO_CART: {
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    }
+
+    case UPDATE_CART: {
+      return {
+        ...state,
+        cart: state.cart.map(item =&gt; item.product === action.payload.product ? action.payload : item)
+      }
+    }
+
+    case DELETE_FROM_CART: {
+      return {
+        ...state,
+        cart: state.cart.filter(item =&gt; item.product !== action.payload.product)
+      }
+    }
+
+    default:
+      return state;
+  }
+}
+</code></pre>
+
+<p>Finally, let's dispatch the <code>UPDATE_CART</code> and <code>DELETE_FROM_CART</code> actions in <code>index.js</code>:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+…
+// Update Cart
+store.dispatch(updateCart('Flour 1kg', 5, 110));
+
+// Delete from Cart
+store.dispatch(deleteFromCart('Coffee 500gm'));
+…
+</code></pre>
+
+<p>Your browser should automatically refresh once you've saved all the changes. Check the console tab to confirm the results:</p>
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602353304-redux-crud.png">
+    <figcaption>Redux Update and Delete Actions</figcaption>
+</figure>
+
+
+
+<p>As confirmed, the quantity for 1kg of flour is updated from 2 to 5, while the the 500gm of coffee gets deleted from cart.</p>
+
+<h2 id="debuggingwithreduxtools">Debugging with Redux tools</h2>
+
+<p>Now, if we've made a mistake in our code, how do we debug a Redux project?</p>
+
+<p>Redux comes with a lot of third-party debugging tools we can use to analyze code behavior and fix bugs. Probably the most popular one is the <strong>time-travelling tool</strong>, otherwise known as <a href="https://www.npmjs.com/package/redux-devtools-extension">redux-devtools-extension</a>. Setting it up is a 3-step process. First, go to your Chrome browser and install the <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en">Redux Devtools extension</a>.</p>
+
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602354505-redux-devtools.png">
+    <figcaption>Redux DevTools Chrome Extensions</figcaption>
+</figure>
+
+
+
+
+<p>Next, go to your terminal where your Redux application is running and press <code>Ctrl+C</code> to stop the development server. Next, use npm or yarn to install the <a href="https://www.npmjs.com/package/redux-devtools-extension">redux-devtools-extension</a> package. Personally, I prefer Yarn, since there's a <code>yarn.lock</code> file that I'd like to keep updated.</p>
+
+<pre><code class="bash language-bash">yarn add redux-devtools-extension
+</code></pre>
+
+<p>Once installation is complete, you can start the development server as we implement the final step of implementing the tool. Open <code>store.js</code> and replace the existing code as follows:</p>
+
+<pre><code class="jsx language-jsx">// src/store.js
+import { createStore } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer, composeWithDevTools());
+
+export default store;
+</code></pre>
+
+<p>Feel free to update <code>src/index.js</code> and remove all code related with logging to the console and subscribing to the store. This is no longer needed. Now, go back to Chrome and open the Redux DevTools panel by right-clicking the tool's icon:</p>
+<figure class="imagefig">
+    <img src="../images/reactant3/150602355206-redux-devtools-menu.png">
+    <figcaption>Redux DevTools Menu</figcaption>
+</figure>
+
+
+
+
+<p>In my case, I've selected to <strong>To Bottom</strong> option. Feel free to try out other options.</p>
+
+<figure class="imagefig">
+    <img src="../images/reactant3/150602355707-redux-devtools-screenshot.png">
+    <figcaption>Redux DevTools Panel</figcaption>
+</figure>
+
+
+
+<p>As you can see, the Redux Devtool is quite amazing. You can toggle between action, state and diff methods. Select actions on the left panel and observe how the state tree changes. You can also use the slider to play back the sequence of actions. You can even dispatch directly from the tool! Do check out the <a href="https://github.com/gaearon/redux-devtools">documentation</a> to learn more on how you can further customize the tool to your needs.</p>
+
+<h2 id="integrationwithreact">Integration with React</h2>
+
+<p>At the beginning of this tutorial, I mentioned Redux really pairs well with React. Well, you only need a few steps to setup the integration. Firstly, stop the development server, as we'll need to install the <a href="https://github.com/reactjs/react-redux">react-redux</a> package, the official Redux bindings for React:</p>
+
+<pre><code class="bash language-bash">yarn add react-redux
+</code></pre>
+
+<p>Next, update <code>index.js</code> to include some React code. We'll also use the <code>Provider</code> class to wrap the React application within the Redux container:</p>
+
+<pre><code class="jsx language-jsx">// src/index.js
+…
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+const App = &lt;h1&gt;Redux Shopping Cart&lt;/h1&gt;;
+
+ReactDOM.render(
+  &lt;Provider store={store}&gt;
+    { App }
+  &lt;/Provider&gt; ,
+  document.getElementById('root')
+);
+…
+</code></pre>
+
+<p>Just like that, we've completed the first part of the integration. You can now start the server to see the result. The second part involves linking React's components with the Redux store and actions using a couple of functions provided by the <code>react-redux</code> package that we just installed. In addition, you'll need to set up an API using <a href="https://expressjs.com/">Express</a> or a framework like <a href="https://feathersjs.com/">Feathers</a>. The API will provide our application with access to a database service.</p>
+
+<p>In Redux, we'll also need to install further packages such as <code>axios</code> to perform API requests via Redux actions. Our React components state will then be handled by Redux, making sure that all components are in sync with the database API. To learn more on how to accomplish all this, do take a look at my other tutorial, “<a href="https://www.sitepoint.com/crud-app-react-redux-feathersjs/">Build a CRUD App Using React, Redux and FeathersJS</a>”.  </p>
+
+
+
+
+
+<h2 id="summary">Summary</h2>
+
+<p>I hope this guide has given you a useful introduction to Redux. There's still quite a bit more for you to learn, though. For example, you need to learn how to deal with async actions, authentication, logging, handling forms and so on. Now that you know what Redux is all about, you'll find it easier to try out other similar frameworks, such as <a href="https://www.sitepoint.com/building-a-react-universal-blog-app-implementing-flux/">Flux</a>, Alt.js or <a href="https://www.sitepoint.com/redux-vs-mobx-which-is-best/">Mobx</a>. If you feel Redux is right for you, I  highly recommend the following tutorials that will help you gain even more experience in Redux:</p>
+
+<ul>
+<li><a href="https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/">Redux State Management in Vanilla JavaScript</a></li>
+
+<li><a href="https://www.sitepoint.com/redux-logging-production-logrocket/">Redux Logging in Production with LogRocket</a></li>
+
+<li><a href="https://www.sitepoint.com/crud-app-react-redux-feathersjs/">Build a CRUD App Using React, Redux and FeathersJS</a></li>
+
+<li><a href="https://www.sitepoint.com/asynchronous-apis-server-rendered-react/">Dealing with Asynchronous APIs in Server-rendered React</a></li>
+</ul>
+            
+ 
+
+ 
+
+    </div>
+
+    <div class="chapter">
+        <div class="ch-head">Chapter</div>
+        <h1 id="chap2">React Router v4: The Complete Guide</h1>
+        <h3>by  Manjunath M</h3>
+        <p><a href="https://reacttraining.com/react-router/">React Router</a> is the de facto standard routing library for React. When you need to navigate through a React application with multiple views, you'll need a router to manage the URLs. React Router takes care of that, keeping your application UI and the URL in sync.</p>
+
+
+
+<p>This tutorial introduces you to React Router v4 and a whole lot of things you can do with it.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>React is a popular library for creating single-page applications (SPAs) that are rendered on the client side. An SPA might have multiple <strong>views</strong> (aka <strong>pages</strong>), and unlike the conventional multi-page apps, navigating through these views shouldn't result in the entire page being reloaded. Instead, we want the views to be rendered inline within the current page. The end user, who's accustomed to multi-page apps, expects the following features to be present in an SPA:</p>
+
+<ul>
+<li>Each view in an application should have a URL that uniquely specifies that view. This is so that the user can bookmark the URL for reference at a later time – e.g. <code>www.example.com/products</code>.</li>
+
+<li>The browser's back and forward button should work as expected.</li>
+
+<li>The dynamically generated nested views should preferably have a URL of their own too – e.g. <code>example.com/products/shoes/101</code>, where 101 is the product id.</li>
+</ul>
+
+<p><strong>Routing</strong> is the process of keeping the browser URL in sync with what's being rendered on the page. React Router lets you handle routing <strong>declaratively</strong>. The declarative routing approach allows you to control the data flow in your application, by saying "the route should look like this":</p>
+
+<pre><code class="jsx language-jsx">&lt;Route path="/about" component={About}/&gt;
+</code></pre>
+
+<p>You can place your <code>&lt;Route&gt;</code> component anywhere that you want your route to be rendered. Since <code>&lt;Route&gt;</code>, <code>&lt;Link&gt;</code> and all the other React Router API that we'll be dealing with are just components, you can easily get used to routing in React.</p>
+
+<p><em>A note before getting started. There's a common misconception that React Router is an official routing solution developed by Facebook. In reality, it's a third-party library that's widely popular for its design and simplicity. If your requirements are limited to routers for navigation, you could implement a custom router from scratch without much hassle. However, understanding how the basics of React Router will give you better insights into how a router should work.</em></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>This tutorial is divided into different sections. First, we'll be setting up React and React Router using npm. Then we'll jump right into React Router basics. You'll find different code demonstrations of React Router in action. The examples covered in this tutorial include:</p>
+
+<ol>
+<li>basic navigational routing</li>
+
+<li>nested routing</li>
+
+<li>nested routing with path parameters</li>
+
+<li>protected routing</li>
+</ol>
+
+<p>All the concepts connected with building these routes will be discussed along the way. The entire code for the project is available on <a href="https://github.com/blizzerand/react-router-v4-demo">this GitHub repo</a>. Once you're inside a particular demo directory, run <code>npm install</code> to install the dependencies. To serve the application on a development server, run <code>npm start</code> and head over to <code>http://localhost:3000/</code> to see the demo in action.</p>
+
+<p>Let's get started!</p>
+
+<h2 id="settingupreactrouter">Setting up React Router</h2>
+
+<p>I assume you already have a development environment up and running. If not, head over to “<a href="https://www.sitepoint.com/getting-started-react-jsx/">Getting Started with React and JSX</a>”. Alternatively, you can use <a href="https://www.sitepoint.com/create-react-app/">Create React App</a> to generate the files required for creating a basic React project. This is the default directory structure generated by Create React App:</p>
+
+<pre><code class="bash language-bash"> react-routing-demo-v4
+    ├── .gitignore
+    ├── package.json
+    ├── public
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   └── manifest.json
+    ├── README.md
+    ├── src
+    │   ├── App.css
+    │   ├── App.js
+    │   ├── App.test.js
+    │   ├── index.css
+    │   ├── index.js
+    │   ├── logo.svg
+    │   └── registerServiceWorker.js
+    └── yarn.lock
+</code></pre>
+
+<p>The React Router library comprises three packages: <code>react-router</code>, <code>react-router-dom</code>, and <code>react-router-native</code>. <code>react-router</code> is the core package for the router, whereas the other two are environment specific. You should use <code>react-router-dom</code> if you're building a website, and <code>react-router-native</code> if you're on a mobile app development environment using React Native.</p>
+
+<p>Use npm to install <code>react-router-dom</code>:</p>
+
+<pre><code>npm install --save react-router-dom
+</code></pre>
+
+<h2 id="reactrouterbasics">React Router Basics</h2>
+
+<p>Here's an example of how our routes will look:</p>
+
+<pre><code class="jsx language-jsx">&lt;Router&gt;
+  &lt;Route exact path="/" component={Home}/&gt;
+  &lt;Route path="/category" component={Category}/&gt;
+  &lt;Route path="/login" component={Login}/&gt;
+  &lt;Route path="/products" component={Products}/&gt;
+&lt;/Router&gt;
+</code></pre>
+
+<h3 id="router">Router</h3>
+
+<p>You need a router component and several route components to set up a basic route as exemplified above. Since we're building a browser-based application, we can use two types of routers from the React Router API:</p>
+
+<ol>
+<li><code>&lt;BrowserRouter&gt;</code></li>
+
+<li><code>&lt;HashRouter&gt;</code></li>
+</ol>
+
+<p>The primary difference between them is evident in the URLs that they create:</p>
+
+<pre><code class="jsx language-jsx">// &lt;BrowserRouter&gt;
+http://example.com/about
+
+// &lt;HashRouter&gt;
+http://example.com/#/about
+</code></pre>
+
+<p>The <code>&lt;BrowserRouter&gt;</code> is more popular amongst the two because it uses the HTML5 History API to keep track of your router history. The <code>&lt;HashRouter&gt;</code>, on the other hand, uses the hash portion of the URL (<code>window.location.hash</code>) to remember things. If you intend to support legacy browsers, you should stick with <code>&lt;HashRouter&gt;</code>.</p>
+
+<p>Wrap the <code>&lt;BrowserRouter&gt;</code> component around the App component.</p>
+
+<h4 id="indexjs">index.js</h4>
+
+<pre><code class="jsx language-jsx">/* Import statements */
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+/* App is the entry point to the React code.*/
+import App from './App';
+
+/* import BrowserRouter from 'react-router-dom' */
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render(
+    &lt;BrowserRouter&gt;
+        &lt;App /&gt;
+    &lt;/BrowserRouter&gt;
+    , document.getElementById('root'));
+</code></pre>
+
+<div class="box note">
+    <h4>A Router Component Can Only Have a Single Child Element</h4>
+    <div class="body">
+        <p>A router component can only have a single child element. The child element can be an HTML element – such as a div – or a React component.</p>
+    </div>
+</div>
+
+
+<p>For the React Router to work, you need to import the relevant API from the <code>react-router-dom</code> library. Here I've imported the <code>BrowserRouter</code> into <code>index.js</code>. I've also imported the <code>App</code> component from <code>App.js</code>. <code>App.js</code>, as you might have guessed, is the entry point to React components.</p>
+
+<p>The above code creates an instance of history for our entire App component. Let me formally introduce you to history.</p>
+
+<h3 id="history">history</h3>
+
+<blockquote>
+  <p><code>history</code> is a JavaScript library that lets you easily manage session history anywhere JavaScript runs. history provides a minimal API that lets you manage the history stack, navigate, confirm navigation, and persist state between sessions. – <a href="https://github.com/ReactTraining/history">React Training docs</a></p>
+</blockquote>
+
+<p>Each router component creates a history object that keeps track of the current location (<code>history.location</code>) and also the previous locations in a stack. When the current location changes, the view is re-rendered and you get a sense of navigation. How does the current location change? The history object has methods such as <code>history.push()</code> and <code>history.replace()</code> to take care of that. <code>history.push()</code> is invoked when you click on a <code>&lt;Link&gt;</code> component, and <code>history.replace()</code> is called when you use <code>&lt;Redirect&gt;</code>. Other methods – such as <code>history.goBack()</code> and <code>history.goForward()</code> – are used to navigate through the history stack by going back or forward a page.</p>
+
+<p>Moving on, we have Links and Routes.</p>
+
+<h3 id="linksandroutes">Links and Routes</h3>
+
+<p>The <code>&lt;Route&gt;</code> component is the most important component in React router. It renders some UI if the current location matches the route's path. Ideally, a <code>&lt;Route&gt;</code> component should have a prop named <code>path</code>, and if the pathname is matched with the current location, it gets rendered.</p>
+
+<p>The <code>&lt;Link&gt;</code> component, on the other hand, is used to navigate between pages. It's comparable to the HTML anchor element. However, using anchor links would result in a browser refresh, which we don't want. So instead, we can use <code>&lt;Link&gt;</code> to navigate to a particular URL and have the view re-rendered without a browser refresh.</p>
+
+<p>We've covered everything you need to know to create a basic router. Let's build one.</p>
+
+<h3 id="demo1basicrouting">Demo 1: Basic Routing</h3>
+
+<h4 id="srcappjs">src/App.js</h4>
+
+<pre><code class="jsx language-jsx">/* Import statements */
+import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+
+/* Home component */
+const Home = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;Home&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+/* Category component */
+const Category = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;Category&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+/* Products component */
+const Products = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;Products&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+/* App component */
+class App extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;nav className="navbar navbar-light"&gt;
+          &lt;ul className="nav navbar-nav"&gt;
+
+           /* Link components are used for linking to other views */
+            &lt;li&gt;&lt;Link to="/"&gt;Homes&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="/category"&gt;Category&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="/products"&gt;Products&lt;/Link&gt;&lt;/li&gt;
+
+          &lt;/ul&gt;
+         &lt;/nav&gt;
+
+          /* Route components are rendered if the path prop matches the current URL */
+           &lt;Route path="/" component={Home}/&gt;
+           &lt;Route path="/category" component={Category}/&gt;
+           &lt;Route path="/products" component={Products}/&gt;
+
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+
+<p>We've declared the components for Home, Category and Products inside <code>App.js</code>. Although this is okay for now, when the component starts to grow bigger, it's better to have a separate file for each component. As a rule of thumb, I usually create a new file for a component if it occupies more than 10 lines of code. Starting from the second demo, I'll be creating a separate file for components that have grown too big to fit inside the <code>App.js</code> file.</p>
+
+<p>Inside the App component, we've written the logic for routing. The <code>&lt;Route&gt;</code>'s path is matched with the current location and a component gets rendered. The component that should be rendered is passed in as a second prop.</p>
+
+<p>Here <code>/</code> matches both <code>/</code> and <code>/category</code>. Therefore, both the routes are matched and rendered. How do we avoid that? You should pass the <code>exact= {true}</code> props to the router with <code>path='/'</code>:</p>
+
+<pre><code class="jsx language-jsx">&lt;Route exact={true} path="/" component={Home}/&gt;
+</code></pre>
+
+<p>If you want a route to be rendered only if the paths are exactly the same, you should use the exact props.</p>
+
+<h2 id="nestedrouting">Nested Routing</h2>
+
+<p>To create nested routes, we need to have a better understanding of how <code>&lt;Route&gt;</code> works. Let's do that.</p>
+
+<p><code>&lt;Route&gt;</code> has three props that you can you use to define what gets rendered:</p>
+
+<ul>
+<li><strong>component</strong>. We've already seen this in action. When the URL is matched, the router creates a React element from the given component using <code>React.createElement</code>.</li>
+
+<li><strong>render</strong>. This is handy for inline rendering. The render prop expects a function that returns an element when the location matches the route's path.</li>
+
+<li><strong>children</strong>. The children prop is similar to render in that it expects a function that returns a React element. However, children gets rendered regardless of whether the path is matched with the location or not.</li>
+</ul>
+
+<h3 id="pathandmatch">Path and match</h3>
+
+<p>The <strong><em>path</em></strong> is used to identify the portion of the URL that the router should match. It uses the Path-to-RegExp library to turn a path string into a regular expression. It will then be matched against the current location.</p>
+
+<p>If the router's path and the location are successfully matched, an object is created and we call it the <strong>match</strong> object. The match object carries more information about the URL and the path. This information is accessible through its properties, listed below:</p>
+
+<ul>
+<li><code>match.url</code>. A string that returns the matched portion of the URL. This is particularly useful for building nested <code>&lt;Link&gt;</code>s</li>
+
+<li><code>match.path</code>. A string that returns the route's path string – that is, <code>&lt;Route path=""&gt;</code>. We'll be using this to build nested <code>&lt;Route&gt;</code>s.</li>
+
+<li><code>match.isExact</code>. A boolean that returns true if the match was exact (without any trailing characters).</li>
+
+<li><code>match.params</code>. An object containing key/value pairs from the URL parsed by the Path-to-RegExp package.</li>
+</ul>
+
+<p>Now that we know all about <code>&lt;Route&gt;</code>s, let's build a router with nested routes.</p>
+
+<h3 id="switchcomponent">Switch Component</h3>
+
+<p>Before we head for the demo code, I want to introduce you to the <code>&lt;Switch&gt;</code> component. When multiple <code>&lt;Route&gt;</code>s are used together, all the routes that match are rendered inclusively. Consider this code from demo 1. I've added a new route to demonstrate why <code>&lt;Switch&gt;</code> is useful.</p>
+
+<pre><code class="jsx language-jsx">&lt;Route exact path="/" component={Home}/&gt;
+&lt;Route path="/products" component={Products}/&gt;
+&lt;Route path="/category" component={Category}/&gt;
+&lt;Route path="/:id" render = {()=&gt; (&lt;p&gt; I want this text to show up for all routes other than '/', '/products' and '/category' &lt;/p&gt;)}/&gt;
+</code></pre>
+
+<p>If the URL is <code>/products</code>, all the routes that match the location <code>/products</code> are rendered. So, the <code>&lt;Route&gt;</code> with path <code>:id</code> gets rendered along with the <code>Products</code> component. This is by design. However, if this is not the behavior you're expecting, you should add the <code>&lt;Switch&gt;</code> component to your routes. With <code>&lt;Switch&gt;</code>, only the first child <code>&lt;Route&gt;</code> that matches the location gets rendered.</p>
+
+<h3 id="demo2nestedrouting">Demo 2: nested routing</h3>
+
+<p>Earlier on, we created routes for <code>/</code>, <code>/category</code> and <code>/products</code>. What if we wanted a URL of the form <code>/category/shoes</code>?</p>
+
+<h4 id="srcappjs-1">src/App.js</h4>
+
+<pre><code class="jsx language-jsx">import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import Category from './Category';
+
+class App extends Component {
+  render() {
+
+    return (
+      &lt;div&gt;
+        &lt;nav className="navbar navbar-light"&gt;
+          &lt;ul className="nav navbar-nav"&gt;
+            &lt;li&gt;&lt;Link to="/"&gt;Homes&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="/category"&gt;Category&lt;/Link&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;Link to="/products"&gt;Products&lt;/Link&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+       &lt;/nav&gt;
+
+    &lt;Switch&gt;
+      &lt;Route exact path="/" component={Home}/&gt;
+      &lt;Route path="/category" component={Category}/&gt;
+       &lt;Route path="/products" component={Products}/&gt;
+    &lt;/Switch&gt;
+
+    &lt;/div&gt;
+    );
+  }
+}
+export default App;
+
+/* Code for Home and Products component omitted for brevity */
+</code></pre>
+
+<p>Unlike the earlier version of React Router, in version 4, the nested <code>&lt;Route&gt;</code>s should preferably go inside the parent component. That is, the Category component is the parent here, and we'll be declaring the routes for <code>category/:name</code> inside the parent component.</p>
+
+<h4 id="srccategoryjsx">src/Category.jsx</h4>
+
+<pre><code class="jsx language-jsx">import React from 'react';
+import { Link, Route } from 'react-router-dom';
+
+const Category = ({ match }) =&gt; {
+return( &lt;div&gt; &lt;ul&gt;
+    &lt;li&gt;&lt;Link to={`${match.url}/shoes`}&gt;Shoes&lt;/Link&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;Link to={`${match.url}/boots`}&gt;Boots&lt;/Link&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;Link to={`${match.url}/footwear`}&gt;Footwear&lt;/Link&gt;&lt;/li&gt;
+
+  &lt;/ul&gt;
+  &lt;Route path={`${match.path}/:name`} render= {({match}) =&gt;( &lt;div&gt; &lt;h3&gt; {match.params.name} &lt;/h3&gt;&lt;/div&gt;)}/&gt;
+  &lt;/div&gt;)
+}
+export default Category;
+</code></pre>
+
+<p>First, we've declared a couple of links for the nested routes. As previously mentioned, <code>match.url</code> will be used for building nested links and <code>match.path</code> for nested routes. If you're having trouble understanding the concept of match, <code>console.log(match)</code> provides some useful information that might help to clarify it.</p>
+
+<pre><code class="jsx language-jsx">&lt;Route path={`${match.path}/:name`}
+  render= {({match}) =&gt;( &lt;div&gt; &lt;h3&gt; {match.params.name} &lt;/h3&gt;&lt;/div&gt;)}/&gt;
+</code></pre>
+
+<p>This is our first attempt at dynamic routing. Instead of hard-coding the routes, we've used a variable within the pathname. <code>:name</code> is a path parameter and catches everything after <code>category/</code> until another forward slash is encountered. So, a pathname like <code>products/running-shoes</code> will create a <code>params</code> object as follows:</p>
+
+<pre><code class="jsx language-jsx">{
+  name: 'running-shoes'
+}
+</code></pre>
+
+<p>The captured data should be accessible at <code>match.params</code> or <code>props.match.params</code> depending on how the props are passed. The other interesting thing is that we've used a <code>render</code> prop. <code>render</code> props are pretty handy for inline functions that don't require a component of their own.</p>
+
+<h3 id="demo3nestedroutingwithpathparameters">Demo 3: Nested routing with Path parameters</h3>
+
+<p>Let's complicate things a bit more, shall we? A real-world router will have to deal with data and display it dynamically. Assume that we have the product data returned by a server API of the form below.</p>
+
+<h4 id="srcproductsjsx">src/Products.jsx</h4>
+
+<pre><code class="jsx language-jsx">const productData = [
+{
+  id: 1,
+  name: 'NIKE Liteforce Blue Sneakers',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie.',
+  status: 'Available'
+
+},
+{
+  id: 2,
+  name: 'Stylised Flip Flops and Slippers',
+  description: 'Mauris finibus, massa eu tempor volutpat, magna dolor euismod dolor.',
+  status: 'Out of Stock'
+
+},
+{
+  id: 3,
+  name: 'ADIDAS Adispree Running Shoes',
+  description: 'Maecenas condimentum porttitor auctor. Maecenas viverra fringilla felis, eu pretium.',
+  status: 'Available'
+},
+{
+  id: 4,
+  name: 'ADIDAS Mid Sneakers',
+  description: 'Ut hendrerit venenatis lacus, vel lacinia ipsum fermentum vel. Cras.',
+  status: 'Out of Stock'
+},
+
+];
+</code></pre>
+
+<p>We need to create routes for the following paths:</p>
+
+<ul>
+<li><code>/products</code>. This should display a list of products.</li>
+
+<li><code>/products/:productId</code>. If a product with the <code>:productId</code> exists, it should display the product data, and if not, it should display an error message.</li>
+</ul>
+
+<h4 id="srcproductsjsx-1">src/Products.jsx</h4>
+
+<pre><code class="jsx language-jsx">/* Import statements have been left out for code brevity */
+
+const Products = ({ match }) =&gt; {
+
+   const productsData = [
+    {
+        id: 1,
+        name: 'NIKE Liteforce Blue Sneakers',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie.',
+        status: 'Available'
+
+    },
+
+    //Rest of the data has been left out for code brevity
+
+];
+ /* Create an array of `&lt;li&gt;` items for each product
+  var linkList = productsData.map( (product) =&gt; {
+    return(
+      &lt;li&gt;
+        &lt;Link to={`${match.url}/${product.id}`}&gt;
+          {product.name}
+        &lt;/Link&gt;
+      &lt;/li&gt;
+      )
+
+    })
+
+  return(
+    &lt;div&gt;
+        &lt;div&gt;
+         &lt;div&gt;
+           &lt;h3&gt; Products&lt;/h3&gt;
+           &lt;ul&gt; {linkList} &lt;/ul&gt;
+         &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;Route path={`${match.url}/:productId`}
+            render={ (props) =&gt; &lt;Product data= {productsData} {...props} /&gt;}/&gt;
+        &lt;Route exact path={match.url}
+            render={() =&gt; (
+            &lt;div&gt;Please select a product.&lt;/div&gt;
+            )}
+        /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+
+<p>First, we created a list of <code>&lt;Links&gt;</code>s using the <code>productsData.id</code>s and stored it in <code>linkList</code>. The route takes a parameter in the path string which corresponds to that of the product id.</p>
+
+<pre><code class="jsx language-jsx">&lt;Route path={`${match.url}/:productId`}
+  render={ (props) =&gt; &lt;Product data= {productsData} {...props} /&gt;}/&gt;
+</code></pre>
+
+<p>You may have expected <code>component = { Product }</code> instead of the inline render function. The problem is that we need to pass down <code>productsData</code> to the Product component along with all the existing props. Although there are other ways you can do this, I find this method to be the easiest. <code>{...props}</code> uses the ES6's <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator">spread syntax</a> to pass the whole props object to the component.   </p>
+
+<p>Here's the code for Product component.</p>
+
+<h4 id="srcproductjsx">src/Product.jsx</h4>
+
+<pre><code class="jsx language-jsx">/* Import statements have been left out for code brevity */
+
+const Product = ({match,data}) =&gt; {
+  var product= data.find(p =&gt; p.id == match.params.productId);
+  var productData;
+
+  if(product)
+    productData = &lt;div&gt;
+      &lt;h3&gt; {product.name} &lt;/h3&gt;
+      &lt;p&gt;{product.description}&lt;/p&gt;
+      &lt;hr/&gt;
+      &lt;h4&gt;{product.status}&lt;/h4&gt;  &lt;/div&gt;;
+  else
+    productData = &lt;h2&gt; Sorry. Product doesnt exist &lt;/h2&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;div&gt;
+         {productData}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )    
+}
+</code></pre>
+
+<p>The <code>find</code> method is used to search the array for an object with an id property that equals <code>match.params.productId</code>. If the product exists, the <code>productData</code> is displayed. If not, a "Product doesn't exist" message is rendered.</p>
+
+<h2 id="protectingroutes">Protecting Routes</h2>
+
+<p>For the final demo, we'll be discussing techniques concerned with protecting routes. So, if someone tries to access <code>/admin</code>, they'd be required to log in first. However, there are some things we need to cover before we can protect routes.</p>
+
+<h3 id="redirect">Redirect</h3>
+
+<p>Like the server-side redirects, <code>&lt;Redirect&gt;</code> will replace the current location in the history stack with a new location. The new location is specified by the <code>to</code> prop. Here's how we'll be using <code>&lt;Redirect&gt;</code>:</p>
+
+<pre><code class="jsx language-jsx">&lt;Redirect to={{pathname: '/login', state: {from: props.location}}}
+</code></pre>
+
+<p>So, if someone tries to access the <code>/admin</code> while logged out, they'll be redirected to the <code>/login</code> route. The information about the current location is passed via state, so that if the authentication is successful, the user can be redirected back to the original location. Inside the child component, you can access this information at <code>this.props.location.state</code>.</p>
+
+<h3 id="customroutes">Custom Routes</h3>
+
+<p>A custom route is a fancy word for a route nested inside a component. If we need to make a decision whether a route should be rendered or not, writing a custom route is the way to go. Here's the custom route declared among other routes.</p>
+
+<h4 id="srcappjs-2">src/App.js</h4>
+
+<pre><code class="jsx language-jsx">/* Add the PrivateRoute component to the existing Routes */
+&lt;Switch&gt;
+  &lt;Route exact path="/" component={Home} data={data}/&gt;
+  &lt;Route path="/category" component={Category}/&gt;
+  &lt;Route path="/login" component={Login}/&gt;
+  &lt;PrivateRoute authed={fakeAuth.isAuthenticated} path='/products' component = {Products} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+
+<p><code>fakeAuth.isAuthenticated</code> returns true if the user is logged in and false otherwise.</p>
+
+<p>Here's the definition for <code>PrivateRoute</code>:</p>
+
+<h4 id="srcappjs-3">src/App.js</h4>
+
+<pre><code class="jsx language-jsx">/* PrivateRoute component definition */
+const PrivateRoute = ({component: Component, authed, ...rest}) =&gt; {
+  return (
+    &lt;Route
+      {...rest}
+      render={(props) =&gt; authed === true
+        ? &lt;Component {...props} /&gt;
+        : &lt;Redirect to={{pathname: '/login', state: {from: props.location}}} /&gt;} /&gt;
+  )
+}
+</code></pre>
+
+<p>The route renders the Admin component if the user is logged in. Otherwise, the user is redirected to <code>/login</code>. The good thing about this approach is that it is evidently more declarative and <code>PrivateRoute</code> is reusable.</p>
+
+<p>Finally, here's the code for the Login component:</p>
+
+<h4 id="srcloginjsx">src/Login.jsx</h4>
+
+<pre><code class="jsx language-jsx">import React from 'react';
+import { Redirect } from 'react-router-dom';
+
+class Login extends React.Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      redirectToReferrer: false
+    }
+    // binding 'this'
+    this.login = this.login.bind(this);
+  }
+
+  login() {
+
+    fakeAuth.authenticate(() =&gt; {
+      this.setState({ redirectToReferrer: true })
+    })
+  }
+
+  render() {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer) {
+      return (
+        &lt;Redirect to={from} /&gt;
+      )
+    }
+
+    return (
+      &lt;div&gt;
+        &lt;p&gt;You must log in to view the page at {from.pathname}&lt;/p&gt;
+        &lt;button onClick={this.login}&gt;Log in&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+/* A fake authentication function */
+export const fakeAuth = {
+
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+     setTimeout(cb, 100)
+  },
+}
+</code></pre>
+
+<p>The line below demonstrates <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">object destructuring</a>, which is a part of the ES6 specification.</p>
+
+<pre><code class="jsx language-jsx">const { from } = this.props.location.state || { from: { pathname: '/' } }
+</code></pre>
+
+<h3 id="demo4protectingroutes">Demo 4: Protecting Routes</h3>
+
+<p>Let's fit the puzzle pieces together, shall we? Here's the final demo of the application that we built using React router:</p>
+
+<div class="box codepen">
+    <h4>CodeSandbox Example</h4>
+    <div class="body">
+        <p><a href="https://codesandbox.io/embed/nn8x24vm60">https://codesandbox.io/embed/nn8x24vm60</a></p>
+    </div>
+</div>
+
+
+
+
+<h2 id="summary">Summary</h2>
+
+<p>As you've seen in this article, React Router is a powerful library that complements React for building better, declarative routes. Unlike the prior versions of React Router, in v4, everything is "just components". Moreover, the new design pattern perfectly fits into the React way of doing things.</p>
+
+<p>In this tutorial, we learned:</p>
+
+<ul>
+<li>how to setup and install React Router</li>
+
+<li>the basics of routing and some essential components such as <code>&lt;Router&gt;</code>, <code>&lt;Route&gt;</code> and <code>&lt;Link&gt;</code></li>
+
+<li>how to create a minimal router for navigation and nested routes</li>
+
+<li>how to build dynamic routes with path parameters</li>
+</ul>
+
+<p>Finally, we learned some advanced routing techniques for creating the final demo for protected routes.</p>
+
+    </div>
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1 id="todoappreact">How to Test React Components Using Jest</h1>
+                <h3>by Jack Franklin</h3>
+                <p>In this tutorial, we'll take a look at using <a href="https://facebook.github.io/jest/">Jest</a> – a testing framework maintained by Facebook – to test our <a href="https://facebook.github.io/react/index.html">ReactJS</a> components. We'll look at how we can use Jest first on plain JavaScript functions, before looking at some of the features it provides out of the box specifically aimed at making testing React apps easier. It's worth noting that Jest isn't aimed specifically at React: you can use it to test any JavaScript applications. However, a couple of the features it provides come in really handy for testing user interfaces, which is why it's a great fit with React.</p>
+
+
+
+<h2 id="sampleapplication">Sample Application</h2>
+
+
+
+<p>Before we can test anything, we need an application to test! Staying true to web development tradition, I've built a small todo application that we'll use as the starting point. You can find it, along with all the tests that we're about to write, <a href="https://github.com/sitepoint-editors/testing-react-with-jest">on GitHub</a>. If you'd like to play with the application to get a feel for it, you can also find a <a href="https://sitepoint-editors.github.io/testing-react-with-jest">live demo online</a>.</p>
+
+<p>The application is written in ES2015, compiled using Webpack with the Babel ES2015 and React presets. I won't go into the details of the build set up, but it's all <a href="https://github.com/sitepoint-editors/testing-react-with-jest">in the GitHub repo</a> if you'd like to check it out. You'll find full instructions in the README on how to get the app running locally. If you'd like to read more, the application is built using <a href="https://webpack.github.io/docs/tutorials/getting-started/">Webpack</a>, and I recommend "<a href="https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.f6vf3p9ag">A Beginner's guide to Webpack</a>" as a good introduction to the tool.</p>
+
+<p>The entry point of the application is <code>app/index.js</code>, which just renders the <code>Todos</code> component into the HTML:</p>
+
+<pre><code class="jsx language-jsx">render(
+  &lt;Todos /&gt;,
+  document.getElementById('app')
+);
+</code></pre>
+
+<p>The <code>Todos</code> component is the main hub of the application. It contains all the state (hard-coded data for this application, which in reality would likely come from an API or similar), and has code to render the two child components: <code>Todo</code>, which is rendered once for each todo in the state, and <code>AddTodo</code>, which is rendered once and provides the form for a user to add a new todo.</p>
+
+<p>Because the <code>Todos</code> component contains all the state, it needs the <code>Todo</code> and <code>AddTodo</code> components to notify it whenever anything changes. Therefore, it passes functions down into these components that they can call when some data changes, and <code>Todos</code> can update the state accordingly.</p>
+
+<p>Finally, for now, you'll notice that all the business logic is contained in <code>app/state-functions.js</code>:</p>
+
+<pre><code class="jsx language-jsx">export function toggleDone(state, id) {…}
+
+export function addTodo(state, todo) {…}
+
+export function deleteTodo(state, id) {…}
+</code></pre>
+
+<p>These are all pure functions that take the state and some data, and return the new state. If you're unfamiliar with pure functions, they are functions that only reference data they are given and have no side effects. For more, you can read <a href="http://alistapart.com/article/making-your-javascript-pure">my article on A List Apart on pure functions</a> and <a href="https://www.sitepoint.com/react-higher-order-components/">my article on SitePoint about pure functions and React</a>.</p>
+
+<p>If you're familiar with Redux, they're fairly similar to what Redux would call a reducer. In fact, if this application got much bigger I would consider moving into Redux for a more explicit, structured approach to data. But for this size application you'll often find that local component state and some well abstracted functions to be more than enough.</p>
+
+<h2 id="totddornottotdd">To TDD or Not to TDD?</h2>
+
+<p>There have been many articles written on the pros and cons of <strong>test-driven development</strong>, where developers are expected to write the tests first, before writing the code to fix the test. The idea behind this is that, by writing the test first, you have to think about the API that you're writing, and it can lead to a better design. For me, I find that this very much comes down to personal preference and also to the sort of thing I'm testing. I've found that, for React components, I like to write the components first and then add tests to the most important bits of functionality. However, if you find that writing tests first for your components fits your workflow, then you should do that. There's no hard rule here; do whatever feels best for you and your team.</p>
+
+<p class="tip">Note that this article will focus on testing front-end code. If you're looking for something focused on the back end, be sure to check out SitePoint's course <a href="https://www.sitepoint.com/premium/courses/test-driven-development-in-node-js-2932">Test-Driven Development in Node.js</a>.</p>
+
+<h2 id="introducingjest">Introducing Jest</h2>
+
+<p><a href="https://facebook.github.io/jest/">Jest</a> was first released in 2014, and although it initially garnered a lot of interest, the project was dormant for a while and not so actively worked on. However, Facebook has invested the last year into improving Jest, and recently published a few releases with impressive changes that make it worth reconsidering. The only resemblance of Jest compared to the initial open-source release is the name and the logo. Everything else has been changed and rewritten. If you'd like to find out more about this, you can read <a href="https://github.com/facebookincubator/create-react-app/pull/250#issuecomment-237098619">Christoph Pojer's comment</a>, where he discusses the current state of the project.</p>
+
+<p>If you've been frustrated by setting up Babel, React and JSX tests using another framework, then I definitely recommend giving Jest a try. If you've found your existing test setup to be slow, I also highly recommend Jest. It automatically runs tests in parallel, and its watch mode is able to run only tests relevant to the changed file, which is invaluable when you have a large suite of tests. It comes with <a href="https://github.com/tmpvar/jsdom">JSDom</a> configured, meaning you can write browser tests but run them through Node, can deal with asynchronous tests and has advanced features such as mocking, spies and stubs built in.</p>
+
+<h2 id="installingandconfiguringjest">Installing and Configuring Jest</h2>
+
+<p>To start with, we need to get Jest installed. Because we're also using Babel, we'll install another couple of modules that make Jest and Babel play nicely out of the box:</p>
+
+<pre><code class="bash language-bash">npm install --save-dev babel-jest babel-polyfill babel-preset-es2015 babel-preset-react jest
+</code></pre>
+
+<p>You also need to have a <code>.babelrc</code> file with Babel configured to use any presets and plugins you need. The sample project already has this file, which looks like so:</p>
+
+<pre><code class="jsx language-jsx">{
+  "presets": ["es2015", "react"]
+}
+</code></pre>
+
+<p>We won't install any React testing tools yet, because we're not going to start with testing our components, but our state functions.</p>
+
+<p>Jest expects to find our tests in a <code>__tests__</code> folder, which has become a popular convention in the JavaScript community, and it's one we're going to stick to here. If you're not a fan of the <code>__tests__</code> setup, out of the box Jest also supports finding any <code>.test.js</code> and <code>.spec.js</code> files too.</p>
+
+<p>As we'll be testing our state functions, go ahead and create <code>__tests__/state-functions.test.js</code>.</p>
+
+<p>We'll write a proper test shortly, but for now, put in this dummy test, which will let us check everything's working correctly and we have Jest configured.</p>
+
+<pre><code class="jsx language-jsx">describe('Addition', () =&gt; {
+  it('knows that 2 and 2 make 4', () =&gt; {
+    expect(2 + 2).toBe(4);
+  });
+});
+</code></pre>
+
+<p>Now, head into your <code>package.json</code>. We need to set up <code>npm test</code> so that it runs Jest, and we can do that simply by setting the <code>test</code> script to run <code>jest</code>.</p>
+
+<pre><code class="javascript language-javascript">"scripts": {
+  "test": "jest"
+}
+</code></pre>
+
+<p>If you now run <code>npm test</code> locally, you should see your tests run, and pass!</p>
+
+<pre><code class="bash language-bash">PASS  __tests__/state-functions.test.js
+  Addition
+    ✓ knows that 2 and 2 make 4 (5ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 passed, 0 total
+Time:        3.11s
+</code></pre>
+
+<p>If you've ever used Jasmine, or most testing frameworks, the above test code itself should be pretty familiar. Jest lets us use <code>describe</code> and <code>it</code> to nest tests as we need to. How much nesting you use is up to you; I like to nest mine so all the descriptive strings passed to <code>describe</code> and <code>it</code> read almost as a sentence.</p>
+
+<p>When it comes to making actual assertions, you wrap the thing you want to test within an <code>expect()</code> call, before then calling an assertion on it. In this case, we've used <code>toBe</code>. You can find a list of all the available assertions <a href="https://facebook.github.io/jest/docs/api.html#writing-assertions-with-expect">in the Jest documentation</a>. <code>toBe</code> checks that the given value matches the value under test, using <code>===</code> to do so. We'll meet a few of Jest's assertions through this tutorial.</p>
+
+<h2 id="testingbusinesslogic">Testing Business Logic</h2>
+
+<p>Now we've seen Jest work on a dummy test, let's get it running on a real one! We're going to test the first of our state functions, <code>toggleDone</code>. <code>toggleDone</code> takes the current state and the ID of a todo that we'd like to toggle. Each todo has a <code>done</code> property, and <code>toggleDone</code> should swap it from <code>true</code> to <code>false</code>, or vice-versa.</p>
+
+<p class="tip">If you're following along with this, make sure you've cloned the <a href="https://github.com/sitepoint-editors/testing-react-with-jest">repo</a> and have copied the <code>app</code> folder to the same directory that contains your <code>___tests__</code> folder. You'll also need to install the <code>shortid</code> package (<code>npm install shortid --save</code>), which is a dependency of the Todo app.</p>
+
+<p>I'll start by importing the function from <code>app/state-functions.js</code>, and setting up the test's structure. Whilst Jest allows you to use <code>describe</code> and <code>it</code> to nest as deeply as you'd like to, you can also use <code>test</code>, which will often read better. <code>test</code> is just an alias to Jest's <code>it</code> function, but can sometimes make tests much easier to read and less nested.</p>
+
+<p>For example, here's how I would write that test with nested <code>describe</code> and <code>it</code> calls:</p>
+
+<pre><code class="jsx language-jsx">import { toggleDone } from '../app/state-functions';
+
+describe('toggleDone', () =&gt; {
+  describe('when given an incomplete todo', () =&gt; {
+    it('marks the todo as completed', () =&gt; {
+    });
+  });
+});
+</code></pre>
+
+<p>And here's how I would do it with <code>test</code>:</p>
+
+<pre><code class="jsx language-jsx">import { toggleDone } from '../app/state-functions';
+
+test('toggleDone completes an incomplete todo', () =&gt; {
+});
+</code></pre>
+
+<p>The test still reads nicely, but there's less indentation getting in the way now. This one is mainly down to personal preference; choose whichever style you're more comfortable with.</p>
+
+<p>Now we can write the assertion. First we'll create our starting state, before passing it into <code>toggleDone</code>, along with the ID of the todo that we want to toggle. <code>toggleDone</code> will return our finish state, which we can then assert on:</p>
+
+<pre><code class="jsx language-jsx">const startState = {
+  todos: [{ id: 1, done: false, name: 'Buy Milk' }]
+};
+
+const finState = toggleDone(startState, 1);
+
+expect(finState.todos).toEqual([
+  { id: 1, done: true, name: 'Buy Milk' }
+]);
+</code></pre>
+
+<p>Notice now that I use <code>toEqual</code> to make my assertion. You should use <code>toBe</code> on primitive values, such as strings and numbers, but <code>toEqual</code> on objects and arrays. <code>toEqual</code> is built to deal with arrays and objects, and will recursively check each field or item within the object given to ensure that it matches.</p>
+
+<p>With that we can now run <code>npm test</code> and see our state function test pass:</p>
+
+<pre><code class="bash language-bash">PASS  __tests__/state-functions.test.js
+  ✓ tooggleDone completes an incomplete todo (9ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 passed, 0 total
+Time:        3.166s
+</code></pre>
+
+<h2 id="rerunningtestsonchanges">Rerunning Tests on Changes</h2>
+
+<p>It's a bit frustrating to make changes to a test file and then have to manually run <code>npm test</code> again. One of Jest's best features is its watch mode, which watches for file changes and runs tests accordingly. It can even figure out which subset of tests to run based on the file that changed. It's incredibly powerful and reliable, and you're able to run Jest in watch mode and leave it all day whilst you craft your code.</p>
+
+<p>To run it in watch mode, you can run <code>npm test -- --watch</code>. Anything you pass to <code>npm test</code> after the first <code>--</code> will be passed straight through to the underlying command. This means that these two commands are effectively equivalent:</p>
+
+<ul>
+<li><code>npm test -- --watch</code></li>
+
+<li><code>jest --watch</code></li>
+</ul>
+
+<p>I would recommend that you leave Jest running in another tab, or terminal window, for the rest of this tutorial.</p>
+
+<p>Before moving onto testing the React components, we'll write one more test on another one of our state functions. In a real application I would write many more tests, but for the sake of the tutorial, I'll skip some of them. For now, let's write a test that ensures that our <code>deleteTodo</code> function is working. Before seeing how I've written it below, try writing it yourself and seeing how your test compares.</p>
+
+<p><em><a href="#" data-target="reveal-jest-test" onclick="return false;" class="sp_unhider">Show me the test</a></em></p>
+
+<div class="sp_hiddenblock sp_hide" id="reveal-jest-test">
+  <p>Remember that you will have to update the <code>import</code> statement at the top to import <code>deleteTodo</code> along with <code>toggleTodo</code>:</p>
+
+  <pre><code class="javascript language-javascript">import { toggleTodo, deleteTodo } from '../app/state-functions';</code></pre>
+
+  <p>And here's how I've written the test:</p>
+
+  <pre><code class="javascript language-javascript">test('deleteTodo deletes the todo it is given', () =&amp;gt; {
+    const startState = {
+      todos: [{ id: 1, done: false, name: 'Buy Milk' }]
+    };
+
+    const finState = deleteTodo(startState, 1);
+
+    expect(finState.todos).toEqual([]);
+  });
+  </code></pre>
+</div>
+
+<p>The test doesn't vary too much from the first: we set up our initial state, run our function and then assert on the finished state. If you left Jest running in watch mode, notice how it picks up your new test and runs it, and how quick it is to do so! It's a great way to get instant feedback on your tests as you write them.</p>
+
+<p>The tests above also demonstrate the perfect layout for a test, which is:</p>
+
+<ul>
+<li>set up</li>
+
+<li>execute the function under test</li>
+
+<li>assert on the results.</li>
+</ul>
+
+<p>By keeping the tests laid out in this way, you'll find them easier to follow and work with.</p>
+
+<p>Now we're happy testing our state functions, let's move on to React components.</p>
+
+<h2 id="testingreactcomponents">Testing React Components</h2>
+
+<p>It's worth noting that, by default, I would actually encourage you to not write too many tests on your React components. Anything that you want to test very thoroughly, such as business logic, should be pulled out of your components and sit in standalone functions, just like the state functions that we tested earlier. That said, it is useful at times to test some React interactions (making sure a specific function is called with the right arguments when the user clicks a button, for example). We'll start by testing that our React components render the right data, and then look at testing interactions. Then we'll move on to snapshots, a feature of Jest that makes testing the output of React components much more convenient.</p>
+
+<p>To do this, we'll need to make use of <code>react-addons-test-utils</code>, a library that <a href="https://facebook.github.io/react/docs/test-utils.html">provides functions for testing React</a>. We'll also install <a href="https://github.com/airbnb/enzyme">Enzyme</a>, a wrapper library written by AirBnB that makes testing React components much easier. We'll use this API throughout our tests. Enzyme is a fantastic library, and the React team even recommend it as the way to test React components.</p>
+
+<pre><code class="bash language-bash">npm install --save-dev react-addons-test-utils enzyme
+</code></pre>
+
+<p>Let's test that the <code>Todo</code> component renders the text of its todo inside a paragraph. First we'll create <code>__tests__/todo.test.js</code>, and import our component:</p>
+
+<pre><code class="jsx language-jsx">import Todo from '../app/todo';
+import React from 'react';
+import { mount } from 'enzyme';
+
+test('Todo component renders the text of the todo', () =&gt; {
+});
+</code></pre>
+
+<p>I also import <code>mount</code> from Enzyme. The <code>mount</code> function is used to render our component and then allow us to inspect the output and make assertions on it. Even though we're running our tests in Node, we can still write tests that require a DOM. This is because Jest configures <a href="https://github.com/tmpvar/jsdom">jsdom</a>, a library that implements the DOM in Node. This is great because we can write DOM based tests without having to fire up a browser each time to test them.</p>
+
+<p>We can use <code>mount</code> to create our <code>Todo</code>:</p>
+
+<pre><code class="jsx language-jsx">const todo = { id: 1, done: false, name: 'Buy Milk' };
+const wrapper = mount(
+  &lt;Todo todo={todo} /&gt;
+);
+</code></pre>
+
+<p>And then we can call <code>wrapper.find</code>, giving it a CSS selector, to find the paragraph that we're expecting to contain the text of the Todo. This API might remind you of jQuery, and that's by design. It's a very intuitive API for searching rendered output to find the matching elements.</p>
+
+<pre><code class="jsx language-jsx">const p = wrapper.find('.toggle-todo');
+</code></pre>
+
+<p>And finally, we can assert that the text within it is <code>Buy Milk</code>:</p>
+
+<pre><code class="jsx language-jsx">expect(p.text()).toBe('Buy Milk');
+</code></pre>
+
+<p>Which leaves our entire test looking like so:</p>
+
+<pre><code class="jsx language-jsx">import Todo from '../app/todo';
+import React from 'react';
+import { mount } from 'enzyme';
+
+test('TodoComponent renders the text inside it', () =&gt; {
+  const todo = { id: 1, done: false, name: 'Buy Milk' };
+  const wrapper = mount(
+    &lt;Todo todo={todo} /&gt;
+  );
+  const p = wrapper.find('.toggle-todo');
+  expect(p.text()).toBe('Buy Milk');
+});
+</code></pre>
+
+<p>Phew! You might think that was a lot of work and effort to check that "Buy Milk" gets placed onto the screen, and, well … you'd be correct. Hold your horses for now, though; in the next section we'll look at using Jest's snapshot ability to make this much easier.</p>
+
+<p>In the meantime, let's look at how you can use Jest's spy functionality to assert that functions are called with specific arguments. This is useful in our case, because we have the <code>Todo</code> component which is given two functions as properties, which it should call when the user clicks a button or performs an interaction.</p>
+
+<p>In this test we're going to assert that when the todo is clicked, the component will call the <code>doneChange</code> prop that it's given.</p>
+
+<pre><code class="jsx language-jsx">test('Todo calls doneChange when todo is clicked', () =&gt; {
+});
+</code></pre>
+
+<p>What we want to do is to have a function that we can keep track of its calls, and the arguments that it's called with. Then we can check that when the user clicks the todo, the <code>doneChange</code> function is called and also called with the correct arguments. Thankfully, Jest provides this out of the box with spies. A <strong>spy</strong> is a function whose implementation you don't care about; you just care about when and how it's called. Think of it as you spying on the function. To create one, we call <code>jest.fn()</code>:</p>
+
+<pre><code class="jsx language-jsx">const doneChange = jest.fn();
+</code></pre>
+
+<p>This gives a function that we can spy on and make sure it's called correctly. Let's start by rendering our <code>Todo</code> with the right props:</p>
+
+<pre><code class="jsx language-jsx">const todo = { id: 1, done: false, name: 'Buy Milk' };
+const doneChange = jest.fn();
+const wrapper = mount(
+  &lt;Todo todo={todo} doneChange={doneChange} /&gt;
+);
+</code></pre>
+
+<p>Next, we can find our paragraph again, just like in the previous test:</p>
+
+<pre><code class="jsx language-jsx">const p = TestUtils.findRenderedDOMComponentWithClass(rendered, 'toggle-todo');
+</code></pre>
+
+<p>And then we can call <code>simulate</code> on it to simulate a user event, passing <code>click</code> as the argument:</p>
+
+<pre><code class="jsx language-jsx">p.simulate('click');
+</code></pre>
+
+<p>And all that's left to do is assert that our spy function has been called correctly. In this case, we're expecting it to be called with the ID of the todo, which is <code>1</code>. We can use <code>expect(doneChange).toBeCalledWith(1)</code> to assert this, and with that we're done with our test!</p>
+
+<pre><code class="jsx language-jsx">test('TodoComponent calls doneChange when todo is clicked', () =&gt; {
+  const todo = { id: 1, done: false, name: 'Buy Milk' };
+  const doneChange = jest.fn();
+  const wrapper = mount(
+    &lt;Todo todo={todo} doneChange={doneChange} /&gt;
+  );
+
+  const p = wrapper.find('.toggle-todo');
+  p.simulate('click');
+  expect(doneChange).toBeCalledWith(1);
+});
+</code></pre>
+
+<h2 id="bettercomponenttestingwithsnapshots">Better Component Testing with Snapshots</h2>
+
+<p>I mentioned above that this might feel like a lot of work to test React components, especially some of the more mundane functionalities (such as rendering the text). Rather than make a large amount of assertions on React components, Jest lets you run snapshot tests. These are not so useful for interactions (in which case I still prefer a test like we just wrote above), but for testing that the output of your component is correct, they're much easier.</p>
+
+<p>When you run a snapshot test, Jest renders the React component under test and stores the result in a JSON file. Every time the test runs, Jest will check that the React component still renders the same output as the snapshot. Then, when you change a component's behavior, Jest will tell you and either:</p>
+
+<ul>
+<li>you'll realize you made a mistake, and you can fix the component so it matches the snapshot again</li>
+
+<li>or, you made that change on purpose, and you can tell Jest to update the snapshot.</li>
+</ul>
+
+<p>This way of testing means that:</p>
+
+<ul>
+<li>you don't have to write a lot of assertions to ensure your React components are behaving as expected</li>
+
+<li>you can never accidentally change a component's behavior, because Jest will realize.</li>
+</ul>
+
+<p>You also don't have to snapshot all your components. In fact, I'd actively recommend against it. You should pick components with some functionality that you really need to ensure is working. Snapshotting all your components will just lead to slow tests that aren't useful. Remember, React is a very thoroughly tested framework, so we can be confident that it will behave as expected. Make sure you don't end up testing the framework, rather than your code!</p>
+
+<p>To get started with snapshot testing, we need one more Node package. <a href="https://www.npmjs.com/package/react-test-renderer">react-test-renderer</a> is a package that's able to take a React component and render it as a pure JavaScript object. This means it can then be saved to a file, and this is what Jest uses to keep track of our snapshots.</p>
+
+<pre><code class="bash language-bash">npm install --save-dev react-test-renderer
+</code></pre>
+
+<p>Now, let's rewrite our first Todo component test to use a snapshot. For now, comment out the <code>TodoComponent calls doneChange when todo is clicked</code> test as well.</p>
+
+<p>The first thing you need to do is import the <code>react-test-renderer</code>, and also remove the import for <code>mount</code>. They can't both be used; you either have to use one or the other. This is why we have commented the other test out for now.</p>
+
+<pre><code class="jsx language-jsx">import renderer from 'react-test-renderer';
+</code></pre>
+
+<p>Now I'll use the renderer we just imported to render the component, and assert that it matches the snapshot:</p>
+
+<pre><code class="jsx language-jsx">describe('Todo component renders the todo correctly', () =&gt; {
+  it('renders correctly', () =&gt; {
+    const todo = { id: 1, done: false, name: 'Buy Milk' };
+    const rendered = renderer.create(
+      &lt;Todo todo={todo} /&gt;
+    );
+    expect(rendered.toJSON()).toMatchSnapshot();
+  });
+});
+</code></pre>
+
+<p>The first time you run this, Jest is clever enough to realize that there's no snapshot for this component, so it creates it. Let's take a look at <code>__tests__/__snapshots__/todo.test.js.snap</code>:</p>
+
+<pre><code class="jsx language-jsx">exports[`Todo component renders the todo correctly renders correctly 1`] = `
+&lt;div
+  className="todo  todo-1"&gt;
+  &lt;p
+    className="toggle-todo"
+    onClick={[Function]}&gt;
+    Buy Milk
+  &lt;/p&gt;
+  &lt;a
+    className="delete-todo"
+    href="#"
+    onClick={[Function]}&gt;
+    Delete
+  &lt;/a&gt;
+&lt;/div&gt;
+`;
+</code></pre>
+
+<p>You can see that Jest has saved the output for us, and now the next time we run this test it will check that the outputs are the same. To demonstrate this, I'll break the component by removing the paragraph that renders the text of the todo, meaning that I've removed this line from the <code>Todo</code> component:</p>
+
+<pre><code class="jsx language-jsx">&lt;p className="toggle-todo" onClick={() =&gt; this.toggleDone() }&gt;{ todo.name }&lt;/p&gt;
+</code></pre>
+
+<p>Let's see what Jest says now:</p>
+
+<pre><code class="bash language-bash">FAIL  __tests__/todo.test.js
+ ● Todo component renders the todo correctly › renders correctly
+
+   expect(value).toMatchSnapshot()
+
+   Received value does not match stored snapshot 1.
+
+   - Snapshot
+   + Received
+
+     &lt;div
+       className="todo  todo-1"&gt;
+   -   &lt;p
+   -     className="toggle-todo"
+   -     onClick={[Function]}&gt;
+   -     Buy Milk
+   -   &lt;/p&gt;
+       &lt;a
+         className="delete-todo"
+         href="#"
+         onClick={[Function]}&gt;
+         Delete
+       &lt;/a&gt;
+     &lt;/div&gt;
+
+     at Object.&lt;anonymous&gt; (__tests__/todo.test.js:21:31)
+     at process._tickCallback (internal/process/next_tick.js:103:7)
+</code></pre>
+
+<p>Jest realized that the snapshot doesn't match the new component, and lets us know in the output. If we think this change is correct, we can run jest with the <code>-u</code> flag, which will update the snapshot. In this case, though, I'll undo my change and Jest is happy once more.</p>
+
+<p>Next we can look at how we might use snapshot testing to test interactions. You can have multiple snapshots per test, so you can test that the output after an interaction is as expected.</p>
+
+<p>We can't actually test our Todo component interactions through Jest snapshots, because they don't control their own state but call the callback props they are given. What I've done here is move the snapshot test into a new file, <a href="https://github.com/sitepoint-editors/testing-react-with-jest/blob/master/__tests__/todo.snapshot.test.js">todo.snapshot.test.js</a>, and leave our toggling test in <a href="https://github.com/sitepoint-editors/testing-react-with-jest/blob/master/__tests__/todo.test.js">todo.test.js</a>. I've found it useful to separate the snapshot tests into a different file; it also means that you don't get conflicts between <code>react-test-renderer</code> and <code>react-addons-test-utils</code>.</p>
+
+<p>Remember, you'll find all the code that I've written in this tutorial <a href="https://github.com/sitepoint-editors/testing-react-with-jest">available on GitHub</a> for you to check out and run locally.</p>
+
+
+
+
+
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Facebook released Jest a long time ago, but in recent times it's been picked up and worked on excessively. It's fast become a favorite for JavaScript developers and it's only going to get better. If you've tried Jest in the past and not liked it, I can't encourage you enough to try it again, because it's practically a different framework now. It's quick, great at rerunning specs, gives fantastic error messages and tops it all off with its snapshot functionality.</p>
+
+<p>If you have any questions please feel free to raise an issue on GitHub and I'll be happy to help. And please be sure check out <a href="https://github.com/facebook/jest">Jest on GitHub</a> and star the project; it helps the maintainers.</p>
+    
+                
+                
+        </div>    
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+                <div class="ch-head">Chapter</div>
+                <h1 id="serevr-rendered-react">Building Animated Components, or How React Makes D3 Better</h1>
+                <h3>by Swizec Teller </h3>
+                <p>D3 is great. As the jQuery of the web data visualization world, it can do everything you can think of.</p>
+
+
+
+<p>Many of <a href="https://www.quora.com/What-are-the-best-visualizations-made-using-D3-js">the best data visualizations</a> you've seen online use D3. It's a great library, and with <a href="https://github.com/d3/d3/blob/master/CHANGES.md">the recent v4 update</a>, it became more robust than ever.</p>
+
+<p>Add React, and you can make D3 even better.</p>
+
+<p>Just like jQuery, D3 is powerful but low level. The bigger your visualization, the harder your code becomes to work with, the more time you spend fixing bugs and pulling your hair out.</p>
+
+<p>React can fix that.</p>
+
+<p>You can read my book <a href="http://swizec.com/reactd3js/">React+d3js ES6</a> for a deep insight, or keep reading for an overview of how to best integrate React and D3. In a practical example, we'll see how to build declarative, transition-based animations.</p>
+
+<p>A version of this article also exists as <a href="https://www.youtube.com/watch?v=47uMw-2mb4U">a D3 meetup talk on YouTube</a>.</p>
+
+
+
+
+
+
+<h2 id="isreactworthit">Is React Worth It?</h2>
+
+<p>OK, React is big. It adds <em>a ton</em> of code to your payload, and it increases your dependency footprint. It’s yet another library that you have to keep updated.</p>
+
+<p>If you want to use it effectively, you'll need a build step. Something to turn <a href="https://www.sitepoint.com/getting-started-react-jsx/">JSX code</a> into pure JavaScript.</p>
+
+<p>Setting up Webpack and Babel is easy these days: just run <code>create-react-app</code>. It gives you JSX compilation, modern JavaScript features, linting, hot loading, and code minification for production builds. It's great.</p>
+
+<p>Despite the size and tooling complexity, React <em>is</em> worth it, <em>especially</em> if you're serious about your visualization. If you're building a one-off that you’ll never have to maintain, debug, or expand, stick to pure D3. If you're building something real, I encourage you to add React to the mix.</p>
+
+<p>To me, the main benefit is that React <s>forces</s> strongly encourages you to componentize your code. The other benefits are either symptoms of componentization, or made possible by it.</p>
+
+<p>The main benefits of using React with your D3 code are:</p>
+
+<ul>
+<li>componentization</li>
+
+<li>easier testing and debugging</li>
+
+<li>smart DOM redraws</li>
+
+<li>hot loading</li>
+</ul>
+
+<p><strong>Componentization</strong> encourages you to build your code as a series of logical units – components. With JSX, you can use them like they were HTML elements: <code>&lt;Histogram /&gt;</code>, <code>&lt;Piechart /&gt;</code>, <code>&lt;MyFancyThingThatIMade /&gt;</code>. We'll dive deeper into that in the next section.</p>
+
+<p>Building your visualization as a series of components makes it <strong>easier to test and debug</strong>. You can focus on logical units one at a time. If a component works here, it will work over there as well. If it passes tests and looks nice, it will pass tests and look nice no matter how often you render it, no matter where you put it, and no matter who calls it.</p>
+
+<p><strong>React understands the structure of your code</strong>, so it knows how to redraw only the components that have changes. There’s no more hard work in deciding what to re-render and what to leave alone. Just <strong>change and forget</strong>. React can figure it out on its own. And yes, if you look at a profiling tool, you'll see that <em>only</em> the parts with changes are re-rendered.</p>
+
+
+
+<p>Using <a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html"><code>create-react-app</code></a> to configure your tooling, React can utilize <strong>hot loading</strong>. Let's say you're building a visualization of 30,000 datapoints. With pure D3, you have to refresh the page for every code change. Load the dataset, parse the dataset, render the dataset, click around to reach the state you're testing … yawn.</p>
+
+<p>With React -> no reload, no waiting. Just immediate changes on the page. When I first saw it in action, it felt like eating ice cream while the crescendo of <em>1812 Overture</em> plays in the background. Mind = blown.</p>
+
+<h2 id="benefitsofcomponentization">Benefits of Componentization</h2>
+
+<p>Components this, components that. Blah blah blah. Why should you care? Your dataviz code already works. You build it, you ship it, you make people happy.</p>
+
+<p>But does the code make <em>you</em> happy? With components, it can. Components make your life easier because they make your code:</p>
+
+<ul>
+<li>declarative</li>
+
+<li>reusable</li>
+
+<li>understandable</li>
+
+<li>organized</li>
+</ul>
+
+<p>It's okay if that sounds like buzzword soup. Let me show you.</p>
+
+<p>For instance, <strong>declarative code</strong> is the kind of code where you say <em>what</em> you want, not <em>how</em> you want it. Ever written HTML or CSS? You know how to write declarative code! Congratz!</p>
+
+<p>React uses JSX to make your JavaScript look like HTML. But don't worry, it all compiles to pure JavaScript behind the scenes.</p>
+
+<p>Try to guess what this code does:</p>
+
+<pre><code class="javascript language-javascript">render() {
+  // ...
+  return (
+    &lt;g transform={translate}&gt;
+      &lt;Histogram data={this.props.data}
+         value={(d) =&gt; d.base_salary}
+         x={0}
+         y={0}
+         width={400}
+         height={200}
+         title="All" /&gt;
+      &lt;Histogram data={engineerData}
+         value={(d) =&gt; d.base_salary}
+         x={450}
+         y={0}
+         width={400}
+         height={200}
+         title="Engineer" /&gt;
+      &lt;Histogram data={programmerData}
+         value={(d) =&gt; d.base_salary}
+         x={0}
+         y={220}
+         width={400}
+         height={200}
+         title="Programmer"/&gt;
+      &lt;Histogram data={developerData}
+         value={(d) =&gt; d.base_salary}
+         x={450}
+         y={220}
+         width={400}
+         height={200}
+         title="Developer" /&gt;
+    &lt;/g&gt;
+  )
+}
+</code></pre>
+
+<p>If you guessed <em>"Renders four histograms"</em>, you were right. Hooray.</p>
+
+<p>After you create a Histogram component, you can use it like it was a normal piece of HTML. A histogram shows up anywhere you put <code>&lt;Histogram /&gt;</code> with the right parameters.</p>
+
+<p>In this case, the parameters are <code>x</code> and <code>y</code> coordinates, <code>width</code> and <code>height</code> sizing, the <code>title</code>, some <code>data</code>, and a <code>value</code> accessor. They can be anything your component needs.</p>
+
+<p>Parameters look like HTML attributes, but can take any JavaScript object, even functions. It's like HTML on steroids.</p>
+
+<p>With some boilerplate and the right dataset, that code above gives you a picture like this. A comparison of salary distributions for different types of people who write software.</p>
+
+<p><img src="../images/reactant3/1468570824four-histograms.png" alt="4 histograms of salary distributions" /></p>
+
+<p>Look at the code again. Notice how <strong>reusable</strong> components are? It's like <code>&lt;Histogram /&gt;</code> was a function that created a histogram. Behind the scenes it <em>does</em> compile into a function call – <code>(new Histogram()).render()</code>, or something similar. <code>Histogram</code> becomes a class, and you call an instance's render function every time you use <code>&lt;Histogram /&gt;</code>.</p>
+
+<p>React components should follow the principles of good functional programming. No side effects, statelessness, idempotency, comparability. Unless you really, really want to break the rules.</p>
+
+<p>Unlike JavaScript functions, where following these principles requires deliberate effort, React makes it hard <em>not</em> to code that way. That's a win when you work in a team.</p>
+
+<p>Declarativeness and reusability make your code <strong>understandable</strong> by default. If you've ever used HTML, you can read what that code does. You might not understand the details, but if you know some HTML and JavaScript, you know how to read JSX.</p>
+
+<p>Complex components are made out of simpler components, which are made out of even simpler components, which are eventually made out of pure HTML elements. This keeps your code <strong>organized</strong>.</p>
+
+<p>When you come back in six months, you can look at your code and think, <em>"Ah yes, four histograms. To tweak this, I should open the Histogram component and poke around."</em></p>
+
+<p>React takes the principles I’ve always loved about fancy-pants functional programming and makes them practical. I love that.</p>
+
+<p>Let me show you an example – an animated alphabet.</p>
+
+<h2 id="apracticalexample">A Practical Example</h2>
+
+<p><img src="../images/reactant3/animatedalpha.png" alt="Animated alphabet" /></p>
+
+<p>We're going to build an animated alphabet. Not because it's the simplest example of using React and D3 together, but because it looks cool. When I show this at live talks, people always oooh and aaah, especially when I show proof that only the DOM elements with changes get redrawn.</p>
+
+<p>This is a shortened version of a more <a href="http://swizec.com/blog/using-d3js-transitions-in-react/swizec/6797">in-depth article on React and D3 and transitions</a> that I posted on my blog a few months ago. We're going to gloss over some details in this version to keep it short. You can dive into the full codebase in the <a href="https://github.com/Swizec/react-d3-enter-exit-transitions/tree/alphabet">GitHub repository</a>.</p>
+
+<p>The code is based on React 15 and D3 4.0.0. Some of the syntax I use, like class properties, is not in stable ES6 yet, but should work if you use <code>create-react-app</code> for your tooling setup.</p>
+
+
+<p>To make an animated alphabet, we need two components:</p>
+
+<ul>
+<li><code>Alphabet</code>, which creates random lists of letters every 1.5 seconds, then maps through them to render <code>Letter</code> components</li>
+
+<li><code>Letter</code>, which renders an SVG text element, and takes care of its own enter/update/exit transitions.</li>
+</ul>
+
+<p>We're going to use React to render SVG elements, and we’ll use D3 for transitions, intervals, and some maths.</p>
+
+<h3 id="thealphabetcomponent">The Alphabet Component</h3>
+
+<p>The <code>Alphabet</code> component holds the current list of letters in state and renders a collection of <code>Letter</code> components in a loop.</p>
+
+<p>We start with a skeleton like this:</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/index.jsx
+import React, { Component } from 'react';
+import ReactTransitionGroup from 'react-addons-transition-group';
+import * as d3 from 'd3';
+
+require('./style.css');
+
+import Letter from './Letter';
+
+class Alphabet extends Component {
+  static letters = "abcdefghijklmnopqrstuvwxyz".split('');
+  state = {alphabet: []}
+
+  componentWillMount() {
+    // starts an interval to update alphabet
+  }
+
+  render() {
+    // spits out svg elements
+  }
+}
+
+export default Alphabet;
+</code></pre>
+
+<p>We import our dependencies, add some styling, and define the <code>Alphabet</code> component. It holds a list of available letters in a static <code>letters</code> property and an empty <code>alphabet</code> in component state. We'll need a <code>componentWillMount</code> and a <code>render</code> method as well.</p>
+
+<p>The best place to create a new alphabet every 1.5 seconds is in <code>componentWillMount</code>:</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/index.jsx
+  componentWillMount() {
+    d3.interval(() =&gt; this.setState({
+       alphabet: d3.shuffle(Alphabet.letters)
+         .slice(0, Math.floor(Math.random() * Alphabet.letters.length))
+         .sort()
+    }), 1500);
+  }
+</code></pre>
+
+<p>We use <code>d3.interval( //.., 1500)</code> to call a function every 1.5 seconds. On each period, we shuffle the available letters, slice out a random amount, sort them, and update component state with <code>setState()</code>.</p>
+
+<p>This ensures our alphabet is both random and in alphabetical order. <code>setState()</code> triggers a re-render.</p>
+
+<p>Our declarative magic starts in the <code>render</code> method.</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/index.jsx
+render() {
+  let transform = `translate(${this.props.x}, ${this.props.y})`;
+
+  return (
+    &lt;g transform={transform}&gt;
+      &lt;ReactTransitionGroup component="g"&gt;
+        {this.state.alphabet.map((d, i) =&gt; (
+          &lt;Letter d={d} i={i} key={`letter-${d}`} /&gt;
+        ))}
+      &lt;/ReactTransitionGroup&gt;
+    &lt;/g&gt;
+  );
+}
+</code></pre>
+
+<p>We use an SVG transformation to move our alphabet into the specified <code>(x, y)</code> position, then define a <code>ReactTransitionGroup</code> and map through <code>this.state.alphabet</code> to render a bunch of <code>Letter</code> components with wanton disregard.</p>
+
+<p>Each <code>Letter</code> gets its current text, <code>d</code>, and index, <code>i</code>. The <code>key</code> attribute helps React recognize which component is which. Using <code>ReactTransitionGroup</code> gives us special component lifecycle methods that help with smooth transitions.</p>
+
+<h4 id="reacttransitiongroup">ReactTransitionGroup</h4>
+
+<p>In addition to the normal lifecycle hooks that tell us when a component mounts, updates, and unmounts, ReactTransitionGroup gives us access to <code>componentWillEnter</code>, <code>componentWillLeave</code>, and a few others. Notice something familiar?</p>
+
+<p><code>componentWillEnter</code> is the same as D3's <code>.enter()</code>, <code>componentWillLeave</code> is the same as D3's <code>.exit()</code>, and <code>componentWillUpdate</code> is the same as D3's <code>.update()</code>.</p>
+
+<p>"The same" is a strong concept; they're analogous. D3's hooks operate on entire selections – groups of components – while React's hooks operate on each component individually. In D3, an overlord is dictating what happens; in React, each component knows what to do.</p>
+
+<p>That makes React code easier to understand. I think. ¯&#92;&#95;(ツ)&#95;/¯</p>
+
+<p><code>ReactTransitionGroup</code> gives us <a href="https://facebook.github.io/react/docs/animation.html">even more hooks</a>, but these three are all we need. It's nice that in both <code>componentWillEnter</code> and <code>componentWillLeave</code>, we can use a callback to explicitly say <em>"The transition is done. React, back to you"</em>.</p>
+
+<p>My thanks to Michelle Tilley for writing about <code>ReactTransitionGroup</code> <a href="http://stackoverflow.com/questions/29977799/how-should-i-handle-a-leave-animation-in-componentwillunmount-in-react">on Stack Overflow</a>.</p>
+
+<h3 id="thelettercomponent">The Letter Component</h3>
+
+<p>Now we're ready for the cool stuff – a component that can transition itself into and out of a visualization declaratively.</p>
+
+<p>The basic skeleton for our <code>Letter</code> component looks like this:</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/Letter.jsx
+
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import * as d3 from 'd3';
+
+class Letter extends Component {
+    state = {
+      y: -60,
+      x: 0,
+      className: 'enter',
+      fillOpacity: 1e-6
+    }
+    transition = d3.transition()
+                   .duration(750)
+                   .ease(d3.easeCubicInOut);
+
+    componentWillEnter(callback) {
+      // start enter transition, then callback()
+    }
+
+    componentWillLeave(callback) {
+      // start exit transition, then callback()
+    }
+
+    componentWillReceiveProps(nextProps) {
+      if (this.props.i != nextProps.i) {
+        // start update transition
+      }
+    }
+
+    render() {
+       // spit out a &lt;text&gt; element
+    }
+};
+
+export default Letter;
+</code></pre>
+
+<p>We start with some dependencies and define a <code>Letter</code> component with a default state and a default transition. In most cases, you'd want to avoid using <code>state</code> for coordinates and other transient properties. That's what props are for. With transitions we use state because it helps us keep React's reality in sync with D3's reality.</p>
+
+<p>That said, those magic default values could be default props. That would make our <code>Alphabet</code> more flexible.</p>
+
+<h4 id="componentwillenter">componentWillEnter</h4>
+
+<p>We put the enter transition in <code>componentWillEnter</code>.</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/Letter.jsx
+    componentWillEnter(callback) {
+      let node = d3.select(ReactDOM.findDOMNode(this));
+
+      this.setState({x: this.props.i*32});
+
+      node.transition(this.transition)
+        .attr('y', 0)
+        .style('fill-opacity', 1)
+        .on('end', () =&gt; {
+            this.setState({y: 0, fillOpacity: 1});
+            callback()
+        });
+    }
+</code></pre>
+
+<p>We use <code>reactDOM.findDOMNode()</code> to get our DOM node and use <code>d3.select()</code> to turn it into a d3 selection. Now anything D3 can do, our component can do. Yessss! 🙌</p>
+
+<p>Then we update <code>this.state.x</code> using the current index and letter width. The width is a value that we Just Know™. Putting <code>x</code> in state helps us avoid jumpiness: The <code>i</code> prop changes on each update, but we want to delay when the <code>Letter</code> moves.</p>
+
+<p>When a <code>Letter</code> first renders, it's invisible and 60 pixels above the baseline. To animate it moving down and becoming visible, we use a D3 transition.</p>
+
+<p>We use <code>node.transition(this.transition)</code> to start a new transition with default settings from earlier. Any <code>.attr</code> and <code>.style</code> changes that we make happen over time directly on the DOM element itself.</p>
+
+<p>This confuses React, because it assumes it's the lord and master of the DOM. So we have to sync React's reality with actual reality using a callback: <code>.on('end', …)</code>. We use <code>setState()</code> to update component state, and trigger the main <code>callback</code>. React now knows this letter is done appearing.</p>
+
+<h4 id="componentwillleave">componentWillLeave</h4>
+
+<p>The exit transition goes in <code>componentWillLeave()</code>. Same concept as above, just in reverse.</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/
+  componentWillLeave(callback) {
+    let node = d3.select(ReactDOM.findDOMNode(this));
+
+    this.setState({className: 'exit'});
+
+    node.transition(this.transition)
+      .attr('y', 60)
+      .style('fill-opacity', 1e-6)
+      .on('end', () =&gt; {
+          callback()
+      });
+  }
+</code></pre>
+
+<p>This time, we update state to change the <code>className</code> instead of <code>x</code>. That's because <code>x</code> doesn't change.</p>
+
+<p>The exit transition itself is an inverse of the enter transition: letter moves down and becomes invisible. After the transition, we tell React it's okay to remove the component.</p>
+
+<h4 id="componentwillreceiveprops">componentWillReceiveProps</h4>
+
+<p>The update transition goes into <code>componentWillReceiveProps()</code>.</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/Letter.jsx
+  componentWillReceiveProps(nextProps) {
+    if (this.props.i != nextProps.i) {
+      let node = d3.select(ReactDOM.findDOMNode(this));
+
+      this.setState({className: 'update'});
+
+      node.transition(this.transition)
+        .attr('x', nextProps.i*32)
+        .on('end', () =&gt; this.setState({x: nextProps.i*32}));
+    }
+  }
+</code></pre>
+
+<p>You know the pattern by now, don't you? Update state, do transition, sync state with reality after transition.</p>
+
+<p>In this case, we change the <code>className</code>, then move the letter into its new horizontal position.</p>
+
+<h4 id="render">render</h4>
+
+<p>After all that transition magic, you might be thinking <em>"Holy cow, how do I render this!?"</em>. I don't blame ya!</p>
+
+<p>But we did all the hard work. Rendering is straightforward:</p>
+
+<pre><code class="javascript language-javascript">// src/components/Alphabet/Letter.jsx
+  render() {
+    return (
+      &lt;text dy=".35em"
+          y={this.state.y}
+          x={this.state.x}
+          className={this.state.className}
+          style={{fillOpacity: this.state.fillOpacity}}&gt;
+        {this.props.d}
+      &lt;/text&gt;
+    );
+  }
+</code></pre>
+
+<p>We return an SVG <code>&lt;text&gt;</code> element rendered at an <code>(x, y)</code> position with a <code>className</code> and a <code>fillOpacity</code>. It shows a single letter given by the <code>d</code> prop.</p>
+
+<p>As mentioned: using state for <code>x</code>, <code>y</code>, <code>className</code>, and <code>fillOpacity</code> is wrong in theory. You'd normally use props for that. But state is the simplest way I can think of to communicate between the render and lifecycle methods.</p>
+
+<h2 id="youknowthebasics">You Know the Basics!</h2>
+
+<p>Boom. That's it. You know how to build an animated declarative visualization. That's pretty cool if you ask me.</p>
+
+<p>This is what it looks like in action:</p>
+
+<iframe src="https://sitepoint-editors.github.io/react-d3-enter-exit-transitions/" width="100%" height="500"></iframe>
+
+<p>Such nice transitions, and all you had to do was loop through an array and render some <code>&lt;Letter&gt;</code> components. How cool is that?</p>
+
+<h2 id="inconclusion">In Conclusion</h2>
+
+<p>You now understand React well enough to make technical decisions. You can look at project and decide: <em>"Yes, this is more than a throwaway toy. Components and debuggability will help me."</em></p>
+
+<p>For extra fun, you also know how to use React and D3 together to build declarative animations. A feat most difficult in the olden days.</p>
+
+<p>To learn more about properly integrating React and D3 check out my book, <a href="http://swizec.com/reactd3js">React+d3js ES6</a>.</p>
+    
+                
+                
+        </div>    
+
+
+		<!-- all the other chapters just go into a div with a class of chapter -->
+		<div class="chapter">
+            <div class="ch-head">Chapter</div>
+            <h1 id="preeact">Using Preact as a React Alternative</h1>
+            <h3>by Ahmed Bouchefra</h3>
+            <p><a href="https://github.com/developit/preact">Preact</a> is an implementation of the virtual DOM component paradigm just like React and many other similar libraries. Unlike React, it's only 3KB in size, and it also outperforms it in terms of speed. It's created by Jason Miller and available under the well-known permissive and open-source MIT license.</p>
+
+<h2 id="whyusepreact">Why Use Preact?</h2>
+
+<p>Preact is a lightweight version of React. You may prefer to use Preact as a lightweight alternative if you like building views with React but performance, speed and size are a priority for you – for example, in the case of mobile web apps or progressive web apps.</p>
+
+
+<p>Whether you're starting a new project or developing an existing one, Preact can save you a lot of time. You don't need to reinvent the wheel trying to learn a new library, since it's similar to, and compatible with, React – to the point that you can use existing React packages with it with only some aliasing, thanks to the compatibility layer <code>preact-compat</code>.</p>
+
+<h2 id="prosandcons">Pros and Cons</h2>
+
+<p>There are many differences between React and Preact that we can summarize in three points:</p>
+
+<ul>
+<li><strong>Features and API</strong>: Preact includes only a subset of the React API, and not all available features in React.</li>
+
+<li><strong>Size</strong>: Preact is much smaller than React.</li>
+
+<li><strong>Performance</strong>: Preact is faster than React.</li>
+</ul>
+
+<p>Every library out there has its own set of pros and cons, and only your priorities can help you decide which library is a good fit for your next project. In this section, I'll try to list the pros and cons of the two libraries.</p>
+
+<h3 id="preactpros">Preact Pros</h3>
+
+<ul>
+<li>Preact is lightweight, smaller (only 3KB in size when gzipped) and faster than React (see these <a href="https://developit.github.io/preact-perf/">tests</a>). You can also run performance tests in your browser via <a href="https://developit.github.io/preact-perf/">this link</a>.</li>
+
+<li>Preact is largely compatible with React, and has the same ES6 API as React, which makes it dead easy either to adopt Preact as a new library for building user interfaces in your project or to swap React with Preact for an existing project for performance reasons.</li>
+
+<li>It has good documentation and examples available from the official website.</li>
+
+<li>It has a powerful and official CLI for quickly creating new Preact projects, without the hassle of Webpack and Babel configuration.</li>
+
+<li>Many features are inspired by all the work already done on React.</li>
+
+<li>It has also its own set of advanced features independent from React, like <a href="https://preactjs.com/guide/linked-state">Linked State</a>.</li>
+</ul>
+
+<h3 id="reactpros">React Pros</h3>
+
+<ul>
+<li>React supports one-way data binding.</li>
+
+<li>It's backed by a large company, Facebook.</li>
+
+<li>Good documentation, examples, and tutorials on the official website and the web.</li>
+
+<li>Large community.</li>
+
+<li>Used on Facebook's website, which has millions of visitors worldwide.</li>
+
+<li>Has its own official developer debugging tools extension for Chrome.</li>
+
+<li>It has the Create React App project boilerplate for quickly creating projects with zero configuration.</li>
+
+<li>It has a well-architectured and complex codebase.</li>
+</ul>
+
+<h3 id="reactcons">React Cons</h3>
+
+<ul>
+<li>React has a relatively large size in comparison with Preact or other existing similar libraries. (React minified source file is around 136KB in size, or about 42KB when minified and gzipped.)</li>
+
+<li>It's slower than Preact.</li>
+
+<li>As a result of its complex codebase, it's harder for novice developers to contribute.</li>
+</ul>
+
+
+<div class="box note">
+    <h4>License Concerns</h4>
+    <div class="body">
+        <p>Another con I listed while writing this article was that React had a grant patent clause paired with the BSD license, making it legally unsuitable for some use cases. However, <a href="https://github.com/facebook/react/commit/b765fb25ebc6e53bb8de2496d2828d9d01c2774b">in September 2017</a>, the React license switched to MIT, which resolved these license concerns.</p>
+    </div>
+</div>
+
+
+<h3 id="preactcons">Preact Cons</h3>
+
+<ul>
+<li>Preact supports only stateless functional components and ES6 class-based component definition, so there's no <strong>createClass</strong>.</li>
+
+<li>No support for <a href="https://facebook.github.io/react/docs/context.html">context</a>.</li>
+
+<li>No support for React propTypes.</li>
+
+<li>Smaller community than React.</li>
+</ul>
+
+<h2 id="gettingstartedwithpreactcli">Getting Started with Preact CLI</h2>
+
+<p>Preact CLI is a command line tool created by Preact's author, Jason Miller. It makes it very easy to create a new Preact project without getting bogged down with configuration complexities, so let's start by installing it.</p>
+
+<p>Open your terminal (Linux or macOS) or command prompt (Windows), then run the following commands:</p>
+
+<pre><code class="bash language-bash">npm i -g preact-cli@latest
+</code></pre>
+
+<p>This will install the latest version of Preact CLI, assuming you have <a href="https://www.sitepoint.com/beginners-guide-node-package-manager/">Node and NPM installed</a> on your local development machine.</p>
+
+<p>You can now create your project with this:</p>
+
+<pre><code class="bash language-bash">preact create my-app
+</code></pre>
+
+<p>Or with this, ff you want to create your app interactively:</p>
+
+<pre><code class="bash language-bash">preact init
+</code></pre>
+
+<p>Next, navigate inside your app's root folder and run this:</p>
+
+<pre><code class="bash language-bash">npm start
+</code></pre>
+
+<p>This will start a live-reload development server.</p>
+
+<p>Finally, when you finish developing your app, you can build a production release using this:</p>
+
+<pre><code class="bash language-bash">npm run build
+</code></pre>
+
+<h2 id="demystifyingyourfirstpreactapp">Demystifying Your First Preact App</h2>
+
+<p>After successfully installing the Preact CLI and generating an app, let's try to understand the simple app generated with the Preact CLI.</p>
+
+<p>The Preact CLI generates the following directory structure</p>
+
+<pre><code class="bash language-bash">├── node_modules
+├── package.json
+├── package-lock.json
+└── src
+    ├── assets
+    ├── components
+    │   ├── app.js
+    │   └── header
+    ├── index.js
+    ├── lib
+    ├── manifest.json
+    ├── routes
+    │   ├── home
+    │   └── profile
+    └── style
+        └── index.css
+</code></pre>
+
+<p>The <code>components</code> folder holds Preact components, and the <code>routes</code> folder holds the page components used for each app's route. You can use the <code>lib</code> folder for any external libraries, the <code>style</code> folder for CSS styles, and the <code>assets</code> for icons and other graphics.</p>
+
+<p>Note the <code>manifest.json</code> file, which is like <code>package.json</code> but for PWAs (progressive web apps). Thanks to the Preact CLI, you can have a perfect-score PWA out of the box.</p>
+
+<p>Now, if you open your project's <code>package.json</code> file, you'll see that the main entry point is set to <code>src/index.js</code>. Here is the content of this file:</p>
+
+<pre><code class="jsx language-jsx">import './style';
+import App from './components/app';
+
+export default App;
+</code></pre>
+
+<p>As you can see, <code>index.js</code> imports styles, and <code>App</code> component from <code>./components/app**</code>, and then just exports it as the default.</p>
+
+<p>Now, let's see what's inside <code>./components/app</code>:</p>
+
+<pre><code class="jsx language-jsx">import { h, Component } from 'preact';
+import { Router } from 'preact-router';
+
+import Header from './header';
+import Home from '../routes/home';
+import Profile from '../routes/profile';
+
+export default class App extends Component {
+    handleRoute = e =&gt; {
+        this.currentUrl = e.url;
+    };
+
+    render() {
+        return (
+            &lt;div id="app"&gt;
+                &lt;Header /&gt;
+                &lt;Router onChange={this.handleRoute}&gt;
+                    &lt;Home path="/" /&gt;
+                    &lt;Profile path="/profile/" user="me" /&gt;
+                    &lt;Profile path="/profile/:user" /&gt;
+                &lt;/Router&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre>
+
+<p>This file exports a default class <code>App</code> which extends the <code>Component</code> class imported from the <code>preact</code> package. Every Preact component needs to extend the <code>Component</code> class.</p>
+
+<p><code>App</code> defines a <code>render</code> method, which returns a bunch of HTML elements and Preact components that render the app's main user interface.  </p>
+
+<p>Inside the <code>div</code> element, we have two Preact components, <code>Header</code> – which renders the app's header – and a <code>Router</code> component.</p>
+
+<p>The Preact Router is similar to the latest version of <a href="https://www.sitepoint.com/react-router-v4-complete-guide/">React Router (version 4)</a>. You simply need to wrap the child components with a <code>&lt;Router&gt;</code> component, then specify the <code>path</code> prop for each component. Then, the router will take care of rendering the component, which has a path prop that matches the current browser's URL.</p>
+
+<p>It's worth mentioning that Preact Router is very simple and, unlike React Router, it doesn't support advanced features such as nested routes and view composition. If you need these features, you have to use either the React Router v3 by aliasing <code>preact-compat</code>, or better yet use the latest React Router (version 4) which is more powerful than v3 and doesn't need any compatibility layer, because it works directly with Preact. (See this <a href="https://codepen.io/developit/pen/BWxepY?editors=0010">CodePen</a> demo for an example.)  </p>
+
+<h2 id="preactcompatibilitylayer">Preact Compatibility Layer</h2>
+
+<p>The <code>preact-compat</code> module allows developers to switch from React to Preact without changing imports from React and ReactDOM to Preact, or to use existing React packages with Preact.</p>
+
+<p>Using <code>preact-compat</code> is easy. All you have to do is to first install it via npm:</p>
+
+<pre><code class="bash language-bash">npm i -S preact preact-compat
+</code></pre>
+
+<p>Then set up your build system to redirect imports or requires for <code>react</code> or <code>react-dom</code> to <code>preact-compat</code>. For example, in the case of Webpack, you just need to add the following configuration to <code>webpack.config.js</code>:</p>
+
+<pre><code class="javascript language-javascript">{
+  "resolve": {
+    "alias": {
+      "react": "preact-compat",
+      "react-dom": "preact-compat"
+    }
+  }
+}
+</code></pre>
+
+
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Preact is a nice alternative to React. Its community is growing steadily, and more web apps are using it. So if you're building a web app with high-performance requirements, or a mobile app for slow 2G networks, then you should consider Preact – either as the first candidate view library for your project, or as a drop-in replacement for React.</p>
+</div>
+        
+
+</body>
+
+<script type="text/javascript" src="../assets/js/book.js"></script>
+<script src="../assets/js/prism.js"></script>
+</html>
